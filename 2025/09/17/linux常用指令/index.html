@@ -6,16 +6,19 @@
   
   <title>linux常用指令 | Mr.苏的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Linux基本操作指令Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法： 文件和目录操作 ls：列出当前目录中的文件和子目录 pwd：显示当前工作目录的路径 cd：切换工作目录 cd &#x2F;path&#x2F;to&#x2F;directory mkdir：创建新目录 mkdir direc">
+  <meta name="description" content="Linux基本操作指令Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：  一、文件和目录操作   命令 功能说明 示例用法    ls 列出当前目录中的文件和子目录 &#96;&#96;&#96;bash   基础用法ls 显示详细信息（权限、大小、时间等）ls -l 显示隐藏文件（以.开头的文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用指令">
 <meta property="og:url" content="http://example.com/2025/09/17/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Mr.苏的博客">
-<meta property="og:description" content="Linux基本操作指令Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法： 文件和目录操作 ls：列出当前目录中的文件和子目录 pwd：显示当前工作目录的路径 cd：切换工作目录 cd &#x2F;path&#x2F;to&#x2F;directory mkdir：创建新目录 mkdir direc">
+<meta property="og:description" content="Linux基本操作指令Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：  一、文件和目录操作   命令 功能说明 示例用法    ls 列出当前目录中的文件和子目录 &#96;&#96;&#96;bash   基础用法ls 显示详细信息（权限、大小、时间等）ls -l 显示隐藏文件（以.开头的文">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-09-17T15:35:41.000Z">
-<meta property="article:modified_time" content="2025-09-19T16:16:01.328Z">
+<meta property="article:modified_time" content="2025-12-05T08:43:38.691Z">
 <meta property="article:author" content="Mr.苏">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="命令行">
+<meta property="article:tag" content="基础操作">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
@@ -95,51 +98,182 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Linux基本操作指令<br>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
-<p>文件和目录操作</p>
-<p>ls：列出当前目录中的文件和子目录</p>
-<p>pwd：显示当前工作目录的路径</p>
-<p>cd：切换工作目录</p>
-<p>cd &#x2F;path&#x2F;to&#x2F;directory</p>
-<p>mkdir：创建新目录</p>
-<p>mkdir directory_name</p>
-<p>rmdir：删除空目录</p>
-<p>rmdir directory_name</p>
-<p>rm：删除文件或目录</p>
-<p>rm file_name<br>rm -r directory_name # 递归删除目录及其内容</p>
-<p>cp：复制文件或目录</p>
-<p>cp source_file destination<br>cp -r source_directory destination # 递归复制目录及其内容</p>
-<p>mv：移动或重命名文件或目录</p>
-<p>mv old_name new_name</p>
-<p>touch：创建空文件或更新文件的时间戳</p>
-<p>touch file_name</p>
-<p>cat：连接和显示文件内容</p>
-<p>cat file_name</p>
-<p>系统管理</p>
-<p>ps：显示当前运行的进程</p>
-<p>ps aux</p>
-<p>kill：终止进程</p>
-<p>kill process_id</p>
-<p>ifconfig&#x2F;ip：查看和配置网络接口信息</p>
-<p>ifconfig<br>ip addr show</p>
-<p>ping：测试与主机的连通性</p>
-<p>ping host_name_or_ip</p>
-<p>chmod：修改文件或目录的权限</p>
-<p>chmod permissions file_name</p>
-<p>chown：修改文件或目录的所有者</p>
-<p>chown owner:group file_name</p>
-<p>df&#x2F;du：显示磁盘使用情况</p>
-<p>df -h # 显示磁盘空间使用情况<br>du -h directory_name # 显示目录的磁盘使用情况</p>
-<p>mount&#x2F;umount：挂载和卸载文件系统</p>
-<p>mount &#x2F;dev&#x2F;sdX1 &#x2F;mnt # 挂载分区到指定目录<br>umount &#x2F;mnt # 卸载挂载的文件系统</p>
-<p>网络操作</p>
-<p>ssh：远程登录到其他计算机</p>
-<p>ssh username@remote_host</p>
-<p>scp：安全地将文件从本地复制到远程主机，或从远程主机复制到本地</p>
-<p>scp local_file remote_user@remote_host:&#x2F;remote&#x2F;directory</p>
-<p>wget&#x2F;curl：从网络下载文件</p>
-<p>wget URL<br>curl -O URL</p>
-<p>这些命令是Linux系统中最常用的基本操作命令，掌握这些命令可以帮助你更有效地管理和操作Linux系统</p>
+        <h1 id="Linux基本操作指令"><a href="#Linux基本操作指令" class="headerlink" title="Linux基本操作指令"></a>Linux基本操作指令</h1><p>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
+<hr>
+<h2 id="一、文件和目录操作"><a href="#一、文件和目录操作" class="headerlink" title="一、文件和目录操作"></a>一、文件和目录操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能说明</th>
+<th>示例用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td>列出当前目录中的文件和子目录</td>
+<td>&#96;&#96;&#96;bash</td>
+</tr>
+</tbody></table>
+<h1 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h1><p>ls</p>
+<h1 id="显示详细信息（权限、大小、时间等）"><a href="#显示详细信息（权限、大小、时间等）" class="headerlink" title="显示详细信息（权限、大小、时间等）"></a>显示详细信息（权限、大小、时间等）</h1><p>ls -l</p>
+<h1 id="显示隐藏文件（以-开头的文件）"><a href="#显示隐藏文件（以-开头的文件）" class="headerlink" title="显示隐藏文件（以.开头的文件）"></a>显示隐藏文件（以.开头的文件）</h1><p>ls -a</p>
+<pre><code class="language-|">| `pwd` | 显示当前工作目录的绝对路径 | ```bash
+pwd
+``` |
+| `cd` | 切换工作目录 | ```bash
+# 切换到指定目录
+cd /path/to/directory
+# 回到上一级目录
+cd ..
+# 回到当前用户主目录
+cd ~
+# 回到上一次所在目录
+cd -
+``` |
+| `mkdir` | 创建新目录 | ```bash
+# 创建单个目录
+mkdir directory_name
+# 递归创建多级目录（如a/b/c）
+mkdir -p a/b/c
+``` |
+| `rmdir` | 删除空目录（仅能删空目录） | ```bash
+rmdir directory_name
+``` |
+| `rm` | 删除文件或目录（慎用！） | ```bash
+# 删除文件
+rm file_name
+# 递归删除目录及其所有内容
+rm -r directory_name
+# 强制删除（无确认提示，高危）
+rm -rf directory_name
+``` |
+| `cp` | 复制文件或目录 | ```bash
+# 复制文件到目标位置
+cp source_file destination
+# 递归复制目录及其内容
+cp -r source_directory destination
+# 覆盖前提示（避免误操作）
+cp -i source_file destination
+``` |
+| `mv` | 移动/重命名文件/目录 | ```bash
+# 重命名文件/目录
+mv old_name new_name
+# 移动文件到指定目录
+mv file_name /path/to/directory
+``` |
+| `touch` | 创建空文件/更新文件时间戳 | ```bash
+# 创建空文件
+touch file_name
+# 同时创建多个空文件
+touch file1 file2 file3
+``` |
+| `cat` | 查看/拼接文件内容 | ```bash
+# 查看单个文件内容
+cat file_name
+# 拼接多个文件内容并输出
+cat file1 file2
+# 查看文件并显示行号
+cat -n file_name
+``` |
+
+---
+
+## 二、系统管理
+| 命令 | 功能说明 | 示例用法 |
+|------|----------|----------|
+| `ps` | 查看当前运行的进程 | ```bash
+# 显示所有进程（最常用）
+ps aux
+# 按进程树显示
+ps -ef
+``` |
+| `kill` | 终止指定进程 | ```bash
+# 终止指定PID的进程（PID为进程号）
+kill process_id
+# 强制终止进程（无法忽略）
+kill -9 process_id
+``` |
+| `ifconfig/ip` | 查看/配置网络接口 | ```bash
+# 传统查看网络信息（部分系统需安装net-tools）
+ifconfig
+# 新版查看IP地址（推荐）
+ip addr show
+# 启动/关闭网卡（eth0为网卡名）
+ip link set eth0 up/down
+``` |
+| `ping` | 测试主机连通性 | ```bash
+# 测试与百度的连通性（默认无限次）
+ping www.baidu.com
+# 测试5次后停止
+ping -c 5 www.baidu.com
+``` |
+| `chmod` | 修改文件/目录权限 | ```bash
+# 数字权限（755：所有者读/写/执行，其他读/执行）
+chmod 755 file_name
+# 符号权限（给所有者添加执行权限）
+chmod u+x file_name
+``` |
+| `chown` | 修改文件/目录所有者/所属组 | ```bash
+# 修改所有者
+chown owner file_name
+# 同时修改所有者和所属组
+chown owner:group file_name
+# 递归修改目录及其内容的所有者
+chown -R owner:group directory_name
+``` |
+| `df/du` | 查看磁盘使用情况 | ```bash
+# 查看磁盘分区使用情况（人性化显示）
+df -h
+# 查看指定目录的磁盘占用（人性化）
+du -h directory_name
+# 查看目录总大小（仅显示总和）
+du -sh directory_name
+``` |
+| `mount/umount` | 挂载/卸载文件系统 | ```bash
+# 挂载分区到指定目录（sdX1为分区名）
+mount /dev/sdX1 /mnt
+# 卸载挂载的目录（卸载前确保未被使用）
+umount /mnt
+# 查看已挂载的文件系统
+mount
+``` |
+
+---
+
+## 三、网络操作
+| 命令 | 功能说明 | 示例用法 |
+|------|----------|----------|
+| `ssh` | 远程登录其他Linux主机 | ```bash
+# 基础远程登录（默认22端口）
+ssh username@remote_host
+# 指定端口登录（如2222端口）
+ssh -p 2222 username@remote_host
+``` |
+| `scp` | 安全复制文件（跨主机） | ```bash
+# 本地文件复制到远程主机
+scp local_file remote_user@remote_host:/remote/directory
+# 远程文件复制到本地
+scp remote_user@remote_host:/remote/file /local/directory
+# 递归复制目录
+scp -r local_directory remote_user@remote_host:/remote/directory
+``` |
+| `wget/curl` | 从网络下载文件 | ```bash
+# wget下载文件（直接保存到当前目录）
+wget https://example.com/file.zip
+# curl下载文件（需加-O参数）
+curl -O https://example.com/file.zip
+# 断点续传（大文件推荐）
+wget -c https://example.com/large_file.zip
+``` |
+
+---
+
+### 补充说明
+1. 所有命令区分大小写，输入时需注意；
+2. 带`-r/-R`参数表示**递归**，适用于目录操作；
+3. 带`-h`参数表示**人性化显示**（如大小显示为KB/MB，而非字节）；
+4. 执行系统级命令（如mount、chown）通常需要加`sudo`获取管理员权限。
+</code></pre>
 
       
     </div>
@@ -148,6 +282,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" rel="tag">基础操作</a></li></ul>
+
     </footer>
   </div>
   
@@ -178,9 +314,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" rel="tag">基础操作</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 10px;">命令行</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">基础操作</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">

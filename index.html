@@ -94,28 +94,53 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo</a>官方文档 </p>
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="下载node-js"><a href="#下载node-js" class="headerlink" title="下载node.js"></a>下载<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a></h2><h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git</a></h2><h2 id="验证下载（cmd中运行）"><a href="#验证下载（cmd中运行）" class="headerlink" title="验证下载（cmd中运行）"></a>验证下载（cmd中运行）</h2><p>node -v<br>npm -v（这个是node附带的）<br>git -v</p>
-<h2 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h2><p>npm install hexo-cli -g</p>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="下载node-js"><a href="#下载node-js" class="headerlink" title="下载node.js"></a>下载<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a></h2><h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git</a></h2><h2 id="验证下载（cmd中运行）"><a href="#验证下载（cmd中运行）" class="headerlink" title="验证下载（cmd中运行）"></a>验证下载（cmd中运行）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v（这个是node附带的）</span><br><span class="line">git -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
 <h1 id="搭建github仓库"><a href="#搭建github仓库" class="headerlink" title="搭建github仓库"></a>搭建github仓库</h1><p>注册并登录github（github用于托管我们的文件）</p>
 <p>点击Create a new repository（创建仓库）</p>
-<p>用户名.github.io<br>勾选 Public<br>勾选 Add a README file<br>拉到下面点击create创建</p>
-<h2 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h2><p>在Git bash here输入<br>ssh-keygen -t rsa -C “邮件地址”四下回车<br>找C:\Users\用户名.ssh\id_rsa.pub复制</p>
-<h2 id="github创建ssh"><a href="#github创建ssh" class="headerlink" title="github创建ssh"></a>github创建ssh</h2><p>设置里面找ssh keys<br>复制粘贴创建</p>
-<h2 id="验正"><a href="#验正" class="headerlink" title="验正"></a>验正</h2><p>git中输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;">git@github.com</a>后yes</p>
-<h1 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h1><p>新建文件夹<br>git中输入<br>hexo init<br>hexo install<br>hexo g<br>hexo s<br>如果不行就加npx</p>
-<h2 id="改配置文件"><a href="#改配置文件" class="headerlink" title="改配置文件"></a>改配置文件</h2><p>打开_config.yml<br>拉到最下面将deploy后面的全删掉，复制粘贴这段</p>
-<p>  type: git<br>  repository:<br>  branch: main<br>  注意格式</p>
-<h2 id="安装自动部署发布工具"><a href="#安装自动部署发布工具" class="headerlink" title="安装自动部署发布工具"></a>安装自动部署发布工具</h2><p>npm install hexo-deployer-git –save  </p>
-<p>然后在Blog文件夹右键打开git bash，依次输入<br>hexo g（生成）<br>hexo d（上传）</p>
-<h2 id="第一次使用git的话会需要配置"><a href="#第一次使用git的话会需要配置" class="headerlink" title="第一次使用git的话会需要配置"></a>第一次使用git的话会需要配置</h2><p>git config –global user.email “你的邮箱”<br>git config –global user.name “你的名字”<br>配置完后再hexo d上传</p>
+<p>用户名.github.io</p>
+<p>勾选 Public</p>
+<p>勾选 Add a README file</p>
+<p>拉到下面点击create创建</p>
+<h2 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h2><p>在Git bash here输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
+<p>四下回车</p>
+<p>找C:\Users\用户名.ssh\id_rsa.pub复制</p>
+<h2 id="github创建ssh"><a href="#github创建ssh" class="headerlink" title="github创建ssh"></a>github创建ssh</h2><p>设置里面找ssh keys</p>
+<p>复制粘贴创建</p>
+<h2 id="验正"><a href="#验正" class="headerlink" title="验正"></a>验正</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git中输入ssh -T git@github.com后<span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h1><p>新建文件夹</p>
+<p>git中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>如果不行就加npx</p>
+<h2 id="改配置文件"><a href="#改配置文件" class="headerlink" title="改配置文件"></a>改配置文件</h2><p>打开_config.yml</p>
+<p>拉到最下面将deploy后面的全删掉，复制粘贴这段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> </span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="安装自动部署发布工具"><a href="#安装自动部署发布工具" class="headerlink" title="安装自动部署发布工具"></a>安装自动部署发布工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save  </span><br></pre></td></tr></table></figure>
+
+<p>然后在Blog文件夹右键打开git bash，依次输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g（生成）</span><br><span class="line">hexo d（上传）</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一次使用git的话会需要配置"><a href="#第一次使用git的话会需要配置" class="headerlink" title="第一次使用git的话会需要配置"></a>第一次使用git的话会需要配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;你的名字&quot;</span></span><br></pre></td></tr></table></figure>
+<p>配置完后再hexo d上传</p>
 <p>在跳出来的窗口内进行登录</p>
 <p>接下来我们就成功把本地内容上传到github了</p>
 <p>上传成功以后，我们就算搭建好了！上自己的网址看看吧</p>
-<h2 id="网址是我们之前设的仓库名："><a href="#网址是我们之前设的仓库名：" class="headerlink" title="网址是我们之前设的仓库名："></a>网址是我们之前设的仓库名：</h2><p>用户名.github.io</p>
+<h2 id="网址是我们之前设的仓库名："><a href="#网址是我们之前设的仓库名：" class="headerlink" title="网址是我们之前设的仓库名："></a>网址是我们之前设的仓库名：</h2><p><strong>用户名.github.io</strong></p>
 <h2 id="用记事本打开我们新建文件夹中的-config-yml文件"><a href="#用记事本打开我们新建文件夹中的-config-yml文件" class="headerlink" title="用记事本打开我们新建文件夹中的_config.yml文件"></a>用记事本打开我们新建文件夹中的_config.yml文件</h2><p>将#Site下面按自己的需求填上</p>
-<h2 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h2><p>title: 标题<br>subtitle: 副标题<br>description: 描述<br>keywords: 关键词<br>author: 站主<br>language: 语言（可以填写zh-CN）<br>timezone: 时区（可以填写Asia&#x2F;Shanghai）<br>然后保存</p>
-<h2 id="上传文章"><a href="#上传文章" class="headerlink" title="上传文章"></a>上传文章</h2><p>我们在新建文件夹中打开git bash,<br>输入下方代码就可以生成新的文章md文件<br>hexo new 文章标题</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>文章是.md格式，在我们的Blog文件夹中的source&#x2F;_posts中<br>_config.yml是配置文件自己修改就行</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">关键词</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">站主</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">语言（可以填写zh-CN）</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">时区（可以填写Asia/Shanghai）</span></span><br></pre></td></tr></table></figure>
+<p>然后保存</p>
+<h2 id="上传文章"><a href="#上传文章" class="headerlink" title="上传文章"></a>上传文章</h2><p>我们在新建文件夹中打开git bash,</p>
+<p>输入下方代码就可以生成新的文章md文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>文章是.md格式，在我们的Blog文件夹中的source&#x2F;_posts中</p>
+<p>_config.yml是配置文件自己修改就行</p>
 
       
     </div>
@@ -154,51 +179,182 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Linux基本操作指令<br>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
-<p>文件和目录操作</p>
-<p>ls：列出当前目录中的文件和子目录</p>
-<p>pwd：显示当前工作目录的路径</p>
-<p>cd：切换工作目录</p>
-<p>cd &#x2F;path&#x2F;to&#x2F;directory</p>
-<p>mkdir：创建新目录</p>
-<p>mkdir directory_name</p>
-<p>rmdir：删除空目录</p>
-<p>rmdir directory_name</p>
-<p>rm：删除文件或目录</p>
-<p>rm file_name<br>rm -r directory_name # 递归删除目录及其内容</p>
-<p>cp：复制文件或目录</p>
-<p>cp source_file destination<br>cp -r source_directory destination # 递归复制目录及其内容</p>
-<p>mv：移动或重命名文件或目录</p>
-<p>mv old_name new_name</p>
-<p>touch：创建空文件或更新文件的时间戳</p>
-<p>touch file_name</p>
-<p>cat：连接和显示文件内容</p>
-<p>cat file_name</p>
-<p>系统管理</p>
-<p>ps：显示当前运行的进程</p>
-<p>ps aux</p>
-<p>kill：终止进程</p>
-<p>kill process_id</p>
-<p>ifconfig&#x2F;ip：查看和配置网络接口信息</p>
-<p>ifconfig<br>ip addr show</p>
-<p>ping：测试与主机的连通性</p>
-<p>ping host_name_or_ip</p>
-<p>chmod：修改文件或目录的权限</p>
-<p>chmod permissions file_name</p>
-<p>chown：修改文件或目录的所有者</p>
-<p>chown owner:group file_name</p>
-<p>df&#x2F;du：显示磁盘使用情况</p>
-<p>df -h # 显示磁盘空间使用情况<br>du -h directory_name # 显示目录的磁盘使用情况</p>
-<p>mount&#x2F;umount：挂载和卸载文件系统</p>
-<p>mount &#x2F;dev&#x2F;sdX1 &#x2F;mnt # 挂载分区到指定目录<br>umount &#x2F;mnt # 卸载挂载的文件系统</p>
-<p>网络操作</p>
-<p>ssh：远程登录到其他计算机</p>
-<p>ssh username@remote_host</p>
-<p>scp：安全地将文件从本地复制到远程主机，或从远程主机复制到本地</p>
-<p>scp local_file remote_user@remote_host:&#x2F;remote&#x2F;directory</p>
-<p>wget&#x2F;curl：从网络下载文件</p>
-<p>wget URL<br>curl -O URL</p>
-<p>这些命令是Linux系统中最常用的基本操作命令，掌握这些命令可以帮助你更有效地管理和操作Linux系统</p>
+        <h1 id="Linux基本操作指令"><a href="#Linux基本操作指令" class="headerlink" title="Linux基本操作指令"></a>Linux基本操作指令</h1><p>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
+<hr>
+<h2 id="一、文件和目录操作"><a href="#一、文件和目录操作" class="headerlink" title="一、文件和目录操作"></a>一、文件和目录操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能说明</th>
+<th>示例用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ls</code></td>
+<td>列出当前目录中的文件和子目录</td>
+<td>&#96;&#96;&#96;bash</td>
+</tr>
+</tbody></table>
+<h1 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h1><p>ls</p>
+<h1 id="显示详细信息（权限、大小、时间等）"><a href="#显示详细信息（权限、大小、时间等）" class="headerlink" title="显示详细信息（权限、大小、时间等）"></a>显示详细信息（权限、大小、时间等）</h1><p>ls -l</p>
+<h1 id="显示隐藏文件（以-开头的文件）"><a href="#显示隐藏文件（以-开头的文件）" class="headerlink" title="显示隐藏文件（以.开头的文件）"></a>显示隐藏文件（以.开头的文件）</h1><p>ls -a</p>
+<pre><code class="language-|">| `pwd` | 显示当前工作目录的绝对路径 | ```bash
+pwd
+``` |
+| `cd` | 切换工作目录 | ```bash
+# 切换到指定目录
+cd /path/to/directory
+# 回到上一级目录
+cd ..
+# 回到当前用户主目录
+cd ~
+# 回到上一次所在目录
+cd -
+``` |
+| `mkdir` | 创建新目录 | ```bash
+# 创建单个目录
+mkdir directory_name
+# 递归创建多级目录（如a/b/c）
+mkdir -p a/b/c
+``` |
+| `rmdir` | 删除空目录（仅能删空目录） | ```bash
+rmdir directory_name
+``` |
+| `rm` | 删除文件或目录（慎用！） | ```bash
+# 删除文件
+rm file_name
+# 递归删除目录及其所有内容
+rm -r directory_name
+# 强制删除（无确认提示，高危）
+rm -rf directory_name
+``` |
+| `cp` | 复制文件或目录 | ```bash
+# 复制文件到目标位置
+cp source_file destination
+# 递归复制目录及其内容
+cp -r source_directory destination
+# 覆盖前提示（避免误操作）
+cp -i source_file destination
+``` |
+| `mv` | 移动/重命名文件/目录 | ```bash
+# 重命名文件/目录
+mv old_name new_name
+# 移动文件到指定目录
+mv file_name /path/to/directory
+``` |
+| `touch` | 创建空文件/更新文件时间戳 | ```bash
+# 创建空文件
+touch file_name
+# 同时创建多个空文件
+touch file1 file2 file3
+``` |
+| `cat` | 查看/拼接文件内容 | ```bash
+# 查看单个文件内容
+cat file_name
+# 拼接多个文件内容并输出
+cat file1 file2
+# 查看文件并显示行号
+cat -n file_name
+``` |
+
+---
+
+## 二、系统管理
+| 命令 | 功能说明 | 示例用法 |
+|------|----------|----------|
+| `ps` | 查看当前运行的进程 | ```bash
+# 显示所有进程（最常用）
+ps aux
+# 按进程树显示
+ps -ef
+``` |
+| `kill` | 终止指定进程 | ```bash
+# 终止指定PID的进程（PID为进程号）
+kill process_id
+# 强制终止进程（无法忽略）
+kill -9 process_id
+``` |
+| `ifconfig/ip` | 查看/配置网络接口 | ```bash
+# 传统查看网络信息（部分系统需安装net-tools）
+ifconfig
+# 新版查看IP地址（推荐）
+ip addr show
+# 启动/关闭网卡（eth0为网卡名）
+ip link set eth0 up/down
+``` |
+| `ping` | 测试主机连通性 | ```bash
+# 测试与百度的连通性（默认无限次）
+ping www.baidu.com
+# 测试5次后停止
+ping -c 5 www.baidu.com
+``` |
+| `chmod` | 修改文件/目录权限 | ```bash
+# 数字权限（755：所有者读/写/执行，其他读/执行）
+chmod 755 file_name
+# 符号权限（给所有者添加执行权限）
+chmod u+x file_name
+``` |
+| `chown` | 修改文件/目录所有者/所属组 | ```bash
+# 修改所有者
+chown owner file_name
+# 同时修改所有者和所属组
+chown owner:group file_name
+# 递归修改目录及其内容的所有者
+chown -R owner:group directory_name
+``` |
+| `df/du` | 查看磁盘使用情况 | ```bash
+# 查看磁盘分区使用情况（人性化显示）
+df -h
+# 查看指定目录的磁盘占用（人性化）
+du -h directory_name
+# 查看目录总大小（仅显示总和）
+du -sh directory_name
+``` |
+| `mount/umount` | 挂载/卸载文件系统 | ```bash
+# 挂载分区到指定目录（sdX1为分区名）
+mount /dev/sdX1 /mnt
+# 卸载挂载的目录（卸载前确保未被使用）
+umount /mnt
+# 查看已挂载的文件系统
+mount
+``` |
+
+---
+
+## 三、网络操作
+| 命令 | 功能说明 | 示例用法 |
+|------|----------|----------|
+| `ssh` | 远程登录其他Linux主机 | ```bash
+# 基础远程登录（默认22端口）
+ssh username@remote_host
+# 指定端口登录（如2222端口）
+ssh -p 2222 username@remote_host
+``` |
+| `scp` | 安全复制文件（跨主机） | ```bash
+# 本地文件复制到远程主机
+scp local_file remote_user@remote_host:/remote/directory
+# 远程文件复制到本地
+scp remote_user@remote_host:/remote/file /local/directory
+# 递归复制目录
+scp -r local_directory remote_user@remote_host:/remote/directory
+``` |
+| `wget/curl` | 从网络下载文件 | ```bash
+# wget下载文件（直接保存到当前目录）
+wget https://example.com/file.zip
+# curl下载文件（需加-O参数）
+curl -O https://example.com/file.zip
+# 断点续传（大文件推荐）
+wget -c https://example.com/large_file.zip
+``` |
+
+---
+
+### 补充说明
+1. 所有命令区分大小写，输入时需注意；
+2. 带`-r/-R`参数表示**递归**，适用于目录操作；
+3. 带`-h`参数表示**人性化显示**（如大小显示为KB/MB，而非字节）；
+4. 执行系统级命令（如mount、chown）通常需要加`sudo`获取管理员权限。
+</code></pre>
 
       
     </div>
@@ -207,6 +363,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" rel="tag">基础操作</a></li></ul>
+
     </footer>
   </div>
   
@@ -225,9 +383,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" rel="tag">基础操作</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 10px;">命令行</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">基础操作</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
