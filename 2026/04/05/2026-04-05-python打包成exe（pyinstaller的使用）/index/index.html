@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python打包成exe（pyinstaller的使用） | Mr.苏的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：当我们用python写好一个完整的程序以后想要把这个py主程序运行到没有安装python的windows时，我们就要用到pyinstaller这个第三方库用来把这些程序打包成exe的可执行文件方便其他人使用你的程序，以下是一个完整的流程 一、项目结构（必须这样放，否则打包必错） 你先建一个文件夹，比如叫  MyApp ，所有东西都放这里。 plaintext MyApp&#x2F;├── ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python打包成exe（pyinstaller的使用）">
+<meta property="og:url" content="http://example.com/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/index.html">
+<meta property="og:site_name" content="Mr.苏的博客">
+<meta property="og:description" content="注：当我们用python写好一个完整的程序以后想要把这个py主程序运行到没有安装python的windows时，我们就要用到pyinstaller这个第三方库用来把这些程序打包成exe的可执行文件方便其他人使用你的程序，以下是一个完整的流程 一、项目结构（必须这样放，否则打包必错） 你先建一个文件夹，比如叫  MyApp ，所有东西都放这里。 plaintext MyApp&#x2F;├── ma">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T15:03:34.659Z">
+<meta property="article:author" content="Mr.苏">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.苏的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026-04-05-python打包成exe（pyinstaller的使用）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-04T16:00:00.000Z" itemprop="datePublished">2026-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python打包成exe（pyinstaller的使用）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：当我们用python写好一个完整的程序以后想要把这个py主程序运行到没有安装python的windows时，我们就要用到pyinstaller这个第三方库用来把这些程序打包成exe的可执行文件方便其他人使用你的程序，以下是一个完整的流程</p>
+<p>一、项目结构（必须这样放，否则打包必错）</p>
+<p>你先建一个文件夹，比如叫  MyApp ，所有东西都放这里。</p>
+<p>plaintext</p>
+<p>MyApp&#x2F;<br>├── main.py # 主程序入口<br>├── icon.ico # 程序图标（Windows）<br>├── config.json # 配置文件用于嵌套什么的<br>├── settings.ini # 配置文件一般是很简单的配置有时我们一般人都可以直接改这两是不同的东西<br>├── assets&#x2F; # 资源文件夹（图片、音频、数据、字体）<br>│ ├── images&#x2F; # 图片<br>│ ├── sounds&#x2F; # 音频<br>│ ├── data&#x2F; # 数据文件（csv、txt、xlsx）<br>│ └── fonts&#x2F; # 字体<br>├── src&#x2F; # 你自己写的模块<br>│ ├── utils.py #（用于处理时间加密的）<br>│ ├── api.py #（接口文件）<br>│ └── ui.py #（用户界面的布局）<br>└── libs&#x2F; # 第三方库&#x2F;自己封装的库  
+ </p>
+<p>二、代码里必须写的路径函数（打包后不丢资源）</p>
+<p>把这段代码放到  main.py  最前面，所有资源都用这个函数读取：</p>
+<p>python</p>
+<p>import sys<br>import os</p>
+<p>def resource_path(relative_path):<br>if hasattr(sys, ‘_MEIPASS’):<br>return os.path.join(sys._MEIPASS, relative_path)<br>return os.path.join(os.path.abspath(‘.’), relative_path)  
+ </p>
+<p>例子：</p>
+<p>img &#x3D; resource_path(“assets&#x2F;images&#x2F;logo.png”)<br>config &#x3D; resource_path(“config.json”)<br>data &#x3D; resource_path(“assets&#x2F;data&#x2F;data.csv”)  
+ </p>
+<p>三、打包前必须做的环境准备（必做）</p>
+<ol>
+<li>打开命令行，进入项目文件夹</li>
+</ol>
+<p>cd D:\MyApp #（切换到对应目录）  
+ </p>
+<ol start="2">
+<li>创建虚拟环境（避免打包体积大、报错）</li>
+</ol>
+<p>python -m venv venv<br> 其实不创建也可以，就是感觉容易冲突出问题。</p>
+<ol start="3">
+<li>激活虚拟环境</li>
+</ol>
+<p>venv\Scripts\activate  
+ </p>
+<ol start="4">
+<li>安装项目需要的库（只装你用到的）</li>
+</ol>
+<p>pip install 你需要的库 #(这个能懂吧)  
+ </p>
+<ol start="5">
+<li>安装 PyInstaller（这就是打包的第三方库）</li>
+</ol>
+<p>pip install pyinstaller  
+ </p>
+<p>四、最完整打包命令（包含所有文件、资源、模块、图标）</p>
+<p>下面这条命令是万能终极版，包含所有你需要的功能，直接复制运行：</p>
+<p>pyinstaller -F -w –clean –noconfirm -i icon.ico –add-data “assets;assets” –add-data “config.json;.” –add-data “settings.ini;.” –add-data “src;src” –add-data “libs;libs” main.py</p>
+<p>这个前提是每个文件都放在其对应的位置，必须严格放置。  
+ </p>
+<p>五、命令每一部分详细解释（你必须懂）</p>
+<p>我把上面的命令拆解开，每一段都告诉你是什么、干什么、为什么要加：</p>
+<ol>
+<li> pyinstaller</li>
+</ol>
+<p> </p>
+<ul>
+<li><p>作用：启动打包工具</p>
+</li>
+<li><p>必须写在最前面</p>
+</li>
+</ul>
+<p> -F </p>
+<ul>
+<li><p>全称： –onefile </p>
+</li>
+<li><p>作用：打包成单个 exe 文件</p>
+</li>
+<li><p>不加的话会生成一个文件夹，里面一堆文件</p>
+</li>
+<li><p>必须加，最常用</p>
+</li>
+</ul>
+<p>-w </p>
+<ul>
+<li><p>全称： –windowed  &#x2F;  –noconsole </p>
+</li>
+<li><p>作用：不显示黑色控制台窗口</p>
+</li>
+<li><p>适合 GUI 程序、桌面软件</p>
+</li>
+<li><p>如果你是命令行程序，就不要加  -w ，用  -c</p>
+</li>
+</ul>
+<p> </p>
+<p>--clean </p>
+<ul>
+<li><p>作用：打包前自动清理旧缓存、旧文件</p>
+</li>
+<li><p>避免旧文件干扰导致打包失败</p>
+</li>
+<li><p>每次打包都建议加</p>
+</li>
+</ul>
+<p>--noconfirm </p>
+<ul>
+<li><p>作用：打包时不询问是否覆盖，直接覆盖</p>
+</li>
+<li><p>避免重复打包时弹确认框</p>
+</li>
+</ul>
+<p>-i icon.ico </p>
+<ul>
+<li><p>作用：设置程序图标</p>
+</li>
+<li><p>必须是  .ico  格式</p>
+</li>
+<li><p>放在项目根目录</p>
+</li>
+</ul>
+<ol>
+<li> –add-data “assets;assets”</li>
+</ol>
+<p> </p>
+<ul>
+<li><p>作用：把  assets  文件夹打包进 exe</p>
+</li>
+<li><p>格式： 源路径;目标路径 </p>
+</li>
+<li><p>Windows 用分号  ; ，Mac&#x2F;Linux 用冒号  : </p>
+</li>
+<li><p>不加这个，打包后图片、音频、数据都会丢失</p>
+</li>
+</ul>
+<p>--add-data “config.json;.” </p>
+<ul>
+<li><p>作用：把  config.json  打包到 exe 同目录</p>
+</li>
+<li><p> .  表示 exe 所在目录</p>
+</li>
+</ul>
+<p>--add-data “settings.ini;.” </p>
+<ul>
+<li>作用：把  settings.ini  打包到 exe 同目录</li>
+</ul>
+<p>--add-data “src;src” </p>
+<ul>
+<li><p>作用：把你自己写的  src  模块文件夹打包进去</p>
+</li>
+<li><p>不加会导致  import src.utils  报错</p>
+</li>
+</ul>
+<p>--add-data “libs;libs” </p>
+<ul>
+<li><p>作用：把  libs  文件夹打包进去</p>
+</li>
+<li><p>如果你有自己的库文件，必须加</p>
+</li>
+</ul>
+<p>main.py </p>
+<ul>
+<li><p>作用：指定主程序入口文件</p>
+</li>
+<li><p>必须是你项目的启动文件</p>
+</li>
+</ul>
+<p>六、如果打包后提示“找不到模块”，加这个参数</p>
+<p>--hidden-import&#x3D;模块名  
+ </p>
+<p>实例</p>
+<p>pyinstaller -F –hidden-import&#x3D;requests –hidden-import&#x3D;urllib3 –hidden-import&#x3D;pandas._libs.tslibs.base main.py  
+ </p>
+<p>七、打包后文件在哪里？</p>
+<p>打包完成后，在  MyApp  文件夹里：</p>
+<ul>
+<li><p> dist&#x2F;main.exe  → 最终可执行文件</p>
+</li>
+<li><p> build&#x2F;  → 临时文件，可删除</p>
+</li>
+<li><p> main.spec  → 配置文件，不用管</p>
+</li>
+<li><p>反正找exe文件就对了</p>
+</li>
+</ul>
+<p>八、最常见问题怎么解决</p>
+<ol>
+<li>打包后闪退</li>
+</ol>
+<p>把  -w  换成  -c ，看报错：</p>
+<p>pyinstaller -F -c main.py  
+ </p>
+<ol start="2">
+<li>打包后找不到资源</li>
+</ol>
+<p>必须加  –add-data ，并且代码用  resource_path </p>
+<ol start="3">
+<li>打包后 exe 很大（我自己一般不管，因为自己用懒得配虚拟环境了，个人感觉问题也不大）</li>
+</ol>
+<p>用虚拟环境，只装必要库</p>
+<ol start="4">
+<li>打包后报毒</li>
+</ol>
+<p>这个是正常的，因为是自己写的软件，现在软件基本上要搞数字签名才不会包病毒，如果觉得烦可以去研究一下</p>
+<ol start="5">
+<li>打包后功能不全</li>
+</ol>
+<p>检查是否漏了  –add-data  或  –hidden-import </p>
+<p>九、以下是一些常用的模板吧，对应打命令就行</p>
+<ol>
+<li>最常用（单文件 + 无黑窗 + 图标 + 资源）</li>
+</ol>
+<p>pyinstaller -F -w –clean -i icon.ico –add-data “assets;assets” main.py  
+ </p>
+<ol start="2">
+<li>调试用（单文件 + 显示黑窗 + 看报错）</li>
+</ol>
+<p>pyinstaller -F -c –clean main.py  
+ </p>
+<ol start="3">
+<li>完整项目（包含所有文件、模块、配置）</li>
+</ol>
+<p>pyinstaller -F -w –clean –noconfirm -i icon.ico –add-data “assets;assets” –add-data “config.json;.” –add-data “src;src” main.py</p>
+<p>总结：大致的方法就是这样，因为打包还是要根据你自己写的具体情况来分析，如果你是严格按照规定来的大概率没有问题，但是，你如果写的是屎山，那你就得自己研究了，反正方法大差不差，我就只能提供个思路。代码是死的，人是活的嘛，只要能达到目的一切都好，哪怕写的是屎山。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/" data-id="cuidTbDIhVRybvZAy733WYlFi" data-title="python打包成exe（pyinstaller的使用）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          虚拟机创建（windows沙盒与vmware）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">用python做一个密码箱小工具（已在本人github仓库可以看看）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Mr.苏<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

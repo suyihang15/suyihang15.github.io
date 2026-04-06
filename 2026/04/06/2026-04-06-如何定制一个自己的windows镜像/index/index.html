@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>如何定制一个自己的Windows镜像 | Mr.苏的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注意：如果你已经厌倦了Windows自带的一些你可能这一辈子都不会用的内置软件或一些功能，可以试试自己定制一款自己的Windows镜像，在原版的基础上进行魔改，这是本人根据前面自己操作和别人分享的资料以后写下了这些流程，那么你可以看看 1、前期准备工具与文件 （1）windows镜像（主要是提取出install.win文件与后面放入） （2）NTLite（用于更改install.win文件的内容，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何定制一个自己的Windows镜像">
+<meta property="og:url" content="http://example.com/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/index.html">
+<meta property="og:site_name" content="Mr.苏的博客">
+<meta property="og:description" content="注意：如果你已经厌倦了Windows自带的一些你可能这一辈子都不会用的内置软件或一些功能，可以试试自己定制一款自己的Windows镜像，在原版的基础上进行魔改，这是本人根据前面自己操作和别人分享的资料以后写下了这些流程，那么你可以看看 1、前期准备工具与文件 （1）windows镜像（主要是提取出install.win文件与后面放入） （2）NTLite（用于更改install.win文件的内容，">
+<meta property="og:locale">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-134404-1024x516.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-135535-1024x592.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-140856-1024x594.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-150832-1024x415.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145410-1024x823.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145523.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145635-1024x906.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-161728-1024x1005.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-153406-1024x524.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-153758-1024x844.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-154323.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-161215.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-154718.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-162021-1024x613.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-162319-1024x613.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-163136-1024x613.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-172457-1024x609.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-173357-1024x612.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-173426-1024x610.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-182414-1024x735.png">
+<meta property="article:published_time" content="2026-04-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T15:03:34.704Z">
+<meta property="article:author" content="Mr.苏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-134404-1024x516.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.苏的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026-04-06-如何定制一个自己的windows镜像/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-05T16:00:00.000Z" itemprop="datePublished">2026-04-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      如何定制一个自己的Windows镜像
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注意：如果你已经厌倦了Windows自带的一些你可能这一辈子都不会用的内置软件或一些功能，可以试试自己定制一款自己的Windows镜像，在原版的基础上进行魔改，这是本人根据前面自己操作和别人分享的资料以后写下了这些流程，那么你可以看看</p>
+<p>1、前期准备工具与文件</p>
+<p>（1）<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">windows镜像</a>（主要是提取出install.win文件与后面放入）</p>
+<p>（2）<a target="_blank" rel="noopener" href="https://www.ntlite.com/">NTLite</a>（用于更改install.win文件的内容，就系统层面的，打补丁什么的都可以）这个他一些功能是要收费的，但是我们用免费版的足够了。</p>
+<p>（3）<a target="_blank" rel="noopener" href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">vmware</a>（用于一些基本的设置和内置捆绑的软件，就内置软件和设置什么的）</p>
+<p>（4）<a target="_blank" rel="noopener" href="https://www.wepe.com.cn/">PE.iso</a>（用于在虚拟机上安装系统因为这是的文件是install.win不是我们知道的iso文件了，是要更改这里的内容）</p>
+<p>(5)<a target="_blank" rel="noopener" href="https://gitcode.com/open-source-toolkit/e3223/?utm_source=tools_gitcode&index=top&type=card&&uuid_tt_dd=10_19753706400-1773830015274-495080&isLogin=1&from_id=143125413&from_link=335bb833c35f85da747732bf80649550">Easy sysprep</a>（用于更改后的install.win文件封装）</p>
+<p>（6）<a target="_blank" rel="noopener" href="https://www.anyburn.com/cn/download.htm">AnyBurn</a>（用于把文件最后封装为iso文件）</p>
+<p><strong><em>2、更改install.win</em></strong></p>
+<p>在电脑上挂载windows11光盘</p>
+<p>在光盘的驱动盘:\sources有install.win文件</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-134404-1024x516.png"></p>
+<p>复制粘贴出来，这就是我们要更改的文件</p>
+<p>用NTLite这一个软件打开install.win文件</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-135535-1024x592.png"></p>
+<p>这里你可以根据自己的需要来删除你需要的windows版本，只保留你需要的</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-140856-1024x594.png"></p>
+<p>前面挂载完成后就可以对一些不要的组件和功能进行改动了，但是如果不清楚是干什么的就不要乱改，不然在这个层面修改可能会导致改出来的系统连不上网容易崩溃等一系列问题，如果要打补丁也可以在这里修改，但是你自己要确定你的补丁没有问题，这里你就要自己发挥了</p>
+<p>以下是其作用和介绍</p>
+<p>1、映像</p>
+<ul>
+<li><p>功能：加载、选择、保存系统镜像，选择系统版本。</p>
+</li>
+<li><p>注意：用原版镜像，操作前备份，建议在虚拟机操作。</p>
+</li>
+</ul>
+<p>2、整合</p>
+<p>更新整合</p>
+<ul>
+<li><p>功能：把系统补丁注入镜像，装完自带更新。</p>
+</li>
+<li><p>注意：只加正式补丁，分批添加，版本匹配系统。</p>
+</li>
+</ul>
+<p>驱动程序</p>
+<ul>
+<li><p>功能：注入硬件驱动，装机自动识别设备。</p>
+</li>
+<li><p>注意：用通用驱动，必加USB、网卡、硬盘驱动，不重复添加。</p>
+</li>
+</ul>
+<p>注册表</p>
+<ul>
+<li><p>功能：预设系统优化，装完自动生效。</p>
+</li>
+<li><p>注意：不用不明注册表文件，不乱改核心项。</p>
+</li>
+</ul>
+<p>后期任务</p>
+<ul>
+<li><p>功能：首次进桌面自动装软件、运行脚本。</p>
+</li>
+<li><p>注意：路径准确，不装大型软件，按驱动→软件→优化顺序执行。</p>
+</li>
+</ul>
+<p>3、移除（如果是第一次的话建议可以先试试改这里的内容）</p>
+<p>组件移除</p>
+<ul>
+<li><p>功能：删除无用组件，精简系统。</p>
+</li>
+<li><p>注意：不删.NET、驱动框架等核心组件，精简适度。</p>
+</li>
+</ul>
+<p>计划任务</p>
+<ul>
+<li><p>功能：禁用后台自动任务，减少占用。</p>
+</li>
+<li><p>注意：保留安全相关任务，不全禁用。</p>
+</li>
+</ul>
+<p>4、配置</p>
+<p>功能设置</p>
+<ul>
+<li><p>功能：开关系统自带功能（如.NET、虚拟机）。</p>
+</li>
+<li><p>注意：必开.NET，不用的功能关闭。</p>
+</li>
+</ul>
+<p>设置</p>
+<ul>
+<li><p>功能：优化账户、网络、服务、电源等基础设置。</p>
+</li>
+<li><p>注意：不关闭关键服务，隐私设置适度调整。</p>
+</li>
+</ul>
+<p>无人值守</p>
+<ul>
+<li><p>功能：自动跳过装机设置，实现全自动安装。</p>
+</li>
+<li><p>注意：提前测试，信息填写准确。</p>
+</li>
+</ul>
+<p>结束→应用</p>
+<ul>
+<li><p>功能：保存所有修改，生成新镜像。</p>
+</li>
+<li><p>注意：先清理垃圾，优先保存为WIM格式，生成后测试安装。</p>
+</li>
+</ul>
+<p>搞好以后点击应用，左边这么选择，右边是你更改的东西</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-150832-1024x415.png"></p>
+<p>之后点击开始就行。</p>
+<p><strong><em>3、创建一个虚拟磁盘（用于存放windows镜像）</em></strong></p>
+<p>注：有的人可能觉得为什么还要创建一个虚拟磁盘这不是浪费时间吗，但是这一部是很重要的，我们电脑本身是在Windows系统下运行，其可能会受到其本身系统的影响，创建一个虚拟磁盘可以很好的避免这些问题。</p>
+<p>打开创建磁盘并格式化分区选择一个盘然后右键进行如下操作</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145410-1024x823.png"></p>
+<p>选择好要放到文件夹，然后初始化并创建分区，就选择默认的就行</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145523.png"></p>
+<p>创建分区以后电脑上就会多出来一个盘了，后面要用到</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-145635-1024x906.png"></p>
+<p>把EasySysprep和制作好了的install.win放入这个虚拟磁盘里面</p>
+<p>还有你要安装的软件的安装包放在里面如果你要安装软件的话，因为我们在后需虚拟机上的操作是没有网络的，各家网卡各不相同，所以我们要经量使自己做的镜像通用。而且方便后面挂载到虚拟机上面。</p>
+<p>放入以后，还要分离VHD，不然虚拟机不能挂载的</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-161728-1024x1005.png"></p>
+<p><strong><em>4、PE生成镜像文件</em></strong></p>
+<p>这里我们要用微PE生成一个pe.iso文件，用于虚拟机对于镜像的操作</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-153406-1024x524.png"></p>
+<p><strong><em>5、创建虚拟机</em></strong></p>
+<p>创建好虚拟机，选择wepe.iso只保留如下东西</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-153758-1024x844.png"></p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-154323.png"></p>
+<p>不然可能会有问题，然后安装时选择他认的操作系统是windows10不要11不要硬盘要加密，不然添加不了硬盘，之前我在这里卡了很久，就这里</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-161215.png"></p>
+<p>然后添加磁盘，把之前创建的虚拟磁盘添加好</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-154718.png"></p>
+<p>启动虚拟机</p>
+<p>先分区，如下操作就行</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-162021-1024x613.png"></p>
+<p>再安装系统，注意这里选镜像时是选择之前放入虚拟磁盘的install.win了</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-162319-1024x613.png"></p>
+<p>之后就会静入Windows界面，按住ctrl shift F3会自动重启进入审核桌面，这里可以直接进入windos界面，方便然后你就可以进行设置了，你在里面做的所有设置都会被封装下来的。</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-163136-1024x613.png"></p>
+<p>进入审核桌面改好操作好</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-172457-1024x609.png"></p>
+<p>就打开另外一个磁盘里的EasySysprep，全部默认，只改图片上的就行</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-173357-1024x612.png"></p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-173426-1024x610.png"></p>
+<p>重启以后要一定进入PE界面，虚拟机是按一下esc就行，然后进入，不然会封装失败</p>
+<p>后面根据自己的需求继续设置就行，最后会有install.win文件</p>
+<p>根据自己的需要改好就行，然后把install.win文件粘贴到Windows的iso里面替换到原位置就行了。</p>
+<p>再用anyburn封装，点击编辑镜像文件把那个install.win替换就行了</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-06-182414-1024x735.png"></p>
+<p>总结：系统封装是根据自己的需求来进行调整，方便自己使用，而且可玩性很高，以上便是我自己总结的，如果有问题或者不会的地方可以留言，我会回复的。</p>
+<p>希望对你有帮助。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/" data-id="cuid-9TmB7SbJiokAOaorYB-x" data-title="如何定制一个自己的Windows镜像" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">虚拟机创建（windows沙盒与vmware）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Mr.苏<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

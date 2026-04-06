@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>什么是公网IP与端口 | Mr.苏的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="公网IP是你服务器在互联网上的唯一地址 1、全世界只有一个（所以很多运营商不愿意给公网IP因为他是有限的） 2、别人靠它找到你的服务器（包括远程连接，服务器，打开网页） 3、其分为ipv4和ipv6，他们处于不同频段，v4是全球通用的，但是现在不太够了，一般现在能给的是v6，v6是只有支持该频端的电子设备才能访问，现在一般只有买云服务器才给公网ip，当然你搞得到v4的话确实厉害，但是上传多了可能会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是公网IP与端口">
+<meta property="og:url" content="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/index.html">
+<meta property="og:site_name" content="Mr.苏的博客">
+<meta property="og:description" content="公网IP是你服务器在互联网上的唯一地址 1、全世界只有一个（所以很多运营商不愿意给公网IP因为他是有限的） 2、别人靠它找到你的服务器（包括远程连接，服务器，打开网页） 3、其分为ipv4和ipv6，他们处于不同频段，v4是全球通用的，但是现在不太够了，一般现在能给的是v6，v6是只有支持该频端的电子设备才能访问，现在一般只有买云服务器才给公网ip，当然你搞得到v4的话确实厉害，但是上传多了可能会">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-04-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T15:03:34.549Z">
+<meta property="article:author" content="Mr.苏">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.苏的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026-04-04-什么是公网ip与端口/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      什么是公网IP与端口
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>公网IP是你服务器在互联网上的唯一地址</p>
+<p>1、全世界只有一个（所以很多运营商不愿意给公网IP因为他是有限的）</p>
+<p>2、别人靠它找到你的服务器（包括远程连接，服务器，打开网页）</p>
+<p>3、其分为ipv4和ipv6，他们处于不同频段，v4是全球通用的，但是现在不太够了，一般现在能给的是v6，v6是只有支持该频端的电子设备才能访问，现在一般只有买云服务器才给公网ip，当然你搞得到v4的话确实厉害，但是上传多了可能会被pcdn警告，这点要注意，所以一般建议要玩公网ip可以买个云服务器。</p>
+<p>那么通俗点说公网IP好比如你家小区的地址，是一个可以找到你地址的一串数字。</p>
+<p>二、端口是什么？</p>
+<p>端口是服务器上不同服务的门牌号<br>一台服务器可以跑很多东西但是它们不能挤在一个门里所以用不同端口区分。<br>通俗点来说端口就是你家每间房的门牌号</p>
+<p>三、公网IP + 端口 &#x3D; 完整访问地址</p>
+<p>IP:端口 就是你访问任何服务的方式。</p>
+<p>比如：</p>
+<p>网站：ip地址（123.123.123.123）:端口号（80）中间一般打: </p>
+<p>四、常用的端口（一般是默认的）</p>
+<p>1、系统&#x2F;远程&#x2F;网络基础（0–1023 公认端口）</p>
+<ul>
+<li><p>20 FTP 数据端口</p>
+</li>
+<li><p>21 FTP 控制端口</p>
+</li>
+<li><p>22 SSH（安全远程登录）</p>
+</li>
+<li><p>23 Telnet（明文远程，已淘汰）</p>
+</li>
+<li><p>25 SMTP（邮件发送）</p>
+</li>
+<li><p>53 DNS（域名解析）</p>
+</li>
+<li><p>67 DHCP 服务器</p>
+</li>
+<li><p>68 DHCP 客户端</p>
+</li>
+<li><p>80 HTTP（网页默认）</p>
+</li>
+<li><p>110 POP3（邮件接收）</p>
+</li>
+<li><p>123 NTP（时间同步）</p>
+</li>
+<li><p>143 IMAP（邮件接收）</p>
+</li>
+<li><p>161 SNMP（设备监控）</p>
+</li>
+<li><p>162 SNMP Trap</p>
+</li>
+<li><p>443 HTTPS（加密网页）</p>
+</li>
+<li><p>445 SMB（Windows 文件共享）</p>
+</li>
+<li><p>514 Syslog（系统日志）</p>
+</li>
+<li><p>993 IMAPS（加密 IMAP）</p>
+</li>
+<li><p>995 POP3S（加密 POP3）</p>
+</li>
+</ul>
+<p>2、数据库端口</p>
+<ul>
+<li><p>1433 SQL Server</p>
+</li>
+<li><p>1521 Oracle</p>
+</li>
+<li><p>3306 MySQL &#x2F; MariaDB</p>
+</li>
+<li><p>5432 PostgreSQL</p>
+</li>
+<li><p>6379 Redis</p>
+</li>
+<li><p>27017 MongoDB</p>
+</li>
+<li><p>9042 Cassandra</p>
+</li>
+<li><p>5984 CouchDB</p>
+</li>
+<li><p>389 LDAP</p>
+</li>
+<li><p>636 LDAPS（加密）</p>
+</li>
+</ul>
+<p>3、Web 服务&#x2F;反向代理&#x2F;开发</p>
+<ul>
+<li><p>80 HTTP</p>
+</li>
+<li><p>443 HTTPS</p>
+</li>
+<li><p>8080 备用 HTTP（Tomcat、Jetty、测试）</p>
+</li>
+<li><p>8443 备用 HTTPS</p>
+</li>
+<li><p>8888 宝塔面板</p>
+</li>
+<li><p>9000 PHP-FPM</p>
+</li>
+<li><p>3000 Node.js 常用</p>
+</li>
+<li><p>5000 Flask &#x2F; 群晖 NAS</p>
+</li>
+<li><p>8000 Django</p>
+</li>
+<li><p>8081 Nginx 备用</p>
+</li>
+<li><p>9090 Prometheus</p>
+</li>
+<li><p>3000 Grafana</p>
+</li>
+</ul>
+<p>4、NAS &#x2F; 下载 &#x2F; 媒体服务</p>
+<ul>
+<li><p>5000 群晖 DSM</p>
+</li>
+<li><p>5001 群晖 HTTPS</p>
+</li>
+<li><p>32400 Plex</p>
+</li>
+<li><p>8096 Jellyfin</p>
+</li>
+<li><p>8989 Sonarr</p>
+</li>
+<li><p>7878 Radarr</p>
+</li>
+<li><p>9091 Transmission</p>
+</li>
+<li><p>51413 qBittorrent</p>
+</li>
+<li><p>6881–6889 BT 下载</p>
+</li>
+<li><p>9091 Transmission Web</p>
+</li>
+</ul>
+<p>5、邮件端口</p>
+<ul>
+<li><p>25 SMTP</p>
+</li>
+<li><p>465 SMTPS（加密）</p>
+</li>
+<li><p>587 SMTP 子端口</p>
+</li>
+<li><p>110 POP3</p>
+</li>
+<li><p>143 IMAP</p>
+</li>
+<li><p>993 IMAPS</p>
+</li>
+<li><p>995 POP3S</p>
+</li>
+</ul>
+<p>6、监控&#x2F;运维&#x2F;日志</p>
+<ul>
+<li><p>9090 Prometheus</p>
+</li>
+<li><p>3000 Grafana</p>
+</li>
+<li><p>9100 Node Exporter</p>
+</li>
+<li><p>9200 Elasticsearch</p>
+</li>
+<li><p>5601 Kibana</p>
+</li>
+<li><p>5044 Logstash</p>
+</li>
+<li><p>199 SMUX</p>
+</li>
+<li><p>61616 ActiveMQ</p>
+</li>
+</ul>
+<p>7、游戏常用端口</p>
+<ul>
+<li><p>22 SSH</p>
+</li>
+<li><p>80&#x2F;443 网页</p>
+</li>
+<li><p>27015 Steam</p>
+</li>
+<li><p>19132 Minecraft PE</p>
+</li>
+<li><p>25565 Minecraft Java</p>
+</li>
+<li><p>3724 魔兽世界</p>
+</li>
+<li><p>6112 星际争霸</p>
+</li>
+<li><p>27000–27050 游戏通用</p>
+</li>
+</ul>
+<p>8、VPN&#x2F;网络隧道</p>
+<ul>
+<li><p>1194 OpenVPN</p>
+</li>
+<li><p>1723 PPTP</p>
+</li>
+<li><p>500 IKE</p>
+</li>
+<li><p>4500 NAT-T</p>
+</li>
+<li><p>1701 L2TP</p>
+</li>
+</ul>
+<p>9、远程桌面&#x2F;管理</p>
+<ul>
+<li><p>3389 Windows RDP</p>
+</li>
+<li><p>5900 VNC</p>
+</li>
+<li><p>5901 VNC :1</p>
+</li>
+<li><p>5800 VNC Web</p>
+</li>
+</ul>
+<p>10、文件传输&#x2F;同步</p>
+<ul>
+<li><p>21 FTP</p>
+</li>
+<li><p>22 SFTP &#x2F; SCP</p>
+</li>
+<li><p>873 Rsync</p>
+</li>
+<li><p>445 SMB</p>
+</li>
+<li><p>139 NetBIOS</p>
+</li>
+</ul>
+<p>11、消息队列&#x2F;中间件</p>
+<ul>
+<li><p>5672 RabbitMQ</p>
+</li>
+<li><p>1883 MQTT</p>
+</li>
+<li><p>9092 Kafka</p>
+</li>
+<li><p>61616 ActiveMQ</p>
+</li>
+</ul>
+<p>12、容器&#x2F;云原生</p>
+<ul>
+<li><p>2375 Docker</p>
+</li>
+<li><p>2376 Docker TLS</p>
+</li>
+<li><p>6443 Kubernetes API</p>
+</li>
+<li><p>10250 Kubelet</p>
+</li>
+<li><p>9090 Prometheus</p>
+</li>
+</ul>
+<p>13、端口范围说明</p>
+<ul>
+<li><p>0–1023：系统保留端口（系统服务）</p>
+</li>
+<li><p>1024–49151：注册端口（软件&#x2F;服务）</p>
+</li>
+<li><p>49152–65535：动态&#x2F;私有端口（临时使用）</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" data-id="cuid284n4mPPZ3IghiPdM1kxz" data-title="什么是公网IP与端口" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          什么是docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">什么是服务器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Mr.苏<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

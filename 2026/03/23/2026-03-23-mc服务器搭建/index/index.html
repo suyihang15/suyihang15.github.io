@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>mc服务器搭建 | Mr.苏的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1、前期准备 部署服务器的电脑（可以是本地的或云服务器） 一个公网IP或用内网穿透也可以 安装好java 11 apt update（更新库） apt install -y openjdk-17-jdk（安装java11） 2、安装mcsm 命令sudo su -c “wget -qO- https:&#x2F;&#x2F;script.mcsmanager.com&#x2F;setup\_cn.sh | bash” 访问网页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mc服务器搭建">
+<meta property="og:url" content="http://example.com/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/index.html">
+<meta property="og:site_name" content="Mr.苏的博客">
+<meta property="og:description" content="1、前期准备 部署服务器的电脑（可以是本地的或云服务器） 一个公网IP或用内网穿透也可以 安装好java 11 apt update（更新库） apt install -y openjdk-17-jdk（安装java11） 2、安装mcsm 命令sudo su -c “wget -qO- https:&#x2F;&#x2F;script.mcsmanager.com&#x2F;setup\_cn.sh | bash” 访问网页">
+<meta property="og:locale">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-232611-1024x590.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/03/image-1-1024x583.png">
+<meta property="og:image" content="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-234556-1-1024x620.png">
+<meta property="article:published_time" content="2026-03-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T15:03:34.225Z">
+<meta property="article:author" content="Mr.苏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-232611-1024x590.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.苏的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026-03-23-mc服务器搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-22T16:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      mc服务器搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1、前期准备</p>
+<p>部署服务器的电脑（可以是本地的或云服务器）</p>
+<p>一个公网IP或用内网穿透也可以</p>
+<p>安装好java 11</p>
+<p>apt update（更新库）</p>
+<p>apt install -y openjdk-17-jdk（安装java11）</p>
+<p><strong><em>2、安装<a target="_blank" rel="noopener" href="https://docs.mcsmanager.com/zh_cn/">mcsm</a></em></strong></p>
+<p>命令sudo su -c “wget -qO- <a target="_blank" rel="noopener" href="https://script.mcsmanager.com/setup/_cn.sh">https://script.mcsmanager.com/setup\_cn.sh</a> | bash”</p>
+<p>访问网页IP地址:23333</p>
+<p>记得如果连接不安全就删掉一个s用http访问</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-232611-1024x590.png"></p>
+<p>访问后会喊你注册账号和密码，按操作来就行。</p>
+<p>记得如果是默认安装市场里的要选好对应的操作系统，本人之前没注意踩过坑之后一键安装就部署好了。</p>
+<p><strong><em>3、外网访问</em></strong></p>
+<p>如果是买的云服务器，那就会有公网IP直接在mc里选好对应的版本或相应的整合包就行</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/image-1-1024x583.png"></p>
+<p>一般不更改就是默认端口25565</p>
+<p>没有公网IP就用内网穿透，一般各家的内网穿透都还行，选免费的够用，对于玩的人不是特别多的话，各家厂商也有对应的操作文档，反正只要记得你的IP地址和要穿的端口是25565就行了。</p>
+<p><strong><em>4、注意事项</em></strong></p>
+<p>如果玩的不是正版或者有联机的朋友有一个玩的不是正版就要关闭服务器的配置文档里的正版验证</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-234556-1-1024x620.png"></p>
+<p>基本流程就是这样的，希望你和你的朋友玩的开心。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" data-id="cuidW48EkeTPvjSOoEYaGU519" data-title="mc服务器搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/25/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          电脑adb连接模拟器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/22/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">OpenList编译指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Mr.苏<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
