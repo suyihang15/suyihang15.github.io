@@ -71,6 +71,453 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2026-03-22-部署一个自己的网盘搜索引擎（pansou）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/">部署一个自己的网盘搜索引擎（pansou）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>项目地址 <a target="_blank" rel="noopener" href="https://github.com/fish2018/pansou">https://github.com/fish2018/pansou</a></p>
+<p>用docker可以直接一键部署（开箱即用）</p>
+<p>docker run -d –name pansou -p 80:80 ghcr.io&#x2F;fish2018&#x2F;pansou-web</p>
+<p>在Nas上部署其本身还是用docker，打开后自定义compose</p>
+<p>version: ‘3.8’</p>
+<p>services:<br>pansou:<br>image: ghcr.io&#x2F;fish2018&#x2F;pansou-web:latest<br>container_name: pansou-app<br>ports:<br>- “8080:80” #我这个默认写的是8080，可根据自己的需求改<br>- “4433:443”<br>environment:<br># 基础配置<br>- DOMAIN&#x3D;localhost<br>- PANSOU_PORT&#x3D;8888<br>- PANSOU_HOST&#x3D;127.0.0.1<br># 代理配置（可选）<br># - SOCKS5_PROXY&#x3D;socks5:&#x2F;&#x2F;ip:20170<br># - HTTP_PROXY&#x3D;<a target="_blank" rel="noopener" href="http://ip:20171/">http://ip:20171</a><br>volumes:<br># 数据持久化<br>- .&#x2F;pansou-data:&#x2F;app&#x2F;data<br>- .&#x2F;pansou-logs:&#x2F;app&#x2F;logs<br>restart: unless-stopped<br>healthcheck:<br>test: [“CMD”, “curl”, “-f”, “<a target="_blank" rel="noopener" href="http://localhost/api/health%22/]">http://localhost/api/health&quot;\]</a><br>interval: 30s<br>timeout: 10s<br>retries: 3<br>start_period: 40s</p>
+<p>volumes:<br>pansou-data:<br>driver: local<br>pansou-logs:<br>driver: local</p>
+<p>这是我写的一个大致的，如果不懂就照抄</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" data-id="cuidRhJdPJ4JUR6Y-S0qur62U" data-title="部署一个自己的网盘搜索引擎（pansou）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-21-frpc的使用（用于穿透家里的设备）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/21/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/21/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/">frpc的使用（用于穿透家里的设备）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、前提条件</em></strong></p>
+<p>有一台有公网IP的云服务器。（建议国外的服务器，国内则必须备案）</p>
+<p>本地的服务已经准备好并知道其端口</p>
+<p>一个域名国内域名要备案，国外的服务器则不管</p>
+<p><strong><em>2、服务器端操作</em></strong></p>
+<p>远程ssh连接输入账号和密码（我直接用的是<a target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">XSHELL</a> ）</p>
+<p>连接好后输入</p>
+<p>if [ -f &#x2F;usr&#x2F;bin&#x2F;curl ];then curl -sSO <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;else">https://download.bt.cn/install/install\_panel.sh;else</a> wget -O install_panel.sh <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;fi;bash">https://download.bt.cn/install/install\_panel.sh;fi;bash</a> install_panel.sh ed8484bec</p>
+<p><a target="_blank" rel="noopener" href="https://www.bt.cn/new/download.html">安装宝塔</a>后登录宝塔后台，记得关闭防火墙，安装docker</p>
+<p>找到frpc服务端安装后默认端口是7500，根据自己需要改</p>
+<p>安装好了进入安装目录data&#x2F;frps&#x2F;toml复制token</p>
+<p><strong><em>3、本地操作</em></strong></p>
+<p>同理安装宝塔加frpc客户端，打开配置文件</p>
+<p>serverAddr&#x3D;’你的公网IP’</p>
+<p>token改成服务器的,直接复制粘贴就行</p>
+<p>[[proxies]]<br>name &#x3D; “test-tcp”<br>type &#x3D; “tcp”<br>localIP &#x3D; “127.0.0.1”<br>localPort &#x3D; 你要穿的端口<br>remotePort &#x3D; 你要穿的端口</p>
+<p>4、验证是否成功</p>
+<p>公网ip加端口看看是否可以访问你要的服务</p>
+<p>5、域名解析就行，记得国内必须域名备案</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/21/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/" data-id="cuidHo2iRXKKZ55fRx8th-z93" data-title="frpc的使用（用于穿透家里的设备）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-21-如何重装系统/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/21/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/21/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/">如何重装系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、电脑直接恢复</em></strong></p>
+<p>在电脑上打开设置，搜索恢复，点击重置此电脑就行。</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-172255-1024x584.png"></p>
+<p><strong><em>2、用微软提供的重装件</em></strong> <a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">下载 Windows 11</a></p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-172629-1024x454.png"></p>
+<p>下载这个以后启动，可以无U盘安装，直接选择本地或者安装到U盘（U盘建议8G以上）里，记得U盘里的数据会被清空哦。</p>
+<p>后面进入Bloss选择U盘启动后重启就行。之后根据应道操作就行</p>
+<p><strong><em>3、用rufus安装</em></strong></p>
+<p>下载rufus<a target="_blank" rel="noopener" href="https://rufus.ie/en/">（Rufus - Create bootable USB drives the easy way</a>）</p>
+<p>去微软官方下载官方镜像<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">下载 Windows 11</a></p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-173756-1024x458.png"></p>
+<p>然后打开rufus这里设备选择插入的U盘，选择这里选择下载好的镜像，无脑下一步，其他的可以不用管，默认就行。等做好以后按上面操作进入blossU盘启动根据引导来就行。</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-173933.png"></p>
+<p>4、PE安装（一般现在不太推荐了）</p>
+<p>下载微PE<a target="_blank" rel="noopener" href="https://www.wepe.com.cn/">微PE工具箱 - 超好用的装机维护工具</a></p>
+<p><strong>插入4G及以上容量的U盘</strong>，然后打开软件，点击“安装到U盘”。</p>
+<p><strong>点击“立即安装进U盘”</strong>，然后点击“开始制作”。</p>
+<p><strong>稍等片刻</strong>，安装完成后，电脑开机时连按快捷键进入微PE即可。 这样就可以成功安装微PE工具箱了。</p>
+<p>后面进入bloss选择U盘启动，先用分区工具分好区，再用如下软件安装</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/21/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/" data-id="cuidkg8e2tdgjxeJBe3FGOyU_" data-title="如何重装系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-21-网页如何打包成打包exe（很基础的）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/21/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/21/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/">网页如何打包成打包exe（很基础的）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、环境准备</em></strong></p>
+<p>安装<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">Node.js</a>和<a target="_blank" rel="noopener" href="https://npm.nodejs.cn/cli/v11/configuring-npm/install">npm</a></p>
+<p><strong><em>2、验证是否安装好</em></strong></p>
+<p>在cmd中输入node -v和npm -v</p>
+<p>看能不能输出版本号可以就装好了</p>
+<p><strong><em>3、下载要的包</em></strong></p>
+<p>npm install -g nativefier</p>
+<p><strong><em>4、验证包的安装</em></strong></p>
+<p>nativefier –version</p>
+<p><strong><em>5、创建exe文件</em></strong></p>
+<p>新建一个文件夹，这里面装的就是打包后的文件后打开文件夹右键打开cmd后输入nativefier ‘网址’</p>
+<p>之后找到exe文件就行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/21/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/" data-id="cuidhxIa7gurg5OEEiRNRU72V" data-title="网页如何打包成打包exe（很基础的）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-19-python基础语法/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/19/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/19/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/">python基础语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em>基础语法</em></p>
+<p>1. 变量名规则</p>
+<p>   只能是字母或者下划线 _ 开头；特别注意不能使用数字开头</p>
+<p>   区分大小写</p>
+<p>   可以用中文</p>
+<p>2. 注释</p>
+<p>   单行注释：使用 # 号进行注释</p>
+<p>   多行注释：使用三引号 ‘’’ 或者 “”” 进行注释</p>
+<p>   python</p>
+<p>3. 代码块结构（缩进）</p>
+<p>python 最具特色的就是使用缩进来表示代码块，不需要使用大括号 {}</p>
+<p>可以使用制表符（Tab 键）或者空格来进行缩进，通常使用一个 Tab 或者 4 个空格 即可</p>
+<p>同一代码文件中必须统一使用 Tab 或者空格，不能混用（不同系统解析的制表符不一致，混用会导致在不同系统中代码表现不一致）</p>
+<p>重要：实际使用中一般统一使用 4 个空格</p>
+<p>python</p>
+<p>if True:</p>
+<p>    print(‘hello, world’)</p>
+<p>4. print 输出</p>
+<p>   使用 print() 进行输出</p>
+<p>   print 默认输出是换行的，如果不需要换行可以加上 end 参数：</p>
+<p>   python</p>
+<p>   print(‘hello, world’)</p>
+<p>   print(‘hello, world’, end&#x3D;’’)</p>
+<p>5. 关键字</p>
+<p>   关键字也称保留字，每个编程语言均有的；不能作为普通标识符（变量名，函数名等）</p>
+<p>   就是我们自己定义的变量不要用就行了</p>
+<p>   简单了解一下就行，不需要现在就弄懂：</p>
+<p>关键字    简述</p>
+<p>True      逻辑真                                                                       False           逻辑假</p>
+<p>and        逻辑与                                                                       or                逻辑或</p>
+<p>if            条件语句的如果                                                        elif               条件语句的另一个如果</p>
+<p>else       条件语句的否则                                                         in                在 … 里</p>
+<p>is            是，常用在判断中                                                    not              不是</p>
+<p>async     异步                                                                           await           异步中的等待</p>
+<p>from       从 … 用在引入包                                                      import        引入包</p>
+<p>pass       占位符，啥也不干                                                    None          空，通常用于初始变量</p>
+<p>try           开始捕获异常                                                           except         捕获到异常</p>
+<p>finally     异常语句中的最后无论是否异常都要执行的块      raise           抛出异常</p>
+<p>def           定义函数                                                                   return        函数返回</p>
+<p>yield        用于创建生成器</p>
+<p>lambda   定义匿名函数                                                           for               循环</p>
+<p>while        循环                                                                         continue     继续循环</p>
+<p>break       退出循环                                                                 class             定义类</p>
+<p>assert       断言                                                                        nonlocal      非局部变量</p>
+<p>global      全局，常用与定义全局变量                            del                删除</p>
+<p>with          上下文                                                                     as                 别名</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/19/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/" data-id="cuidlY0m96DS9iXJOQCJvc8AO" data-title="python基础语法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-19-网站公告（必看）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/19/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/19/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/">网站公告（必看）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本网站是只用于科技交流的个人博客网站，无任何盈利目的和商业行为，赞赏码只是希望各位大佬觉得还行希望打赏一些，本身无任何商业目的和行为，如有违规或侵权行为请联系本站站主删除。本人坚决维护好一个健康安全的上网环境，遵守网络法律道德，希望大家能搭建出一个纯技术讨论环境，本人水平有限，按照自己的理解来讲述我理解的知识点。如果有什么想发或者建议，可以联系本站长，或者在文章上留言，本人会积极回复，并改正的。</p>
+<p>本网站应用了<br>Theme <a target="_blank" rel="noopener" href="https://2heng.xin/theme-sakura/">Sakura</a> by <a target="_blank" rel="noopener" href="https://2heng.xin/">Mashiro</a>这位大佬的主题并进行了部分魔改，在这里保留作者信息。</p>
+<p>站主QQ邮箱：<a href="mailto:&#x32;&#x37;&#x34;&#56;&#x38;&#55;&#x34;&#53;&#x38;&#54;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">2748874586@qq.com</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/19/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/" data-id="cuidi_uhFyJrEJ34Vpb9886Qz" data-title="网站公告（必看）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-19-linux基本操作指令/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/19/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/19/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/">Linux基本操作指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
+<p><strong>文件和目录操作</strong></p>
+<p> <strong>ls：                列出当前目录中的文件和子目录</strong></p>
+<p><strong>pwd：                显示当前工作目录的路径</strong></p>
+<p><strong>cd：                 切换工作目录</strong></p>
+<p>cd &#x2F;path&#x2F;to&#x2F;directory</p>
+<p><strong>mkdir：              创建新目录</strong></p>
+<p>mkdir directory_name</p>
+<p><strong>rmdir：              删除空目录</strong></p>
+<p>rmdir directory_name</p>
+<p><strong>rm：                 删除文件或目录</strong></p>
+<p>rm file_name</p>
+<p>rm -r directory_name     递归删除目录及其内容</p>
+<p><strong>cp：                 复制文件或目录</strong></p>
+<p>cp source_file destination</p>
+<p>cp -r source_directory destination # 递归复制目录及其内容</p>
+<p><strong>mv：                 移动或重命名文件或目录</strong></p>
+<p>mv old_name new_name</p>
+<p><strong>touch：              创建空文件或更新文件的时间戳</strong></p>
+<p>touch file_name</p>
+<p><strong>cat：                连接和显示文件内容</strong></p>
+<p>cat file_name</p>
+<p><strong>系统管理</strong></p>
+<p><strong>ps：                 显示当前运行的进程</strong></p>
+<p><strong>ps aux</strong></p>
+<p><strong>kill：               终止进程</strong></p>
+<p>kill process_id</p>
+<p><strong>ifconfig&#x2F;ip：        查看和配置网络接口信息</strong></p>
+<p>ifconfig</p>
+<p>ip addr show</p>
+<p><strong>ping：               测试与主机的连通性</strong></p>
+<p>ping host_name_or_ip</p>
+<p><strong>chmod：              修改文件或目录的权限</strong></p>
+<p>chmod permissions file_name</p>
+<p><strong>chown：              修改文件或目录的所有者</strong></p>
+<p>chown owner:group file_name</p>
+<p><strong>df&#x2F;du：              显示磁盘使用情况</strong></p>
+<p><strong>df -h                显示磁盘空间使用情况</strong></p>
+<p><strong>du -h directory_name 显示目录的磁盘使用情况</strong></p>
+<p><strong>umount &#x2F;dev&#x2F;sdX1 &#x2F;mnt 挂载分区到指定目录</strong></p>
+<p><strong>umount &#x2F;mnt           卸载挂载的文件系统</strong></p>
+<p><strong>网络操作</strong></p>
+<p><strong>ssh：                 远程登录到其他计算机</strong></p>
+<p>ssh username@remote_host</p>
+<p><strong>scp：                 安全地将文件从本地复制到远程主机，或从远程主机复制到本地</strong></p>
+<p>scp local_file remote_user@remote_host:&#x2F;remote&#x2F;directory</p>
+<p><strong>wget&#x2F;curl：           从网络下载文件</strong></p>
+<p>wget URL</p>
+<p>curl -O URL</p>
+<p>这些命令是Linux系统中最常用的基本操作命令，掌握这些命令可以帮助你更有效地管理和操作Linux系统</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/19/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/" data-id="cuidLxRKIKpaEbtQ7u8wSHjlJ" data-title="Linux基本操作指令" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2026-03-19-hexo加github搭建博客网站/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/03/19/2026-03-19-hexo%E5%8A%A0github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index/" class="article-date">
@@ -201,7 +648,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
     </div>
   </div>
 
@@ -229,23 +676,23 @@
       <ul>
         
           <li>
-            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+            <a href="/2026/04/12/2026-04-12-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%BC%80%E6%BA%90%EF%BC%89/index/">图书管理系统（已在本人GitHub仓库开源）</a>
           </li>
         
           <li>
-            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+            <a href="/2026/04/11/2026-04-11-%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%95%99%E8%82%B2/index/">关于学习和教育</a>
           </li>
         
           <li>
-            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+            <a href="/2026/04/10/2026-04-10-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D/index/">编程语言介绍</a>
           </li>
         
           <li>
-            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+            <a href="/2026/04/09/2026-04-09-%E4%B8%80%E5%A5%97%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BA%A7%E5%93%81%E7%9A%84%E7%BB%84%E6%88%90/index/">一套完整的产品的组成</a>
           </li>
         
           <li>
-            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+            <a href="/2026/04/08/2026-04-08-%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/index/">一些感想</a>
           </li>
         
       </ul>

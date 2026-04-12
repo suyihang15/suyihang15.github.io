@@ -71,6 +71,1189 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2026-04-05-用python做一个密码箱小工具（已在本人github仓库可以看/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-04T16:00:00.000Z" itemprop="datePublished">2026-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：因为本人经常记不住密码所以用python写了这个工具箱，并用pyinstaller这个第三方库打包成了exe文件。并附上exe下载地址和代码介绍与样式，本人能力有限希望勿喷。</p>
+<p>下载地址：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/password-manager/releases/download/v1.0.0/default.exe">https://github.com/suyihang15/password-manager/releases/download/v1.0.0/default.exe</a></p>
+<p>项目地址</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/password-manager">suyihang15&#x2F;password-manager: python写的本地密码记录本</a></p>
+<p>代码介绍：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">#导入第三方库</span><br><span class="line">import os</span><br><span class="line">import json</span><br><span class="line">import tkinter as tk</span><br><span class="line">from tkinter import ttk, messagebox</span><br><span class="line">from cryptography.fernet import Fernet</span><br><span class="line"></span><br><span class="line"># 密钥文件名</span><br><span class="line">KEY_FILE = &quot;secret.key&quot;</span><br><span class="line"># 密码数据文件名</span><br><span class="line">DATA_FILE = &quot;passwords.json&quot;</span><br><span class="line"></span><br><span class="line"># 加载密钥，不存在则生成</span><br><span class="line">def load_key():</span><br><span class="line">    if not os.path.exists(KEY_FILE):</span><br><span class="line">        key = Fernet.generate_key()</span><br><span class="line">        with open(KEY_FILE, &quot;wb&quot;) as f:</span><br><span class="line">            f.write(key)</span><br><span class="line">    with open(KEY_FILE, &quot;rb&quot;) as f:</span><br><span class="line">        return f.read()</span><br><span class="line"></span><br><span class="line"># 初始化加密器</span><br><span class="line">key = load_key()</span><br><span class="line">cipher = Fernet(key)</span><br><span class="line"></span><br><span class="line"># 保存数据（加密）</span><br><span class="line">def save_data(data):</span><br><span class="line">    json_data = json.dumps(data).encode()</span><br><span class="line">    encrypted_data = cipher.encrypt(json_data)</span><br><span class="line">    with open(DATA_FILE, &quot;wb&quot;) as f:</span><br><span class="line">        f.write(encrypted_data)</span><br><span class="line"></span><br><span class="line"># 加载数据（解密）</span><br><span class="line">def load_data():</span><br><span class="line">    if not os.path.exists(DATA_FILE):</span><br><span class="line">        return []</span><br><span class="line">    with open(DATA_FILE, &quot;rb&quot;) as f:</span><br><span class="line">        encrypted_data = f.read()</span><br><span class="line">    decrypted_data = cipher.decrypt(encrypted_data).decode()</span><br><span class="line">    return json.loads(decrypted_data)</span><br><span class="line"></span><br><span class="line"># 主窗口</span><br><span class="line">root = tk.Tk()</span><br><span class="line">root.title(&quot;密码记录本&quot;)</span><br><span class="line">root.geometry(&quot;600x400&quot;)</span><br><span class="line"></span><br><span class="line"># 表格</span><br><span class="line">columns = (&quot;网站&quot;, &quot;账号&quot;, &quot;密码&quot;, &quot;备注&quot;)</span><br><span class="line">tree = ttk.Treeview(root, columns=columns, show=&quot;headings&quot;)</span><br><span class="line">for col in columns:</span><br><span class="line">    tree.heading(col, text=col)</span><br><span class="line">tree.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)</span><br><span class="line"></span><br><span class="line"># 刷新表格</span><br><span class="line">def refresh_list():</span><br><span class="line">    for item in tree.get_children():</span><br><span class="line">        tree.delete(item)</span><br><span class="line">    data = load_data()</span><br><span class="line">    for item in data:</span><br><span class="line">        tree.insert(&quot;&quot;, tk.END, values=(item[&quot;site&quot;], item[&quot;user&quot;], item[&quot;pwd&quot;], item[&quot;note&quot;]))</span><br><span class="line"></span><br><span class="line"># 添加密码窗口</span><br><span class="line">def add_window():</span><br><span class="line">    win = tk.Toplevel(root)</span><br><span class="line">    win.title(&quot;添加密码&quot;)</span><br><span class="line">    win.geometry(&quot;400x250&quot;)</span><br><span class="line"></span><br><span class="line">    tk.Label(win, text=&quot;网站/应用：&quot;).grid(row=0, column=0, padx=10, pady=10)</span><br><span class="line">    site_entry = tk.Entry(win)</span><br><span class="line">    site_entry.grid(row=0, column=1, padx=10, pady=10)</span><br><span class="line"></span><br><span class="line">    tk.Label(win, text=&quot;账号：&quot;).grid(row=1, column=0, padx=10, pady=10)</span><br><span class="line">    user_entry = tk.Entry(win)</span><br><span class="line">    user_entry.grid(row=1, column=1, padx=10, pady=10)</span><br><span class="line"></span><br><span class="line">    tk.Label(win, text=&quot;密码：&quot;).grid(row=2, column=0, padx=10, pady=10)</span><br><span class="line">    pwd_entry = tk.Entry(win)</span><br><span class="line">    pwd_entry.grid(row=2, column=1, padx=10, pady=10)</span><br><span class="line"></span><br><span class="line">    tk.Label(win, text=&quot;备注：&quot;).grid(row=3, column=0, padx=10, pady=10)</span><br><span class="line">    note_entry = tk.Entry(win)</span><br><span class="line">    note_entry.grid(row=3, column=1, padx=10, pady=10)</span><br><span class="line"></span><br><span class="line">    def save_new():</span><br><span class="line">        site = site_entry.get()</span><br><span class="line">        user = user_entry.get()</span><br><span class="line">        pwd = pwd_entry.get()</span><br><span class="line">        note = note_entry.get()</span><br><span class="line">        if not site or not user or not pwd:</span><br><span class="line">            messagebox.showwarning(&quot;提示&quot;, &quot;网站、账号、密码不能为空！&quot;)</span><br><span class="line">            return</span><br><span class="line">        data = load_data()</span><br><span class="line">        data.append(&#123;&quot;site&quot;: site, &quot;user&quot;: user, &quot;pwd&quot;: pwd, &quot;note&quot;: note&#125;)</span><br><span class="line">        save_data(data)</span><br><span class="line">        refresh_list()</span><br><span class="line">        win.destroy()</span><br><span class="line">        messagebox.showinfo(&quot;成功&quot;, &quot;保存成功！&quot;)</span><br><span class="line"></span><br><span class="line">    tk.Button(win, text=&quot;保存&quot;, command=save_new).grid(row=4, column=0, columnspan=2, pady=10)</span><br><span class="line"></span><br><span class="line"># 删除选中</span><br><span class="line">def delete_selected():</span><br><span class="line">    selected = tree.selection()</span><br><span class="line">    if not selected:</span><br><span class="line">        messagebox.showwarning(&quot;提示&quot;, &quot;请先选择一条记录！&quot;)</span><br><span class="line">        return</span><br><span class="line">    data = load_data()</span><br><span class="line">    idx = tree.index(selected[0])</span><br><span class="line">    del data[idx]</span><br><span class="line">    save_data(data)</span><br><span class="line">    refresh_list()</span><br><span class="line">    messagebox.showinfo(&quot;成功&quot;, &quot;删除成功！&quot;)</span><br><span class="line"></span><br><span class="line"># 按钮</span><br><span class="line">frame = tk.Frame(root)</span><br><span class="line">frame.pack(pady=5)</span><br><span class="line">tk.Button(frame, text=&quot;添加&quot;, command=add_window).pack(side=tk.LEFT, padx=5)</span><br><span class="line">tk.Button(frame, text=&quot;删除选中&quot;, command=delete_selected).pack(side=tk.LEFT, padx=5)</span><br><span class="line"></span><br><span class="line"># 启动</span><br><span class="line">refresh_list()</span><br><span class="line">root.mainloop()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-154714-1024x717.png"></p>
+<p>启动后就是上面那个样子</p>
+<p>添加保存以后就会在改文件夹里生成</p>
+<p>passwords.json（作用：密码箱）</p>
+<p>secret.key（作用：钥匙）</p>
+<p>不能随便删除，删了数据就没了</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-154756-1024x691.png"></p>
+<p>成功以后打开软件就会以这样的方式呈现。</p>
+<p>我个人觉得是很直观的，当然你也可以拿着这些代码随便改，反正都有注释的</p>
+<p>要直接用源码的话，需要你自己配置环境</p>
+<p>1、<a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3110/">python 3.11</a></p>
+<p>2、安装第三方库pip install cryptography（我个人是喜欢pycharm或者vs code的这两个IDE的，当然你要用文本文档也行，反正代码也不多，就是格式容易错）安装第三方库时有可能网络超时，就自己配镜像源吧</p>
+<p>3、如果改好了可以打包了，个人推荐pyinstaller</p>
+<p>（1）安装库pip install pyinstaller和pip install cryptography记得要把这个环境一起打包进去，不然运行不了</p>
+<p>（2）打包pyinstaller -F -w –hidden-import&#x3D;cryptography 文件名字.py</p>
+<p>之后就生成一些文件里面就有exe文件，就可以直接拿来用了</p>
+<p><img src="https://suyihang15.com/wp-content/uploads/2026/04/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-162359-1024x309.png"></p>
+<p>希望对你有帮助，如果可以希望点一个star。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/" data-id="cuidArXSBL7-EGKCgwl_ban_J" data-title="用python做一个密码箱小工具（已在本人github仓库可以看看）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-04-04-什么是反向代理/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我们知道，网站一般是通过公网ip加端口号的方式访问的，而且一般我们是用80端口，之后绑定域名解析，就可以通过域名访问了，但是，如果不是用80端口，那么，就要在域名后面加端口访问了。</p>
+<p>但是，为什么我们基本我们过用域名加端口的方式访问呢，难道他们都是部署在不同服务器上的吗，同一个服务器可不可以搭建多个网站呢</p>
+<p>先回答上面的问题，可以，这里我们就要用到反向代理了，我们在搭建时一定会用到不同的端口，我们可以用反向代理的方式给他转换为80端口，方便我们使用，以下是一串反向代理的配置文件及作用</p>
+<p>nginx</p>
+<p>server {<br>listen 80; # 监听 HTTP 80 端口<br>server_name example.com; # 你的域名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8080; # 转发到本地服务端口</span><br><span class="line"></span><br><span class="line">    # 传递真实 IP 和域名（必须）</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line"></span><br><span class="line">    # 连接超时（Nginx 连后端）</span><br><span class="line">    proxy_connect_timeout 10s;</span><br><span class="line">    # 发送超时（Nginx → 后端）</span><br><span class="line">    proxy_send_timeout 30s;</span><br><span class="line">    # 读取超时（后端 → Nginx）</span><br><span class="line">    proxy_read_timeout 30s;</span><br><span class="line"></span><br><span class="line">    # 不缓存（常用）</span><br><span class="line">    proxy_buffering off;</span><br><span class="line">    proxy_cache off;</span><br><span class="line"></span><br><span class="line">    # 允许大文件上传（常用）</span><br><span class="line">    client_max_body_size 100M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>}  
+ </p>
+<p>每一行作用</p>
+<ul>
+<li><p> proxy_connect_timeout ：连不上后端多久断开</p>
+</li>
+<li><p> proxy_send_timeout ：发数据给后端多久超时</p>
+</li>
+<li><p> proxy_read_timeout ：等后端响应多久超时</p>
+</li>
+<li><p> client_max_body_size ：允许上传大文件</p>
+</li>
+<li><p> proxy_buffering off ：避免卡顿，实时流更稳</p>
+</li>
+</ul>
+<p>这是一些基础配置，希望可以帮你了解。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/" data-id="cuidewTXjwgvGPlJEIBP3-6oi" data-title="什么是反向代理" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-04-04-什么是docker/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/">什么是docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>很多项目的部署用docker更为方便，那么什么是<a target="_blank" rel="noopener" href="https://www.docker.com/">docker</a>呢</p>
+<p>按我自己的理解来说docker就是一个容器</p>
+<p>他可以把我们部署需要的环境全部打包好，然后当我们需要这个项目的时候就给他拆开使用。</p>
+<p>很多人用做菜来比喻，你可以把他看作预制场，他把调料包（所需环境）全部整理好，拆开简答烹饪（拉取镜像）就可以吃了（使用了）</p>
+<p>因为有的项目部署环境比较复杂，这样做可以大大降低部署的门槛，而且因为其是一个个隔离且独立的环境，所以不必担心环境冲突等因素影响其他的项目冲突。</p>
+<p>但是我个人觉得docker部署完后的项目在处理时还有些残留不太能删的干净，也应该是本人技术不到位。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/" data-id="cuidxC58vuZXc_SOP6jhqlkA-" data-title="什么是docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-04-04-什么是公网ip与端口/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/">什么是公网IP与端口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>公网IP是你服务器在互联网上的唯一地址</p>
+<p>1、全世界只有一个（所以很多运营商不愿意给公网IP因为他是有限的）</p>
+<p>2、别人靠它找到你的服务器（包括远程连接，服务器，打开网页）</p>
+<p>3、其分为ipv4和ipv6，他们处于不同频段，v4是全球通用的，但是现在不太够了，一般现在能给的是v6，v6是只有支持该频端的电子设备才能访问，现在一般只有买云服务器才给公网ip，当然你搞得到v4的话确实厉害，但是上传多了可能会被pcdn警告，这点要注意，所以一般建议要玩公网ip可以买个云服务器。</p>
+<p>那么通俗点说公网IP好比如你家小区的地址，是一个可以找到你地址的一串数字。</p>
+<p>二、端口是什么？</p>
+<p>端口是服务器上不同服务的门牌号<br>一台服务器可以跑很多东西但是它们不能挤在一个门里所以用不同端口区分。<br>通俗点来说端口就是你家每间房的门牌号</p>
+<p>三、公网IP + 端口 &#x3D; 完整访问地址</p>
+<p>IP:端口 就是你访问任何服务的方式。</p>
+<p>比如：</p>
+<p>网站：ip地址（123.123.123.123）:端口号（80）中间一般打: </p>
+<p>四、常用的端口（一般是默认的）</p>
+<p>1、系统&#x2F;远程&#x2F;网络基础（0–1023 公认端口）</p>
+<ul>
+<li><p>20 FTP 数据端口</p>
+</li>
+<li><p>21 FTP 控制端口</p>
+</li>
+<li><p>22 SSH（安全远程登录）</p>
+</li>
+<li><p>23 Telnet（明文远程，已淘汰）</p>
+</li>
+<li><p>25 SMTP（邮件发送）</p>
+</li>
+<li><p>53 DNS（域名解析）</p>
+</li>
+<li><p>67 DHCP 服务器</p>
+</li>
+<li><p>68 DHCP 客户端</p>
+</li>
+<li><p>80 HTTP（网页默认）</p>
+</li>
+<li><p>110 POP3（邮件接收）</p>
+</li>
+<li><p>123 NTP（时间同步）</p>
+</li>
+<li><p>143 IMAP（邮件接收）</p>
+</li>
+<li><p>161 SNMP（设备监控）</p>
+</li>
+<li><p>162 SNMP Trap</p>
+</li>
+<li><p>443 HTTPS（加密网页）</p>
+</li>
+<li><p>445 SMB（Windows 文件共享）</p>
+</li>
+<li><p>514 Syslog（系统日志）</p>
+</li>
+<li><p>993 IMAPS（加密 IMAP）</p>
+</li>
+<li><p>995 POP3S（加密 POP3）</p>
+</li>
+</ul>
+<p>2、数据库端口</p>
+<ul>
+<li><p>1433 SQL Server</p>
+</li>
+<li><p>1521 Oracle</p>
+</li>
+<li><p>3306 MySQL &#x2F; MariaDB</p>
+</li>
+<li><p>5432 PostgreSQL</p>
+</li>
+<li><p>6379 Redis</p>
+</li>
+<li><p>27017 MongoDB</p>
+</li>
+<li><p>9042 Cassandra</p>
+</li>
+<li><p>5984 CouchDB</p>
+</li>
+<li><p>389 LDAP</p>
+</li>
+<li><p>636 LDAPS（加密）</p>
+</li>
+</ul>
+<p>3、Web 服务&#x2F;反向代理&#x2F;开发</p>
+<ul>
+<li><p>80 HTTP</p>
+</li>
+<li><p>443 HTTPS</p>
+</li>
+<li><p>8080 备用 HTTP（Tomcat、Jetty、测试）</p>
+</li>
+<li><p>8443 备用 HTTPS</p>
+</li>
+<li><p>8888 宝塔面板</p>
+</li>
+<li><p>9000 PHP-FPM</p>
+</li>
+<li><p>3000 Node.js 常用</p>
+</li>
+<li><p>5000 Flask &#x2F; 群晖 NAS</p>
+</li>
+<li><p>8000 Django</p>
+</li>
+<li><p>8081 Nginx 备用</p>
+</li>
+<li><p>9090 Prometheus</p>
+</li>
+<li><p>3000 Grafana</p>
+</li>
+</ul>
+<p>4、NAS &#x2F; 下载 &#x2F; 媒体服务</p>
+<ul>
+<li><p>5000 群晖 DSM</p>
+</li>
+<li><p>5001 群晖 HTTPS</p>
+</li>
+<li><p>32400 Plex</p>
+</li>
+<li><p>8096 Jellyfin</p>
+</li>
+<li><p>8989 Sonarr</p>
+</li>
+<li><p>7878 Radarr</p>
+</li>
+<li><p>9091 Transmission</p>
+</li>
+<li><p>51413 qBittorrent</p>
+</li>
+<li><p>6881–6889 BT 下载</p>
+</li>
+<li><p>9091 Transmission Web</p>
+</li>
+</ul>
+<p>5、邮件端口</p>
+<ul>
+<li><p>25 SMTP</p>
+</li>
+<li><p>465 SMTPS（加密）</p>
+</li>
+<li><p>587 SMTP 子端口</p>
+</li>
+<li><p>110 POP3</p>
+</li>
+<li><p>143 IMAP</p>
+</li>
+<li><p>993 IMAPS</p>
+</li>
+<li><p>995 POP3S</p>
+</li>
+</ul>
+<p>6、监控&#x2F;运维&#x2F;日志</p>
+<ul>
+<li><p>9090 Prometheus</p>
+</li>
+<li><p>3000 Grafana</p>
+</li>
+<li><p>9100 Node Exporter</p>
+</li>
+<li><p>9200 Elasticsearch</p>
+</li>
+<li><p>5601 Kibana</p>
+</li>
+<li><p>5044 Logstash</p>
+</li>
+<li><p>199 SMUX</p>
+</li>
+<li><p>61616 ActiveMQ</p>
+</li>
+</ul>
+<p>7、游戏常用端口</p>
+<ul>
+<li><p>22 SSH</p>
+</li>
+<li><p>80&#x2F;443 网页</p>
+</li>
+<li><p>27015 Steam</p>
+</li>
+<li><p>19132 Minecraft PE</p>
+</li>
+<li><p>25565 Minecraft Java</p>
+</li>
+<li><p>3724 魔兽世界</p>
+</li>
+<li><p>6112 星际争霸</p>
+</li>
+<li><p>27000–27050 游戏通用</p>
+</li>
+</ul>
+<p>8、VPN&#x2F;网络隧道</p>
+<ul>
+<li><p>1194 OpenVPN</p>
+</li>
+<li><p>1723 PPTP</p>
+</li>
+<li><p>500 IKE</p>
+</li>
+<li><p>4500 NAT-T</p>
+</li>
+<li><p>1701 L2TP</p>
+</li>
+</ul>
+<p>9、远程桌面&#x2F;管理</p>
+<ul>
+<li><p>3389 Windows RDP</p>
+</li>
+<li><p>5900 VNC</p>
+</li>
+<li><p>5901 VNC :1</p>
+</li>
+<li><p>5800 VNC Web</p>
+</li>
+</ul>
+<p>10、文件传输&#x2F;同步</p>
+<ul>
+<li><p>21 FTP</p>
+</li>
+<li><p>22 SFTP &#x2F; SCP</p>
+</li>
+<li><p>873 Rsync</p>
+</li>
+<li><p>445 SMB</p>
+</li>
+<li><p>139 NetBIOS</p>
+</li>
+</ul>
+<p>11、消息队列&#x2F;中间件</p>
+<ul>
+<li><p>5672 RabbitMQ</p>
+</li>
+<li><p>1883 MQTT</p>
+</li>
+<li><p>9092 Kafka</p>
+</li>
+<li><p>61616 ActiveMQ</p>
+</li>
+</ul>
+<p>12、容器&#x2F;云原生</p>
+<ul>
+<li><p>2375 Docker</p>
+</li>
+<li><p>2376 Docker TLS</p>
+</li>
+<li><p>6443 Kubernetes API</p>
+</li>
+<li><p>10250 Kubelet</p>
+</li>
+<li><p>9090 Prometheus</p>
+</li>
+</ul>
+<p>13、端口范围说明</p>
+<ul>
+<li><p>0–1023：系统保留端口（系统服务）</p>
+</li>
+<li><p>1024–49151：注册端口（软件&#x2F;服务）</p>
+</li>
+<li><p>49152–65535：动态&#x2F;私有端口（临时使用）</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" data-id="cuid284n4mPPZ3IghiPdM1kxz" data-title="什么是公网IP与端口" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-04-04-什么是服务器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/">什么是服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>按照我个人的理解就是一台永不关机的电脑，如果你自己有一台电脑，可以大部分时间不关机，也可以算作一台服务器</p>
+<p>那么区别在哪里呢</p>
+<p>1、我们知道一台电脑可以干的事情有很多，但是服务器可以干的事情就比较专业了，他们有的专门用于存储，有的专门用于网站的运行，你可以把电脑理解为一个什么都还行的学生，把服务器理解为一个偏科生，他一般就是用于专业干某件事情的大佬。</p>
+<p>2、对于一般来说服务器一般运行的系统为linux系统或者他的发行版，由于其运行起来极低的占用与极强的自定义性，所以大部分服务器都会选择Linux系统</p>
+<p>3、操控方式，一般来说对于服务器的控制一般都是原程控制的，因为一般不会给服务器专门连接一个显示屏，通过ssh连接远程下载命令，可以更加高效的执行操作者的命令。</p>
+<p>按照本人的理解大致就是这些了，如果还有什么见解欢迎在评论区补充。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/" data-id="cuidurPE6MAM5QhGqUPor0dKz" data-title="什么是服务器" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-31-常见文件类型及作用/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/31/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-30T16:00:00.000Z" itemprop="datePublished">2026-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/31/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/">常见文件类型及作用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>一、文档类（最常用）</p>
+<ul>
+<li><p>.txt：纯文本，无格式</p>
+</li>
+<li><p>.doc &#x2F; .docx：Word 文档</p>
+</li>
+<li><p>.xls &#x2F; .xlsx：Excel 表格</p>
+</li>
+<li><p>.ppt &#x2F; .pptx：PPT 演示</p>
+</li>
+<li><p>.pdf：通用文档，格式固定</p>
+</li>
+<li><p>.rtf：富文本，带简单格式</p>
+</li>
+<li><p>.odt &#x2F; .ods &#x2F; .odp：LibreOffice 文档</p>
+</li>
+<li><p>.md：Markdown 笔记</p>
+</li>
+<li><p>.epub：电子书</p>
+</li>
+<li><p>.mobi &#x2F; .azw3：Kindle 电子书</p>
+</li>
+<li><p>.chm：Windows 帮助文档</p>
+</li>
+<li><p>.wps：WPS 文档</p>
+</li>
+<li><p>.dot &#x2F; .dotx：Word 模板</p>
+</li>
+<li><p>.xlt &#x2F; .xltx：Excel 模板</p>
+</li>
+<li><p>.pot &#x2F; .potx：PPT 模板</p>
+</li>
+<li><p>.pages：Mac 文档</p>
+</li>
+<li><p>.numbers：Mac 表格</p>
+</li>
+<li><p>.key：Mac 演示</p>
+</li>
+</ul>
+<p>二、图片类</p>
+<ul>
+<li><p>.jpg &#x2F; .jpeg：照片</p>
+</li>
+<li><p>.png：透明图</p>
+</li>
+<li><p>.gif：动图</p>
+</li>
+<li><p>.bmp：无压缩位图</p>
+</li>
+<li><p>.webp：网页图片</p>
+</li>
+<li><p>.svg：矢量图</p>
+</li>
+<li><p>.ico：图标</p>
+</li>
+<li><p>.heic &#x2F; .heif：iPhone 照片</p>
+</li>
+<li><p>.tiff &#x2F; .tif：印刷高清图</p>
+</li>
+<li><p>.psd：PS 源文件</p>
+</li>
+<li><p>.ai：Illustrator 矢量</p>
+</li>
+<li><p>.cdr：CorelDRAW</p>
+</li>
+<li><p>.raw：相机原始照片</p>
+</li>
+<li><p>.exr：专业 HDR 图</p>
+</li>
+<li><p>.jfif：JPEG 变种</p>
+</li>
+<li><p>.dds：游戏贴图</p>
+</li>
+<li><p>.tga：游戏&#x2F;设计图</p>
+</li>
+<li><p>.pic：老图片格式</p>
+</li>
+</ul>
+<p>三、音频类</p>
+<ul>
+<li><p>.mp3：通用音乐</p>
+</li>
+<li><p>.wav：无压缩音频</p>
+</li>
+<li><p>.flac：无损音乐</p>
+</li>
+<li><p>.aac：手机&#x2F;视频音频</p>
+</li>
+<li><p>.m4a：苹果音频</p>
+</li>
+<li><p>.ogg：开源音频</p>
+</li>
+<li><p>.wma：Windows 音频</p>
+</li>
+<li><p>.amr：手机录音</p>
+</li>
+<li><p>.mid &#x2F; .midi：电子音乐</p>
+</li>
+<li><p>.mp2：老音频</p>
+</li>
+<li><p>.ac3：DVD 音轨</p>
+</li>
+<li><p>.dts：高清音轨</p>
+</li>
+<li><p>.opus：高质量低体积音频</p>
+</li>
+<li><p>.mka：Matroska 音频</p>
+</li>
+<li><p>.caf：Mac 音频</p>
+</li>
+<li><p>.au：Unix 音频</p>
+</li>
+<li><p>.snd：老音频</p>
+</li>
+</ul>
+<p>四、视频类</p>
+<ul>
+<li><p>.mp4：通用视频</p>
+</li>
+<li><p>.mkv：高清多音轨</p>
+</li>
+<li><p>.mov：苹果视频</p>
+</li>
+<li><p>.avi：老视频</p>
+</li>
+<li><p>.wmv：Windows 视频</p>
+</li>
+<li><p>.flv：Flash 视频</p>
+</li>
+<li><p>.webm：网页视频</p>
+</li>
+<li><p>.mpeg &#x2F; .mpg：MPEG 视频</p>
+</li>
+<li><p>.rm &#x2F; .rmvb：Real 视频</p>
+</li>
+<li><p>.3gp：手机老视频</p>
+</li>
+<li><p>.m4v：苹果视频</p>
+</li>
+<li><p>.ts &#x2F; .mts：高清摄像</p>
+</li>
+<li><p>.vob：DVD 视频</p>
+</li>
+<li><p>.m2ts：蓝光视频</p>
+</li>
+<li><p>.f4v：Flash 高清</p>
+</li>
+<li><p>.asf：Windows 媒体</p>
+</li>
+<li><p>.m3u8：在线视频流</p>
+</li>
+<li><p>.dat：VCD 视频</p>
+</li>
+<li><p>.dv：摄像机视频</p>
+</li>
+<li><p>.ogv：开源视频</p>
+</li>
+</ul>
+<p>五、压缩&#x2F;归档类</p>
+<ul>
+<li><p>.zip：通用压缩</p>
+</li>
+<li><p>.rar：高压缩</p>
+</li>
+<li><p>.7z：最强压缩</p>
+</li>
+<li><p>.tar：Linux 归档</p>
+</li>
+<li><p>.tar.gz &#x2F; .tgz：Linux 压缩</p>
+</li>
+<li><p>.tar.bz2：高压缩</p>
+</li>
+<li><p>.tar.xz：超高压</p>
+</li>
+<li><p>.gz：Gzip 压缩</p>
+</li>
+<li><p>.bz2：Bzip2 压缩</p>
+</li>
+<li><p>.xz：XZ 压缩</p>
+</li>
+<li><p>.z：老压缩</p>
+</li>
+<li><p>.iso：光盘镜像</p>
+</li>
+<li><p>.img：磁盘镜像</p>
+</li>
+<li><p>.nrg：Nero 镜像</p>
+</li>
+<li><p>.dmg：Mac 镜像</p>
+</li>
+<li><p>.cso：PSP 镜像</p>
+</li>
+<li><p>.isz：压缩 ISO</p>
+</li>
+<li><p>.arj：老压缩</p>
+</li>
+<li><p>.lzh：老压缩</p>
+</li>
+<li><p>.cab：Windows 压缩包</p>
+</li>
+<li><p>.wim：Windows 镜像</p>
+</li>
+<li><p>.squashfs：Linux 镜像</p>
+</li>
+</ul>
+<p>六、程序&#x2F;安装包（电脑+手机）</p>
+<ul>
+<li><p>.exe：Windows 程序</p>
+</li>
+<li><p>.msi：Windows 安装</p>
+</li>
+<li><p>.bat &#x2F; .cmd：Windows 脚本</p>
+</li>
+<li><p>.dll：系统库</p>
+</li>
+<li><p>.sys：驱动</p>
+</li>
+<li><p>.drv：驱动</p>
+</li>
+<li><p>.ocx：控件</p>
+</li>
+<li><p>.cpl：控制面板</p>
+</li>
+<li><p>.app：Mac 程序</p>
+</li>
+<li><p>.pkg：Mac 安装</p>
+</li>
+<li><p>.deb：Debian 包</p>
+</li>
+<li><p>.rpm：RedHat 包</p>
+</li>
+<li><p>.sh：Linux 脚本</p>
+</li>
+<li><p>.bin：二进制</p>
+</li>
+<li><p>.run：Linux 安装</p>
+</li>
+<li><p>.apk：安卓</p>
+</li>
+<li><p>.xapk &#x2F; .apkm：安卓分包</p>
+</li>
+<li><p>.apks：安卓捆绑</p>
+</li>
+<li><p>.aab：安卓发布</p>
+</li>
+<li><p>.ipa：苹果</p>
+</li>
+<li><p>.pxl &#x2F; .deb：越狱苹果</p>
+</li>
+<li><p>.jar：Java</p>
+</li>
+<li><p>.jad：Java 描述</p>
+</li>
+<li><p>.swf：Flash</p>
+</li>
+<li><p>.crx：Chrome 插件</p>
+</li>
+<li><p>.xpi：Firefox 插件</p>
+</li>
+</ul>
+<p>七、代码&#x2F;配置&#x2F;数据</p>
+<ul>
+<li><p>.py：Python</p>
+</li>
+<li><p>.js：JavaScript</p>
+</li>
+<li><p>.html &#x2F; .htm：网页</p>
+</li>
+<li><p>.css：样式</p>
+</li>
+<li><p>.java：Java</p>
+</li>
+<li><p>.c &#x2F; .cpp &#x2F; .cxx：C&#x2F;C++</p>
+</li>
+<li><p>.h &#x2F; .hpp：头文件</p>
+</li>
+<li><p>.php：PHP</p>
+</li>
+<li><p>.go：Go</p>
+</li>
+<li><p>.rs：Rust</p>
+</li>
+<li><p>.rb：Ruby</p>
+</li>
+<li><p>.pl：Perl</p>
+</li>
+<li><p>.lua：Lua</p>
+</li>
+<li><p>.swift：Swift</p>
+</li>
+<li><p>.kt：Kotlin</p>
+</li>
+<li><p>.json：数据</p>
+</li>
+<li><p>.xml：数据</p>
+</li>
+<li><p>.yaml &#x2F; .yml：配置</p>
+</li>
+<li><p>.toml：配置</p>
+</li>
+<li><p>.ini：配置</p>
+</li>
+<li><p>.conf：配置</p>
+</li>
+<li><p>.cfg：配置</p>
+</li>
+<li><p>.env：环境变量</p>
+</li>
+<li><p>.log：日志</p>
+</li>
+<li><p>.csv：表格</p>
+</li>
+<li><p>.tsv：制表符表格</p>
+</li>
+<li><p>.sql：数据库</p>
+</li>
+<li><p>.db &#x2F; .sqlite &#x2F; .sqlite3：数据库</p>
+</li>
+<li><p>.mdb &#x2F; .accdb：Access</p>
+</li>
+<li><p>.bak：备份</p>
+</li>
+<li><p>.dat：数据</p>
+</li>
+<li><p>.bin：二进制数据</p>
+</li>
+<li><p>.rc：资源文件</p>
+</li>
+<li><p>.plist：Mac 配置</p>
+</li>
+<li><p>.properties：Java 配置</p>
+</li>
+<li><p>.htaccess：Apache 配置</p>
+</li>
+</ul>
+<p>八、字体类</p>
+<ul>
+<li><p>.ttf：TrueType</p>
+</li>
+<li><p>.otf：OpenType</p>
+</li>
+<li><p>.woff &#x2F; .woff2：网页字体</p>
+</li>
+<li><p>.eot：老网页字体</p>
+</li>
+<li><p>.fon：Windows 字体</p>
+</li>
+<li><p>.ttc：字体集</p>
+</li>
+</ul>
+<p>九、虚拟机&#x2F;容器&#x2F;镜像</p>
+<ul>
+<li><p>.vmdk：VMware</p>
+</li>
+<li><p>.vdi：VirtualBox</p>
+</li>
+<li><p>.qcow2：KVM</p>
+</li>
+<li><p>.vhd &#x2F; .vhdx：Hyper-V</p>
+</li>
+<li><p>.ova：虚拟机导出</p>
+</li>
+<li><p>.ovf：虚拟机配置</p>
+</li>
+<li><p>.hdd：Parallels</p>
+</li>
+<li><p>.img：树莓派镜像</p>
+</li>
+<li><p>.iso：系统镜像</p>
+</li>
+<li><p>.tar：Docker 镜像</p>
+</li>
+</ul>
+<p>十、系统&#x2F;驱动&#x2F;固件</p>
+<ul>
+<li><p>.rom：固件</p>
+</li>
+<li><p>.bin：固件</p>
+</li>
+<li><p>.img：固件</p>
+</li>
+<li><p>.elf：Linux 可执行</p>
+</li>
+<li><p>.so：Linux 库</p>
+</li>
+<li><p>.dylib：Mac 库</p>
+</li>
+<li><p>.efi：UEFI 启动</p>
+</li>
+<li><p>.scpt：Mac 脚本</p>
+</li>
+<li><p>.applescript：AppleScript</p>
+</li>
+</ul>
+<p>十一、加密&#x2F;证书&#x2F;安全</p>
+<ul>
+<li><p>.pem：证书</p>
+</li>
+<li><p>.crt &#x2F; .cer：证书</p>
+</li>
+<li><p>.key：私钥</p>
+</li>
+<li><p>.pfx &#x2F; .p12：证书包</p>
+</li>
+<li><p>.asc：GPG 签名</p>
+</li>
+<li><p>.gpg：加密文件</p>
+</li>
+<li><p>.zipx：高级加密压缩</p>
+</li>
+<li><p>.rar5：新版 RAR</p>
+</li>
+</ul>
+<p>十二、手机特有</p>
+<ul>
+<li><p>.nomedia：安卓隐藏媒体</p>
+</li>
+<li><p>.inprogress：下载中</p>
+</li>
+<li><p>.crdownload：Chrome 未完成</p>
+</li>
+<li><p>.part：未完成下载</p>
+</li>
+<li><p>.uc：UC 浏览器缓存</p>
+</li>
+<li><p>.qlv：腾讯视频缓存</p>
+</li>
+<li><p>.kux：优酷缓存</p>
+</li>
+<li><p>.m3u：播放列表</p>
+</li>
+<li><p>.pls：播放列表</p>
+</li>
+<li><p>.xspf：播放列表</p>
+</li>
+</ul>
+<p>十三、临时&#x2F;缓存&#x2F;垃圾</p>
+<ul>
+<li><p>.tmp：临时</p>
+</li>
+<li><p>.cache：缓存</p>
+</li>
+<li><p>.swp &#x2F; .swo：Vim 缓存</p>
+</li>
+<li><p>.DS_Store：Mac 垃圾</p>
+</li>
+<li><p>.Thumbs.db：Windows 缩略图</p>
+</li>
+<li><p>.localized：Mac 本地化</p>
+</li>
+<li><p>.idb：缓存索引</p>
+</li>
+</ul>
+<p>十四、专业&#x2F;游戏&#x2F;设计</p>
+<ul>
+<li><p>.blend：Blender</p>
+</li>
+<li><p>.max：3ds Max</p>
+</li>
+<li><p>.ma &#x2F; .mb：Maya</p>
+</li>
+<li><p>.c4d：CINEMA 4D</p>
+</li>
+<li><p>.fbx：3D 模型</p>
+</li>
+<li><p>.obj：3D 模型</p>
+</li>
+<li><p>.stl：3D 打印</p>
+</li>
+<li><p>.sldprt &#x2F; .sldasm：SolidWorks</p>
+</li>
+<li><p>.dwg &#x2F; .dxf：CAD</p>
+</li>
+<li><p>.skp：SketchUp</p>
+</li>
+<li><p>.unitypackage：Unity 资源</p>
+</li>
+<li><p>.pak：游戏资源</p>
+</li>
+<li><p>.uasset：UE 资源</p>
+</li>
+<li><p>.vtt &#x2F; .srt &#x2F; .ass &#x2F; .ssa：字幕</p>
+</li>
+<li><p>.sub &#x2F; .idx：DVD 字幕</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/31/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/" data-id="cuidwEiStR6LAwdIfd84HJ5Kw" data-title="常见文件类型及作用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026-03-31-罪恶都市作弊码（仅供参考）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/31/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-30T16:00:00.000Z" itemprop="datePublished">2026-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/31/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/">罪恶都市作弊码（仅供参考）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>一、武器与生存类</em></strong></p>
+<ul>
+<li><p>THUGSTOOLS：初级武器套装（棒球棍、手枪、砍刀、燃烧瓶等）</p>
+</li>
+<li><p>PROFESSIONALTOOLS：中级武器套装（左轮手枪、霰弹枪、冲锋枪、狙击枪等）</p>
+</li>
+<li><p>NUTTERTOOLS：重型武器套装（电锯、加特林机枪、火箭筒、遥控炸弹等）</p>
+</li>
+<li><p>ASPIRINE：恢复全部生命值</p>
+</li>
+<li><p>PRECIOUSPROTECTION：获得满额护甲</p>
+</li>
+<li><p>ICANTTAKEITANYMORE：角色自杀</p>
+</li>
+</ul>
+<p><strong><em>二、通缉等级类</em></strong></p>
+<ul>
+<li><p>LEAVEMEALONE：消除所有通缉警星</p>
+</li>
+<li><p>YOUWONTTAKEMEALIVE：增加2颗通缉警星</p>
+</li>
+</ul>
+<p><strong><em>三、载具生成类</em></strong></p>
+<ul>
+<li><p>PANZER：召唤坦克</p>
+</li>
+<li><p>GETTHEREFAST：召唤高速跑车（Sabre Turbo）</p>
+</li>
+<li><p>BETTERTHANWALKING：召唤高尔夫球车</p>
+</li>
+<li><p>RUBBISHCAR：召唤垃圾车</p>
+</li>
+<li><p>THELASTRIDE：召唤灵车</p>
+</li>
+<li><p>ROCKANDROLLCAR：召唤豪华轿车</p>
+</li>
+</ul>
+<p><strong><em>四、载具功能类</em></strong></p>
+<ul>
+<li><p>SEAWAYS：汽车可在水面行驶（摩托车、直升机除外）</p>
+</li>
+<li><p>COMEFLYWITHME：汽车高速行驶时可飞行</p>
+</li>
+<li><p>BIGBANG：炸毁附近所有车辆</p>
+</li>
+<li><p>GREENLIGHT：所有交通信号灯变为绿灯</p>
+</li>
+<li><p>MIAMITRAFFIC：路上车辆增多且行驶混乱</p>
+</li>
+<li><p>AHAIRDRESSERSCAR：当前驾驶车辆变为粉色</p>
+</li>
+<li><p>IWANTITPAINTEDBLACK：当前驾驶车辆变为黑色</p>
+</li>
+</ul>
+<p><strong><em>五、游戏节奏类</em></strong></p>
+<ul>
+<li><p>ONSPEED：加快游戏整体速度</p>
+</li>
+<li><p>BOOOOOORING：减慢游戏整体速度</p>
+</li>
+</ul>
+<p><strong><em>六、天气效果类</em></strong></p>
+<ul>
+<li><p>APLEASANTDAY：切换为晴天</p>
+</li>
+<li><p>ALOVELYDAY：切换为晴朗好天气</p>
+</li>
+<li><p>ABITDRIEG：切换为阴天</p>
+</li>
+<li><p>CATSANDDOGS：切换为雨天</p>
+</li>
+<li><p>CANTSEEATHING：切换为雾天</p>
+</li>
+</ul>
+<p><strong><em>七、人物与趣味类</em></strong></p>
+<ul>
+<li><p>STILLLIKEDRESSINGUP：随机更换角色皮肤</p>
+</li>
+<li><p>FANNYMAGNET：吸引周围女性角色跟随</p>
+</li>
+<li><p>DEEPFRIEDMARSBARS：角色体型变胖</p>
+</li>
+<li><p>PROGRAMMER：角色体型变瘦</p>
+</li>
+<li><p>FIGHTFIGHTFIGHT：路人互相攻击</p>
+</li>
+<li><p>NOBODYLIKESME：路人攻击玩家</p>
+</li>
+<li><p>OURGODGIVENRIGHTTOBEARARMS：路人持有武器</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/31/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/" data-id="cuidShr2iASQuxcS37hE-JFoC" data-title="罪恶都市作弊码（仅供参考）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2026-03-31-电脑常用软件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/03/31/2026-03-31-%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/index/" class="article-date">
@@ -262,514 +1445,6 @@
 
 
   
-    <article id="post-2026-03-29-github使用指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">Github使用指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：github是全球最大的开源社区，里面有很多好玩的本人根据理解来帮助兄弟们使用它</p>
-<p><strong><em>1、准备条件</em></strong></p>
-<p>下载<a target="_blank" rel="noopener" href="https://steampp.net/">steam++或者叫Watt Toolkit</a>其他的有些加速器也有可以加速github（因为github服务器在国外所以国内有时会连不上）加速就行</p>
-<p>进入<a target="_blank" rel="noopener" href="https://github.com/">github</a>查看你要的项目</p>
-<p><strong><em>2、查看项目</em></strong></p>
-<p>对于一般不懂一点代码的人来说看右下角的Releases就行，一般作者会提供这个一键安装包</p>
-<p>或者看右上角的链接就可以体验一下了。</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-221510-1024x465.png"></p>
-<p><strong><em>3、进阶一点</em></strong></p>
-<p>仔细阅读readme</p>
-<p>根据具体情况来分析</p>
-<p>我自己一般是</p>
-<p>1、先看环境要准备哪些</p>
-<p>2、下载源码，（如果下载太慢可以复制下载连接到<a target="_blank" rel="noopener" href="https://github.akams.cn/">github加速下载站</a>）点击code下载zip解压</p>
-<p>3、打开cmd根据对应的命令来打，中间可能要你更改一些对应文件，这个就要根据你要部署的项目来调整了。</p>
-<p><strong><em>4、总结</em></strong></p>
-<p>不同的项目其部署方法各不相同，这里面有很多好玩的项目等你去发现，本人之后会介绍一些好玩的项目来玩的，希望对你能有所帮助。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" data-id="cuidy6OpZvRXrIGOgY6QUCg5R" data-title="Github使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-29-安卓游戏拆包/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/">安卓游戏拆包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本教程只是很简单的流程，具体问题还要具体分析</p>
-<p><strong><em>1、准备情况</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.java.com/zh-CN/">java下载</a>（必要环境）</p>
-<p><a target="_blank" rel="noopener" href="https://gitcode.com/open-source-toolkit/99d361/?utm_source=tools_gitcode&index=top&type=card&&uuid_tt_dd=10_19753706400-1773830015274-495080&isLogin=1&from_id=143013788&from_link=18c955a9dc5c4f6c56136c4bb16d784e">apktool下载</a>（用于拆包和反向编译的工具）</p>
-<p><a target="_blank" rel="noopener" href="https://mt2.cn/">mt管理器</a>（用于apk文件的签名）</p>
-<p>要拆的apk</p>
-<p><strong><em>2、拆包</em></strong></p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-214131-1024x175.png"></p>
-<p>将apk和apktool放在一个文件夹里，在本文件夹里的cmd里输入.&#x2F;apktool d .apk的包名，会生成对应的文件夹，里面生成的就是拆开的文件</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-215644.png"></p>
-<p><strong><em>3、各文件介绍</em></strong></p>
-<p>1.assets</p>
-<p>存放游戏资源（图片、音效、地图、配置文件），改游戏内容常用。</p>
-<ol start="2">
-<li>lib</li>
-</ol>
-<p>存放.so底层库文件，只留armeabi、armeabi-v7a，避免闪退。</p>
-<ol start="3">
-<li>original</li>
-</ol>
-<p>保存原始签名与配置，打包用，无需修改。</p>
-<ol start="4">
-<li>res</li>
-</ol>
-<p>存放界面资源（图标、布局、文字），改UI、文字常用。</p>
-<ol start="5">
-<li>smali &#x2F; smali_classes2~5</li>
-</ol>
-<p>存放游戏代码，删广告、改逻辑、修复闪退都在这里。</p>
-<ol start="6">
-<li>unknown</li>
-</ol>
-<p>未知加密资源，一般不用管。</p>
-<ol start="7">
-<li>AndroidManifest.xml</li>
-</ol>
-<p>APP配置文件，权限、启动项、兼容设置都在这，闪退关键。</p>
-<ol start="8">
-<li>apktool.yml</li>
-</ol>
-<p>打包工具配置，改SDK版本、包名等，防闪退。</p>
-<p>根据自己的需要更改就行</p>
-<p><strong><em>4、打包</em></strong></p>
-<p>cmd中输入.\apktool.bat b 文件夹名字 -o 打包后的名字.apk 这样会生成对应的apk这样就行了。</p>
-<p><strong><em>5、签名</em></strong></p>
-<p>由于更改后的apk没有签名因此手机是不认这里我们要用mt管理器签名后就可以安装了，但是可能会报病毒，直接无视风险继续安装就行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" data-id="cuidZjazCXib2r35S851C4sBf" data-title="安卓游戏拆包" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-29-openclaw部署指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ai/">ai</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/">OpenClaw部署指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>前情提要</p>
-<p>本人觉得，部署这个就只是好玩就行，其本身对于不是专门从事这个行业的其作用并不算大，没必要，纯个人看法。</p>
-<p>1、环境准备</p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.cn/en/download/current">Node.js</a></p>
-<p><a target="_blank" rel="noopener" href="https://ollama.com/">ollama</a>（可选，用于运行本地模型）</p>
-<p><a target="_blank" rel="noopener" href="https://ollama.com/search">ollama下载好后安装模型</a>（这里选一个电脑能带动的就行）</p>
-<p>2、安装openclaw</p>
-<p>windows安装命令 &amp; ([scriptblock]::Create((iwr -useb <a target="_blank" rel="noopener" href="https://openclaw.ai/install.ps1">https://openclaw.ai/install.ps1</a>))) -NoOnboard</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-080711-1-1024x537.png"></p>
-<p>mac os&#x2F;linux安装 curl -fsSL <a target="_blank" rel="noopener" href="https://openclaw.ai/install.sh">https://openclaw.ai/install.sh</a> | bash -s – –no-onboard</p>
-<p>3、验证</p>
-<p>openclaw –version（看是否输出版本号）</p>
-<p>openclaw doctor（环境检查）</p>
-<p>openclaw onboard（初始化配置）</p>
-<p>这里你得自己根据自己的实际情况配置api这些</p>
-<p>4、更新</p>
-<p>npm i -g openclaw@latest</p>
-<p>5、卸载</p>
-<p>npm uninstall -g openclaw</p>
-<p>6、删除用户数据</p>
-<p>windows rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
-<p>Mac OS&#x2F;Linux rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" data-id="cuidQ1rjUk8T4yjeuLwKm8sQZ" data-title="OpenClaw部署指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-29-私人音乐平台搭建（道鲤鱼音乐）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人音乐平台搭建（道鲤鱼音乐）docker部署</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本教程就是搭建音乐平台，没有任何音乐资源分享，资源要自行找导入，建议安装在nas上。</p>
-<p><strong><em>1、前提条件</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">docker下载</a></p>
-<p><strong><em>2、部署方法</em></strong></p>
-<p>方式一：不用 docker-compose（纯 Docker 单命令）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="2">
-<li>创建目录并授权</li>
-</ol>
-<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs  
- </p>
-<ol start="3">
-<li>一键启动容器</li>
-</ol>
-<p>docker run -d \<br>--name daoyuyu \<br>--restart always \<br>-p 23456:80 \<br>-v $(pwd)&#x2F;config:&#x2F;app&#x2F;config \<br>-v $(pwd)&#x2F;data:&#x2F;app&#x2F;data \<br>-v $(pwd)&#x2F;media:&#x2F;app&#x2F;media \<br>-v $(pwd)&#x2F;logs:&#x2F;app&#x2F;logs \<br>-e TZ&#x3D;Asia&#x2F;Shanghai \<br>mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="4">
-<li><p>放行端口 23456</p>
-</li>
-<li><p>访问</p>
-</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="http://ip:23456/">http://IP:23456</a>  
- </p>
-<p>方式二：使用 docker-compose（推荐，更稳定）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="2">
-<li>创建目录并授权</li>
-</ol>
-<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs</p>
-<p>3、填入compose</p>
-<p>version: ‘3.8’</p>
-<p>services:<br>daoyuyu:<br>image: mscststs&#x2F;daoyuyu:latest<br>container_name: daoyuyu<br>restart: always<br>ports:<br>- “23456:80” #根据自己需要改端口<br>volumes:<br>- .&#x2F;config:&#x2F;app&#x2F;config<br>- .&#x2F;data:&#x2F;app&#x2F;data<br>- .&#x2F;media:&#x2F;app&#x2F;media #用于存放自己的音乐文件MP3这些<br>- .&#x2F;logs:&#x2F;app&#x2F;logs<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai</p>
-<p><strong><em>3、访问</em></strong></p>
-<p>部署的IP地址:23456(如有更改自行调整)</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-133035-1024x621.png"></p>
-<p>点击右上角的图标进入这个界面，把你要听的歌放入上面说的文件夹里就行</p>
-<p><strong><em>4、手机访问</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://cn.amcfy.com/?lang=zh-CN">下载箭头音乐</a></p>
-<p>选择道鲤鱼音乐，填入好自己的ip地址（广和局域网填一个）就行，账户和密码就是你开始设置的。</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/ffb1753d760f2fe86dc7517194c1080d-461x1024.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidHYCUegwTjUvdIh7Qe0ofw" data-title="私人音乐平台搭建（道鲤鱼音乐）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-26-苹果手机安装ipa文件（免越狱）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/26/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-25T16:00:00.000Z" itemprop="datePublished">2026-03-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/26/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/">苹果手机安装ipa文件（免越狱）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong><em>1、前期准备</em></strong></p>
-<p>要安装的苹果手机</p>
-<p>要导入的ipa文件</p>
-<p>一台电脑，安装好<a target="_blank" rel="noopener" href="https://www.i4.cn/">爱思助手</a></p>
-<p>一根数据线</p>
-<p><strong><em>2、软件签名</em></strong></p>
-<p>网上一版都可以找到的或者可以找到证书的只是很容易失效，可以去网上买的一般几块钱。</p>
-<p>如果不想买就用苹果账号签也可以就是只管一个星期，失效后自己再签名</p>
-<p>打开爱思助手找到ipa签名</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202531-1024x240.png"></p>
-<p>打开后导入相应的文件一个是证书（没有证书就apple ID签名），一个是ipa文件</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202703-1024x659.png"></p>
-<p>搞好后会在对应的文件夹生成对应的ipa文件，后面用爱思助手导入就行了</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-203850-1024x220.png"></p>
-<p>手机要同意一下，后面就可以玩了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/26/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" data-id="cuidwakuAExidCJnNPFLKd_0X" data-title="苹果手机安装ipa文件（免越狱）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-25-电脑adb连接模拟器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/25/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-24T16:00:00.000Z" itemprop="datePublished">2026-03-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/25/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/">电脑adb连接模拟器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在一般要测试一些脚本时可以用这种方式在电脑上跑命令</p>
-<p>1、前提条件</p>
-<p>adb下载</p>
-<p>windwos端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">https://dl.google.com/android/repository/platform-tools-latest-windows.zip</a></p>
-<p>macos端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">https://dl.google.com/android/repository/platform-tools-latest-windows.zip</a></p>
-<p>linux端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">https://dl.google.com/android/repository/platform-tools-latest-linux.zip</a></p>
-<p>解压</p>
-<p>2、改环境变量</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/6da0d4f87d425ae11cae5502f534985e.jpg"></p>
-<p>选择好解压下来的adb.exe就行了</p>
-<h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>.\adb devices</p>
-<h3 id="连接-MuMu-模拟器（常用端口：16384-5554）"><a href="#连接-MuMu-模拟器（常用端口：16384-5554）" class="headerlink" title="连接 MuMu 模拟器（常用端口：16384 &#x2F; 5554）"></a>连接 MuMu 模拟器（常用端口：16384 &#x2F; 5554）</h3><p>.\adb connect 127.0.0.1:16384</p>
-<h3 id="断开设备"><a href="#断开设备" class="headerlink" title="断开设备"></a>断开设备</h3><p>.\adb disconnect 127.0.0.1:16384</p>
-<h3 id="重启-adb-服务"><a href="#重启-adb-服务" class="headerlink" title="重启 adb 服务"></a>重启 adb 服务</h3><p>.\adb kill-server<br>.\adb start-server  
- </p>
-<p>二、模拟操作（自动化脚本最常用）</p>
-<h3 id="点击坐标-x-y"><a href="#点击坐标-x-y" class="headerlink" title="点击坐标 (x,y)"></a>点击坐标 (x,y)</h3><p>.\adb shell input tap x y</p>
-<h3 id="滑动（起点x1-y1-→-终点x2-y2，时长300ms）"><a href="#滑动（起点x1-y1-→-终点x2-y2，时长300ms）" class="headerlink" title="滑动（起点x1 y1 → 终点x2 y2，时长300ms）"></a>滑动（起点x1 y1 → 终点x2 y2，时长300ms）</h3><p>.\adb shell input swipe x1 y1 x2 y2 300</p>
-<h3 id="输入文字"><a href="#输入文字" class="headerlink" title="输入文字"></a>输入文字</h3><p>.\adb shell input text “你要输入的内容”</p>
-<h3 id="按返回键"><a href="#按返回键" class="headerlink" title="按返回键"></a>按返回键</h3><p>.\adb shell input keyevent 4</p>
-<h3 id="按-Home-键"><a href="#按-Home-键" class="headerlink" title="按 Home 键"></a>按 Home 键</h3><p>.\adb shell input keyevent 3  
- </p>
-<p>三、安装 &#x2F; 卸载 APP</p>
-<h3 id="安装-APK"><a href="#安装-APK" class="headerlink" title="安装 APK"></a>安装 APK</h3><p>.\adb install 路径&#x2F;xxx.apk</p>
-<h3 id="强制覆盖安装（更新用）"><a href="#强制覆盖安装（更新用）" class="headerlink" title="强制覆盖安装（更新用）"></a>强制覆盖安装（更新用）</h3><p>.\adb install -r 路径&#x2F;xxx.apk</p>
-<h3 id="卸载-APP（需要包名）"><a href="#卸载-APP（需要包名）" class="headerlink" title="卸载 APP（需要包名）"></a>卸载 APP（需要包名）</h3><p>.\adb uninstall 包名  
- </p>
-<p>四、文件传输（电脑 ↔ 模拟器）</p>
-<h3 id="电脑-→-模拟器"><a href="#电脑-→-模拟器" class="headerlink" title="电脑 → 模拟器"></a>电脑 → 模拟器</h3><p>.\adb push 电脑文件路径 &#x2F;sdcard&#x2F;</p>
-<h3 id="模拟器-→-电脑"><a href="#模拟器-→-电脑" class="headerlink" title="模拟器 → 电脑"></a>模拟器 → 电脑</h3><p>.\adb pull &#x2F;sdcard&#x2F;文件名 电脑保存路径  
- </p>
-<p>五、查看与截图</p>
-<p>截图并保存到电脑</p>
-<p>.\adb shell screencap -p &#x2F;sdcard&#x2F;screen.png<br>.\adb pull &#x2F;sdcard&#x2F;screen.png 电脑路径</p>
-<h3 id="查看屏幕分辨率"><a href="#查看屏幕分辨率" class="headerlink" title="查看屏幕分辨率"></a>查看屏幕分辨率</h3><p>.\adb shell wm size  
- </p>
-<p>六、APP 相关</p>
-<h3 id="查看当前打开的-APP-包名"><a href="#查看当前打开的-APP-包名" class="headerlink" title="查看当前打开的 APP 包名"></a>查看当前打开的 APP 包名</h3><p>.\adb shell dumpsys window | findstr mCurrentFocus</p>
-<h3 id="启动-APP"><a href="#启动-APP" class="headerlink" title="启动 APP"></a>启动 APP</h3><p>.\adb shell am start -n 包名&#x2F;Activity名</p>
-<h3 id="强制停止-APP"><a href="#强制停止-APP" class="headerlink" title="强制停止 APP"></a>强制停止 APP</h3><p>.\adb shell am force-stop 包名  
- </p>
-<p>你现在最常用的（直接记这几个）</p>
-<p>.\adb devices # 看设备<br>.\adb connect 127.0.0.1:16384 # 连 MuMu<br>.\adb shell input tap x y # 点击<br>.\adb shell input swipe x1 y1 x2 y2 300 # 滑动</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/25/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" data-id="cuidNwD7b_HIR5fGp--4qX2aP" data-title="电脑adb连接模拟器" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026-03-23-mc服务器搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-22T16:00:00.000Z" itemprop="datePublished">2026-03-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/">mc服务器搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>1、前期准备</p>
-<p>部署服务器的电脑（可以是本地的或云服务器）</p>
-<p>一个公网IP或用内网穿透也可以</p>
-<p>安装好java 11</p>
-<p>apt update（更新库）</p>
-<p>apt install -y openjdk-17-jdk（安装java11）</p>
-<p><strong><em>2、安装<a target="_blank" rel="noopener" href="https://docs.mcsmanager.com/zh_cn/">mcsm</a></em></strong></p>
-<p>命令sudo su -c “wget -qO- <a target="_blank" rel="noopener" href="https://script.mcsmanager.com/setup/_cn.sh">https://script.mcsmanager.com/setup\_cn.sh</a> | bash”</p>
-<p>访问网页IP地址:23333</p>
-<p>记得如果连接不安全就删掉一个s用http访问</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-232611-1024x590.png"></p>
-<p>访问后会喊你注册账号和密码，按操作来就行。</p>
-<p>记得如果是默认安装市场里的要选好对应的操作系统，本人之前没注意踩过坑之后一键安装就部署好了。</p>
-<p><strong><em>3、外网访问</em></strong></p>
-<p>如果是买的云服务器，那就会有公网IP直接在mc里选好对应的版本或相应的整合包就行</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/image-1-1024x583.png"></p>
-<p>一般不更改就是默认端口25565</p>
-<p>没有公网IP就用内网穿透，一般各家的内网穿透都还行，选免费的够用，对于玩的人不是特别多的话，各家厂商也有对应的操作文档，反正只要记得你的IP地址和要穿的端口是25565就行了。</p>
-<p><strong><em>4、注意事项</em></strong></p>
-<p>如果玩的不是正版或者有联机的朋友有一个玩的不是正版就要关闭服务器的配置文档里的正版验证</p>
-<p><img src="https://suyihang15.com/wp-content/uploads/2026/03/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-234556-1-1024x620.png"></p>
-<p>基本流程就是这样的，希望你和你的朋友玩的开心。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/23/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" data-id="cuidW48EkeTPvjSOoEYaGU519" data-title="mc服务器搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -785,7 +1460,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
     </div>
   </div>
 
@@ -813,23 +1488,23 @@
       <ul>
         
           <li>
-            <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/">如何定制一个自己的Windows镜像</a>
+            <a href="/2026/04/12/2026-04-12-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%BC%80%E6%BA%90%EF%BC%89/index/">图书管理系统（已在本人GitHub仓库开源）</a>
           </li>
         
           <li>
-            <a href="/2026/04/06/2026-04-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%EF%BC%88windows%E6%B2%99%E7%9B%92%E4%B8%8Evmware%EF%BC%89/index/">虚拟机创建（windows沙盒与vmware）</a>
+            <a href="/2026/04/11/2026-04-11-%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%95%99%E8%82%B2/index/">关于学习和教育</a>
           </li>
         
           <li>
-            <a href="/2026/04/05/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
+            <a href="/2026/04/10/2026-04-10-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D/index/">编程语言介绍</a>
           </li>
         
           <li>
-            <a href="/2026/04/05/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+            <a href="/2026/04/09/2026-04-09-%E4%B8%80%E5%A5%97%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BA%A7%E5%93%81%E7%9A%84%E7%BB%84%E6%88%90/index/">一套完整的产品的组成</a>
           </li>
         
           <li>
-            <a href="/2026/04/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+            <a href="/2026/04/08/2026-04-08-%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/index/">一些感想</a>
           </li>
         
       </ul>

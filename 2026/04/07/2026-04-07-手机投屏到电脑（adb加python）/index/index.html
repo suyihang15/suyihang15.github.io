@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>手机投屏到电脑（adb加python） | Mr.苏的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注:这是本人用adb连接手机用python写的图像界面，使用前请先用adb连接好要控制的手机如果不知道怎么连接的可以看我这篇文章电脑adb连接模拟器，本项目以上传到本人Github仓库，但因为是python的原因可能会有一点延迟。 Github仓库地址:suyihang15&#x2F;ADB-link-tool: 用于有电脑上用ADB连接手机的需求的人，做了简单的图形化界面 1、环境准备 pyth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机投屏到电脑（adb加python）">
+<meta property="og:url" content="http://example.com/2026/04/07/2026-04-07-%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E5%88%B0%E7%94%B5%E8%84%91%EF%BC%88adb%E5%8A%A0python%EF%BC%89/index/index.html">
+<meta property="og:site_name" content="Mr.苏的博客">
+<meta property="og:description" content="注:这是本人用adb连接手机用python写的图像界面，使用前请先用adb连接好要控制的手机如果不知道怎么连接的可以看我这篇文章电脑adb连接模拟器，本项目以上传到本人Github仓库，但因为是python的原因可能会有一点延迟。 Github仓库地址:suyihang15&#x2F;ADB-link-tool: 用于有电脑上用ADB连接手机的需求的人，做了简单的图形化界面 1、环境准备 pyth">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/4052a2dd26f334069924f1c469a0e393-1024x720.png">
+<meta property="article:published_time" content="2026-04-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-12T09:28:55.971Z">
+<meta property="article:author" content="Mr.苏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/4052a2dd26f334069924f1c469a0e393-1024x720.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.苏的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.苏的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026-04-07-手机投屏到电脑（adb加python）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/07/2026-04-07-%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E5%88%B0%E7%94%B5%E8%84%91%EF%BC%88adb%E5%8A%A0python%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-06T16:00:00.000Z" itemprop="datePublished">2026-04-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      手机投屏到电脑（adb加python）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注:这是本人用adb连接手机用python写的图像界面，使用前请先用adb连接好要控制的手机如果不知道怎么连接的可以看我这篇文章<a target="_blank" rel="noopener" href="https://suyihang15.com/2026/03/25/%e7%94%b5%e8%84%91adb%e8%bf%9e%e6%8e%a5%e6%a8%a1%e6%8b%9f%e5%99%a8/">电脑adb连接模拟器</a>，本项目以上传到本人Github仓库，但因为是python的原因可能会有一点延迟。</p>
+<p>Github仓库地址:<a target="_blank" rel="noopener" href="https://github.com/suyihang15/ADB-link-tool/tree/main"></a><a target="_blank" rel="noopener" href="https://github.com/suyihang15/ADB-link-tool/tree/main">suyihang15&#x2F;ADB-link-tool: 用于有电脑上用ADB连接手机的需求的人，做了简单的图形化界面</a></p>
+<p><strong><em>1、环境准备</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3100/">python</a></p>
+<p><strong><em>2、源码介绍</em></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line">import tkinter as tk</span><br><span class="line">from PIL import Image, ImageTk</span><br><span class="line">import threading</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"># 改成你自己的 adb 路径</span><br><span class="line">ADB_PATH = r&quot;\adb.exe&quot; #填你下载的adb.exe文件的地址，不然后面的都不行的，记住</span><br><span class="line">WIN_W = 480</span><br><span class="line">WIN_H = 950</span><br><span class="line"></span><br><span class="line">class PhoneControl:</span><br><span class="line">    def __init__(self, root):</span><br><span class="line">        self.root = root</span><br><span class="line">        self.root.title(&quot;手机联机软件（作者Mr.苏）&quot;)</span><br><span class="line">        self.root.geometry(f&quot;&#123;WIN_W&#125;x&#123;WIN_H&#125;&quot;)</span><br><span class="line"></span><br><span class="line">        # 1. 投屏显示区域：用于显示手机画面</span><br><span class="line">        self.screen = tk.Label(root)</span><br><span class="line">        self.screen.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)</span><br><span class="line">        self.screen.bind(&quot;&lt;Button-1&gt;&quot;, self.click) # 绑定鼠标点击事件</span><br><span class="line"></span><br><span class="line">        # 2. 功能按键区：返回、主页、唤醒等</span><br><span class="line">        btn_frame = tk.Frame(root)</span><br><span class="line">        btn_frame.pack(pady=5)</span><br><span class="line">        tk.Button(btn_frame, text=&quot;返回&quot;, command=self.back).grid(row=0, column=0, padx=3)</span><br><span class="line">        tk.Button(btn_frame, text=&quot;主页&quot;, command=self.home).grid(row=0, column=1, padx=3)</span><br><span class="line">        tk.Button(btn_frame, text=&quot;唤醒&quot;, command=self.wake).grid(row=0, column=2, padx=3)</span><br><span class="line">        tk.Button(btn_frame, text=&quot;电源&quot;, command=self.power).grid(row=0, column=3, padx=3)</span><br><span class="line">        tk.Button(btn_frame, text=&quot;截图&quot;, command=self.screenshot).grid(row=0, column=4, padx=3)</span><br><span class="line"></span><br><span class="line">        # 3. ADB 命令终端区：输入自定义命令</span><br><span class="line">        term_frame = tk.Frame(root)</span><br><span class="line">        term_frame.pack(fill=tk.X, padx=10, pady=5)</span><br><span class="line">        tk.Label(term_frame, text=&quot;ADB命令：&quot;).pack(side=tk.LEFT)</span><br><span class="line">        self.cmd_input = tk.Entry(term_frame)</span><br><span class="line">        self.cmd_input.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)</span><br><span class="line">        tk.Button(term_frame, text=&quot;执行&quot;, command=self.run_cmd).pack(side=tk.LEFT)</span><br><span class="line"></span><br><span class="line">        # 命令输出框：显示命令执行结果</span><br><span class="line">        self.output_box = tk.Text(root, height=6)</span><br><span class="line">        self.output_box.pack(fill=tk.BOTH, padx=10, pady=5)</span><br><span class="line"></span><br><span class="line">        self.running = True</span><br><span class="line">        self.current_frame = None</span><br><span class="line"></span><br><span class="line">        # 启动投屏线程</span><br><span class="line">        threading.Thread(target=self.stream, daemon=True).start()</span><br><span class="line">        # 启动声音转发线程</span><br><span class="line">        threading.Thread(target=self.audio, daemon=True).start()</span><br><span class="line">        # 启动界面刷新循环</span><br><span class="line">        self.update_ui()</span><br><span class="line"></span><br><span class="line">    # ---------------------- 核心功能模块 ----------------------</span><br><span class="line">    # 投屏流获取：不断从手机抓取屏幕数据（核心循环）</span><br><span class="line">    def stream(self):</span><br><span class="line">        while self.running:</span><br><span class="line">            try:</span><br><span class="line">                # 使用 ADB  exec-out 命令抓取手机屏幕二进制流</span><br><span class="line">                data = subprocess.run([ADB_PATH, &quot;exec-out&quot;, &quot;screencap&quot;, &quot;-p&quot;], stdout=subprocess.PIPE).stdout</span><br><span class="line">                # 数据过短表示抓取失败，跳过</span><br><span class="line">                if len(data) &lt; 1000:</span><br><span class="line">                    continue</span><br><span class="line">                # 将二进制流转为 numpy 数组</span><br><span class="line">                nparr = np.frombuffer(data, np.uint8)</span><br><span class="line">                # 解码为图片</span><br><span class="line">                img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)</span><br><span class="line">                # 转换颜色格式 (BGR -&gt; RGB) 并赋值给当前帧变量</span><br><span class="line">                if img is not None:</span><br><span class="line">                    self.current_frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)</span><br><span class="line">            except:</span><br><span class="line">                pass</span><br><span class="line">            # 控制抓取频率，0.008秒 = 125帧左右</span><br><span class="line">            time.sleep(0.008)</span><br><span class="line"></span><br><span class="line">    # UI 画面刷新：将 current_frame 显示在 Label 上</span><br><span class="line">    def update_ui(self):</span><br><span class="line">        if self.current_frame is not None:</span><br><span class="line">            try:</span><br><span class="line">                h, w = self.current_frame.shape[:2]</span><br><span class="line">                # 计算缩放比例，保证画面适应窗口且不变形</span><br><span class="line">                scale = min(WIN_W/w, 850/h)</span><br><span class="line">                img = cv2.resize(self.current_frame, (int(w*scale), int(h*scale)))</span><br><span class="line">                # 转为 Tkinter 可用的图片格式</span><br><span class="line">                imgtk = ImageTk.PhotoImage(Image.fromarray(img))</span><br><span class="line">                # 更新界面显示</span><br><span class="line">                self.screen.config(image=imgtk)</span><br><span class="line">                self.screen.imgtk = imgtk # 强制保存引用，防止被垃圾回收</span><br><span class="line">            except:</span><br><span class="line">                pass</span><br><span class="line">        # 递归调用，实现每 8 毫秒刷新一次界面</span><br><span class="line">        if self.running:</span><br><span class="line">            self.root.after(8, self.update_ui)</span><br><span class="line"></span><br><span class="line">    # 鼠标点击控制：将电脑鼠标坐标映射为手机坐标并发送点击指令</span><br><span class="line">    def click(self, e):</span><br><span class="line">        if self.current_frame is None:</span><br><span class="line">            return</span><br><span class="line">        h, w = self.current_frame.shape[:2]</span><br><span class="line">        # 计算真实的手机点击位置</span><br><span class="line">        x = int(e.x * w / WIN_W)</span><br><span class="line">        y = int(e.y * h / 850)</span><br><span class="line">        # 执行 ADB 点击命令</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;tap&quot;, str(x), str(y)])</span><br><span class="line"></span><br><span class="line">    # 音频转发：通过 screenrecord 转发手机声音流</span><br><span class="line">    def audio(self):</span><br><span class="line">        while self.running:</span><br><span class="line">            try:</span><br><span class="line">                # 启动手机录屏并输出到标准输出（用于转发声音）</span><br><span class="line">                subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;screenrecord&quot;, &quot;--output-format&quot;, &quot;h264&quot;, &quot;-&quot;],</span><br><span class="line">                                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)</span><br><span class="line">            except:</span><br><span class="line">                pass</span><br><span class="line">            time.sleep(1)</span><br><span class="line"></span><br><span class="line">    # ---------------------- 基础按键功能模块 ----------------------</span><br><span class="line">    # 模拟手机返回键</span><br><span class="line">    def back(self):</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;keyevent&quot;, &quot;4&quot;])</span><br><span class="line">    # 模拟手机主页键</span><br><span class="line">    def home(self):</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;keyevent&quot;, &quot;3&quot;])</span><br><span class="line">    # 模拟多任务键</span><br><span class="line">    def recent(self):</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;keyevent&quot;, &quot;187&quot;])</span><br><span class="line">    # 模拟唤醒屏幕/点亮屏幕</span><br><span class="line">    def wake(self):</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;keyevent&quot;, &quot;224&quot;])</span><br><span class="line">    # 模拟电源键（锁屏/点亮）</span><br><span class="line">    def power(self):</span><br><span class="line">        subprocess.Popen([ADB_PATH, &quot;shell&quot;, &quot;input&quot;, &quot;keyevent&quot;, &quot;26&quot;])</span><br><span class="line"></span><br><span class="line">    # 截图功能：截取手机屏幕并保存到电脑</span><br><span class="line">    def screenshot(self):</span><br><span class="line">        try:</span><br><span class="line">            # 先在手机内存截图</span><br><span class="line">            subprocess.run([ADB_PATH, &quot;shell&quot;, &quot;screencap&quot;, &quot;/sdcard/screenshot.png&quot;])</span><br><span class="line">            # 拉取到电脑当前目录</span><br><span class="line">            subprocess.run([ADB_PATH, &quot;pull&quot;, &quot;/sdcard/screenshot.png&quot;, &quot;screenshot.png&quot;])</span><br><span class="line">            self.output_box.insert(tk.END, &quot;\n截图已保存到当前目录：screenshot.png&quot;)</span><br><span class="line">        except:</span><br><span class="line">            self.output_box.insert(tk.END, &quot;\n截图失败&quot;)</span><br><span class="line"></span><br><span class="line">    # ADB 命令执行：读取输入框的命令并执行</span><br><span class="line">    def run_cmd(self):</span><br><span class="line">        cmd = self.cmd_input.get().strip()</span><br><span class="line">        if not cmd:</span><br><span class="line">            return</span><br><span class="line">        try:</span><br><span class="line">            # 拆分命令并执行</span><br><span class="line">            res = subprocess.run([ADB_PATH] + cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)</span><br><span class="line">            # 输出结果</span><br><span class="line">            self.output_box.insert(tk.END, f&quot;\n&gt; &#123;cmd&#125;\n&#123;res.stdout&#125;&#123;res.stderr&#125;&quot;)</span><br><span class="line">            self.output_box.see(tk.END) # 滚动到最底部</span><br><span class="line">        except Exception as e:</span><br><span class="line">            self.output_box.insert(tk.END, f&quot;\n错误：&#123;str(e)&#125;&quot;)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    root = tk.Tk()</span><br><span class="line">    app = PhoneControl(root)</span><br><span class="line">    root.mainloop()</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>3、运行</em></strong></p>
+<p>（1）安装所需第三方库 pip install opencv-python numpy pillow</p>
+<p>（2）运行python文件</p>
+<p><strong><em>4、效果展示</em></strong></p>
+<p><img src="/images/4052a2dd26f334069924f1c469a0e393-1024x720.png"></p>
+<p>这些就是全部功能，如果想直接使用就直接用我打包好的exe文件就行。</p>
+<p>5、打包</p>
+<p>因为本身功能不算多，打包用pyinstaller这个，后面会再优化以下，可以自行打包试试记得要用到adb.exe哦，要把他一起打包才有用哦，因为本身是基于它的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/07/2026-04-07-%E6%89%8B%E6%9C%BA%E6%8A%95%E5%B1%8F%E5%88%B0%E7%94%B5%E8%84%91%EF%BC%88adb%E5%8A%A0python%EF%BC%89/index/" data-id="cuidY_BA52HNcDgKZCVval4Wd" data-title="手机投屏到电脑（adb加python）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/08/2026-04-08-%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          一些感想
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/06/2026-04-06-%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84windows%E9%95%9C%E5%83%8F/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何定制一个自己的Windows镜像</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/12/2026-04-12-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%BC%80%E6%BA%90%EF%BC%89/index/">图书管理系统（已在本人GitHub仓库开源）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/11/2026-04-11-%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%95%99%E8%82%B2/index/">关于学习和教育</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/10/2026-04-10-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D/index/">编程语言介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/09/2026-04-09-%E4%B8%80%E5%A5%97%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BA%A7%E5%93%81%E7%9A%84%E7%BB%84%E6%88%90/index/">一套完整的产品的组成</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/08/2026-04-08-%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/index/">一些感想</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Mr.苏<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
