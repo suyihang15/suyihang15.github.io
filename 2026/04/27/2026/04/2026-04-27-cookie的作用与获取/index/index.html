@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>cookie的作用与获取 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：本文主要是介绍cookie，至于具体的使用方式不会过多介绍。 Cookie是网站用于记录你电脑&#x2F;手机里的登录信息的东西，你可能看见过这个申请。  作用： 那么他是干什么的，我们知道，当我们访问有些网站时，他要登录，但是，当我们登录以后下次再访问相同的网站时，他就不需要我们再次登录了，这就是cookie的作用，是不是很方便。 而且，由于他是储存我们这个网站的登录信息，所以，我们可以调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cookie的作用与获取">
+<meta property="og:url" content="http://example.com/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：本文主要是介绍cookie，至于具体的使用方式不会过多介绍。 Cookie是网站用于记录你电脑&#x2F;手机里的登录信息的东西，你可能看见过这个申请。  作用： 那么他是干什么的，我们知道，当我们访问有些网站时，他要登录，但是，当我们登录以后下次再访问相同的网站时，他就不需要我们再次登录了，这就是cookie的作用，是不是很方便。 而且，由于他是储存我们这个网站的登录信息，所以，我们可以调用">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-172923-1024x198.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174224-1024x648.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174252-1024x622.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174312-1024x619.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174340-1024x595.png">
+<meta property="og:image" content="http://example.com/images/qq_pic_merged_1777283328617-1024x618.jpg">
+<meta property="article:published_time" content="2026-04-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-25T10:41:08.533Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-172923-1024x198.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/04/2026-04-27-cookie的作用与获取/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-26T16:00:00.000Z" itemprop="datePublished">2026-04-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      cookie的作用与获取
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文主要是介绍cookie，至于具体的使用方式不会过多介绍。</p>
+<p>Cookie是网站用于记录你电脑&#x2F;手机里的登录信息的东西，你可能看见过这个申请。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-172923-1024x198.png"></p>
+<p><strong><em>作用：</em></strong></p>
+<p>那么他是干什么的，我们知道，当我们访问有些网站时，他要登录，但是，当我们登录以后下次再访问相同的网站时，他就不需要我们再次登录了，这就是cookie的作用，是不是很方便。</p>
+<p>而且，由于他是储存我们这个网站的登录信息，所以，我们可以调用它做各种各样的事情，比如之前介绍的openlist挂载网盘时，就是利用了这个cookie来识别你的软件登录信息的，因此，他也有风险，可以通过这个东西来盗取你的账号和密码，但是，网站一般的话都会保护好使用者的个人信息的，一些黑客也可以利用这个东西的，请保护好你的个人cookie</p>
+<p>但是，这个也有一定的时间期限的，我们会发现，网站登录以后，过一段时间会喊你重新登录，这就是因为你的cookie失效了，所以，不用过度担心，他不是一成不变的。</p>
+<p><strong><em>获取：</em></strong></p>
+<p>这里以夸克网盘为例（其他的网站获取也大差不差）：登陆好你的账号</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174224-1024x648.png"></p>
+<p>右键检查或者按F12开启开发者模式</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174252-1024x622.png"></p>
+<p>就会弹出这个界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174312-1024x619.png"></p>
+<p>点击网络，开始是什么都没有的要手动刷新一下，就会有下面的东西</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174340-1024x595.png"></p>
+<p>随便点击一个，我这里点击的是list，就会弹出一个界面找到cookie这就是我们要的东西了。</p>
+<p><img src="/images/qq_pic_merged_1777283328617-1024x618.jpg"></p>
+<p>获取以后这个的使用就要你自己去开发了</p>
+<p>这里就些一个简单的python的调用</p>
+<p>import requests</p>
+<p>ck &#x3D; “cookie”<br>r &#x3D; requests.get(“网站”, headers&#x3D;{“Cookie”: ck})<br>print(r.text)</p>
+<p>这样就可以爬取你登录后的一些简单的网站信息，这也是最简单让机器人去通过登录的方式。</p>
+<p>总结：如果你想去学爬虫那么，这个最简单的方法你必须要知道，这基本就是一些基础，希望你能学到吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" data-id="cuidRK1unkl08BtZzgS2h1XUX" data-title="cookie的作用与获取" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/28/2026/04/2026-04-28-%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91%EF%BC%88tailscale%EF%BC%89/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          异地组网（tailscale）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/26/2026/04/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BT种子下载</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

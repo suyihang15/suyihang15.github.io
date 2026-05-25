@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>一个简单的python贪吃蛇实现方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：这是本人很早之前写的的一个小游戏，最近玩编程农场有点上头，就想复现一下之前写的的一个小游戏，现在主要介绍实现方法，以及本人打包好的exe文件 项目地址：suyihang15&#x2F;Snake-Game: 基于python实现的贪吃蛇 下载地址：https:&#x2F;&#x2F;github.com&#x2F;suyihang15&#x2F;Snake-Game&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;default.e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个简单的python贪吃蛇实现方法">
+<meta property="og:url" content="http://example.com/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：这是本人很早之前写的的一个小游戏，最近玩编程农场有点上头，就想复现一下之前写的的一个小游戏，现在主要介绍实现方法，以及本人打包好的exe文件 项目地址：suyihang15&#x2F;Snake-Game: 基于python实现的贪吃蛇 下载地址：https:&#x2F;&#x2F;github.com&#x2F;suyihang15&#x2F;Snake-Game&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;default.e">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/580384426-2889cbfc-24db-4d94-8ab0-be4c61a814c2-1-1024x608.png">
+<meta property="article:published_time" content="2026-04-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-25T10:41:08.119Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/580384426-2889cbfc-24db-4d94-8ab0-be4c61a814c2-1-1024x608.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/04/2026-04-19-一个简单的python贪吃蛇实现方法/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-18T16:00:00.000Z" itemprop="datePublished">2026-04-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      一个简单的python贪吃蛇实现方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这是本人很早之前写的的一个小游戏，最近玩编程农场有点上头，就想复现一下之前写的的一个小游戏，现在主要介绍实现方法，以及本人打包好的exe文件</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/Snake-Game">suyihang15&#x2F;Snake-Game: 基于python实现的贪吃蛇</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/Snake-Game/releases/download/1.0.0/default.exe">https://github.com/suyihang15/Snake-Game/releases/download/1.0.0/default.exe</a></p>
+<p><strong><em>1、环境配置</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3110/">python</a>（运行所要的环境）</p>
+<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/pycharm/">pycharm</a>（编写所需要的IDE，毕竟你不可能用记事本写吧，社区版是免费的）</p>
+<p>pip install pygame（安装所需的第三方库）</p>
+<p><strong><em>2、编写代码</em></strong></p>
+<p><strong>1、导入工具库</strong> （这是下面可以运行的必要条件）</p>
+<p>import pygame, random  
+ </p>
+<p>pygame  做游戏窗口、画图、按键控制的库，我觉得大部分python小游戏的实现都要靠这个小玩意</p>
+<p>random  专门用来随机生成食物位置</p>
+<p><strong>2、初始化游戏</strong>（<strong>创建游戏窗口）</strong></p>
+<p>pygame.init()<br>W, H &#x3D; 600, 400<br>screen &#x3D; pygame.display.set_mode((W, H))<br>pygame.display.set_caption(“贪吃蛇”)<br>clock &#x3D; pygame.time.Clock()  
+ </p>
+<p>pygame.init() ：启动游戏引擎，就是直接调用第三方库，不然全部逻辑你自己写得写死<br>W, H &#x3D; 600, 400 ：设定窗口宽度 600，高度 400，可以根据需要改嘛<br>screen &#x3D; … ：创建一个游戏窗口<br>set_caption(“贪吃蛇”) ：窗口标题写“贪吃蛇”，或者写你自己想到的任何你名字都行，不影响整体逻辑<br>clock &#x3D; pygame.time.Clock() ：用来控制蛇的移动速度</p>
+<p><strong>3、定义颜色</strong></p>
+<p>BLACK &#x3D; (0,0,0)<br>WHITE &#x3D; (255,255,255)<br>RED &#x3D; (255,0,0)<br>GREEN &#x3D; (0,255,0)  
+ </p>
+<p>给颜色起名字，后面画图直接用单词，不用记数字，当然你自己记得那个调色板的那个一点点写也可以，不拦你(R,G,B)三色板自己调去吧。</p>
+<p>BLACK：背景黑色</p>
+<p>RED：食物红色</p>
+<p>GREEN：蛇身体绿色</p>
+<p><strong>4、游戏基础参数</strong>（差不多就是游戏的初始值）</p>
+<p>block &#x3D; 10<br>speed &#x3D; 12  
+ </p>
+<p>block &#x3D; 10 ：蛇每一节、食物都是 10 像素大小，你可以理解为蛇和食物的大小设置</p>
+<p>speed &#x3D; 12 ：游戏每秒刷新 12 次，数字越大蛇跑得越快</p>
+<p><strong><em>5、主函数开始</em></strong></p>
+<p>def main():  
+ </p>
+<p>把整个游戏放进一个函数里</p>
+<p><strong><em>6、游戏初始状态</em></strong></p>
+<p>x, y &#x3D; W&#x2F;&#x2F;2, H&#x2F;&#x2F;2<br>dx, dy &#x3D; block, 0<br>snake &#x3D; [[x, y]]<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)]<br>score &#x3D; 0  
+ </p>
+<p>x, y &#x3D; 窗口中心 ：蛇出生在屏幕正中间，后面的就是刚好在窗口正中心，W和H我上面定义了的，注意看<br>dx, dy &#x3D; block, 0 ：- dx &#x3D; 水平方向速度</p>
+<p>dy &#x3D; 垂直方向速度</p>
+<p>一开始蛇向右走<br>snake &#x3D; [[x, y]] ：蛇是一个列表，每一节是一个坐标- 刚开始只有一个头<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)] ：随机生成食物位置，坐标是 10 的倍数，和蛇对齐<br>score &#x3D; 0 ：初始分数为 0</p>
+<p><strong><em>7、游戏主循环</em></strong>（循环运行毕竟你不可能让他一下子就结束吧）</p>
+<p>while True:  
+ </p>
+<p>游戏永远循环执行</p>
+<p>直到关闭窗口或蛇死掉才跳出</p>
+<p><strong><em>8、处理退出事件</em></strong></p>
+<p>for e in pygame.event.get():<br>if e.type &#x3D;&#x3D; pygame.QUIT:<br>pygame.quit()<br>return  
+ </p>
+<p>检测你是否点了窗口右上角的 ×</p>
+<p>点了就关闭游戏，退出程序</p>
+<p><strong><em>9、按键控制方向</em></strong></p>
+<p>if e.type &#x3D;&#x3D; pygame.KEYDOWN:<br>if e.key &#x3D;&#x3D; pygame.K_LEFT and dx &#x3D;&#x3D; 0:<br>dx, dy &#x3D; -block, 0<br>elif e.key &#x3D;&#x3D; pygame.K_RIGHT and dx &#x3D;&#x3D; 0:<br>dx, dy &#x3D; block, 0<br>elif e.key &#x3D;&#x3D; pygame.K_UP and dy &#x3D;&#x3D; 0:<br>dx, dy &#x3D; 0, -block<br>elif e.key &#x3D;&#x3D; pygame.K_DOWN and dy &#x3D;&#x3D; 0:<br>dx, dy &#x3D; 0, block  
+ </p>
+<p>按上下左右键改变蛇的方向</p>
+<p>dx &#x3D;&#x3D; 0  &#x2F;  dy &#x3D;&#x3D; 0  是为了防止蛇立刻反向撞死自己- 比如向右走时不能直接向左</p>
+<p><strong><em>10、蛇移动核心逻辑</em></strong></p>
+<p>x +&#x3D; dx<br>y +&#x3D; dy<br>snake.append([x, y])  
+ </p>
+<p>先更新蛇头坐标<br>把新蛇头加到蛇的列表最后<br>蛇看起来就像往前挪了一步</p>
+<p><strong><em>11、吃食物</em></strong></p>
+<p>if [x, y] &#x3D;&#x3D; food:<br>score +&#x3D; 1<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)]<br>else:<br>snake.pop(0)  
+ </p>
+<p>如果蛇头碰到食物：1. 分数 +1<br>重新随机生成一个食物<br>不删除尾巴 → 蛇变长</p>
+<p>没吃到食物：- 删除最后一节身体 → 蛇保持长度，只向前移动</p>
+<p><strong><em>12、碰撞检测（死亡判断）</em></strong></p>
+<p>if x &lt; 0 or x &gt;&#x3D; W or y &lt; 0 or y &gt;&#x3D; H or [x, y] in snake[:-1]:<br>print(“游戏结束！得分：”, score)<br>pygame.quit()<br>return<br> <br>满足任意一条，蛇死亡：</p>
+<p> 撞墙：x、y 超出窗口范围<br>撞自己：蛇头坐标出现在身体里<br>死掉后打印分数，关闭游戏</p>
+<p><strong><em>13、绘制画面</em></strong>（就是场景设置）</p>
+<p>screen.fill(BLACK)<br>pygame.draw.rect(screen, RED, (food[0], food[1], block, block))<br>for pos in snake:<br>pygame.draw.rect(screen, GREEN, (pos[0], pos[1], block, block))<br>pygame.display.update()<br>clock.tick(speed)  
+ </p>
+<p>全屏涂黑色<br>画红色食物方块<br>循环画出蛇的每一节<br>update() ：把画好的内容显示到屏幕<br>clock.tick(speed) ：控制游戏速度，保持稳定</p>
+<p><strong><em>14、程序入口</em></strong>（要开始喽）</p>
+<p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:<br>main()  
+ </p>
+<p>只有直接运行这个文件时，才启动游戏  main() </p>
+<p>注：上面的代码就是大致的介绍，缩进什么的自己调，基本上你有点基础的都可以看懂的，这是大致的效果</p>
+<p><img src="/images/580384426-2889cbfc-24db-4d94-8ab0-be4c61a814c2-1-1024x608.png"></p>
+<p>本人主要是介绍一下大致的实现过程，完整的代码也已经放在我github仓库了。</p>
+<p>如果改好了代码。想自己打包成exe可以看我这个<a target="_blank" rel="noopener" href="https://suyihang15.com/2026/04/05/python%e6%89%93%e5%8c%85%e6%88%90exe%ef%bc%88pyinstaller%e7%9a%84%e4%bd%bf%e7%94%a8%ef%bc%89/">python打包成exe（pyinstaller的使用） – 苏的小站</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/" data-id="cuidzelN3KFVEUvSgp5-W9AeM" data-title="一个简单的python贪吃蛇实现方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/20/2026/04/2026-04-20-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          软件安装包制作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/18/2026/04/2026-04-18-%E7%BD%91%E7%BB%9C%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%EF%BC%88%E9%92%88%E5%AF%B9%E4%BA%8Elinux%EF%BC%89/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络挂载硬盘（针对于Linux）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
