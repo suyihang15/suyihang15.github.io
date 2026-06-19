@@ -71,9 +71,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/2026-05-23-关于驱动/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-23-关于驱动/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/23/2026/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/" class="article-date">
+    <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/" class="article-date">
   <time class="dt-published" datetime="2026-05-22T16:00:00.000Z" itemprop="datePublished">2026-05-23</time>
 </a>
     
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/23/2026/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+      <a class="p-name article-title" href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
     </h1>
   
 
@@ -111,163 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/23/2026/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/" data-id="cuidbQC-MHuCnrPoNJUSI7xQW" data-title="关于驱动" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/05/2026-05-22-python-打包器-gui/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-21T16:00:00.000Z" itemprop="datePublished">2026-05-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui#python-%E6%89%93%E5%8C%85%E5%99%A8-gui"></a>注：这是一个用于把 Python 脚本打包成可执行文件的可视化工具（基于 PyInstaller）。</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui">suyihang15&#x2F;packager_gui: 一款可视化的python打包exe的工具</a></p>
-<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui/releases/download/1.0.0/packager_gui.exe">https://github.com/suyihang15/packager_gui&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;packager_gui.exe</a></p>
-<p>主要特性：</p>
-<ul>
-<li><p>支持单文件（–onefile）和目录打包</p>
-</li>
-<li><p>可选使用临时虚拟环境进行构建，避免本地环境污染</p>
-</li>
-<li><p>可添加资源&#x2F;文件夹、可选依赖 <code>requirements.txt</code>（会作为 <code>--add-data</code> 打包）</p>
-</li>
-<li><p>简洁 GUI（基于 PySide6），若未安装 PySide6 会回退到 Tkinter 界面或提示安装</p>
-</li>
-</ul>
-<p>快速开始：</p>
-<ol>
-<li>安装依赖（推荐在干净的虚拟环境中）</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>启动工具</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python packager_gui.py</span><br></pre></td></tr></table></figure>
-
-<p>使用说明：</p>
-<ul>
-<li><p>在界面中选择主脚本（.py），设置输出目录、是否单文件、是否隐藏控制台等。</p>
-</li>
-<li><p>若勾选“使用隔离虚拟环境构建”，工具会创建临时 venv、在其中安装 PyInstaller（和可选的 requirements），然后进行打包，最后清理临时目录。</p>
-</li>
-<li><p>添加的资源&#x2F;文件夹会作为 <code>--add-data</code> 加入，Windows 下路径分隔为 <code>;</code>。</p>
-</li>
-</ul>
-<p>文件说明：</p>
-<ul>
-<li><p><code>packager_gui.py</code></p>
-<ul>
-<li><p>程序入口文件。</p>
-</li>
-<li><p>运行后会导入 <code>src.ui.run_app()</code> 并启动打包器界面。</p>
-</li>
-</ul>
-</li>
-<li><p><code>src/ui.py</code></p>
-<ul>
-<li><p>GUI 前端逻辑。</p>
-</li>
-<li><p>提供选择主脚本、输出目录、图标、依赖文件、资源列表等界面控件。</p>
-</li>
-<li><p>处理用户操作并调用 <code>src.core.run_packaging()</code> 执行打包。</p>
-</li>
-</ul>
-</li>
-<li><p><code>src/core.py</code></p>
-<ul>
-<li><p>打包后端逻辑。</p>
-</li>
-<li><p>负责创建临时虚拟环境、安装 PyInstaller、安装可选依赖、生成 <code>PyInstaller</code> 命令并运行。</p>
-</li>
-<li><p>支持 <code>--onefile</code>、<code>--windowed</code>、<code>--icon</code>、<code>--add-data</code> 等参数。</p>
-</li>
-</ul>
-</li>
-<li><p><code>main.spec</code></p>
-<ul>
-<li><p><code>PyInstaller</code> 的静态配置文件。</p>
-</li>
-<li><p>定义了 <code>Analysis</code>、<code>PYZ</code>、<code>EXE</code> 等打包步骤。</p>
-</li>
-<li><p>通过 <code>console=False</code> 控制生成的 exe 是否隐藏命令行窗口。</p>
-</li>
-</ul>
-</li>
-<li><p><code>README.md</code></p>
-<ul>
-<li><p>当前项目说明文档。</p>
-</li>
-<li><p>记录安装、运行和打包说明。</p>
-</li>
-</ul>
-</li>
-<li><p><code>requirements.txt</code></p>
-<ul>
-<li>列出本工具运行所需的 Python 包依赖。</li>
-</ul>
-</li>
-<li><p><code>build/</code></p>
-<ul>
-<li><p>记录历史打包产物和中间文件。</p>
-</li>
-<li><p>不属于源代码逻辑，主要是 <code>PyInstaller</code> 打包后的输出结果。</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>把本工具本身打包为 exe：</p>
-<ol>
-<li>在项目根运行（示例）</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m PyInstaller --onefile packager_gui.py</span><br></pre></td></tr></table></figure>
-
-<p>注意事项：</p>
-<ul>
-<li><p>打包目标程序时，外部依赖会被 PyInstaller 扫描并包含，但某些第三方包（如使用动态插件）可能需要额外的 hook 或手动 <code>--add-data</code>。</p>
-</li>
-<li><p>图标需为 Windows 下的 <code>.ico</code> 文件。</p>
-</li>
-<li><p>其本身是基于pyinstaller对python文件进行打包，如果一点看不懂上面的内容，可以直接用本人打包好的exe文件，</p>
-</li>
-</ul>
-<p>软件示例： <a target="_blank" rel="noopener" href="https://private-user-images.githubusercontent.com/246879057/596005430-09393cc2-208c-4440-aada-2df71b521fb0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzkzNjU5MzgsIm5iZiI6MTc3OTM2NTYzOCwicGF0aCI6Ii8yNDY4NzkwNTcvNTk2MDA1NDMwLTA5MzkzY2MyLTIwOGMtNDQ0MC1hYWRhLTJkZjcxYjUyMWZiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUyMVQxMjEzNThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNWRmM2FhNzAzYWJiZjRlNGQ2NTYxMzcwYWY3YjBkNWYxZjFlNWM0YzBlMWU1MTEwMDQxODk4NjEwNDc4ZWZiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.MKpRWjERaMkQk6pH9aWY7NsVUvu31JPlRmhlvis5QQo"></a></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-21-164625-1024x726.png"></p>
-<p>总结：这是本人为方便学习python的想要打包出自己的exe文件所搞的，希望可以帮助他人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" data-id="cuidxqCP9qO_lgcRbzRHqOpim" data-title="Python 打包器 (GUI)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/" data-id="cuidJlAjib5eUz66ULbZhU1Vb" data-title="关于驱动" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -423,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/22/2026/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" data-id="cuidZkj1CFpF6ALnRoqbffGJs" data-title="Python 打包器 (GUI)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/22/2026/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" data-id="cuidtfkQT7Oj0BLag2gSSwRV4" data-title="Python 打包器 (GUI)" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -435,14 +279,14 @@
 
 
   
-    <article id="post-2026/05/2026-05-21-关于操作系统的选用/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-22-python-打包器-gui/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-20T16:00:00.000Z" itemprop="datePublished">2026-05-21</time>
+    <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-21T16:00:00.000Z" itemprop="datePublished">2026-05-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
   </div>
 
   </div>
@@ -453,7 +297,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+      <a class="p-name article-title" href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
     </h1>
   
 
@@ -461,22 +305,125 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：以下仅代表我个人的看法，以及推荐的操作系统。</p>
-<p>首先，选择windows，mac，Linux</p>
-<p>windows</p>
-<p>个人是觉得如果只是普通用户那么，基本上电脑上就选他就行了，因为，基本上市场上的电脑都是选用的Windows，这是没有什么好说的。</p>
-<p>版本选择，10年上建议win7，10年内建议win10，最近几年用win11，如果想怀旧就装win xp（当然在虚拟机上），首先，10年以上的电脑，配置很差了，装老系统更加流畅，不建议装精简版，因为有的问题还是很多的，通过打补丁的方式，基本上电脑运行体验还是不错的，但是，steam已经不支持win7了，所以打游戏体验会有点差，其次，关于硬件，很多老电脑其硬件对与老系统是有一定优化的，所以，建议装老系统和打补丁，win10的话是10年以内的，其不再更新以后相信是绝大多数人的选择，至于为什么最近几年的电脑我还是建议安装win11，其本身电脑性能不错，现在的，没必要安装老系统，就正常最新的就行，如果觉得烦就把自动更新关闭就行，而且，一般新系统对与这些电脑配件适配还是不错的，而且真的，不要安装精简版本的系统，如果没有需求，问题还是有点多的。</p>
-<p>mac</p>
-<p>我觉得，更多的是适合轻打游戏和从事影乐以及代码相关的，其自带的剪辑很办公软件确实很好。</p>
-<p>Linux</p>
-<p>我很不建议一般的用户去使用他，如果想要尝鲜，就去试试虚拟机，不要在主力机安装，毕竟这玩意多数是给服务器这些使用的，</p>
-<p>至于选择版本，如果新手上手，可以试试乌班图系统，这样有图形化界面的对与新手还是很友好的，不建议上手就是Arch很容易劝退的。</p>
-<p>总结：当然，以上就是一个参考，真正的选择权在你自己，自己喜欢就行了。</p>
+        <p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui#python-%E6%89%93%E5%8C%85%E5%99%A8-gui"></a>注：这是一个用于把 Python 脚本打包成可执行文件的可视化工具（基于 PyInstaller）。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui">suyihang15&#x2F;packager_gui: 一款可视化的python打包exe的工具</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/packager_gui/releases/download/1.0.0/packager_gui.exe">https://github.com/suyihang15/packager_gui&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;packager_gui.exe</a></p>
+<p>主要特性：</p>
+<ul>
+<li><p>支持单文件（–onefile）和目录打包</p>
+</li>
+<li><p>可选使用临时虚拟环境进行构建，避免本地环境污染</p>
+</li>
+<li><p>可添加资源&#x2F;文件夹、可选依赖 <code>requirements.txt</code>（会作为 <code>--add-data</code> 打包）</p>
+</li>
+<li><p>简洁 GUI（基于 PySide6），若未安装 PySide6 会回退到 Tkinter 界面或提示安装</p>
+</li>
+</ul>
+<p>快速开始：</p>
+<ol>
+<li>安装依赖（推荐在干净的虚拟环境中）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>启动工具</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python packager_gui.py</span><br></pre></td></tr></table></figure>
+
+<p>使用说明：</p>
+<ul>
+<li><p>在界面中选择主脚本（.py），设置输出目录、是否单文件、是否隐藏控制台等。</p>
+</li>
+<li><p>若勾选“使用隔离虚拟环境构建”，工具会创建临时 venv、在其中安装 PyInstaller（和可选的 requirements），然后进行打包，最后清理临时目录。</p>
+</li>
+<li><p>添加的资源&#x2F;文件夹会作为 <code>--add-data</code> 加入，Windows 下路径分隔为 <code>;</code>。</p>
+</li>
+</ul>
+<p>文件说明：</p>
+<ul>
+<li><p><code>packager_gui.py</code></p>
+<ul>
+<li><p>程序入口文件。</p>
+</li>
+<li><p>运行后会导入 <code>src.ui.run_app()</code> 并启动打包器界面。</p>
+</li>
+</ul>
+</li>
+<li><p><code>src/ui.py</code></p>
+<ul>
+<li><p>GUI 前端逻辑。</p>
+</li>
+<li><p>提供选择主脚本、输出目录、图标、依赖文件、资源列表等界面控件。</p>
+</li>
+<li><p>处理用户操作并调用 <code>src.core.run_packaging()</code> 执行打包。</p>
+</li>
+</ul>
+</li>
+<li><p><code>src/core.py</code></p>
+<ul>
+<li><p>打包后端逻辑。</p>
+</li>
+<li><p>负责创建临时虚拟环境、安装 PyInstaller、安装可选依赖、生成 <code>PyInstaller</code> 命令并运行。</p>
+</li>
+<li><p>支持 <code>--onefile</code>、<code>--windowed</code>、<code>--icon</code>、<code>--add-data</code> 等参数。</p>
+</li>
+</ul>
+</li>
+<li><p><code>main.spec</code></p>
+<ul>
+<li><p><code>PyInstaller</code> 的静态配置文件。</p>
+</li>
+<li><p>定义了 <code>Analysis</code>、<code>PYZ</code>、<code>EXE</code> 等打包步骤。</p>
+</li>
+<li><p>通过 <code>console=False</code> 控制生成的 exe 是否隐藏命令行窗口。</p>
+</li>
+</ul>
+</li>
+<li><p><code>README.md</code></p>
+<ul>
+<li><p>当前项目说明文档。</p>
+</li>
+<li><p>记录安装、运行和打包说明。</p>
+</li>
+</ul>
+</li>
+<li><p><code>requirements.txt</code></p>
+<ul>
+<li>列出本工具运行所需的 Python 包依赖。</li>
+</ul>
+</li>
+<li><p><code>build/</code></p>
+<ul>
+<li><p>记录历史打包产物和中间文件。</p>
+</li>
+<li><p>不属于源代码逻辑，主要是 <code>PyInstaller</code> 打包后的输出结果。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>把本工具本身打包为 exe：</p>
+<ol>
+<li>在项目根运行（示例）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m PyInstaller --onefile packager_gui.py</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li><p>打包目标程序时，外部依赖会被 PyInstaller 扫描并包含，但某些第三方包（如使用动态插件）可能需要额外的 hook 或手动 <code>--add-data</code>。</p>
+</li>
+<li><p>图标需为 Windows 下的 <code>.ico</code> 文件。</p>
+</li>
+<li><p>其本身是基于pyinstaller对python文件进行打包，如果一点看不懂上面的内容，可以直接用本人打包好的exe文件，</p>
+</li>
+</ul>
+<p>软件示例： <a target="_blank" rel="noopener" href="https://private-user-images.githubusercontent.com/246879057/596005430-09393cc2-208c-4440-aada-2df71b521fb0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzkzNjU5MzgsIm5iZiI6MTc3OTM2NTYzOCwicGF0aCI6Ii8yNDY4NzkwNTcvNTk2MDA1NDMwLTA5MzkzY2MyLTIwOGMtNDQ0MC1hYWRhLTJkZjcxYjUyMWZiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUyMVQxMjEzNThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNWRmM2FhNzAzYWJiZjRlNGQ2NTYxMzcwYWY3YjBkNWYxZjFlNWM0YzBlMWU1MTEwMDQxODk4NjEwNDc4ZWZiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.MKpRWjERaMkQk6pH9aWY7NsVUvu31JPlRmhlvis5QQo"></a></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-21-164625-1024x726.png"></p>
+<p>总结：这是本人为方便学习python的想要打包出自己的exe文件所搞的，希望可以帮助他人。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" data-id="cuidfhVRHZk_Qo4o48pvi44y9" data-title="关于操作系统的选用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/" data-id="cuidgdurBNz1BpsmNHfW6QfKV" data-title="Python 打包器 (GUI)" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -529,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/21/2026/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" data-id="cuidLdzmCF_Q01rIGtTzqvcWc" data-title="关于操作系统的选用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/21/2026/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" data-id="cuidKI5rz9e7ui8FxjtNzFX_U" data-title="关于操作系统的选用" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -541,14 +488,14 @@
 
 
   
-    <article id="post-2026/05/2026-05-20-系统信息采集器-gui-版本/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-21-关于操作系统的选用/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-19T16:00:00.000Z" itemprop="datePublished">2026-05-20</time>
+    <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-20T16:00:00.000Z" itemprop="datePublished">2026-05-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
   </div>
 
   </div>
@@ -559,7 +506,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/">系统信息采集器 GUI 版本</a>
+      <a class="p-name article-title" href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
     </h1>
   
 
@@ -567,104 +514,22 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注:这是一个基于 Python 的桌面应用程序，用于可视化采集电脑系统信息，并将采集结果整理展示在窗口中。用户可以直接点击“采集信息”按钮，查看系统信息，并导出为 Excel 表格。</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/system_info_gui">suyihang15&#x2F;system_info_gui: 一款基于Python的电脑信息搜集可视化工具</a></p>
-<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/system_info_gui/releases/download/1.0.0/system_info_gui.exe">https://github.com/suyihang15/system_info_gui&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;system_info_gui.exe</a></p>
-<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
-<li><p>可视化采集按钮：点击“采集信息”即可获取电脑信息</p>
-</li>
-<li><p>直接展示：采集结果实时显示在应用窗口中，不使用 HTML&#x2F;JS</p>
-</li>
-<li><p>支持导出 Excel：将所有信息整理到 <code>.xlsx</code> 文件中，方便分享和保存</p>
-</li>
-<li><p>支持 Windows 已安装程序信息采集</p>
-</li>
-</ul>
-<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
-<li><p>Windows &#x2F; macOS &#x2F; Linux</p>
-</li>
-<li><p>Python 3.8 或更高版本</p>
-</li>
-<li><p>安装依赖：<code>psutil</code>, <code>openpyxl</code>, <code>pyinstaller</code>（仅用于打包）</p>
-</li>
-</ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
-<li>打开 PowerShell，进入项目目录：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;d:\system_info_gui-main\system_info_gui-main&quot;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装依赖：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>启动应用程序：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python system_info_gui.py</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>在窗口中操作：</li>
-</ol>
-<ul>
-<li><p>点击“采集信息”按钮开始收集电脑信息</p>
-</li>
-<li><p>等待窗口显示系统、CPU、内存、磁盘、网络、进程、环境变量等信息</p>
-</li>
-<li><p>点击“导出 Excel”按钮，将当前结果保存为 <code>.xlsx</code> 文件</p>
-</li>
-</ul>
-<h2 id="界面说明"><a href="#界面说明" class="headerlink" title="界面说明"></a>界面说明</h2><ul>
-<li><p>采集按钮：按下后程序会读取本机硬件和软件信息</p>
-</li>
-<li><p>状态提示：显示当前是否已完成采集</p>
-</li>
-<li><p>文本输出区域：按模块分节展示采集后的结果</p>
-</li>
-<li><p>导出按钮：将全部信息写入 Excel，保存为表格文件</p>
-</li>
-</ul>
-<h2 id="原理与思路"><a href="#原理与思路" class="headerlink" title="原理与思路"></a>原理与思路</h2><ol>
-<li><p><code>psutil</code>：获取CPU、内存、磁盘、网络、进程等系统信息</p>
-</li>
-<li><p><code>socket</code> 和 <code>platform</code>：获取主机名、操作系统与硬件类型</p>
-</li>
-<li><p><code>os.environ</code>：读取当前环境变量</p>
-</li>
-<li><p><code>openpyxl</code>：生成 Excel 文件并写入多张工作表</p>
-</li>
-<li><p><code>tkinter</code>：创建桌面 GUI 界面，显示结果并提供按钮操作</p>
-</li>
-</ol>
-<p>程序流程：</p>
-<ul>
-<li><p>用户点击“采集信息”按钮</p>
-</li>
-<li><p>程序调用信息采集函数，构建一个字典报告</p>
-</li>
-<li><p>将报告格式化为可读文本，显示在窗口中</p>
-</li>
-<li><p>用户点击“导出 Excel”按钮，程序把每个信息模块写入不同工作表</p>
-</li>
-</ul>
-<h2 id="打包成exe"><a href="#打包成exe" class="headerlink" title="打包成exe"></a>打包成exe</h2><h3 id="直接使用-PyInstaller-命令"><a href="#直接使用-PyInstaller-命令" class="headerlink" title="直接使用 PyInstaller 命令"></a>直接使用 PyInstaller 命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --onefile --noconsole --name SystemInfoCollector system_info_gui.py</span><br></pre></td></tr></table></figure>
-
-<p>如果希望带控制台窗口显示调试信息，可以去掉 <code>--noconsole</code>。</p>
-<h2 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h2><ul>
-<li><p><code>system_info_gui.py</code>：主程序源码</p>
-</li>
-<li><p><code>requirements.txt</code>：运行和打包所需依赖</p>
-</li>
-<li><p><code>README.md</code>：项目说明与使用方法</p>
-</li>
-</ul>
-<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="/images/594688135-ad00a9cc-e020-4390-b5de-7fa49e9f3dbe-1024x847.png"></p>
-<p>总结：这是本人写的，希望能帮到你。</p>
+        <p>注：以下仅代表我个人的看法，以及推荐的操作系统。</p>
+<p>首先，选择windows，mac，Linux</p>
+<p>windows</p>
+<p>个人是觉得如果只是普通用户那么，基本上电脑上就选他就行了，因为，基本上市场上的电脑都是选用的Windows，这是没有什么好说的。</p>
+<p>版本选择，10年上建议win7，10年内建议win10，最近几年用win11，如果想怀旧就装win xp（当然在虚拟机上），首先，10年以上的电脑，配置很差了，装老系统更加流畅，不建议装精简版，因为有的问题还是很多的，通过打补丁的方式，基本上电脑运行体验还是不错的，但是，steam已经不支持win7了，所以打游戏体验会有点差，其次，关于硬件，很多老电脑其硬件对与老系统是有一定优化的，所以，建议装老系统和打补丁，win10的话是10年以内的，其不再更新以后相信是绝大多数人的选择，至于为什么最近几年的电脑我还是建议安装win11，其本身电脑性能不错，现在的，没必要安装老系统，就正常最新的就行，如果觉得烦就把自动更新关闭就行，而且，一般新系统对与这些电脑配件适配还是不错的，而且真的，不要安装精简版本的系统，如果没有需求，问题还是有点多的。</p>
+<p>mac</p>
+<p>我觉得，更多的是适合轻打游戏和从事影乐以及代码相关的，其自带的剪辑很办公软件确实很好。</p>
+<p>Linux</p>
+<p>我很不建议一般的用户去使用他，如果想要尝鲜，就去试试虚拟机，不要在主力机安装，毕竟这玩意多数是给服务器这些使用的，</p>
+<p>至于选择版本，如果新手上手，可以试试乌班图系统，这样有图形化界面的对与新手还是很友好的，不建议上手就是Arch很容易劝退的。</p>
+<p>总结：当然，以上就是一个参考，真正的选择权在你自己，自己喜欢就行了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" data-id="cuid5aeVnfGhU9DOVdsb2thVi" data-title="系统信息采集器 GUI 版本" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/" data-id="cuidm6IDWeKMKamZVREYtyXMl" data-title="关于操作系统的选用" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -799,7 +664,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/20/2026/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" data-id="cuidaL76F39L4quA0_e6LLyoC" data-title="系统信息采集器 GUI 版本" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/20/2026/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" data-id="cuidUm6NBKJ6MyCImt-V2HGXC" data-title="系统信息采集器 GUI 版本" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -811,14 +676,14 @@
 
 
   
-    <article id="post-2026/05/2026-05-19-taken（数字指纹记录）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-20-系统信息采集器-gui-版本/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-18T16:00:00.000Z" itemprop="datePublished">2026-05-19</time>
+    <a href="/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-19T16:00:00.000Z" itemprop="datePublished">2026-05-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
   </div>
 
   </div>
@@ -829,7 +694,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/">taken（数字指纹记录）</a>
+      <a class="p-name article-title" href="/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/">系统信息采集器 GUI 版本</a>
     </h1>
   
 
@@ -837,18 +702,104 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注:这是一个用于直观表现你浏览网页时，网站的运营人员可以看见那些信息的网站。</p>
-<p>网站地址：<a target="_blank" rel="noopener" href="https://sinceyouarrived.world/taken">taken. — Since You Arrived Vol. IV</a></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-19-173336-1024x563.png"></p>
-<p>大致是这个样子，其后面就会自动显示你的一些信息了</p>
-<p>源码下载</p>
-<p>其作者原本并没有在GitHub上开源，但是其本身只是一个静态网页，所以只需要打开开发者模式直接就可以把源码下载下来。</p>
-<p>总结：如果你想要看看一般访问网站其会可以看见那些内容，你可以试试，并分析源码。</p>
+        <p>注:这是一个基于 Python 的桌面应用程序，用于可视化采集电脑系统信息，并将采集结果整理展示在窗口中。用户可以直接点击“采集信息”按钮，查看系统信息，并导出为 Excel 表格。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/system_info_gui">suyihang15&#x2F;system_info_gui: 一款基于Python的电脑信息搜集可视化工具</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/system_info_gui/releases/download/1.0.0/system_info_gui.exe">https://github.com/suyihang15/system_info_gui&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;system_info_gui.exe</a></p>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
+<li><p>可视化采集按钮：点击“采集信息”即可获取电脑信息</p>
+</li>
+<li><p>直接展示：采集结果实时显示在应用窗口中，不使用 HTML&#x2F;JS</p>
+</li>
+<li><p>支持导出 Excel：将所有信息整理到 <code>.xlsx</code> 文件中，方便分享和保存</p>
+</li>
+<li><p>支持 Windows 已安装程序信息采集</p>
+</li>
+</ul>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
+<li><p>Windows &#x2F; macOS &#x2F; Linux</p>
+</li>
+<li><p>Python 3.8 或更高版本</p>
+</li>
+<li><p>安装依赖：<code>psutil</code>, <code>openpyxl</code>, <code>pyinstaller</code>（仅用于打包）</p>
+</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
+<li>打开 PowerShell，进入项目目录：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;d:\system_info_gui-main\system_info_gui-main&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装依赖：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>启动应用程序：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python system_info_gui.py</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>在窗口中操作：</li>
+</ol>
+<ul>
+<li><p>点击“采集信息”按钮开始收集电脑信息</p>
+</li>
+<li><p>等待窗口显示系统、CPU、内存、磁盘、网络、进程、环境变量等信息</p>
+</li>
+<li><p>点击“导出 Excel”按钮，将当前结果保存为 <code>.xlsx</code> 文件</p>
+</li>
+</ul>
+<h2 id="界面说明"><a href="#界面说明" class="headerlink" title="界面说明"></a>界面说明</h2><ul>
+<li><p>采集按钮：按下后程序会读取本机硬件和软件信息</p>
+</li>
+<li><p>状态提示：显示当前是否已完成采集</p>
+</li>
+<li><p>文本输出区域：按模块分节展示采集后的结果</p>
+</li>
+<li><p>导出按钮：将全部信息写入 Excel，保存为表格文件</p>
+</li>
+</ul>
+<h2 id="原理与思路"><a href="#原理与思路" class="headerlink" title="原理与思路"></a>原理与思路</h2><ol>
+<li><p><code>psutil</code>：获取CPU、内存、磁盘、网络、进程等系统信息</p>
+</li>
+<li><p><code>socket</code> 和 <code>platform</code>：获取主机名、操作系统与硬件类型</p>
+</li>
+<li><p><code>os.environ</code>：读取当前环境变量</p>
+</li>
+<li><p><code>openpyxl</code>：生成 Excel 文件并写入多张工作表</p>
+</li>
+<li><p><code>tkinter</code>：创建桌面 GUI 界面，显示结果并提供按钮操作</p>
+</li>
+</ol>
+<p>程序流程：</p>
+<ul>
+<li><p>用户点击“采集信息”按钮</p>
+</li>
+<li><p>程序调用信息采集函数，构建一个字典报告</p>
+</li>
+<li><p>将报告格式化为可读文本，显示在窗口中</p>
+</li>
+<li><p>用户点击“导出 Excel”按钮，程序把每个信息模块写入不同工作表</p>
+</li>
+</ul>
+<h2 id="打包成exe"><a href="#打包成exe" class="headerlink" title="打包成exe"></a>打包成exe</h2><h3 id="直接使用-PyInstaller-命令"><a href="#直接使用-PyInstaller-命令" class="headerlink" title="直接使用 PyInstaller 命令"></a>直接使用 PyInstaller 命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --onefile --noconsole --name SystemInfoCollector system_info_gui.py</span><br></pre></td></tr></table></figure>
+
+<p>如果希望带控制台窗口显示调试信息，可以去掉 <code>--noconsole</code>。</p>
+<h2 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h2><ul>
+<li><p><code>system_info_gui.py</code>：主程序源码</p>
+</li>
+<li><p><code>requirements.txt</code>：运行和打包所需依赖</p>
+</li>
+<li><p><code>README.md</code>：项目说明与使用方法</p>
+</li>
+</ul>
+<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="/images/594688135-ad00a9cc-e020-4390-b5de-7fa49e9f3dbe-1024x847.png"></p>
+<p>总结：这是本人写的，希望能帮到你。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" data-id="cuidWpafX4E1BqWZ4GrIL0nRG" data-title="taken（数字指纹记录）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/20/2026/05/2026-05-20-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%99%A8-gui-%E7%89%88%E6%9C%AC/index/" data-id="cuidE5zlRskWHzPMDvWi7_wJM" data-title="系统信息采集器 GUI 版本" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -897,7 +848,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/19/2026/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" data-id="cuidrjx5x5QJx0IRcBNOhRcVy" data-title="taken（数字指纹记录）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/19/2026/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" data-id="cuidqVzQ_zX1akAFqfTC7vIWZ" data-title="taken（数字指纹记录）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -909,9 +860,58 @@
 
 
   
-    <article id="post-2026/05/2026-05-18-编译自己的操作系统（基于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-19-taken（数字指纹记录）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
+    <a href="/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-18T16:00:00.000Z" itemprop="datePublished">2026-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/">taken（数字指纹记录）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注:这是一个用于直观表现你浏览网页时，网站的运营人员可以看见那些信息的网站。</p>
+<p>网站地址：<a target="_blank" rel="noopener" href="https://sinceyouarrived.world/taken">taken. — Since You Arrived Vol. IV</a></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-19-173336-1024x563.png"></p>
+<p>大致是这个样子，其后面就会自动显示你的一些信息了</p>
+<p>源码下载</p>
+<p>其作者原本并没有在GitHub上开源，但是其本身只是一个静态网页，所以只需要打开开发者模式直接就可以把源码下载下来。</p>
+<p>总结：如果你想要看看一般访问网站其会可以看见那些内容，你可以试试，并分析源码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/19/2026/05/2026-05-19-taken%EF%BC%88%E6%95%B0%E5%AD%97%E6%8C%87%E7%BA%B9%E8%AE%B0%E5%BD%95%EF%BC%89/index/" data-id="cuid3IKoZ4Q0-15KzmDbTpzGI" data-title="taken（数字指纹记录）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-18-编译自己的操作系统（基于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
   <time class="dt-published" datetime="2026-05-17T16:00:00.000Z" itemprop="datePublished">2026-05-18</time>
 </a>
     
@@ -927,7 +927,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/">编译自己的操作系统（基于Linux）</a>
+      <a class="p-name article-title" href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/">编译自己的操作系统（基于Linux）</a>
     </h1>
   
 
@@ -1076,7 +1076,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuidCyBs43L-vHqPUlbkxFg-y" data-title="编译自己的操作系统（基于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuiduRTe8tzmcfWHZWXFEZB3e" data-title="编译自己的操作系统（基于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

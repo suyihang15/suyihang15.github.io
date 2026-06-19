@@ -71,180 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/04/2026-04-25-python教程（字符串）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/">python教程（字符串）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：字符串按我自己的理解就是程序里所有文字信息，全部都是字符串，只不过我们不叫文字，叫字符串，你可以理解为专有名词。</p>
-<p>作用</p>
-<p>我们几乎所有的代码都需要用到，毕竟你不可能不写任何文字信息吧，那些都叫做字符串。</p>
-<p><strong><em>1.字符串下标取值</em></strong></p>
-<p>s &#x3D; “python”<br>print(s[0])  
- </p>
-<p>解释：<br>取出字符串里单独某一个字符<br>字符位置从0开始依次排序</p>
-<p>比如这个代码输出的就是一个p，因为s定义为pythoon，要输出第一个字符这里记住是要从0开始的。</p>
-<p>注意事项：</p>
-<p>1. 下标从0开始，不是从1<br>2. 数字不能超出字符总数，超出直接报错<br>3. 只能一个数字，不能写区间</p>
-<p><em><strong>2.字符串切片截取</strong></em></p>
-<p>s &#x3D; “hello python”<br>print(s[0:5])  
- </p>
-<p>解释：<br>从字符串当中，截取一整段文字</p>
-<p>这里输出的就是hello</p>
-<p>注意事项：</p>
-<p>1. 规则：包头不包尾<br>2. 左边数字能取到，右边数字取不到<br>3. 冒号两边可以省略数字</p>
-<p><strong><em>3.获取字符串长度</em></strong></p>
-<p>len(s)  
- </p>
-<p>解释：<br>自动统计s字符串一共有多少个字</p>
-<p>但是你要先定义这个s</p>
-<p>注意事项：</p>
-<p>1. 空格、符号、汉字全都算长度<br>2. len()里面必须放字符串</p>
-<p><strong><em>4.字符串拼接</em></strong></p>
-<p>a &#x3D; “我”<br>b &#x3D; “python”<br>print(a + b)  
- </p>
-<p>解释：<br>把两段文字合并拼接在一起</p>
-<p>输出为 我python</p>
-<p>注意事项：</p>
-<p>1. 只能字符串 + 字符串<br>2. 不能字符串和数字直接相加</p>
-<p><strong><em>5.字符串重复输出</em></strong></p>
-<p>print(“666” * 3)  
- </p>
-<p>解释：<br>让一段文字自动重复打印多次</p>
-<p>这里会输出666666666</p>
-<p>注意事项：</p>
-<p>1. 只能 字符串 * 数字<br>2. 不可以数字 * 字符串以外内容</p>
-<p><strong><em>6.大小写转换</em></strong></p>
-<p>s.upper()<br>s.lower()  
- </p>
-<p>解释：<br>英文全部变大写 upper&#x2F; 全部变小写lower</p>
-<p>这里前面s是你定义的东西</p>
-<p>注意事项：</p>
-<p>1. 只对英文字母生效<br>2. 汉字、符号不会发生变化</p>
-<p><strong><em>7.去除两边空格</em></strong></p>
-<p>s.strip()  
- </p>
-<p>解释：<br>删掉字符串前后多余空白空格</p>
-<p>注意事项：<br>只会去掉最前面和最后面<br>中间空格不会删除</p>
-<p><strong><em>8.查找字符位置</em></strong></p>
-<p>s.find(“p”)  
- </p>
-<p>解释：<br>查找某个文字出现在第几个位置</p>
-<p>注意事项：</p>
-<p>1. 找到返回下标数字<br>2. 找不到内容直接返回 -1</p>
-<p><strong><em>9.字符串内容替换</em></strong></p>
-<p>s.replace(“a”,”b”)  
- </p>
-<p>解释：<br>把字符串里面旧文字，换成新文字</p>
-<p>注意事项：</p>
-<p>1. 不会改变原本字符串<br>2. 可以一次性替换所有相同字符</p>
-<p>字符串整体大注意</p>
-<p>1. 引号必须是英文引号<br>2. 字符串里面的字，不能单独修改<br>3. 下标一律从0开始计算<br>4. 不要越界取值，极易代码报错<br>5. 字符串属于不可修改数据类型</p>
-<p>总结：这些就是大致的内容了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" data-id="cuidIjHbbnYWk7JQGctWnCbji" data-title="python教程（字符串）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-04-25-python基础（会看报错）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/">python基础（会看报错）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：这里就只讲一些简单常见的报错问题及其情况，帮助人查看理解，具体的情况还要具体分析，因为报错的情况太多了。</p>
-<p>基本的错误代码：</p>
-<h2 id="IndentationError-expected-an-indented-block"><a href="#IndentationError-expected-an-indented-block" class="headerlink" title="IndentationError: expected an indented block"></a><strong><em>IndentationError: expected an indented block</em></strong></h2><p>原因：冒号下面没有空格缩进，代码没往右挪<br>解决：冒号下一行统一缩进4个空格</p>
-<h2 id="SyntaxError-invalid-syntax"><a href="#SyntaxError-invalid-syntax" class="headerlink" title="SyntaxError: invalid syntax"></a><em><strong>SyntaxError: invalid syntax</strong></em></h2><p>原因：中文逗号、中文引号、中文冒号、少标点、格式乱<br>解决：所有符号全部切换英文输入法</p>
-<h2 id="NameError-name-‘xxx’-is-not-defined"><a href="#NameError-name-‘xxx’-is-not-defined" class="headerlink" title="NameError: name ‘xxx’ is not defined"></a><strong><em>NameError: name ‘xxx’ is not defined</em></strong></h2><p>原因：变量、函数名字没提前写，直接拿来用<br>解决：先定义，再使用</p>
-<h2 id="IndexError-string-index-out-of-range"><a href="#IndexError-string-index-out-of-range" class="headerlink" title="IndexError: string index out of range"></a><strong><em>IndexError: string index out of range</em></strong></h2><p>原因：字符串、列表取值数字太大，没有这个位置<br>解决：下标从0开始，数字写小一点</p>
-<h2 id="KeyError"><a href="#KeyError" class="headerlink" title="KeyError"></a><em><strong>KeyError</strong></em></h2><p>原因：字典里面没有你写的这个名字，单词写错<br>解决：核对字典关键字，一字不差</p>
-<h2 id="TypeError-object-of-type-‘int’-has-no-len"><a href="#TypeError-object-of-type-‘int’-has-no-len" class="headerlink" title="TypeError: object of type ‘int’ has no len()"></a><strong><em>TypeError: object of type ‘int’ has no len()</em></strong></h2><p>原因：给数字用len()、下标取值</p>
-<p>解决：len只能用文字、列表，不能用数字</p>
-<h2 id="TypeError-can-only-concatenate-str-not-“int”-to-str"><a href="#TypeError-can-only-concatenate-str-not-“int”-to-str" class="headerlink" title="TypeError: can only concatenate str (not “int”) to str"></a><em><strong>TypeError: can only concatenate str (not “int”) to str</strong></em></h2><p>原因：文字和数字直接相加拼接<br>解决：不要字符串和数字混着相加</p>
-<h2 id="TypeError-missing-1-required-positional-argument"><a href="#TypeError-missing-1-required-positional-argument" class="headerlink" title="TypeError: missing 1 required positional argument"></a><strong><em>TypeError: missing 1 required positional argument</em></strong></h2><p>原因：函数有参数，调用的时候括号空着没传东西<br>解决：调用括号里填上内容</p>
-<h2 id="TypeError-takes-0-arguments-but-1-was-given"><a href="#TypeError-takes-0-arguments-but-1-was-given" class="headerlink" title="TypeError: takes 0 arguments but 1 was given"></a><strong><em>TypeError: takes 0 arguments but 1 was given</em></strong></h2><p>原因：函数没有参数，调用时多写了内容<br>解决：调用括号清空</p>
-<h2 id="NameError-name-‘fun’-is-not-defined"><a href="#NameError-name-‘fun’-is-not-defined" class="headerlink" title="NameError: name ‘fun’ is not defined"></a><strong><em>NameError: name ‘fun’ is not defined</em></strong></h2><p>原因：先调用函数，后面才写def函数<br>解决：从上到下，先定义函数，再调用</p>
-<h2 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a><strong><em>SyntaxError</em></strong></h2><p>原因：定义函数括号里写带引号内容<br>解决：def括号只写名字，引号内容写在调用那里</p>
-<h2 id="IndentationError-unindent-does-not-match"><a href="#IndentationError-unindent-does-not-match" class="headerlink" title="IndentationError: unindent does not match"></a><strong><em>IndentationError: unindent does not match</em></strong></h2><p>原因：缩进一会大一会小，空格很乱<br>解决：全部对齐，缩进大小统一</p>
-<h2 id="TypeError-unsupported-operand-type"><a href="#TypeError-unsupported-operand-type" class="headerlink" title="TypeError: unsupported operand type"></a><strong><em>TypeError: unsupported operand type</em></strong></h2><p>原因：两个不能加减的数据强行运算<br>解决：换成相同类型数据计算</p>
-<h2 id="代码不报错，运行空白啥都不出来"><a href="#代码不报错，运行空白啥都不出来" class="headerlink" title="代码不报错，运行空白啥都不出来"></a><strong><em>代码不报错，运行空白啥都不出来</em></strong></h2><p>原因：只写了函数，没有调用函数<br>解决：最后一行加上 函数名()</p>
-<h2 id="SyntaxError-EOL-while-scanning-string-literal"><a href="#SyntaxError-EOL-while-scanning-string-literal" class="headerlink" title="SyntaxError: EOL while scanning string literal"></a><strong><em>SyntaxError: EOL while scanning string literal</em></strong></h2><p>原因：引号只写了一半，少半边引号<br>解决：引号左右成对写完整</p>
-<h2 id="TypeError-len-takes-exactly-one-argument"><a href="#TypeError-len-takes-exactly-one-argument" class="headerlink" title="TypeError: len() takes exactly one argument"></a><strong><em>TypeError: len() takes exactly one argument</em></strong></h2><p>原因：len括号里多写、少写内容<br>解决：len()里面只放一个数据</p>
-<h2 id="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"><a href="#总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。" class="headerlink" title="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"></a><strong><em>总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。</em></strong></h2><p>拓展：Python自带功能有限，想要实现更多功能，需要第三方库<br>第三方库不属于自带内容，需要手动安装、引入使用</p>
-<p>引入是import 库名</p>
-<p>安装是在终端输入pip install 库 （当然可能会因为网络安装不行，请自己去配网络镜像，清华源这些）</p>
-<p>当然这就不是本人要说的内容，主要就推荐常见的几个库自己去学吧</p>
-<p>pygame游戏库、random 随机库、time 时间库、turtle 画图库、pywin32自动化、pyautogui自动化、requests 网络请求库、pillow 图片处理库、</p>
-<p>自己去学就行，网上有不少教程，希望我写的这些对你有帮助，越来越好。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" data-id="cuidbfWymEOI9pF-kr1z8rjwS" data-title="python基础（会看报错）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-2026/2026-04-25-python教程（字符串）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/04/25/2026/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" class="article-date">
@@ -340,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" data-id="cuidF0CvQbf93C7Dfgnl8o3Fi" data-title="python教程（字符串）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" data-id="cuidKvwi6o1ndfT5Ta7mVvi2y" data-title="python教程（字符串）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -352,9 +178,74 @@
 
 
   
-    <article id="post-2026/2026-04-25-python的基础（列表字典）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-04-25-关于阴影/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" class="article-date">
+    <a href="/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/">关于阴影</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本篇内容仅为个人对阴影的简单研究及感悟</p>
+<p>我们知道，一个组件单独放置在窗口中，会显得单调</p>
+<p><img src="/images/image-13.png"></p>
+<p>但是如果给这个组件加上一点阴影，就会给人一种立体感，从而使这个组件在窗口中能够凸显出来</p>
+<p><img src="/images/image-14.png"></p>
+<p>与没加上阴影之前，上图中仅仅是在组件边缘加上了一圈阴影，就给人一种奇特的感觉</p>
+<p>当然，这种阴影仅仅是最普通的</p>
+<p>通过对PS的基本使用研究，我发现了阴影角度这个东西</p>
+<p>在使用其他软件&#x2F;浏览一些网页的时候，我们都可以发现他们的组件阴影都带有一定角度</p>
+<p>如：</p>
+<p><img src="/images/image-15.png"></p>
+<p>其实阴影角度并不难理解</p>
+<p>只需要将底层的阴影与上层的组件产生位置上的偏移就可以实现这样的阴影角度效果</p>
+<p>明白了原理之后，我们也可以靠它实现各种阴影角度效果，像这样：</p>
+<p><img src="/images/image-17.png"></p>
+<p>我们也可以通过改变阴影的大小、阴影颜色的透明度，来实现鼠标移入组件后的一些特效</p>
+<p>当然，我们也可以设置两个阴影，当这两个阴影颜色相反（对比色），并且位置的偏移也相反时，我们就可以得到这样的效果</p>
+<p><img src="/images/image-18.png"></p>
+<p><img src="/images/image-21.png"></p>
+<p>关于阴影的玩法其实还有许多，如将阴影放在组件里面、阴影清晰度调高等</p>
+<p>阴影的每种玩法都会使这个组件所突出的效果不同</p>
+<p>以上就是我个人这么久以来对于阴影的感悟</p>
+<p>by.灵弦MuaMua</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/" data-id="cuidB0wxpL4D_ks1d1Q1ZA7Ks" data-title="关于阴影" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python基础（会看报错）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" class="article-date">
   <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
 </a>
     
@@ -370,7 +261,250 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/">python的基础（列表+字典）</a>
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/">python基础（会看报错）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这里就只讲一些简单常见的报错问题及其情况，帮助人查看理解，具体的情况还要具体分析，因为报错的情况太多了。</p>
+<p>基本的错误代码：</p>
+<h2 id="IndentationError-expected-an-indented-block"><a href="#IndentationError-expected-an-indented-block" class="headerlink" title="IndentationError: expected an indented block"></a><strong><em>IndentationError: expected an indented block</em></strong></h2><p>原因：冒号下面没有空格缩进，代码没往右挪<br>解决：冒号下一行统一缩进4个空格</p>
+<h2 id="SyntaxError-invalid-syntax"><a href="#SyntaxError-invalid-syntax" class="headerlink" title="SyntaxError: invalid syntax"></a><em><strong>SyntaxError: invalid syntax</strong></em></h2><p>原因：中文逗号、中文引号、中文冒号、少标点、格式乱<br>解决：所有符号全部切换英文输入法</p>
+<h2 id="NameError-name-‘xxx’-is-not-defined"><a href="#NameError-name-‘xxx’-is-not-defined" class="headerlink" title="NameError: name ‘xxx’ is not defined"></a><strong><em>NameError: name ‘xxx’ is not defined</em></strong></h2><p>原因：变量、函数名字没提前写，直接拿来用<br>解决：先定义，再使用</p>
+<h2 id="IndexError-string-index-out-of-range"><a href="#IndexError-string-index-out-of-range" class="headerlink" title="IndexError: string index out of range"></a><strong><em>IndexError: string index out of range</em></strong></h2><p>原因：字符串、列表取值数字太大，没有这个位置<br>解决：下标从0开始，数字写小一点</p>
+<h2 id="KeyError"><a href="#KeyError" class="headerlink" title="KeyError"></a><em><strong>KeyError</strong></em></h2><p>原因：字典里面没有你写的这个名字，单词写错<br>解决：核对字典关键字，一字不差</p>
+<h2 id="TypeError-object-of-type-‘int’-has-no-len"><a href="#TypeError-object-of-type-‘int’-has-no-len" class="headerlink" title="TypeError: object of type ‘int’ has no len()"></a><strong><em>TypeError: object of type ‘int’ has no len()</em></strong></h2><p>原因：给数字用len()、下标取值</p>
+<p>解决：len只能用文字、列表，不能用数字</p>
+<h2 id="TypeError-can-only-concatenate-str-not-“int”-to-str"><a href="#TypeError-can-only-concatenate-str-not-“int”-to-str" class="headerlink" title="TypeError: can only concatenate str (not “int”) to str"></a><em><strong>TypeError: can only concatenate str (not “int”) to str</strong></em></h2><p>原因：文字和数字直接相加拼接<br>解决：不要字符串和数字混着相加</p>
+<h2 id="TypeError-missing-1-required-positional-argument"><a href="#TypeError-missing-1-required-positional-argument" class="headerlink" title="TypeError: missing 1 required positional argument"></a><strong><em>TypeError: missing 1 required positional argument</em></strong></h2><p>原因：函数有参数，调用的时候括号空着没传东西<br>解决：调用括号里填上内容</p>
+<h2 id="TypeError-takes-0-arguments-but-1-was-given"><a href="#TypeError-takes-0-arguments-but-1-was-given" class="headerlink" title="TypeError: takes 0 arguments but 1 was given"></a><strong><em>TypeError: takes 0 arguments but 1 was given</em></strong></h2><p>原因：函数没有参数，调用时多写了内容<br>解决：调用括号清空</p>
+<h2 id="NameError-name-‘fun’-is-not-defined"><a href="#NameError-name-‘fun’-is-not-defined" class="headerlink" title="NameError: name ‘fun’ is not defined"></a><strong><em>NameError: name ‘fun’ is not defined</em></strong></h2><p>原因：先调用函数，后面才写def函数<br>解决：从上到下，先定义函数，再调用</p>
+<h2 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a><strong><em>SyntaxError</em></strong></h2><p>原因：定义函数括号里写带引号内容<br>解决：def括号只写名字，引号内容写在调用那里</p>
+<h2 id="IndentationError-unindent-does-not-match"><a href="#IndentationError-unindent-does-not-match" class="headerlink" title="IndentationError: unindent does not match"></a><strong><em>IndentationError: unindent does not match</em></strong></h2><p>原因：缩进一会大一会小，空格很乱<br>解决：全部对齐，缩进大小统一</p>
+<h2 id="TypeError-unsupported-operand-type"><a href="#TypeError-unsupported-operand-type" class="headerlink" title="TypeError: unsupported operand type"></a><strong><em>TypeError: unsupported operand type</em></strong></h2><p>原因：两个不能加减的数据强行运算<br>解决：换成相同类型数据计算</p>
+<h2 id="代码不报错，运行空白啥都不出来"><a href="#代码不报错，运行空白啥都不出来" class="headerlink" title="代码不报错，运行空白啥都不出来"></a><strong><em>代码不报错，运行空白啥都不出来</em></strong></h2><p>原因：只写了函数，没有调用函数<br>解决：最后一行加上 函数名()</p>
+<h2 id="SyntaxError-EOL-while-scanning-string-literal"><a href="#SyntaxError-EOL-while-scanning-string-literal" class="headerlink" title="SyntaxError: EOL while scanning string literal"></a><strong><em>SyntaxError: EOL while scanning string literal</em></strong></h2><p>原因：引号只写了一半，少半边引号<br>解决：引号左右成对写完整</p>
+<h2 id="TypeError-len-takes-exactly-one-argument"><a href="#TypeError-len-takes-exactly-one-argument" class="headerlink" title="TypeError: len() takes exactly one argument"></a><strong><em>TypeError: len() takes exactly one argument</em></strong></h2><p>原因：len括号里多写、少写内容<br>解决：len()里面只放一个数据</p>
+<h2 id="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"><a href="#总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。" class="headerlink" title="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"></a><strong><em>总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。</em></strong></h2><p>拓展：Python自带功能有限，想要实现更多功能，需要第三方库<br>第三方库不属于自带内容，需要手动安装、引入使用</p>
+<p>引入是import 库名</p>
+<p>安装是在终端输入pip install 库 （当然可能会因为网络安装不行，请自己去配网络镜像，清华源这些）</p>
+<p>当然这就不是本人要说的内容，主要就推荐常见的几个库自己去学吧</p>
+<p>pygame游戏库、random 随机库、time 时间库、turtle 画图库、pywin32自动化、pyautogui自动化、requests 网络请求库、pillow 图片处理库、</p>
+<p>自己去学就行，网上有不少教程，希望我写的这些对你有帮助，越来越好。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" data-id="cuidFJiL50JB8jMD5Tu06gOO5" data-title="python基础（会看报错）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python基础（函数）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/">python基础（函数）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：函数就是把一段重复要用的代码，打包封装起来，你写好一次，后面想用，直接一句话调用就行，不用反反复复复制粘贴一模一样的代码，简直就是懒人的福音。 简化代码，不用重复写大段一模一样的代码，前面学的字符串、列表、所有操作，全都可以放进函数里打包，而且，你定义好了，后面代码也会美观简洁很多。</p>
+<p><strong><em>1、定义一个基础函数</em></strong></p>
+<p>def fun(你要给这个函数起的名字):<br>print(“函数”)  
+ </p>
+<p>解释：<br> def  是固定开头，用来告诉程序，我要打包一个函数<br>括号+冒号必须带，下面缩进里，放你所有要打包的代码</p>
+<p>注意：</p>
+<p>1. def后面必须空格，再写函数名字<br>2. 末尾必须加英文冒号<br>3. 函数里面的代码，必须全部缩进，和你之前学的缩进规则完全通用</p>
+<p><strong>2、调用运行函数</strong></p>
+<p>fun()  
+ </p>
+<p>解释：<br>你打包好代码之后，直接写函数名字+括号<br>程序就会自动运行你里面打包的所有代码</p>
+<p>注意事项：<br>必须先定义函数，再调用函数<br>不能先调用、再写函数，直接爆红报错</p>
+<p><strong><em>3、函数传入参数</em></strong></p>
+<p>def fun(name):<br>print(name)</p>
+<p>fun(“小苏”)  
+ </p>
+<p>解释：<br>括号里的东西，就是你可以往函数里传进去的内容<br>每次调用，可以传入不一样的数据</p>
+<p>注意事项：<br>括号里有几个参数，调用的时候就要传几个内容，数量必须对上</p>
+<p><strong><em>4、函数返回值 return</em></strong></p>
+<p>def fun(a,b):<br>return a+b  
+ </p>
+<p>解释：<br>把函数里面计算出来的结果，丢出函数外面<br>可以拿到结果、继续拿去二次使用</p>
+<p>简单来说就是计算器的结果拿去二次使用，但是这里的结果是输出结果不一定是计算的数字结果。</p>
+<p>注意事项：<br>1、代码遇到return，会直接结束函数运行<br>2、return后面的内容，不会再执行</p>
+<p>函数整体要注意的是</p>
+<p>1. 所有符号全部必须是英文符号<br>2. 函数内部代码，严格遵守缩进规则<br>3. 永远：先定义函数，再调用函数<br>4. 函数名字不能用中文、不能用特殊符号<br>5. 参数数量，调用和定义必须一一对应</p>
+<p>总结：以上就是大致的有关函数的简单知识了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" data-id="cuidHr_UBIFi78en01eOt6YCl" data-title="python基础（函数）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python教程（字符串）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/">python教程（字符串）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：字符串按我自己的理解就是程序里所有文字信息，全部都是字符串，只不过我们不叫文字，叫字符串，你可以理解为专有名词。</p>
+<p>作用</p>
+<p>我们几乎所有的代码都需要用到，毕竟你不可能不写任何文字信息吧，那些都叫做字符串。</p>
+<p><strong><em>1.字符串下标取值</em></strong></p>
+<p>s &#x3D; “python”<br>print(s[0])  
+ </p>
+<p>解释：<br>取出字符串里单独某一个字符<br>字符位置从0开始依次排序</p>
+<p>比如这个代码输出的就是一个p，因为s定义为pythoon，要输出第一个字符这里记住是要从0开始的。</p>
+<p>注意事项：</p>
+<p>1. 下标从0开始，不是从1<br>2. 数字不能超出字符总数，超出直接报错<br>3. 只能一个数字，不能写区间</p>
+<p><em><strong>2.字符串切片截取</strong></em></p>
+<p>s &#x3D; “hello python”<br>print(s[0:5])  
+ </p>
+<p>解释：<br>从字符串当中，截取一整段文字</p>
+<p>这里输出的就是hello</p>
+<p>注意事项：</p>
+<p>1. 规则：包头不包尾<br>2. 左边数字能取到，右边数字取不到<br>3. 冒号两边可以省略数字</p>
+<p><strong><em>3.获取字符串长度</em></strong></p>
+<p>len(s)  
+ </p>
+<p>解释：<br>自动统计s字符串一共有多少个字</p>
+<p>但是你要先定义这个s</p>
+<p>注意事项：</p>
+<p>1. 空格、符号、汉字全都算长度<br>2. len()里面必须放字符串</p>
+<p><strong><em>4.字符串拼接</em></strong></p>
+<p>a &#x3D; “我”<br>b &#x3D; “python”<br>print(a + b)  
+ </p>
+<p>解释：<br>把两段文字合并拼接在一起</p>
+<p>输出为 我python</p>
+<p>注意事项：</p>
+<p>1. 只能字符串 + 字符串<br>2. 不能字符串和数字直接相加</p>
+<p><strong><em>5.字符串重复输出</em></strong></p>
+<p>print(“666” * 3)  
+ </p>
+<p>解释：<br>让一段文字自动重复打印多次</p>
+<p>这里会输出666666666</p>
+<p>注意事项：</p>
+<p>1. 只能 字符串 * 数字<br>2. 不可以数字 * 字符串以外内容</p>
+<p><strong><em>6.大小写转换</em></strong></p>
+<p>s.upper()<br>s.lower()  
+ </p>
+<p>解释：<br>英文全部变大写 upper&#x2F; 全部变小写lower</p>
+<p>这里前面s是你定义的东西</p>
+<p>注意事项：</p>
+<p>1. 只对英文字母生效<br>2. 汉字、符号不会发生变化</p>
+<p><strong><em>7.去除两边空格</em></strong></p>
+<p>s.strip()  
+ </p>
+<p>解释：<br>删掉字符串前后多余空白空格</p>
+<p>注意事项：<br>只会去掉最前面和最后面<br>中间空格不会删除</p>
+<p><strong><em>8.查找字符位置</em></strong></p>
+<p>s.find(“p”)  
+ </p>
+<p>解释：<br>查找某个文字出现在第几个位置</p>
+<p>注意事项：</p>
+<p>1. 找到返回下标数字<br>2. 找不到内容直接返回 -1</p>
+<p><strong><em>9.字符串内容替换</em></strong></p>
+<p>s.replace(“a”,”b”)  
+ </p>
+<p>解释：<br>把字符串里面旧文字，换成新文字</p>
+<p>注意事项：</p>
+<p>1. 不会改变原本字符串<br>2. 可以一次性替换所有相同字符</p>
+<p>字符串整体大注意</p>
+<p>1. 引号必须是英文引号<br>2. 字符串里面的字，不能单独修改<br>3. 下标一律从0开始计算<br>4. 不要越界取值，极易代码报错<br>5. 字符串属于不可修改数据类型</p>
+<p>总结：这些就是大致的内容了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E6%95%99%E7%A8%8B%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89/index/" data-id="cuidhHK-53LEEc4TS7a1j2AeM" data-title="python教程（字符串）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的基础（列表字典）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/">python的基础（列表+字典）</a>
     </h1>
   
 
@@ -430,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" data-id="cuidWvsmTxMFRtUFqU2-QHarF" data-title="python的基础（列表+字典）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" data-id="cuidmV3Mwy07ybmOcaml1tB5r" data-title="python的基础（列表+字典）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -442,9 +576,9 @@
 
 
   
-    <article id="post-2026/2026-04-25-python的教程（基础语法）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/04/2026-04-25-python的教程（缩进）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" class="article-date">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" class="article-date">
   <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
 </a>
     
@@ -460,7 +594,101 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/">python的教程（基础语法）</a>
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/">python的教程（缩进）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Python的缩进，就是代码行开头空出来的空格，专门用来告诉程序哪里是该这个程序管理，那段不该他管理，如果你下载了IDE基本上按一下tab就能补全，但这里我们还是要学，因为，这些是最基础的，只有学好了才能真正的去看懂一些代码，知道他们的逻辑，tab只是帮助我们不去重复做一个事情罢了。</p>
+<p><strong><em>1、if 判断语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>if 条件:<br>执行内容<br>elif 条件:<br>执行内容<br>else:<br>执行内容</p>
+<p>注意</p>
+<p>（1）if&#x2F;elif&#x2F;else 末尾必须带冒号</p>
+<p>（2）冒号下一行必须缩进4个空格</p>
+<p>（3）同一层级代码缩进必须完全对齐</p>
+<p><strong><em>2、while 循环 缩进规范</em></strong></p>
+<p>格式<br> while 循环条件:<br>循环内执行内容</p>
+<p>注意</p>
+<p>（1）while 末尾必须带冒号</p>
+<p>（2）循环内所有代码统一缩进4个空格</p>
+<p>（3）循环结束后代码取消缩进</p>
+<p><strong><em>3、for 循环 缩进规范</em></strong></p>
+<p>格式</p>
+<p>for 变量 in 循环范围:<br>循环内执行内容</p>
+<p>注意：</p>
+<p>（1）for 末尾必须带冒号</p>
+<p>（2）循环内代码（包括break&#x2F;continue）必须缩进4个空格</p>
+<p>(3)循环结束后代码取消缩进</p>
+<p><strong><em>4、def 自定义函数 缩进规范</em></strong></p>
+<p>格式</p>
+<p>def 函数名():<br>函数内执行内容</p>
+<p>注意</p>
+<p>（1)def 末尾必须带冒号</p>
+<p>(2)函数内所有代码统一缩进4个空格</p>
+<p>(3)函数调用代码顶格写，不缩进</p>
+<p><strong><em>5、try-except 异常处理 缩进规范</em></strong></p>
+<p>标准缩进格式</p>
+<p>try:<br>尝试执行的代码<br>except:<br>出错后执行的代码<br> 注意</p>
+<p>（1）try&#x2F;except 末尾必须带冒号</p>
+<p>（2）对应代码块必须缩进4个空格</p>
+<p><strong><em>6、with 语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>with 操作 as 变量:<br>执行代码<br> 注意</p>
+<p>（1）with 末尾必须带冒号</p>
+<p>（2）内部代码必须缩进4个空格</p>
+<p><strong><em>7、class 类 缩进规范</em></strong></p>
+<p>格式</p>
+<p>class 类名:<br>类内部代码<br>def 类方法(self):<br>方法内部代码<br> 注意</p>
+<p>（1）class 末尾必须带冒号</p>
+<p>(2) 类内部代码缩进4个空格</p>
+<p>(3) 类里的方法，内部代码再额外缩进4个空格</p>
+<p><strong><em>8、嵌套语法 缩进规范</em></strong></p>
+<p>格式</p>
+<p>外层语句:<br>内层语句:<br>最内层执行代码<br> 注意</p>
+<p>（1）每嵌套一层，就多缩进4个空格</p>
+<p>（2）同一层级代码缩进必须完全一致</p>
+<p>所有语法通用缩进规则</p>
+<p>1. 标准缩进固定为 4个空格。<br>2. 只要代码末尾带冒号 : ，下一行必须缩进。<br>3. 同一个代码块，缩进空格数量必须完全相同。<br>4. 不要Tab键和空格混合使用，这是不好的习惯。<br>5. 代码块结束，必须取消缩进，回到上一层级。</p>
+<p>但是，一般情况下，我自己是直接按tab进行自动缩进就行，我不太爱管这些，自己养成好习惯吧，本人已经改不过来了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" data-id="cuidnkXyCWvUWM9MVtCoT5UlN" data-title="python的教程（缩进）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的教程（基础语法）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/">python的教程（基础语法）</a>
     </h1>
   
 
@@ -590,7 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" data-id="cuidrm5CnKQZ0ITENaxoL_TUr" data-title="python的教程（基础语法）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" data-id="cuid3c1SJzyLHhz68A3AnVHe-" data-title="python的教程（基础语法）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -602,237 +830,9 @@
 
 
   
-    <article id="post-2026/2026-04-25-python基础（函数）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-04-24-rss订阅简单介绍/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/">python基础（函数）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：函数就是把一段重复要用的代码，打包封装起来，你写好一次，后面想用，直接一句话调用就行，不用反反复复复制粘贴一模一样的代码，简直就是懒人的福音。 简化代码，不用重复写大段一模一样的代码，前面学的字符串、列表、所有操作，全都可以放进函数里打包，而且，你定义好了，后面代码也会美观简洁很多。</p>
-<p><strong><em>1、定义一个基础函数</em></strong></p>
-<p>def fun(你要给这个函数起的名字):<br>print(“函数”)  
- </p>
-<p>解释：<br> def  是固定开头，用来告诉程序，我要打包一个函数<br>括号+冒号必须带，下面缩进里，放你所有要打包的代码</p>
-<p>注意：</p>
-<p>1. def后面必须空格，再写函数名字<br>2. 末尾必须加英文冒号<br>3. 函数里面的代码，必须全部缩进，和你之前学的缩进规则完全通用</p>
-<p><strong>2、调用运行函数</strong></p>
-<p>fun()  
- </p>
-<p>解释：<br>你打包好代码之后，直接写函数名字+括号<br>程序就会自动运行你里面打包的所有代码</p>
-<p>注意事项：<br>必须先定义函数，再调用函数<br>不能先调用、再写函数，直接爆红报错</p>
-<p><strong><em>3、函数传入参数</em></strong></p>
-<p>def fun(name):<br>print(name)</p>
-<p>fun(“小苏”)  
- </p>
-<p>解释：<br>括号里的东西，就是你可以往函数里传进去的内容<br>每次调用，可以传入不一样的数据</p>
-<p>注意事项：<br>括号里有几个参数，调用的时候就要传几个内容，数量必须对上</p>
-<p><strong><em>4、函数返回值 return</em></strong></p>
-<p>def fun(a,b):<br>return a+b  
- </p>
-<p>解释：<br>把函数里面计算出来的结果，丢出函数外面<br>可以拿到结果、继续拿去二次使用</p>
-<p>简单来说就是计算器的结果拿去二次使用，但是这里的结果是输出结果不一定是计算的数字结果。</p>
-<p>注意事项：<br>1、代码遇到return，会直接结束函数运行<br>2、return后面的内容，不会再执行</p>
-<p>函数整体要注意的是</p>
-<p>1. 所有符号全部必须是英文符号<br>2. 函数内部代码，严格遵守缩进规则<br>3. 永远：先定义函数，再调用函数<br>4. 函数名字不能用中文、不能用特殊符号<br>5. 参数数量，调用和定义必须一一对应</p>
-<p>总结：以上就是大致的有关函数的简单知识了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" data-id="cuidwrcdX_eU4Bk8_viY40Cjw" data-title="python基础（函数）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-04-25-关于阴影/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/">关于阴影</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本篇内容仅为个人对阴影的简单研究及感悟</p>
-<p>我们知道，一个组件单独放置在窗口中，会显得单调</p>
-<p><img src="/images/image-13.png"></p>
-<p>但是如果给这个组件加上一点阴影，就会给人一种立体感，从而使这个组件在窗口中能够凸显出来</p>
-<p><img src="/images/image-14.png"></p>
-<p>与没加上阴影之前，上图中仅仅是在组件边缘加上了一圈阴影，就给人一种奇特的感觉</p>
-<p>当然，这种阴影仅仅是最普通的</p>
-<p>通过对PS的基本使用研究，我发现了阴影角度这个东西</p>
-<p>在使用其他软件&#x2F;浏览一些网页的时候，我们都可以发现他们的组件阴影都带有一定角度</p>
-<p>如：</p>
-<p><img src="/images/image-15.png"></p>
-<p>其实阴影角度并不难理解</p>
-<p>只需要将底层的阴影与上层的组件产生位置上的偏移就可以实现这样的阴影角度效果</p>
-<p>明白了原理之后，我们也可以靠它实现各种阴影角度效果，像这样：</p>
-<p><img src="/images/image-17.png"></p>
-<p>我们也可以通过改变阴影的大小、阴影颜色的透明度，来实现鼠标移入组件后的一些特效</p>
-<p>当然，我们也可以设置两个阴影，当这两个阴影颜色相反（对比色），并且位置的偏移也相反时，我们就可以得到这样的效果</p>
-<p><img src="/images/image-18.png"></p>
-<p><img src="/images/image-21.png"></p>
-<p>关于阴影的玩法其实还有许多，如将阴影放在组件里面、阴影清晰度调高等</p>
-<p>阴影的每种玩法都会使这个组件所突出的效果不同</p>
-<p>以上就是我个人这么久以来对于阴影的感悟</p>
-<p>by.灵弦MuaMua</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-%E5%85%B3%E4%BA%8E%E9%98%B4%E5%BD%B1/index/" data-id="cuidv7Q7IN5dBptbWt5vhwWIa" data-title="关于阴影" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-04-25-python的教程（缩进）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/">python的教程（缩进）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Python的缩进，就是代码行开头空出来的空格，专门用来告诉程序哪里是该这个程序管理，那段不该他管理，如果你下载了IDE基本上按一下tab就能补全，但这里我们还是要学，因为，这些是最基础的，只有学好了才能真正的去看懂一些代码，知道他们的逻辑，tab只是帮助我们不去重复做一个事情罢了。</p>
-<p><strong><em>1、if 判断语句 缩进规范</em></strong></p>
-<p>格式</p>
-<p>if 条件:<br>执行内容<br>elif 条件:<br>执行内容<br>else:<br>执行内容</p>
-<p>注意</p>
-<p>（1）if&#x2F;elif&#x2F;else 末尾必须带冒号</p>
-<p>（2）冒号下一行必须缩进4个空格</p>
-<p>（3）同一层级代码缩进必须完全对齐</p>
-<p><strong><em>2、while 循环 缩进规范</em></strong></p>
-<p>格式<br> while 循环条件:<br>循环内执行内容</p>
-<p>注意</p>
-<p>（1）while 末尾必须带冒号</p>
-<p>（2）循环内所有代码统一缩进4个空格</p>
-<p>（3）循环结束后代码取消缩进</p>
-<p><strong><em>3、for 循环 缩进规范</em></strong></p>
-<p>格式</p>
-<p>for 变量 in 循环范围:<br>循环内执行内容</p>
-<p>注意：</p>
-<p>（1）for 末尾必须带冒号</p>
-<p>（2）循环内代码（包括break&#x2F;continue）必须缩进4个空格</p>
-<p>(3)循环结束后代码取消缩进</p>
-<p><strong><em>4、def 自定义函数 缩进规范</em></strong></p>
-<p>格式</p>
-<p>def 函数名():<br>函数内执行内容</p>
-<p>注意</p>
-<p>（1)def 末尾必须带冒号</p>
-<p>(2)函数内所有代码统一缩进4个空格</p>
-<p>(3)函数调用代码顶格写，不缩进</p>
-<p><strong><em>5、try-except 异常处理 缩进规范</em></strong></p>
-<p>标准缩进格式</p>
-<p>try:<br>尝试执行的代码<br>except:<br>出错后执行的代码<br> 注意</p>
-<p>（1）try&#x2F;except 末尾必须带冒号</p>
-<p>（2）对应代码块必须缩进4个空格</p>
-<p><strong><em>6、with 语句 缩进规范</em></strong></p>
-<p>格式</p>
-<p>with 操作 as 变量:<br>执行代码<br> 注意</p>
-<p>（1）with 末尾必须带冒号</p>
-<p>（2）内部代码必须缩进4个空格</p>
-<p><strong><em>7、class 类 缩进规范</em></strong></p>
-<p>格式</p>
-<p>class 类名:<br>类内部代码<br>def 类方法(self):<br>方法内部代码<br> 注意</p>
-<p>（1）class 末尾必须带冒号</p>
-<p>(2) 类内部代码缩进4个空格</p>
-<p>(3) 类里的方法，内部代码再额外缩进4个空格</p>
-<p><strong><em>8、嵌套语法 缩进规范</em></strong></p>
-<p>格式</p>
-<p>外层语句:<br>内层语句:<br>最内层执行代码<br> 注意</p>
-<p>（1）每嵌套一层，就多缩进4个空格</p>
-<p>（2）同一层级代码缩进必须完全一致</p>
-<p>所有语法通用缩进规则</p>
-<p>1. 标准缩进固定为 4个空格。<br>2. 只要代码末尾带冒号 : ，下一行必须缩进。<br>3. 同一个代码块，缩进空格数量必须完全相同。<br>4. 不要Tab键和空格混合使用，这是不好的习惯。<br>5. 代码块结束，必须取消缩进，回到上一层级。</p>
-<p>但是，一般情况下，我自己是直接按tab进行自动缩进就行，我不太爱管这些，自己养成好习惯吧，本人已经改不过来了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/25/2026/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" data-id="cuidj0P1uaZIv5SEiVR0eBTPx" data-title="python的教程（缩进）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-24-rss订阅简单介绍/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" class="article-date">
+    <a href="/2026/04/24/2026/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" class="article-date">
   <time class="dt-published" datetime="2026-04-23T16:00:00.000Z" itemprop="datePublished">2026-04-24</time>
 </a>
     
@@ -848,7 +848,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/">RSS订阅简单介绍</a>
+      <a class="p-name article-title" href="/2026/04/24/2026/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/">RSS订阅简单介绍</a>
     </h1>
   
 
@@ -891,7 +891,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/24/2026/04/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" data-id="cuidjbm22QEieIqn-Fq53lrzy" data-title="RSS订阅简单介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/24/2026/2026-04-24-rss%E8%AE%A2%E9%98%85%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/index/" data-id="cuidcTRUAjHnFz2RS8zuUHay_" data-title="RSS订阅简单介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -903,9 +903,9 @@
 
 
   
-    <article id="post-2026/04/2026-04-24-python的教程（安装）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-04-24-python的教程（安装）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" class="article-date">
+    <a href="/2026/04/24/2026/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" class="article-date">
   <time class="dt-published" datetime="2026-04-23T16:00:00.000Z" itemprop="datePublished">2026-04-24</time>
 </a>
     
@@ -921,7 +921,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/">python的教程（安装）</a>
+      <a class="p-name article-title" href="/2026/04/24/2026/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/">python的教程（安装）</a>
     </h1>
   
 
@@ -954,7 +954,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/24/2026/04/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" data-id="cuidYgEyCggKW2OlE0fQIJ3EU" data-title="python的教程（安装）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/24/2026/2026-04-24-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%89%E8%A3%85%EF%BC%89/index/" data-id="cuido-5yjx0ucD5oENunFIIDS" data-title="python的教程（安装）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

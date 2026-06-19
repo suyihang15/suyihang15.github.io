@@ -71,384 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/03/2026-03-29-私人音乐平台搭建（道鲤鱼音乐）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人音乐平台搭建（道鲤鱼音乐）docker部署</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本教程就是搭建音乐平台，没有任何音乐资源分享，资源要自行找导入，建议安装在nas上。</p>
-<p><strong><em>1、前提条件</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">docker下载</a></p>
-<p><strong><em>2、部署方法</em></strong></p>
-<p>方式一：不用 docker-compose（纯 Docker 单命令）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="2">
-<li>创建目录并授权</li>
-</ol>
-<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs  
- </p>
-<ol start="3">
-<li>一键启动容器</li>
-</ol>
-<p>docker run -d \<br>--name daoyuyu \<br>--restart always \<br>-p 23456:80 \<br>-v $(pwd)&#x2F;config:&#x2F;app&#x2F;config \<br>-v $(pwd)&#x2F;data:&#x2F;app&#x2F;data \<br>-v $(pwd)&#x2F;media:&#x2F;app&#x2F;media \<br>-v $(pwd)&#x2F;logs:&#x2F;app&#x2F;logs \<br>-e TZ&#x3D;Asia&#x2F;Shanghai \<br>mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="4">
-<li><p>放行端口 23456</p>
-</li>
-<li><p>访问</p>
-</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="http://ip:23456/">http://IP:23456</a>  
- </p>
-<p>方式二：使用 docker-compose（推荐，更稳定）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull mscststs&#x2F;daoyuyu:latest  
- </p>
-<ol start="2">
-<li>创建目录并授权</li>
-</ol>
-<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs</p>
-<p>3、填入compose</p>
-<p>version: ‘3.8’</p>
-<p>services:<br>daoyuyu:<br>image: mscststs&#x2F;daoyuyu:latest<br>container_name: daoyuyu<br>restart: always<br>ports:<br>- “23456:80” #根据自己需要改端口<br>volumes:<br>- .&#x2F;config:&#x2F;app&#x2F;config<br>- .&#x2F;data:&#x2F;app&#x2F;data<br>- .&#x2F;media:&#x2F;app&#x2F;media #用于存放自己的音乐文件MP3这些<br>- .&#x2F;logs:&#x2F;app&#x2F;logs<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai</p>
-<p><strong><em>3、访问</em></strong></p>
-<p>部署的IP地址:23456(如有更改自行调整)</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-133035-1024x621.png"></p>
-<p>点击右上角的图标进入这个界面，把你要听的歌放入上面说的文件夹里就行</p>
-<p><strong><em>4、手机访问</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://cn.amcfy.com/?lang=zh-CN">下载箭头音乐</a></p>
-<p>选择道鲤鱼音乐，填入好自己的ip地址（广和局域网填一个）就行，账户和密码就是你开始设置的。</p>
-<p><img src="/images/ffb1753d760f2fe86dc7517194c1080d-461x1024.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidj7TsFYxgDDlQIXi4ao9MM" data-title="私人音乐平台搭建（道鲤鱼音乐）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-29-私人书库搭建（komga）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人书库搭建（komga）docker部署</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：此项目一般用于nas服务器搭建自己的图书管理系统，本人用过还不错，不建议部署在自己的主力机上，而且图书要自己导入。</p>
-<p><strong><em>1、前期准备</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">docker</a>下载</p>
-<p>方式一：使用 docker-compose（推荐）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull gotson&#x2F;komga:latest </p>
-<p>2、创建本地目录</p>
-<p>mkdir -p config books<br>chmod 777 -R config books</p>
-<p>3、填入这个compose</p>
-<p>version: “3.8”</p>
-<p>services:<br>komga:<br>image: gotson&#x2F;komga:latest<br>container_name: komga<br>restart: unless-stopped<br>ports:<br>- “25600:25600”#这里的端口可以根据自己的需求更改，如果不懂就默认就行<br>volumes:<br>- .&#x2F;komga&#x2F;config:&#x2F;config<br>- .&#x2F;komga&#x2F;data:&#x2F;data<br>- &#x2F;你宿主机的漫画目录:&#x2F;books # 把这里改成你放漫画的路径，一般图书就放这个文件夹就行<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai<br>- PUID&#x3D;1000<br>- PGID&#x3D;1000</p>
-<p>方式二：不用 docker-compose（单命令）</p>
-<ol>
-<li>拉取镜像</li>
-</ol>
-<p>docker pull gotson&#x2F;komga:latest </p>
-<ol start="2">
-<li>创建目录</li>
-</ol>
-<p>mkdir -p config books<br>chmod 777 -R config books</p>
-<ol start="3">
-<li>一键启动</li>
-</ol>
-<p>docker run -d \<br>--name komga \<br>--restart unless-stopped \<br>-p 25600:25600 \<br>-v $(pwd)&#x2F;config:&#x2F;config \<br>-v $(pwd)&#x2F;books:&#x2F;books \<br>-e TZ&#x3D;Asia&#x2F;Shanghai \<br>gotson&#x2F;komga:latest</p>
-<p><strong><em>3、启动命令</em></strong></p>
-<p>docker-compose up -d</p>
-<p><strong><em>4、访问</em></strong></p>
-<p>部署的IP地址:25600(如有更改自行调整)</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-131146-1024x502.png"></p>
-<p>第一次登录会让你设置好账号和密码，后面根着来就行，记住导入图书后要扫描一下</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-131400.png"></p>
-<p>这里添加对应的库以后才能看见哦，个人觉得还是很美观的。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuid0pcscH6qBzJkqb8JJarQt" data-title="私人书库搭建（komga）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-03-29-github使用指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">Github使用指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：github是全球最大的开源社区，里面有很多好玩的本人根据理解来帮助兄弟们使用它</p>
-<p><strong><em>1、准备条件</em></strong></p>
-<p>下载<a target="_blank" rel="noopener" href="https://steampp.net/">steam++或者叫Watt Toolkit</a>其他的有些加速器也有可以加速github（因为github服务器在国外所以国内有时会连不上）加速就行</p>
-<p>进入<a target="_blank" rel="noopener" href="https://github.com/">github</a>查看你要的项目</p>
-<p><strong><em>2、查看项目</em></strong></p>
-<p>对于一般不懂一点代码的人来说看右下角的Releases就行，一般作者会提供这个一键安装包</p>
-<p>或者看右上角的链接就可以体验一下了。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-221510-1024x465.png"></p>
-<p><strong><em>3、进阶一点</em></strong></p>
-<p>仔细阅读readme</p>
-<p>根据具体情况来分析</p>
-<p>我自己一般是</p>
-<p>1、先看环境要准备哪些</p>
-<p>2、下载源码，（如果下载太慢可以复制下载连接到<a target="_blank" rel="noopener" href="https://github.akams.cn/">github加速下载站</a>）点击code下载zip解压</p>
-<p>3、打开cmd根据对应的命令来打，中间可能要你更改一些对应文件，这个就要根据你要部署的项目来调整了。</p>
-<p><strong><em>4、总结</em></strong></p>
-<p>不同的项目其部署方法各不相同，这里面有很多好玩的项目等你去发现，本人之后会介绍一些好玩的项目来玩的，希望对你能有所帮助。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" data-id="cuidoVMfFTCS6w-MDAhvwY9Hx" data-title="Github使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-03-29-openclaw部署指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ai/">ai</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/">OpenClaw部署指南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>前情提要</p>
-<p>本人觉得，部署这个就只是好玩就行，其本身对于不是专门从事这个行业的其作用并不算大，没必要，纯个人看法。</p>
-<p>1、环境准备</p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.cn/en/download/current">Node.js</a></p>
-<p><a target="_blank" rel="noopener" href="https://ollama.com/">ollama</a>（可选，用于运行本地模型）</p>
-<p><a target="_blank" rel="noopener" href="https://ollama.com/search">ollama下载好后安装模型</a>（这里选一个电脑能带动的就行）</p>
-<p>2、安装openclaw</p>
-<p>windows安装命令 &amp; ([scriptblock]::Create((iwr -useb <a target="_blank" rel="noopener" href="https://openclaw.ai/install.ps1">https://openclaw.ai/install.ps1</a>))) -NoOnboard</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-080711-1024x537.png"></p>
-<p>mac os&#x2F;linux安装 curl -fsSL <a target="_blank" rel="noopener" href="https://openclaw.ai/install.sh">https://openclaw.ai/install.sh</a> | bash -s – –no-onboard</p>
-<p>3、验证</p>
-<p>openclaw –version（看是否输出版本号）</p>
-<p>openclaw doctor（环境检查）</p>
-<p>openclaw onboard（初始化配置）</p>
-<p>这里你得自己根据自己的实际情况配置api这些</p>
-<p>4、更新</p>
-<p>npm i -g openclaw@latest</p>
-<p>5、卸载</p>
-<p>npm uninstall -g openclaw</p>
-<p>6、删除用户数据</p>
-<p>windows rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
-<p>Mac OS&#x2F;Linux rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" data-id="cuidSeuNOEm2tfKvQ60GLo3pL" data-title="OpenClaw部署指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/2026-03-29-安卓游戏拆包/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/29/2026/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/">安卓游戏拆包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本教程只是很简单的流程，具体问题还要具体分析</p>
-<p><strong><em>1、准备情况</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.java.com/zh-CN/">java下载</a>（必要环境）</p>
-<p><a target="_blank" rel="noopener" href="https://gitcode.com/open-source-toolkit/99d361/?utm_source=tools_gitcode&index=top&type=card&&uuid_tt_dd=10_19753706400-1773830015274-495080&isLogin=1&from_id=143013788&from_link=18c955a9dc5c4f6c56136c4bb16d784e">apktool下载</a>（用于拆包和反向编译的工具）</p>
-<p><a target="_blank" rel="noopener" href="https://mt2.cn/">mt管理器</a>（用于apk文件的签名）</p>
-<p>要拆的apk</p>
-<p><strong><em>2、拆包</em></strong></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-214131-1024x175.png"></p>
-<p>将apk和apktool放在一个文件夹里，在本文件夹里的cmd里输入.&#x2F;apktool d .apk的包名，会生成对应的文件夹，里面生成的就是拆开的文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-215644.png"></p>
-<p><strong><em>3、各文件介绍</em></strong></p>
-<p>1.assets</p>
-<p>存放游戏资源（图片、音效、地图、配置文件），改游戏内容常用。</p>
-<ol start="2">
-<li>lib</li>
-</ol>
-<p>存放.so底层库文件，只留armeabi、armeabi-v7a，避免闪退。</p>
-<ol start="3">
-<li>original</li>
-</ol>
-<p>保存原始签名与配置，打包用，无需修改。</p>
-<ol start="4">
-<li>res</li>
-</ol>
-<p>存放界面资源（图标、布局、文字），改UI、文字常用。</p>
-<ol start="5">
-<li>smali &#x2F; smali_classes2~5</li>
-</ol>
-<p>存放游戏代码，删广告、改逻辑、修复闪退都在这里。</p>
-<ol start="6">
-<li>unknown</li>
-</ol>
-<p>未知加密资源，一般不用管。</p>
-<ol start="7">
-<li>AndroidManifest.xml</li>
-</ol>
-<p>APP配置文件，权限、启动项、兼容设置都在这，闪退关键。</p>
-<ol start="8">
-<li>apktool.yml</li>
-</ol>
-<p>打包工具配置，改SDK版本、包名等，防闪退。</p>
-<p>根据自己的需要更改就行</p>
-<p><strong><em>4、打包</em></strong></p>
-<p>cmd中输入.\apktool.bat b 文件夹名字 -o 打包后的名字.apk 这样会生成对应的apk这样就行了。</p>
-<p><strong><em>5、签名</em></strong></p>
-<p>由于更改后的apk没有签名因此手机是不认这里我们要用mt管理器签名后就可以安装了，但是可能会报病毒，直接无视风险继续安装就行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" data-id="cuidk78Lg-DSHKe5Uc-uIeFsJ" data-title="安卓游戏拆包" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-2026/2026-03-29-私人音乐平台搭建（道鲤鱼音乐）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
@@ -528,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidB5gMOjogG9zPYCkKo1aF_" data-title="私人音乐平台搭建（道鲤鱼音乐）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidk7n9NVtyp0CTyEoTzug0X" data-title="私人音乐平台搭建（道鲤鱼音乐）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -540,9 +162,9 @@
 
 
   
-    <article id="post-2026/2026-03-29-私人书库搭建（komga）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-03-29-github使用指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
+    <a href="/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" class="article-date">
   <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
 </a>
     
@@ -558,7 +180,66 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人书库搭建（komga）docker部署</a>
+      <a class="p-name article-title" href="/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">Github使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：github是全球最大的开源社区，里面有很多好玩的本人根据理解来帮助兄弟们使用它</p>
+<p><strong><em>1、准备条件</em></strong></p>
+<p>下载<a target="_blank" rel="noopener" href="https://steampp.net/">steam++或者叫Watt Toolkit</a>其他的有些加速器也有可以加速github（因为github服务器在国外所以国内有时会连不上）加速就行</p>
+<p>进入<a target="_blank" rel="noopener" href="https://github.com/">github</a>查看你要的项目</p>
+<p><strong><em>2、查看项目</em></strong></p>
+<p>对于一般不懂一点代码的人来说看右下角的Releases就行，一般作者会提供这个一键安装包</p>
+<p>或者看右上角的链接就可以体验一下了。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-221510-1024x465.png"></p>
+<p><strong><em>3、进阶一点</em></strong></p>
+<p>仔细阅读readme</p>
+<p>根据具体情况来分析</p>
+<p>我自己一般是</p>
+<p>1、先看环境要准备哪些</p>
+<p>2、下载源码，（如果下载太慢可以复制下载连接到<a target="_blank" rel="noopener" href="https://github.akams.cn/">github加速下载站</a>）点击code下载zip解压</p>
+<p>3、打开cmd根据对应的命令来打，中间可能要你更改一些对应文件，这个就要根据你要部署的项目来调整了。</p>
+<p><strong><em>4、总结</em></strong></p>
+<p>不同的项目其部署方法各不相同，这里面有很多好玩的项目等你去发现，本人之后会介绍一些好玩的项目来玩的，希望对你能有所帮助。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" data-id="cuidRmFRDnXH72X1DlXMyjp1o" data-title="Github使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-29-私人书库搭建（komga）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人书库搭建（komga）docker部署</a>
     </h1>
   
 
@@ -604,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/2026/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidqH9o7zSK17CUqbyF6y4Hi" data-title="私人书库搭建（komga）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E4%B9%A6%E5%BA%93%E6%90%AD%E5%BB%BA%EF%BC%88komga%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidvi0OIkmPUXGoO6qO0jkcN" data-title="私人书库搭建（komga）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -616,10 +297,160 @@
 
 
   
-    <article id="post-2026/03/2026-03-26-苹果手机安装ipa文件（免越狱）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/03/2026-03-29-github使用指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-25T16:00:00.000Z" itemprop="datePublished">2026-03-26</time>
+    <a href="/2026/03/29/2026/03/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">Github使用指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：github是全球最大的开源社区，里面有很多好玩的本人根据理解来帮助兄弟们使用它</p>
+<p><strong><em>1、准备条件</em></strong></p>
+<p>下载<a target="_blank" rel="noopener" href="https://steampp.net/">steam++或者叫Watt Toolkit</a>其他的有些加速器也有可以加速github（因为github服务器在国外所以国内有时会连不上）加速就行</p>
+<p>进入<a target="_blank" rel="noopener" href="https://github.com/">github</a>查看你要的项目</p>
+<p><strong><em>2、查看项目</em></strong></p>
+<p>对于一般不懂一点代码的人来说看右下角的Releases就行，一般作者会提供这个一键安装包</p>
+<p>或者看右上角的链接就可以体验一下了。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-221510-1024x465.png"></p>
+<p><strong><em>3、进阶一点</em></strong></p>
+<p>仔细阅读readme</p>
+<p>根据具体情况来分析</p>
+<p>我自己一般是</p>
+<p>1、先看环境要准备哪些</p>
+<p>2、下载源码，（如果下载太慢可以复制下载连接到<a target="_blank" rel="noopener" href="https://github.akams.cn/">github加速下载站</a>）点击code下载zip解压</p>
+<p>3、打开cmd根据对应的命令来打，中间可能要你更改一些对应文件，这个就要根据你要部署的项目来调整了。</p>
+<p><strong><em>4、总结</em></strong></p>
+<p>不同的项目其部署方法各不相同，这里面有很多好玩的项目等你去发现，本人之后会介绍一些好玩的项目来玩的，希望对你能有所帮助。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" data-id="cuidGq0x5Zy515TboBQsKs_5-" data-title="Github使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-29-私人音乐平台搭建（道鲤鱼音乐）docker部署/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/">私人音乐平台搭建（道鲤鱼音乐）docker部署</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本教程就是搭建音乐平台，没有任何音乐资源分享，资源要自行找导入，建议安装在nas上。</p>
+<p><strong><em>1、前提条件</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">docker下载</a></p>
+<p><strong><em>2、部署方法</em></strong></p>
+<p>方式一：不用 docker-compose（纯 Docker 单命令）</p>
+<ol>
+<li>拉取镜像</li>
+</ol>
+<p>docker pull mscststs&#x2F;daoyuyu:latest  
+ </p>
+<ol start="2">
+<li>创建目录并授权</li>
+</ol>
+<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs  
+ </p>
+<ol start="3">
+<li>一键启动容器</li>
+</ol>
+<p>docker run -d \<br>--name daoyuyu \<br>--restart always \<br>-p 23456:80 \<br>-v $(pwd)&#x2F;config:&#x2F;app&#x2F;config \<br>-v $(pwd)&#x2F;data:&#x2F;app&#x2F;data \<br>-v $(pwd)&#x2F;media:&#x2F;app&#x2F;media \<br>-v $(pwd)&#x2F;logs:&#x2F;app&#x2F;logs \<br>-e TZ&#x3D;Asia&#x2F;Shanghai \<br>mscststs&#x2F;daoyuyu:latest  
+ </p>
+<ol start="4">
+<li><p>放行端口 23456</p>
+</li>
+<li><p>访问</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="http://ip:23456/">http://IP:23456</a>  
+ </p>
+<p>方式二：使用 docker-compose（推荐，更稳定）</p>
+<ol>
+<li>拉取镜像</li>
+</ol>
+<p>docker pull mscststs&#x2F;daoyuyu:latest  
+ </p>
+<ol start="2">
+<li>创建目录并授权</li>
+</ol>
+<p>mkdir -p config data media logs<br>chmod 777 -R config data media logs</p>
+<p>3、填入compose</p>
+<p>version: ‘3.8’</p>
+<p>services:<br>daoyuyu:<br>image: mscststs&#x2F;daoyuyu:latest<br>container_name: daoyuyu<br>restart: always<br>ports:<br>- “23456:80” #根据自己需要改端口<br>volumes:<br>- .&#x2F;config:&#x2F;app&#x2F;config<br>- .&#x2F;data:&#x2F;app&#x2F;data<br>- .&#x2F;media:&#x2F;app&#x2F;media #用于存放自己的音乐文件MP3这些<br>- .&#x2F;logs:&#x2F;app&#x2F;logs<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai</p>
+<p><strong><em>3、访问</em></strong></p>
+<p>部署的IP地址:23456(如有更改自行调整)</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-133035-1024x621.png"></p>
+<p>点击右上角的图标进入这个界面，把你要听的歌放入上面说的文件夹里就行</p>
+<p><strong><em>4、手机访问</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://cn.amcfy.com/?lang=zh-CN">下载箭头音乐</a></p>
+<p>选择道鲤鱼音乐，填入好自己的ip地址（广和局域网填一个）就行，账户和密码就是你开始设置的。</p>
+<p><img src="/images/ffb1753d760f2fe86dc7517194c1080d-461x1024.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-%E7%A7%81%E4%BA%BA%E9%9F%B3%E4%B9%90%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%EF%BC%88%E9%81%93%E9%B2%A4%E9%B1%BC%E9%9F%B3%E4%B9%90%EF%BC%89docker%E9%83%A8%E7%BD%B2/index/" data-id="cuidxrCAmEoTiCNp5p45rnyro" data-title="私人音乐平台搭建（道鲤鱼音乐）docker部署" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-29-安卓游戏拆包/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/29/2026/03/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
 </a>
     
   <div class="article-category">
@@ -634,7 +465,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/">苹果手机安装ipa文件（免越狱）</a>
+      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/">安卓游戏拆包</a>
     </h1>
   
 
@@ -642,26 +473,121 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong><em>1、前期准备</em></strong></p>
-<p>要安装的苹果手机</p>
-<p>要导入的ipa文件</p>
-<p>一台电脑，安装好<a target="_blank" rel="noopener" href="https://www.i4.cn/">爱思助手</a></p>
-<p>一根数据线</p>
-<p><strong><em>2、软件签名</em></strong></p>
-<p>网上一版都可以找到的或者可以找到证书的只是很容易失效，可以去网上买的一般几块钱。</p>
-<p>如果不想买就用苹果账号签也可以就是只管一个星期，失效后自己再签名</p>
-<p>打开爱思助手找到ipa签名</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202531-1024x240.png"></p>
-<p>打开后导入相应的文件一个是证书（没有证书就apple ID签名），一个是ipa文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202703-1024x659.png"></p>
-<p>搞好后会在对应的文件夹生成对应的ipa文件，后面用爱思助手导入就行了</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-203850-1024x220.png"></p>
-<p>手机要同意一下，后面就可以玩了。</p>
+        <p>注：本教程只是很简单的流程，具体问题还要具体分析</p>
+<p><strong><em>1、准备情况</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.java.com/zh-CN/">java下载</a>（必要环境）</p>
+<p><a target="_blank" rel="noopener" href="https://gitcode.com/open-source-toolkit/99d361/?utm_source=tools_gitcode&index=top&type=card&&uuid_tt_dd=10_19753706400-1773830015274-495080&isLogin=1&from_id=143013788&from_link=18c955a9dc5c4f6c56136c4bb16d784e">apktool下载</a>（用于拆包和反向编译的工具）</p>
+<p><a target="_blank" rel="noopener" href="https://mt2.cn/">mt管理器</a>（用于apk文件的签名）</p>
+<p>要拆的apk</p>
+<p><strong><em>2、拆包</em></strong></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-214131-1024x175.png"></p>
+<p>将apk和apktool放在一个文件夹里，在本文件夹里的cmd里输入.&#x2F;apktool d .apk的包名，会生成对应的文件夹，里面生成的就是拆开的文件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-215644.png"></p>
+<p><strong><em>3、各文件介绍</em></strong></p>
+<p>1.assets</p>
+<p>存放游戏资源（图片、音效、地图、配置文件），改游戏内容常用。</p>
+<ol start="2">
+<li>lib</li>
+</ol>
+<p>存放.so底层库文件，只留armeabi、armeabi-v7a，避免闪退。</p>
+<ol start="3">
+<li>original</li>
+</ol>
+<p>保存原始签名与配置，打包用，无需修改。</p>
+<ol start="4">
+<li>res</li>
+</ol>
+<p>存放界面资源（图标、布局、文字），改UI、文字常用。</p>
+<ol start="5">
+<li>smali &#x2F; smali_classes2~5</li>
+</ol>
+<p>存放游戏代码，删广告、改逻辑、修复闪退都在这里。</p>
+<ol start="6">
+<li>unknown</li>
+</ol>
+<p>未知加密资源，一般不用管。</p>
+<ol start="7">
+<li>AndroidManifest.xml</li>
+</ol>
+<p>APP配置文件，权限、启动项、兼容设置都在这，闪退关键。</p>
+<ol start="8">
+<li>apktool.yml</li>
+</ol>
+<p>打包工具配置，改SDK版本、包名等，防闪退。</p>
+<p>根据自己的需要更改就行</p>
+<p><strong><em>4、打包</em></strong></p>
+<p>cmd中输入.\apktool.bat b 文件夹名字 -o 打包后的名字.apk 这样会生成对应的apk这样就行了。</p>
+<p><strong><em>5、签名</em></strong></p>
+<p>由于更改后的apk没有签名因此手机是不认这里我们要用mt管理器签名后就可以安装了，但是可能会报病毒，直接无视风险继续安装就行。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" data-id="cuidcbM4Mo02W-cL-mC0EI1ax" data-title="苹果手机安装ipa文件（免越狱）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-%E5%AE%89%E5%8D%93%E6%B8%B8%E6%88%8F%E6%8B%86%E5%8C%85/index/" data-id="cuidWncNO_jdVDAKtY-HSVuff" data-title="安卓游戏拆包" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-29-openclaw部署指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/29/2026/03/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-28T16:00:00.000Z" itemprop="datePublished">2026-03-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ai/">ai</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/29/2026/03/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/">OpenClaw部署指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>前情提要</p>
+<p>本人觉得，部署这个就只是好玩就行，其本身对于不是专门从事这个行业的其作用并不算大，没必要，纯个人看法。</p>
+<p>1、环境准备</p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.cn/en/download/current">Node.js</a></p>
+<p><a target="_blank" rel="noopener" href="https://ollama.com/">ollama</a>（可选，用于运行本地模型）</p>
+<p><a target="_blank" rel="noopener" href="https://ollama.com/search">ollama下载好后安装模型</a>（这里选一个电脑能带动的就行）</p>
+<p>2、安装openclaw</p>
+<p>windows安装命令 &amp; ([scriptblock]::Create((iwr -useb <a target="_blank" rel="noopener" href="https://openclaw.ai/install.ps1">https://openclaw.ai/install.ps1</a>))) -NoOnboard</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-29-080711-1024x537.png"></p>
+<p>mac os&#x2F;linux安装 curl -fsSL <a target="_blank" rel="noopener" href="https://openclaw.ai/install.sh">https://openclaw.ai/install.sh</a> | bash -s – –no-onboard</p>
+<p>3、验证</p>
+<p>openclaw –version（看是否输出版本号）</p>
+<p>openclaw doctor（环境检查）</p>
+<p>openclaw onboard（初始化配置）</p>
+<p>这里你得自己根据自己的实际情况配置api这些</p>
+<p>4、更新</p>
+<p>npm i -g openclaw@latest</p>
+<p>5、卸载</p>
+<p>npm uninstall -g openclaw</p>
+<p>6、删除用户数据</p>
+<p>windows rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
+<p>Mac OS&#x2F;Linux rmdir &#x2F;s &#x2F;q %USERPROFILE%.openclaw</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/29/2026/03/2026-03-29-openclaw%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index/" data-id="cuidebIHVuuYSqF0DlFJaMyCL" data-title="OpenClaw部署指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -718,7 +644,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/26/2026/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" data-id="cuid5UZhWLMrFrHgGrmaVKjXR" data-title="苹果手机安装ipa文件（免越狱）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/26/2026/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" data-id="cuidlYXlnJUTjxfID1V_UrkBO" data-title="苹果手机安装ipa文件（免越狱）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -730,9 +656,66 @@
 
 
   
-    <article id="post-2026/03/2026-03-25-电脑adb连接模拟器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/03/2026-03-26-苹果手机安装ipa文件（免越狱）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/25/2026/03/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" class="article-date">
+    <a href="/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-25T16:00:00.000Z" itemprop="datePublished">2026-03-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/">苹果手机安装ipa文件（免越狱）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、前期准备</em></strong></p>
+<p>要安装的苹果手机</p>
+<p>要导入的ipa文件</p>
+<p>一台电脑，安装好<a target="_blank" rel="noopener" href="https://www.i4.cn/">爱思助手</a></p>
+<p>一根数据线</p>
+<p><strong><em>2、软件签名</em></strong></p>
+<p>网上一版都可以找到的或者可以找到证书的只是很容易失效，可以去网上买的一般几块钱。</p>
+<p>如果不想买就用苹果账号签也可以就是只管一个星期，失效后自己再签名</p>
+<p>打开爱思助手找到ipa签名</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202531-1024x240.png"></p>
+<p>打开后导入相应的文件一个是证书（没有证书就apple ID签名），一个是ipa文件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-202703-1024x659.png"></p>
+<p>搞好后会在对应的文件夹生成对应的ipa文件，后面用爱思助手导入就行了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-26-203850-1024x220.png"></p>
+<p>手机要同意一下，后面就可以玩了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/26/2026/03/2026-03-26-%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E5%AE%89%E8%A3%85ipa%E6%96%87%E4%BB%B6%EF%BC%88%E5%85%8D%E8%B6%8A%E7%8B%B1%EF%BC%89/index/" data-id="cuidhdU3nk9LlrXvQ2q70ZbyI" data-title="苹果手机安装ipa文件（免越狱）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-03-25-电脑adb连接模拟器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" class="article-date">
   <time class="dt-published" datetime="2026-03-24T16:00:00.000Z" itemprop="datePublished">2026-03-25</time>
 </a>
     
@@ -748,7 +731,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/25/2026/03/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/">电脑adb连接模拟器</a>
+      <a class="p-name article-title" href="/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/">电脑adb连接模拟器</a>
     </h1>
   
 
@@ -803,7 +786,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/25/2026/03/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" data-id="cuidfX7D60QN49qCZ4t_C9B4T" data-title="电脑adb连接模拟器" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" data-id="cuidoWr17zz2binRRz-_lkeEc" data-title="电脑adb连接模拟器" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
