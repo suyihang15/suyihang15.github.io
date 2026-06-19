@@ -71,260 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/04/2026-04-05-python打包成exe（pyinstaller的使用）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-05-08-文件传输（文件快递柜）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/05/2026/04/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-04T16:00:00.000Z" itemprop="datePublished">2026-04-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/05/2026/04/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/">python打包成exe（pyinstaller的使用）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：当我们用python写好一个完整的程序以后想要把这个py主程序运行到没有安装python的windows时，我们就要用到pyinstaller这个第三方库用来把这些程序打包成exe的可执行文件方便其他人使用你的程序，以下是一个完整的流程</p>
-<p>一、项目结构（必须这样放，否则打包必错）</p>
-<p>你先建一个文件夹，比如叫  MyApp ，所有东西都放这里。</p>
-<p>plaintext</p>
-<p>MyApp&#x2F;<br>├── main.py # 主程序入口<br>├── icon.ico # 程序图标（Windows）<br>├── config.json # 配置文件用于嵌套什么的<br>├── settings.ini # 配置文件一般是很简单的配置有时我们一般人都可以直接改这两是不同的东西<br>├── assets&#x2F; # 资源文件夹（图片、音频、数据、字体）<br>│ ├── images&#x2F; # 图片<br>│ ├── sounds&#x2F; # 音频<br>│ ├── data&#x2F; # 数据文件（csv、txt、xlsx）<br>│ └── fonts&#x2F; # 字体<br>├── src&#x2F; # 你自己写的模块<br>│ ├── utils.py #（用于处理时间加密的）<br>│ ├── api.py #（接口文件）<br>│ └── ui.py #（用户界面的布局）<br>└── libs&#x2F; # 第三方库&#x2F;自己封装的库  
- </p>
-<p>二、代码里必须写的路径函数（打包后不丢资源）</p>
-<p>把这段代码放到  main.py  最前面，所有资源都用这个函数读取：</p>
-<p>python</p>
-<p>import sys<br>import os</p>
-<p>def resource_path(relative_path):<br>if hasattr(sys, ‘_MEIPASS’):<br>return os.path.join(sys._MEIPASS, relative_path)<br>return os.path.join(os.path.abspath(‘.’), relative_path)  
- </p>
-<p>例子：</p>
-<p>img &#x3D; resource_path(“assets&#x2F;images&#x2F;logo.png”)<br>config &#x3D; resource_path(“config.json”)<br>data &#x3D; resource_path(“assets&#x2F;data&#x2F;data.csv”)  
- </p>
-<p>三、打包前必须做的环境准备（必做）</p>
-<ol>
-<li>打开命令行，进入项目文件夹</li>
-</ol>
-<p>cd D:\MyApp #（切换到对应目录）  
- </p>
-<ol start="2">
-<li>创建虚拟环境（避免打包体积大、报错）</li>
-</ol>
-<p>python -m venv venv<br> 其实不创建也可以，就是感觉容易冲突出问题。</p>
-<ol start="3">
-<li>激活虚拟环境</li>
-</ol>
-<p>venv\Scripts\activate  
- </p>
-<ol start="4">
-<li>安装项目需要的库（只装你用到的）</li>
-</ol>
-<p>pip install 你需要的库 #(这个能懂吧)  
- </p>
-<ol start="5">
-<li>安装 PyInstaller（这就是打包的第三方库）</li>
-</ol>
-<p>pip install pyinstaller  
- </p>
-<p>四、最完整打包命令（包含所有文件、资源、模块、图标）</p>
-<p>下面这条命令是万能终极版，包含所有你需要的功能，直接复制运行：</p>
-<p>pyinstaller -F -w –clean –noconfirm -i icon.ico –add-data “assets;assets” –add-data “config.json;.” –add-data “settings.ini;.” –add-data “src;src” –add-data “libs;libs” main.py</p>
-<p>这个前提是每个文件都放在其对应的位置，必须严格放置。  
- </p>
-<p>五、命令每一部分详细解释（你必须懂）</p>
-<p>我把上面的命令拆解开，每一段都告诉你是什么、干什么、为什么要加：</p>
-<ol>
-<li> pyinstaller</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>作用：启动打包工具</p>
-</li>
-<li><p>必须写在最前面</p>
-</li>
-</ul>
-<p> -F </p>
-<ul>
-<li><p>全称： –onefile </p>
-</li>
-<li><p>作用：打包成单个 exe 文件</p>
-</li>
-<li><p>不加的话会生成一个文件夹，里面一堆文件</p>
-</li>
-<li><p>必须加，最常用</p>
-</li>
-</ul>
-<p>-w </p>
-<ul>
-<li><p>全称： –windowed  &#x2F;  –noconsole </p>
-</li>
-<li><p>作用：不显示黑色控制台窗口</p>
-</li>
-<li><p>适合 GUI 程序、桌面软件</p>
-</li>
-<li><p>如果你是命令行程序，就不要加  -w ，用  -c</p>
-</li>
-</ul>
-<p> </p>
-<p>--clean </p>
-<ul>
-<li><p>作用：打包前自动清理旧缓存、旧文件</p>
-</li>
-<li><p>避免旧文件干扰导致打包失败</p>
-</li>
-<li><p>每次打包都建议加</p>
-</li>
-</ul>
-<p>--noconfirm </p>
-<ul>
-<li><p>作用：打包时不询问是否覆盖，直接覆盖</p>
-</li>
-<li><p>避免重复打包时弹确认框</p>
-</li>
-</ul>
-<p>-i icon.ico </p>
-<ul>
-<li><p>作用：设置程序图标</p>
-</li>
-<li><p>必须是  .ico  格式</p>
-</li>
-<li><p>放在项目根目录</p>
-</li>
-</ul>
-<ol>
-<li> –add-data “assets;assets”</li>
-</ol>
-<p> </p>
-<ul>
-<li><p>作用：把  assets  文件夹打包进 exe</p>
-</li>
-<li><p>格式： 源路径;目标路径 </p>
-</li>
-<li><p>Windows 用分号  ; ，Mac&#x2F;Linux 用冒号  : </p>
-</li>
-<li><p>不加这个，打包后图片、音频、数据都会丢失</p>
-</li>
-</ul>
-<p>--add-data “config.json;.” </p>
-<ul>
-<li><p>作用：把  config.json  打包到 exe 同目录</p>
-</li>
-<li><p> .  表示 exe 所在目录</p>
-</li>
-</ul>
-<p>--add-data “settings.ini;.” </p>
-<ul>
-<li>作用：把  settings.ini  打包到 exe 同目录</li>
-</ul>
-<p>--add-data “src;src” </p>
-<ul>
-<li><p>作用：把你自己写的  src  模块文件夹打包进去</p>
-</li>
-<li><p>不加会导致  import src.utils  报错</p>
-</li>
-</ul>
-<p>--add-data “libs;libs” </p>
-<ul>
-<li><p>作用：把  libs  文件夹打包进去</p>
-</li>
-<li><p>如果你有自己的库文件，必须加</p>
-</li>
-</ul>
-<p>main.py </p>
-<ul>
-<li><p>作用：指定主程序入口文件</p>
-</li>
-<li><p>必须是你项目的启动文件</p>
-</li>
-</ul>
-<p>六、如果打包后提示“找不到模块”，加这个参数</p>
-<p>--hidden-import&#x3D;模块名  
- </p>
-<p>实例</p>
-<p>pyinstaller -F –hidden-import&#x3D;requests –hidden-import&#x3D;urllib3 –hidden-import&#x3D;pandas._libs.tslibs.base main.py  
- </p>
-<p>七、打包后文件在哪里？</p>
-<p>打包完成后，在  MyApp  文件夹里：</p>
-<ul>
-<li><p> dist&#x2F;main.exe  → 最终可执行文件</p>
-</li>
-<li><p> build&#x2F;  → 临时文件，可删除</p>
-</li>
-<li><p> main.spec  → 配置文件，不用管</p>
-</li>
-<li><p>反正找exe文件就对了</p>
-</li>
-</ul>
-<p>八、最常见问题怎么解决</p>
-<ol>
-<li>打包后闪退</li>
-</ol>
-<p>把  -w  换成  -c ，看报错：</p>
-<p>pyinstaller -F -c main.py  
- </p>
-<ol start="2">
-<li>打包后找不到资源</li>
-</ol>
-<p>必须加  –add-data ，并且代码用  resource_path </p>
-<ol start="3">
-<li>打包后 exe 很大（我自己一般不管，因为自己用懒得配虚拟环境了，个人感觉问题也不大）</li>
-</ol>
-<p>用虚拟环境，只装必要库</p>
-<ol start="4">
-<li>打包后报毒</li>
-</ol>
-<p>这个是正常的，因为是自己写的软件，现在软件基本上要搞数字签名才不会包病毒，如果觉得烦可以去研究一下</p>
-<ol start="5">
-<li>打包后功能不全</li>
-</ol>
-<p>检查是否漏了  –add-data  或  –hidden-import </p>
-<p>九、以下是一些常用的模板吧，对应打命令就行</p>
-<ol>
-<li>最常用（单文件 + 无黑窗 + 图标 + 资源）</li>
-</ol>
-<p>pyinstaller -F -w –clean -i icon.ico –add-data “assets;assets” main.py  
- </p>
-<ol start="2">
-<li>调试用（单文件 + 显示黑窗 + 看报错）</li>
-</ol>
-<p>pyinstaller -F -c –clean main.py  
- </p>
-<ol start="3">
-<li>完整项目（包含所有文件、模块、配置）</li>
-</ol>
-<p>pyinstaller -F -w –clean –noconfirm -i icon.ico –add-data “assets;assets” –add-data “config.json;.” –add-data “src;src” main.py</p>
-<p>总结：大致的方法就是这样，因为打包还是要根据你自己写的具体情况来分析，如果你是严格按照规定来的大概率没有问题，但是，你如果写的是屎山，那你就得自己研究了，反正方法大差不差，我就只能提供个思路。代码是死的，人是活的嘛，只要能达到目的一切都好，哪怕写的是屎山。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/05/2026/04/2026-04-05-python%E6%89%93%E5%8C%85%E6%88%90exe%EF%BC%88pyinstaller%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%89/index/" data-id="cuidY1ondcFf4Et66rngIyg_N" data-title="python打包成exe（pyinstaller的使用）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-05-用python做一个密码箱小工具（已在本人github仓库可以看/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/05/2026/04/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-04T16:00:00.000Z" itemprop="datePublished">2026-04-05</time>
+    <a href="/2026/05/08/2026/2026-05-08-%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%EF%BC%88%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%92%E6%9F%9C%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-07T16:00:00.000Z" itemprop="datePublished">2026-05-08</time>
 </a>
     
   <div class="article-category">
@@ -339,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/05/2026/04/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/">用python做一个密码箱小工具（已在本人github仓库可以看看）</a>
+      <a class="p-name article-title" href="/2026/05/08/2026/2026-05-08-%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%EF%BC%88%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%92%E6%9F%9C%EF%BC%89/index/">文件传输（文件快递柜）</a>
     </h1>
   
 
@@ -347,35 +97,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：因为本人经常记不住密码所以用python写了这个工具箱，并用pyinstaller这个第三方库打包成了exe文件。并附上exe下载地址和代码介绍与样式，本人能力有限希望勿喷。</p>
-<p>下载地址：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/password-manager/releases/download/v1.0.0/default.exe">https://github.com/suyihang15/password-manager/releases/download/v1.0.0/default.exe</a></p>
-<p>项目地址</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/suyihang15/password-manager">suyihang15&#x2F;password-manager: python写的本地密码记录本</a></p>
-<p>项目界面</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-154714-1024x717.png"></p>
-<p>启动后就是上面那个样子</p>
-<p>添加保存以后就会在改文件夹里生成</p>
-<p>passwords.json（作用：密码箱）</p>
-<p>secret.key（作用：钥匙）</p>
-<p>不能随便删除，删了数据就没了</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-154756-1024x691.png"></p>
-<p>成功以后打开软件就会以这样的方式呈现。</p>
-<p>我个人觉得是很直观的，当然你也可以拿着这些代码随便改，反正都有注释的</p>
-<p>要直接用源码的话，需要你自己配置环境</p>
-<p>1、<a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3110/">python 3.11</a></p>
-<p>2、安装第三方库pip install cryptography（我个人是喜欢pycharm或者vs code的这两个IDE的，当然你要用文本文档也行，反正代码也不多，就是格式容易错）安装第三方库时有可能网络超时，就自己配镜像源吧</p>
-<p>3、如果改好了可以打包了，个人推荐pyinstaller</p>
-<p>（1）安装库pip install pyinstaller和pip install cryptography记得要把这个环境一起打包进去，不然运行不了</p>
-<p>（2）打包pyinstaller -F -w –hidden-import&#x3D;cryptography 文件名字.py</p>
-<p>之后就生成一些文件里面就有exe文件，就可以直接拿来用了</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-05-162359-1024x309.png"></p>
-<p>希望对你有帮助，如果可以希望点一个star。</p>
+        <p>注：对于本项目主要针对于那些需要传输大文件，但是QQ微信这些传输被限制的人。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox">vastsa&#x2F;FileCodeBox: 文件快递柜-匿名口令分享文本，文件，像拿快递一样取文件（FileCodeBox - File Express Cabinet - Anonymous Passcode Sharing Text, Files, Like Taking Express Delivery for Files）</a></p>
+<p><strong><em>1、准备条件</em></strong></p>
+<p>云服务器，用于搭建传的文件的平台。</p>
+<p><a target="_blank" rel="noopener" href="https://www.bt.cn/new/index.html">安装宝塔面板</a></p>
+<p>if [ -f &#x2F;usr&#x2F;bin&#x2F;curl ];then curl -sSO <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;else">https://download.bt.cn/install/install\_panel.sh;else</a> wget -O install_panel.sh <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;fi;bash">https://download.bt.cn/install/install\_panel.sh;fi;bash</a> install_panel.sh ed8484bec</p>
+<p><strong><em>2、部署方法</em></strong></p>
+<p>直接安装这个就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-07-181115-1024x521.png"></p>
+<p><strong><em>3、效果展示</em></strong></p>
+<p>取文件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-07-182022-1024x546.png"></p>
+<p>发文件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-07-182032-1024x558.png"></p>
+<p>设置好就行了。</p>
+<p>总结:对于经常传输文件的人来说是个不错的项目。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/05/2026/04/2026-04-05-%E7%94%A8python%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AF%86%E7%A0%81%E7%AE%B1%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%88%E5%B7%B2%E5%9C%A8%E6%9C%AC%E4%BA%BAgithub%E4%BB%93%E5%BA%93%E5%8F%AF%E4%BB%A5%E7%9C%8B/index/" data-id="cuidObfpQtapvF98qS6VTpfZK" data-title="用python做一个密码箱小工具（已在本人github仓库可以看看）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/08/2026/2026-05-08-%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%EF%BC%88%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%92%E6%9F%9C%EF%BC%89/index/" data-id="cuidnnkvUJCgmmJlS9VMud0Nl" data-title="文件传输（文件快递柜）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -387,14 +129,14 @@
 
 
   
-    <article id="post-2026/04/2026-04-04-什么是公网ip与端口/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-07-关于开源/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+    <a href="/2026/05/07/2026/05/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-06T16:00:00.000Z" itemprop="datePublished">2026-05-07</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
   </div>
 
   </div>
@@ -405,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/">什么是公网IP与端口</a>
+      <a class="p-name article-title" href="/2026/05/07/2026/05/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/">关于开源</a>
     </h1>
   
 
@@ -413,262 +155,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>公网IP是你服务器在互联网上的唯一地址</p>
-<p>1、全世界只有一个（所以很多运营商不愿意给公网IP因为他是有限的）</p>
-<p>2、别人靠它找到你的服务器（包括远程连接，服务器，打开网页）</p>
-<p>3、其分为ipv4和ipv6，他们处于不同频段，v4是全球通用的，但是现在不太够了，一般现在能给的是v6，v6是只有支持该频端的电子设备才能访问，现在一般只有买云服务器才给公网ip，当然你搞得到v4的话确实厉害，但是上传多了可能会被pcdn警告，这点要注意，所以一般建议要玩公网ip可以买个云服务器。</p>
-<p>那么通俗点说公网IP好比如你家小区的地址，是一个可以找到你地址的一串数字。</p>
-<p>二、端口是什么？</p>
-<p>端口是服务器上不同服务的门牌号<br>一台服务器可以跑很多东西但是它们不能挤在一个门里所以用不同端口区分。<br>通俗点来说端口就是你家每间房的门牌号</p>
-<p>三、公网IP + 端口 &#x3D; 完整访问地址</p>
-<p>IP:端口 就是你访问任何服务的方式。</p>
-<p>比如：</p>
-<p>网站：ip地址（123.123.123.123）:端口号（80）中间一般打: </p>
-<p>四、常用的端口（一般是默认的）</p>
-<p>1、系统&#x2F;远程&#x2F;网络基础（0–1023 公认端口）</p>
-<ul>
-<li><p>20 FTP 数据端口</p>
-</li>
-<li><p>21 FTP 控制端口</p>
-</li>
-<li><p>22 SSH（安全远程登录）</p>
-</li>
-<li><p>23 Telnet（明文远程，已淘汰）</p>
-</li>
-<li><p>25 SMTP（邮件发送）</p>
-</li>
-<li><p>53 DNS（域名解析）</p>
-</li>
-<li><p>67 DHCP 服务器</p>
-</li>
-<li><p>68 DHCP 客户端</p>
-</li>
-<li><p>80 HTTP（网页默认）</p>
-</li>
-<li><p>110 POP3（邮件接收）</p>
-</li>
-<li><p>123 NTP（时间同步）</p>
-</li>
-<li><p>143 IMAP（邮件接收）</p>
-</li>
-<li><p>161 SNMP（设备监控）</p>
-</li>
-<li><p>162 SNMP Trap</p>
-</li>
-<li><p>443 HTTPS（加密网页）</p>
-</li>
-<li><p>445 SMB（Windows 文件共享）</p>
-</li>
-<li><p>514 Syslog（系统日志）</p>
-</li>
-<li><p>993 IMAPS（加密 IMAP）</p>
-</li>
-<li><p>995 POP3S（加密 POP3）</p>
-</li>
-</ul>
-<p>2、数据库端口</p>
-<ul>
-<li><p>1433 SQL Server</p>
-</li>
-<li><p>1521 Oracle</p>
-</li>
-<li><p>3306 MySQL &#x2F; MariaDB</p>
-</li>
-<li><p>5432 PostgreSQL</p>
-</li>
-<li><p>6379 Redis</p>
-</li>
-<li><p>27017 MongoDB</p>
-</li>
-<li><p>9042 Cassandra</p>
-</li>
-<li><p>5984 CouchDB</p>
-</li>
-<li><p>389 LDAP</p>
-</li>
-<li><p>636 LDAPS（加密）</p>
-</li>
-</ul>
-<p>3、Web 服务&#x2F;反向代理&#x2F;开发</p>
-<ul>
-<li><p>80 HTTP</p>
-</li>
-<li><p>443 HTTPS</p>
-</li>
-<li><p>8080 备用 HTTP（Tomcat、Jetty、测试）</p>
-</li>
-<li><p>8443 备用 HTTPS</p>
-</li>
-<li><p>8888 宝塔面板</p>
-</li>
-<li><p>9000 PHP-FPM</p>
-</li>
-<li><p>3000 Node.js 常用</p>
-</li>
-<li><p>5000 Flask &#x2F; 群晖 NAS</p>
-</li>
-<li><p>8000 Django</p>
-</li>
-<li><p>8081 Nginx 备用</p>
-</li>
-<li><p>9090 Prometheus</p>
-</li>
-<li><p>3000 Grafana</p>
-</li>
-</ul>
-<p>4、NAS &#x2F; 下载 &#x2F; 媒体服务</p>
-<ul>
-<li><p>5000 群晖 DSM</p>
-</li>
-<li><p>5001 群晖 HTTPS</p>
-</li>
-<li><p>32400 Plex</p>
-</li>
-<li><p>8096 Jellyfin</p>
-</li>
-<li><p>8989 Sonarr</p>
-</li>
-<li><p>7878 Radarr</p>
-</li>
-<li><p>9091 Transmission</p>
-</li>
-<li><p>51413 qBittorrent</p>
-</li>
-<li><p>6881–6889 BT 下载</p>
-</li>
-<li><p>9091 Transmission Web</p>
-</li>
-</ul>
-<p>5、邮件端口</p>
-<ul>
-<li><p>25 SMTP</p>
-</li>
-<li><p>465 SMTPS（加密）</p>
-</li>
-<li><p>587 SMTP 子端口</p>
-</li>
-<li><p>110 POP3</p>
-</li>
-<li><p>143 IMAP</p>
-</li>
-<li><p>993 IMAPS</p>
-</li>
-<li><p>995 POP3S</p>
-</li>
-</ul>
-<p>6、监控&#x2F;运维&#x2F;日志</p>
-<ul>
-<li><p>9090 Prometheus</p>
-</li>
-<li><p>3000 Grafana</p>
-</li>
-<li><p>9100 Node Exporter</p>
-</li>
-<li><p>9200 Elasticsearch</p>
-</li>
-<li><p>5601 Kibana</p>
-</li>
-<li><p>5044 Logstash</p>
-</li>
-<li><p>199 SMUX</p>
-</li>
-<li><p>61616 ActiveMQ</p>
-</li>
-</ul>
-<p>7、游戏常用端口</p>
-<ul>
-<li><p>22 SSH</p>
-</li>
-<li><p>80&#x2F;443 网页</p>
-</li>
-<li><p>27015 Steam</p>
-</li>
-<li><p>19132 Minecraft PE</p>
-</li>
-<li><p>25565 Minecraft Java</p>
-</li>
-<li><p>3724 魔兽世界</p>
-</li>
-<li><p>6112 星际争霸</p>
-</li>
-<li><p>27000–27050 游戏通用</p>
-</li>
-</ul>
-<p>8、VPN&#x2F;网络隧道</p>
-<ul>
-<li><p>1194 OpenVPN</p>
-</li>
-<li><p>1723 PPTP</p>
-</li>
-<li><p>500 IKE</p>
-</li>
-<li><p>4500 NAT-T</p>
-</li>
-<li><p>1701 L2TP</p>
-</li>
-</ul>
-<p>9、远程桌面&#x2F;管理</p>
-<ul>
-<li><p>3389 Windows RDP</p>
-</li>
-<li><p>5900 VNC</p>
-</li>
-<li><p>5901 VNC :1</p>
-</li>
-<li><p>5800 VNC Web</p>
-</li>
-</ul>
-<p>10、文件传输&#x2F;同步</p>
-<ul>
-<li><p>21 FTP</p>
-</li>
-<li><p>22 SFTP &#x2F; SCP</p>
-</li>
-<li><p>873 Rsync</p>
-</li>
-<li><p>445 SMB</p>
-</li>
-<li><p>139 NetBIOS</p>
-</li>
-</ul>
-<p>11、消息队列&#x2F;中间件</p>
-<ul>
-<li><p>5672 RabbitMQ</p>
-</li>
-<li><p>1883 MQTT</p>
-</li>
-<li><p>9092 Kafka</p>
-</li>
-<li><p>61616 ActiveMQ</p>
-</li>
-</ul>
-<p>12、容器&#x2F;云原生</p>
-<ul>
-<li><p>2375 Docker</p>
-</li>
-<li><p>2376 Docker TLS</p>
-</li>
-<li><p>6443 Kubernetes API</p>
-</li>
-<li><p>10250 Kubelet</p>
-</li>
-<li><p>9090 Prometheus</p>
-</li>
-</ul>
-<p>13、端口范围说明</p>
-<ul>
-<li><p>0–1023：系统保留端口（系统服务）</p>
-</li>
-<li><p>1024–49151：注册端口（软件&#x2F;服务）</p>
-</li>
-<li><p>49152–65535：动态&#x2F;私有端口（临时使用）</p>
-</li>
-</ul>
+        <p>注:以下内容仅代表我自己对于开源的看法。</p>
+<p><strong><em>什么是开源</em></strong></p>
+<p>按照我的理解，就是你自己写了一些代码，然后分享给那些需要你代码实现自己的一些功能的人。</p>
+<p><strong><em>开源的意义</em></strong></p>
+<p>写代码最忌讳的就是重复造轮子，当我们写软件想要实现许多功能时，我们需要写很多的代码，但是有了开源，当别人写了很多的代码有你需要的功能以后，我们就可以直接引用别人写好的就行，就不用大费周章的去写了，这就是开源的意义，其也是互联网精神的体现。</p>
+<p><strong><em>开源和闭源</em></strong></p>
+<p>关于开源，首先我希望所有的开源作者能越做越好，我们遵守作者的开源协议，我们不应该去要求作者做什么，尽可能的为其做贡献，当然我认为既然选择了开源，那就大部分是确实热爱这一事情的，但是，我希望开源作者不要对一个项目投毒或者编写一些恶意代码，也注意一些不怀好意的人的投毒，毕竟一个好的项目是多人维护的，只有这样，项目才会更好，我知道很多的开源作者其实是很不容易的，那么，希望您可以爱惜自己的心血，也希望其能更好。</p>
+<p>关于闭源，我个人觉得并没有什么不好的，毕竟人都是要吃饭的，我尊重所有开源和闭源的做法，但是，当要做闭源软件的时候，我们不能吃相太难看，当我们用了一些付费软件以后，就希望可以提供好的服务，这是为了营造一个良好的环境所必要的条件之一，当一个闭源项目确实很好，使用者体验很好，那么我相信这个软件会越做越好的，也希望其可以提供更好的服务。</p>
+<p><strong><em>关于开源项目</em></strong></p>
+<p>一个好的开源项目，往往是很多人维护的（当然也有大牛是全部自己搞的）。</p>
+<p>我们看到一个好的项目，首先我觉得要先看其使用的开源协议，我个人很喜欢MIT这个协议的（虽然我写的都是很基础的东西），因为其基本上是最宽松的协议了。</p>
+<p>然后，看readme，其·作者一般会详细的写出其部署过程和作用，也会直接放出打包好的文件，方便小白直接使用。</p>
+<p>最后，当你使用别人的代码或者软件，请尽自己所能提供一定的帮助或者宣传一下，请不要辱骂或者命令他人，人家没有这个义务，如果有bug可以拉取issues，并复现你所遇到的问题，那么会有大佬解决的。</p>
+<p><strong><em>关于开源作者</em></strong></p>
+<p>对于很多作者，其本身开源项目是不挣钱的，但是我个人了解的，除了打赏外，一般开源项目的作者会写清楚详细的部署流程，遇到小白不会的会收取一定的费用，但是他们所挣得的是部署的幸苦费，人家已经写清楚了详细的流程，那么，你还不会确实可能会收取一些简单的部署费，当然我也看到过有人把人家的开源项目拿出去挂网上卖，这是我觉得不好的，就算要挣这个钱，也要说清楚，自己挣得的是部署的幸苦钱，其本身是免费的，还有高级一点的，我见到的就是卖项目的key或者api接口的，因为有的人可能觉得有的项目部署起来很麻烦，想直接调用接口，那么，有的作者就会卖这个接口，也是变相的让自己有了一定的收入，不至于纯打白工。</p>
+<p><strong><em>关于大厂</em></strong></p>
+<p>一个反直觉的就是，大厂反而是提供了不少的开源项目的，因为你一开源，特别是大厂的开源，那么就可以帮助一些小作者解决很多事情，而且，当所有人都在使用这一个开源的项目，那么就会在行业里形成一个标准，那么后面很多的项目就会跟着你定的标准去做，这就是为什么大厂也会开源也爱开源的原因，很多大厂也会去招募那些优秀的开源作者，毕竟有了这样一些优秀的人公司才能更好，这对于开源作者也是一个不错的选择。</p>
+<p>总结：本人尊重所有开源或者闭源的人的行为，但是，希望每个人都能记得我们提供代码或者软件都是希望这个世界会更好，也希望能更好。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%AC%E7%BD%91ip%E4%B8%8E%E7%AB%AF%E5%8F%A3/index/" data-id="cuidt8ckljpoywwb2mx7O0xjY" data-title="什么是公网IP与端口" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/07/2026/05/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/" data-id="cuidN8a6qJN9n1WrSO2NChVzo" data-title="关于开源" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -680,14 +189,14 @@
 
 
   
-    <article id="post-2026/04/2026-04-04-什么是反向代理/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-05-07-关于开源/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+    <a href="/2026/05/07/2026/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-06T16:00:00.000Z" itemprop="datePublished">2026-05-07</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
   </div>
 
   </div>
@@ -698,7 +207,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/">什么是反向代理</a>
+      <a class="p-name article-title" href="/2026/05/07/2026/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/">关于开源</a>
     </h1>
   
 
@@ -706,34 +215,351 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>我们知道，网站一般是通过公网ip加端口号的方式访问的，而且一般我们是用80端口，之后绑定域名解析，就可以通过域名访问了，但是，如果不是用80端口，那么，就要在域名后面加端口访问了。</p>
-<p>但是，为什么我们基本我们过用域名加端口的方式访问呢，难道他们都是部署在不同服务器上的吗，同一个服务器可不可以搭建多个网站呢</p>
-<p>先回答上面的问题，可以，这里我们就要用到反向代理了，我们在搭建时一定会用到不同的端口，我们可以用反向代理的方式给他转换为80端口，方便我们使用，以下是一串反向代理的配置文件及作用</p>
-<p>nginx</p>
-<p>server {<br>listen 80; # 监听 HTTP 80 端口<br>server_name example.com; # 你的域名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8080; # 转发到本地服务端口</span><br><span class="line"></span><br><span class="line">    # 传递真实 IP 和域名（必须）</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line"></span><br><span class="line">    # 连接超时（Nginx 连后端）</span><br><span class="line">    proxy_connect_timeout 10s;</span><br><span class="line">    # 发送超时（Nginx → 后端）</span><br><span class="line">    proxy_send_timeout 30s;</span><br><span class="line">    # 读取超时（后端 → Nginx）</span><br><span class="line">    proxy_read_timeout 30s;</span><br><span class="line"></span><br><span class="line">    # 不缓存（常用）</span><br><span class="line">    proxy_buffering off;</span><br><span class="line">    proxy_cache off;</span><br><span class="line"></span><br><span class="line">    # 允许大文件上传（常用）</span><br><span class="line">    client_max_body_size 100M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>注:以下内容仅代表我自己对于开源的看法。</p>
+<p><strong><em>什么是开源</em></strong></p>
+<p>按照我的理解，就是你自己写了一些代码，然后分享给那些需要你代码实现自己的一些功能的人。</p>
+<p><strong><em>开源的意义</em></strong></p>
+<p>写代码最忌讳的就是重复造轮子，当我们写软件想要实现许多功能时，我们需要写很多的代码，但是有了开源，当别人写了很多的代码有你需要的功能以后，我们就可以直接引用别人写好的就行，就不用大费周章的去写了，这就是开源的意义，其也是互联网精神的体现。</p>
+<p><strong><em>开源和闭源</em></strong></p>
+<p>关于开源，首先我希望所有的开源作者能越做越好，我们遵守作者的开源协议，我们不应该去要求作者做什么，尽可能的为其做贡献，当然我认为既然选择了开源，那就大部分是确实热爱这一事情的，但是，我希望开源作者不要对一个项目投毒或者编写一些恶意代码，也注意一些不怀好意的人的投毒，毕竟一个好的项目是多人维护的，只有这样，项目才会更好，我知道很多的开源作者其实是很不容易的，那么，希望您可以爱惜自己的心血，也希望其能更好。</p>
+<p>关于闭源，我个人觉得并没有什么不好的，毕竟人都是要吃饭的，我尊重所有开源和闭源的做法，但是，当要做闭源软件的时候，我们不能吃相太难看，当我们用了一些付费软件以后，就希望可以提供好的服务，这是为了营造一个良好的环境所必要的条件之一，当一个闭源项目确实很好，使用者体验很好，那么我相信这个软件会越做越好的，也希望其可以提供更好的服务。</p>
+<p><strong><em>关于开源项目</em></strong></p>
+<p>一个好的开源项目，往往是很多人维护的（当然也有大牛是全部自己搞的）。</p>
+<p>我们看到一个好的项目，首先我觉得要先看其使用的开源协议，我个人很喜欢MIT这个协议的（虽然我写的都是很基础的东西），因为其基本上是最宽松的协议了。</p>
+<p>然后，看readme，其·作者一般会详细的写出其部署过程和作用，也会直接放出打包好的文件，方便小白直接使用。</p>
+<p>最后，当你使用别人的代码或者软件，请尽自己所能提供一定的帮助或者宣传一下，请不要辱骂或者命令他人，人家没有这个义务，如果有bug可以拉取issues，并复现你所遇到的问题，那么会有大佬解决的。</p>
+<p><strong><em>关于开源作者</em></strong></p>
+<p>对于很多作者，其本身开源项目是不挣钱的，但是我个人了解的，除了打赏外，一般开源项目的作者会写清楚详细的部署流程，遇到小白不会的会收取一定的费用，但是他们所挣得的是部署的幸苦费，人家已经写清楚了详细的流程，那么，你还不会确实可能会收取一些简单的部署费，当然我也看到过有人把人家的开源项目拿出去挂网上卖，这是我觉得不好的，就算要挣这个钱，也要说清楚，自己挣得的是部署的幸苦钱，其本身是免费的，还有高级一点的，我见到的就是卖项目的key或者api接口的，因为有的人可能觉得有的项目部署起来很麻烦，想直接调用接口，那么，有的作者就会卖这个接口，也是变相的让自己有了一定的收入，不至于纯打白工。</p>
+<p><strong><em>关于大厂</em></strong></p>
+<p>一个反直觉的就是，大厂反而是提供了不少的开源项目的，因为你一开源，特别是大厂的开源，那么就可以帮助一些小作者解决很多事情，而且，当所有人都在使用这一个开源的项目，那么就会在行业里形成一个标准，那么后面很多的项目就会跟着你定的标准去做，这就是为什么大厂也会开源也爱开源的原因，很多大厂也会去招募那些优秀的开源作者，毕竟有了这样一些优秀的人公司才能更好，这对于开源作者也是一个不错的选择。</p>
+<p>总结：本人尊重所有开源或者闭源的人的行为，但是，希望每个人都能记得我们提供代码或者软件都是希望这个世界会更好，也希望能更好。</p>
 
-<p>}  
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/07/2026/2026-05-07-%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90/index/" data-id="cuidQcWwSG6EAE0MOZbSkjgE7" data-title="关于开源" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-06-gitea搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/06/2026/05/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-05T16:00:00.000Z" itemprop="datePublished">2026-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/06/2026/05/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/">gitea搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注:对于那些常用GitHub的人我是很推荐部署一个这样的服务的。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/go-gitea/gitea">go-gitea&#x2F;gitea: Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI&#x2F;CD</a></p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://about.gitea.com/"></a><a target="_blank" rel="noopener" href="https://docs.gitea.com/zh-cn/">关于Gitea | Gitea Documentation</a></p>
+<p>1、作用</p>
+<p>其作用和GitHub一样，是一个代码托管平台，用于存放自己的代码，不同的是其部署到本地可以做一个备份和方便下载资源</p>
+<p>我们知道GitHub在国内访问是很慢的，但是部署到了本地就会快很多。</p>
+<p>2、部署</p>
+<p>（1）准备</p>
+<p><a target="_blank" rel="noopener" href="https://www.docker.com/">docker</a></p>
+<p>（2）部署的compose</p>
+<p>创建一个docker-compose.yml</p>
+<p>粘贴上</p>
+<p>version: “3.8”</p>
+<p>networks:<br>gitea-net:<br>driver: bridge</p>
+<p>volumes:<br>gitea-data:<br>gitea-postgres:</p>
+<p>services:<br># 数据库：PostgreSQL（自动建库建用户）<br>db:<br>image: postgres:16-alpine<br>container_name: gitea-db<br>restart: always<br>environment:<br>POSTGRES_DB: gitea<br>POSTGRES_USER: gitea<br>POSTGRES_PASSWORD: gitea123<br>volumes:<br>- gitea-postgres:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data<br>networks:<br>- gitea-net</p>
+<p># Gitea 主服务<br>gitea:<br>image: gitea&#x2F;gitea:1.26.1<br>container_name: gitea<br>restart: always<br>depends_on:<br>- db<br>environment:<br>USER_UID: 1000<br>USER_GID: 1000<br># 数据库连接（直接连上面的 db 服务）<br>GITEA__database__DB_TYPE: postgres<br>GITEA__database__HOST: db:5432<br>GITEA__database__NAME: gitea<br>GITEA__database__USER: gitea<br>GITEA__database__PASSWD: gitea123<br># 初始化锁定（安装后自动锁定）<br>GITEA__security__INSTALL_LOCK: “true”<br>volumes:<br>- gitea-data:&#x2F;data<br>- &#x2F;etc&#x2F;timezone:&#x2F;etc&#x2F;timezone:ro<br>- &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime:ro<br>ports:<br>- “3000:3000” # Web UI<br>- “2222:22” # SSH Git<br>networks:<br>- gitea-net</p>
+<p>启动</p>
+<p>docker compose up -d</p>
+<p>（3）访问</p>
+<p>输入IP地址:3000</p>
+<p>这个根据自己需要改，本人已经将数据库这些也一并写入，就不用配置数据库了，如果有需要配置的就去看官方文档把，里面有详细的配置教程。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-06-185358-1024x548.png"></p>
+<p>访问以后在这里填入你要设置的账号和密码。</p>
+<p>成果展示</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-06-185602-1024x539.png"></p>
+<p>总结:其本身是部署在你自己的服务器上，所以还是很推荐的，主要是可控。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/06/2026/05/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/" data-id="cuidzmf8RCfC3eNFp4D0hTnfr" data-title="gitea搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-06-gitea搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/06/2026/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-05T16:00:00.000Z" itemprop="datePublished">2026-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/06/2026/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/">gitea搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注:对于那些常用GitHub的人我是很推荐部署一个这样的服务的。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/go-gitea/gitea">go-gitea&#x2F;gitea: Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI&#x2F;CD</a></p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://about.gitea.com/"></a><a target="_blank" rel="noopener" href="https://docs.gitea.com/zh-cn/">关于Gitea | Gitea Documentation</a></p>
+<p>1、作用</p>
+<p>其作用和GitHub一样，是一个代码托管平台，用于存放自己的代码，不同的是其部署到本地可以做一个备份和方便下载资源</p>
+<p>我们知道GitHub在国内访问是很慢的，但是部署到了本地就会快很多。</p>
+<p>2、部署</p>
+<p>（1）准备</p>
+<p><a target="_blank" rel="noopener" href="https://www.docker.com/">docker</a></p>
+<p>（2）部署的compose</p>
+<p>创建一个docker-compose.yml</p>
+<p>粘贴上</p>
+<p>version: “3.8”</p>
+<p>networks:<br>gitea-net:<br>driver: bridge</p>
+<p>volumes:<br>gitea-data:<br>gitea-postgres:</p>
+<p>services:<br># 数据库：PostgreSQL（自动建库建用户）<br>db:<br>image: postgres:16-alpine<br>container_name: gitea-db<br>restart: always<br>environment:<br>POSTGRES_DB: gitea<br>POSTGRES_USER: gitea<br>POSTGRES_PASSWORD: gitea123<br>volumes:<br>- gitea-postgres:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data<br>networks:<br>- gitea-net</p>
+<p># Gitea 主服务<br>gitea:<br>image: gitea&#x2F;gitea:1.26.1<br>container_name: gitea<br>restart: always<br>depends_on:<br>- db<br>environment:<br>USER_UID: 1000<br>USER_GID: 1000<br># 数据库连接（直接连上面的 db 服务）<br>GITEA__database__DB_TYPE: postgres<br>GITEA__database__HOST: db:5432<br>GITEA__database__NAME: gitea<br>GITEA__database__USER: gitea<br>GITEA__database__PASSWD: gitea123<br># 初始化锁定（安装后自动锁定）<br>GITEA__security__INSTALL_LOCK: “true”<br>volumes:<br>- gitea-data:&#x2F;data<br>- &#x2F;etc&#x2F;timezone:&#x2F;etc&#x2F;timezone:ro<br>- &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime:ro<br>ports:<br>- “3000:3000” # Web UI<br>- “2222:22” # SSH Git<br>networks:<br>- gitea-net</p>
+<p>启动</p>
+<p>docker compose up -d</p>
+<p>（3）访问</p>
+<p>输入IP地址:3000</p>
+<p>这个根据自己需要改，本人已经将数据库这些也一并写入，就不用配置数据库了，如果有需要配置的就去看官方文档把，里面有详细的配置教程。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-06-185358-1024x548.png"></p>
+<p>访问以后在这里填入你要设置的账号和密码。</p>
+<p>成果展示</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-06-185602-1024x539.png"></p>
+<p>总结:其本身是部署在你自己的服务器上，所以还是很推荐的，主要是可控。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/06/2026/2026-05-06-gitea%E6%90%AD%E5%BB%BA/index/" data-id="cuidGuk2OcX5Xbyae2HjXBQQV" data-title="gitea搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-05-搭建邮件服务系统/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/05/2026/05/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-04T16:00:00.000Z" itemprop="datePublished">2026-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/05/2026/05/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/">搭建邮件服务系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：对于一些隐私及其看中的公司，可以直接搭建一套完整的邮箱系统然后用于使用</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Billionmail/BillionMail">Billionmail&#x2F;BillionMail：BillionMail为您提供开源的邮件服务器、通讯和电子邮件营销——完全自托管，开发者友好，且免月费。加入Discord：https://discord.gg/asfXzBUhZr</a></p>
+<p>1、作用</p>
+<p>就和像qq邮箱和163邮箱一样，但是如果想要公开使用，请进行备案，否则发到其他邮箱会被认为是垃圾信息然后被拦截。</p>
+<p>2、部署</p>
+<p>在终端执行</p>
+<p>cd &#x2F;opt &amp;&amp; git clone <a target="_blank" rel="noopener" href="https://github.com/aaPanel/BillionMail">https://github.com/aaPanel/BillionMail</a> &amp;&amp; cd BillionMail &amp;&amp; bash install.sh</p>
+<p>就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-221348-1024x265.png"></p>
+<p>配置好域名解析和dns记录</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-222929-1-1024x549.png"></p>
+<p>3、效果展示</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-222615-1024x562.png"></p>
+<p>后面就可以了。</p>
+<p>总结：对于一些经常用邮箱的人这个肯定可以对你有一定的帮助。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/05/2026/05/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/" data-id="cuidPhKpdeoPEVbS-tIGMqSkB" data-title="搭建邮件服务系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-05-搭建邮件服务系统/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/05/2026/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-04T16:00:00.000Z" itemprop="datePublished">2026-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/05/2026/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/">搭建邮件服务系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：对于一些隐私及其看中的公司，可以直接搭建一套完整的邮箱系统然后用于使用</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Billionmail/BillionMail">Billionmail&#x2F;BillionMail：BillionMail为您提供开源的邮件服务器、通讯和电子邮件营销——完全自托管，开发者友好，且免月费。加入Discord：https://discord.gg/asfXzBUhZr</a></p>
+<p>1、作用</p>
+<p>就和像qq邮箱和163邮箱一样，但是如果想要公开使用，请进行备案，否则发到其他邮箱会被认为是垃圾信息然后被拦截。</p>
+<p>2、部署</p>
+<p>在终端执行</p>
+<p>cd &#x2F;opt &amp;&amp; git clone <a target="_blank" rel="noopener" href="https://github.com/aaPanel/BillionMail">https://github.com/aaPanel/BillionMail</a> &amp;&amp; cd BillionMail &amp;&amp; bash install.sh</p>
+<p>就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-221348-1024x265.png"></p>
+<p>配置好域名解析和dns记录</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-222929-1-1024x549.png"></p>
+<p>3、效果展示</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-222615-1024x562.png"></p>
+<p>后面就可以了。</p>
+<p>总结：对于一些经常用邮箱的人这个肯定可以对你有一定的帮助。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/05/2026/2026-05-05-%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F/index/" data-id="cuid3GlNQJWjedgwhyt8D91Iq" data-title="搭建邮件服务系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-04-pdf处理工具（stirling-pdf）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/04/2026/05/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-03T16:00:00.000Z" itemprop="datePublished">2026-05-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/04/2026/05/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/">PDF处理工具（Stirling PDF）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：对于经常办公的人员来说，文件的处理是很麻烦的这个项目就是帮助你解决这一痛点的。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-Tools&#x2F;Stirling-PDF: #1 PDF Application on GitHub that lets you edit PDFs on any device anywhere</a></p>
+<p>体验地址：</p>
+<p><strong><em>1、准备</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.docker.com/">安装docker</a></p>
+<p>注：如果你只是自己用就部署到本地就行，如果要对外服务还是要购买云服务器。</p>
+<p><strong><em>2、作用</em></strong></p>
+<p>Stirling PDF 是一个强大的开源 PDF 编辑平台，可以作为个人桌面应用运行，在浏览器中运行，或者用私有 API 部署到自己的服务器上。编辑、签署、编辑、编辑、转换和自动化 PDF 文件，无需将文档发送给外部服务。</p>
+<p><strong><em>2、部署</em></strong></p>
+<p>docker compose部署命令</p>
+<p>version: “3.8”</p>
+<p>services:<br>stirling-pdf:<br>image: frooodle&#x2F;s-pdf:latest<br>container_name: stirling-pdf<br>restart: always<br>ports:<br>- “8080:8080” # 宿主机端口:容器端口，前面的 8080 可根据需要改成别的<br>volumes:<br>- .&#x2F;config:&#x2F;configs<br>- .&#x2F;files:&#x2F;files<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai</p>
+<p>（1）在服务器上新建一个文件夹</p>
+<p>mkdir -p ~&#x2F;stirling-pdf</p>
+<p>cd ~&#x2F;stirling-pdf<br> <br>（2）新建  docker-compose.yml  文件，把上面的内容复制进去保存</p>
+<p>nano docker-compose.yml<br> <br>（3）启动服务</p>
+<p>sudo docker-compose up -d<br> <br>（4）查看是否启动成功</p>
+<p>sudo docker-compose ps  
  </p>
-<p>每一行作用</p>
-<ul>
-<li><p> proxy_connect_timeout ：连不上后端多久断开</p>
-</li>
-<li><p> proxy_send_timeout ：发数据给后端多久超时</p>
-</li>
-<li><p> proxy_read_timeout ：等后端响应多久超时</p>
-</li>
-<li><p> client_max_body_size ：允许上传大文件</p>
-</li>
-<li><p> proxy_buffering off ：避免卡顿，实时流更稳</p>
-</li>
-</ul>
-<p>这是一些基础配置，希望可以帮你了解。</p>
+<p>然后打开：http:&#x2F;&#x2F;你的ip地址:8080</p>
+<p>对，docker就是这么简单。</p>
+<p><strong><em>3、效果展示</em></strong></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105509-1024x585.png"></p>
+<p>登录以后就可以看到他的所有功能了，可以看到还是有很多的，</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105733-1024x556.png"></p>
+<p>在设置里就可以看到你的API密匙就可以对外提供一个简单的服务了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105938-1024x592.png"></p>
+<p>总结：其大部分功能是很好用的，你可以试试特别是要经常处理文件的人群。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index/" data-id="cuidI1e2pxkVfFKeOY_eeeyVS" data-title="什么是反向代理" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/04/2026/05/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/" data-id="cuidfNPO79oZwixMJAHvQZWkT" data-title="PDF处理工具（Stirling PDF）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -745,14 +571,14 @@
 
 
   
-    <article id="post-2026/04/2026-04-04-什么是服务器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-05-04-pdf处理工具（stirling-pdf）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
+    <a href="/2026/05/04/2026/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-03T16:00:00.000Z" itemprop="datePublished">2026-05-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
   </div>
 
   </div>
@@ -763,7 +589,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/">什么是服务器</a>
+      <a class="p-name article-title" href="/2026/05/04/2026/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/">PDF处理工具（Stirling PDF）</a>
     </h1>
   
 
@@ -771,17 +597,39 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>按照我个人的理解就是一台永不关机的电脑，如果你自己有一台电脑，可以大部分时间不关机，也可以算作一台服务器</p>
-<p>那么区别在哪里呢</p>
-<p>1、我们知道一台电脑可以干的事情有很多，但是服务器可以干的事情就比较专业了，他们有的专门用于存储，有的专门用于网站的运行，你可以把电脑理解为一个什么都还行的学生，把服务器理解为一个偏科生，他一般就是用于专业干某件事情的大佬。</p>
-<p>2、对于一般来说服务器一般运行的系统为linux系统或者他的发行版，由于其运行起来极低的占用与极强的自定义性，所以大部分服务器都会选择Linux系统</p>
-<p>3、操控方式，一般来说对于服务器的控制一般都是原程控制的，因为一般不会给服务器专门连接一个显示屏，通过ssh连接远程下载命令，可以更加高效的执行操作者的命令。</p>
-<p>按照本人的理解大致就是这些了，如果还有什么见解欢迎在评论区补充。</p>
+        <p>注：对于经常办公的人员来说，文件的处理是很麻烦的这个项目就是帮助你解决这一痛点的。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-Tools&#x2F;Stirling-PDF: #1 PDF Application on GitHub that lets you edit PDFs on any device anywhere</a></p>
+<p>体验地址：</p>
+<p><strong><em>1、准备</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.docker.com/">安装docker</a></p>
+<p>注：如果你只是自己用就部署到本地就行，如果要对外服务还是要购买云服务器。</p>
+<p><strong><em>2、作用</em></strong></p>
+<p>Stirling PDF 是一个强大的开源 PDF 编辑平台，可以作为个人桌面应用运行，在浏览器中运行，或者用私有 API 部署到自己的服务器上。编辑、签署、编辑、编辑、转换和自动化 PDF 文件，无需将文档发送给外部服务。</p>
+<p><strong><em>2、部署</em></strong></p>
+<p>docker compose部署命令</p>
+<p>version: “3.8”</p>
+<p>services:<br>stirling-pdf:<br>image: frooodle&#x2F;s-pdf:latest<br>container_name: stirling-pdf<br>restart: always<br>ports:<br>- “8080:8080” # 宿主机端口:容器端口，前面的 8080 可根据需要改成别的<br>volumes:<br>- .&#x2F;config:&#x2F;configs<br>- .&#x2F;files:&#x2F;files<br>environment:<br>- TZ&#x3D;Asia&#x2F;Shanghai</p>
+<p>（1）在服务器上新建一个文件夹</p>
+<p>mkdir -p ~&#x2F;stirling-pdf</p>
+<p>cd ~&#x2F;stirling-pdf<br> <br>（2）新建  docker-compose.yml  文件，把上面的内容复制进去保存</p>
+<p>nano docker-compose.yml<br> <br>（3）启动服务</p>
+<p>sudo docker-compose up -d<br> <br>（4）查看是否启动成功</p>
+<p>sudo docker-compose ps  
+ </p>
+<p>然后打开：http:&#x2F;&#x2F;你的ip地址:8080</p>
+<p>对，docker就是这么简单。</p>
+<p><strong><em>3、效果展示</em></strong></p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105509-1024x585.png"></p>
+<p>登录以后就可以看到他的所有功能了，可以看到还是有很多的，</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105733-1024x556.png"></p>
+<p>在设置里就可以看到你的API密匙就可以对外提供一个简单的服务了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-105938-1024x592.png"></p>
+<p>总结：其大部分功能是很好用的，你可以试试特别是要经常处理文件的人群。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/index/" data-id="cuideqrcnx3fkxAfTimHtibvA" data-title="什么是服务器" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/04/2026/2026-05-04-pdf%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%88stirling-pdf%EF%BC%89/index/" data-id="cuid6aVhyQcW1Q7QdxVbN-nLM" data-title="PDF处理工具（Stirling PDF）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -793,58 +641,10 @@
 
 
   
-    <article id="post-2026/04/2026-04-04-什么是docker/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-03-steam安装插件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-03T16:00:00.000Z" itemprop="datePublished">2026-04-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/">什么是docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>很多项目的部署用docker更为方便，那么什么是<a target="_blank" rel="noopener" href="https://www.docker.com/">docker</a>呢</p>
-<p>按我自己的理解来说docker就是一个容器</p>
-<p>他可以把我们部署需要的环境全部打包好，然后当我们需要这个项目的时候就给他拆开使用。</p>
-<p>很多人用做菜来比喻，你可以把他看作预制场，他把调料包（所需环境）全部整理好，拆开简答烹饪（拉取镜像）就可以吃了（使用了）</p>
-<p>因为有的项目部署环境比较复杂，这样做可以大大降低部署的门槛，而且因为其是一个个隔离且独立的环境，所以不必担心环境冲突等因素影响其他的项目冲突。</p>
-<p>但是我个人觉得docker部署完后的项目在处理时还有些残留不太能删的干净，也应该是本人技术不到位。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/04/2026/04/2026-04-04-%E4%BB%80%E4%B9%88%E6%98%AFdocker/index/" data-id="cuidN95oBGxBdl3xbDmHmO-yK" data-title="什么是docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-31-罪恶都市作弊码（仅供参考）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/31/2026/03/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-30T16:00:00.000Z" itemprop="datePublished">2026-03-31</time>
+    <a href="/2026/05/03/2026/05/2026-05-03-steam%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-02T16:00:00.000Z" itemprop="datePublished">2026-05-03</time>
 </a>
     
   <div class="article-category">
@@ -859,7 +659,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/31/2026/03/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/">罪恶都市作弊码（仅供参考）</a>
+      <a class="p-name article-title" href="/2026/05/03/2026/05/2026-05-03-steam%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/index/">steam安装插件</a>
     </h1>
   
 
@@ -867,745 +667,22 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong><em>一、武器与生存类</em></strong></p>
-<ul>
-<li><p>THUGSTOOLS：初级武器套装（棒球棍、手枪、砍刀、燃烧瓶等）</p>
-</li>
-<li><p>PROFESSIONALTOOLS：中级武器套装（左轮手枪、霰弹枪、冲锋枪、狙击枪等）</p>
-</li>
-<li><p>NUTTERTOOLS：重型武器套装（电锯、加特林机枪、火箭筒、遥控炸弹等）</p>
-</li>
-<li><p>ASPIRINE：恢复全部生命值</p>
-</li>
-<li><p>PRECIOUSPROTECTION：获得满额护甲</p>
-</li>
-<li><p>ICANTTAKEITANYMORE：角色自杀</p>
-</li>
-</ul>
-<p><strong><em>二、通缉等级类</em></strong></p>
-<ul>
-<li><p>LEAVEMEALONE：消除所有通缉警星</p>
-</li>
-<li><p>YOUWONTTAKEMEALIVE：增加2颗通缉警星</p>
-</li>
-</ul>
-<p><strong><em>三、载具生成类</em></strong></p>
-<ul>
-<li><p>PANZER：召唤坦克</p>
-</li>
-<li><p>GETTHEREFAST：召唤高速跑车（Sabre Turbo）</p>
-</li>
-<li><p>BETTERTHANWALKING：召唤高尔夫球车</p>
-</li>
-<li><p>RUBBISHCAR：召唤垃圾车</p>
-</li>
-<li><p>THELASTRIDE：召唤灵车</p>
-</li>
-<li><p>ROCKANDROLLCAR：召唤豪华轿车</p>
-</li>
-</ul>
-<p><strong><em>四、载具功能类</em></strong></p>
-<ul>
-<li><p>SEAWAYS：汽车可在水面行驶（摩托车、直升机除外）</p>
-</li>
-<li><p>COMEFLYWITHME：汽车高速行驶时可飞行</p>
-</li>
-<li><p>BIGBANG：炸毁附近所有车辆</p>
-</li>
-<li><p>GREENLIGHT：所有交通信号灯变为绿灯</p>
-</li>
-<li><p>MIAMITRAFFIC：路上车辆增多且行驶混乱</p>
-</li>
-<li><p>AHAIRDRESSERSCAR：当前驾驶车辆变为粉色</p>
-</li>
-<li><p>IWANTITPAINTEDBLACK：当前驾驶车辆变为黑色</p>
-</li>
-</ul>
-<p><strong><em>五、游戏节奏类</em></strong></p>
-<ul>
-<li><p>ONSPEED：加快游戏整体速度</p>
-</li>
-<li><p>BOOOOOORING：减慢游戏整体速度</p>
-</li>
-</ul>
-<p><strong><em>六、天气效果类</em></strong></p>
-<ul>
-<li><p>APLEASANTDAY：切换为晴天</p>
-</li>
-<li><p>ALOVELYDAY：切换为晴朗好天气</p>
-</li>
-<li><p>ABITDRIEG：切换为阴天</p>
-</li>
-<li><p>CATSANDDOGS：切换为雨天</p>
-</li>
-<li><p>CANTSEEATHING：切换为雾天</p>
-</li>
-</ul>
-<p><strong><em>七、人物与趣味类</em></strong></p>
-<ul>
-<li><p>STILLLIKEDRESSINGUP：随机更换角色皮肤</p>
-</li>
-<li><p>FANNYMAGNET：吸引周围女性角色跟随</p>
-</li>
-<li><p>DEEPFRIEDMARSBARS：角色体型变胖</p>
-</li>
-<li><p>PROGRAMMER：角色体型变瘦</p>
-</li>
-<li><p>FIGHTFIGHTFIGHT：路人互相攻击</p>
-</li>
-<li><p>NOBODYLIKESME：路人攻击玩家</p>
-</li>
-<li><p>OURGODGIVENRIGHTTOBEARARMS：路人持有武器</p>
-</li>
-</ul>
+        <p>注：我们熟知的steam没想到吧，其本体是一个基于chromium的网站罢了。</p>
+<p>既然是一个网站，那么我们就可以安装插件。</p>
+<p>鼠标中键选择任何一个游戏，打开一个窗口，使上面的网址变成可编辑状态</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-03-003545-1024x608.png"></p>
+<p>删掉上面的内容输入chrome:&#x2F;&#x2F;extensions&#x2F;就可以安装对应的插件了。</p>
+<p><img src="/images/image-1-1024x612.png"></p>
+<p>插件推荐</p>
+<p>售价对比 SteamDB</p>
+<p>文字翻译 沉浸式翻译_-_网页翻译插件</p>
+<p>基本上就这两个，安装的时候最好把插件文件先下载到本地，然后直接拖进去导入，其他的就自行探索吧。</p>
+<p>总结：个人觉得，steam插件安装一些对于使用体验还是有所提升的，整体还是不错的，而且本质steam还是一个网站，个人觉得其后面的开发自定义的潜力还是有很多的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/31/2026/03/2026-03-31-%E7%BD%AA%E6%81%B6%E9%83%BD%E5%B8%82%E4%BD%9C%E5%BC%8A%E7%A0%81%EF%BC%88%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89/index/" data-id="cuidmVIQ73fMSW3yBO05vvFjk" data-title="罪恶都市作弊码（仅供参考）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-31-常见文件类型及作用/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/31/2026/03/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-30T16:00:00.000Z" itemprop="datePublished">2026-03-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/31/2026/03/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/">常见文件类型及作用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>一、文档类（最常用）</p>
-<ul>
-<li><p>.txt：纯文本，无格式</p>
-</li>
-<li><p>.doc &#x2F; .docx：Word 文档</p>
-</li>
-<li><p>.xls &#x2F; .xlsx：Excel 表格</p>
-</li>
-<li><p>.ppt &#x2F; .pptx：PPT 演示</p>
-</li>
-<li><p>.pdf：通用文档，格式固定</p>
-</li>
-<li><p>.rtf：富文本，带简单格式</p>
-</li>
-<li><p>.odt &#x2F; .ods &#x2F; .odp：LibreOffice 文档</p>
-</li>
-<li><p>.md：Markdown 笔记</p>
-</li>
-<li><p>.epub：电子书</p>
-</li>
-<li><p>.mobi &#x2F; .azw3：Kindle 电子书</p>
-</li>
-<li><p>.chm：Windows 帮助文档</p>
-</li>
-<li><p>.wps：WPS 文档</p>
-</li>
-<li><p>.dot &#x2F; .dotx：Word 模板</p>
-</li>
-<li><p>.xlt &#x2F; .xltx：Excel 模板</p>
-</li>
-<li><p>.pot &#x2F; .potx：PPT 模板</p>
-</li>
-<li><p>.pages：Mac 文档</p>
-</li>
-<li><p>.numbers：Mac 表格</p>
-</li>
-<li><p>.key：Mac 演示</p>
-</li>
-</ul>
-<p>二、图片类</p>
-<ul>
-<li><p>.jpg &#x2F; .jpeg：照片</p>
-</li>
-<li><p>.png：透明图</p>
-</li>
-<li><p>.gif：动图</p>
-</li>
-<li><p>.bmp：无压缩位图</p>
-</li>
-<li><p>.webp：网页图片</p>
-</li>
-<li><p>.svg：矢量图</p>
-</li>
-<li><p>.ico：图标</p>
-</li>
-<li><p>.heic &#x2F; .heif：iPhone 照片</p>
-</li>
-<li><p>.tiff &#x2F; .tif：印刷高清图</p>
-</li>
-<li><p>.psd：PS 源文件</p>
-</li>
-<li><p>.ai：Illustrator 矢量</p>
-</li>
-<li><p>.cdr：CorelDRAW</p>
-</li>
-<li><p>.raw：相机原始照片</p>
-</li>
-<li><p>.exr：专业 HDR 图</p>
-</li>
-<li><p>.jfif：JPEG 变种</p>
-</li>
-<li><p>.dds：游戏贴图</p>
-</li>
-<li><p>.tga：游戏&#x2F;设计图</p>
-</li>
-<li><p>.pic：老图片格式</p>
-</li>
-</ul>
-<p>三、音频类</p>
-<ul>
-<li><p>.mp3：通用音乐</p>
-</li>
-<li><p>.wav：无压缩音频</p>
-</li>
-<li><p>.flac：无损音乐</p>
-</li>
-<li><p>.aac：手机&#x2F;视频音频</p>
-</li>
-<li><p>.m4a：苹果音频</p>
-</li>
-<li><p>.ogg：开源音频</p>
-</li>
-<li><p>.wma：Windows 音频</p>
-</li>
-<li><p>.amr：手机录音</p>
-</li>
-<li><p>.mid &#x2F; .midi：电子音乐</p>
-</li>
-<li><p>.mp2：老音频</p>
-</li>
-<li><p>.ac3：DVD 音轨</p>
-</li>
-<li><p>.dts：高清音轨</p>
-</li>
-<li><p>.opus：高质量低体积音频</p>
-</li>
-<li><p>.mka：Matroska 音频</p>
-</li>
-<li><p>.caf：Mac 音频</p>
-</li>
-<li><p>.au：Unix 音频</p>
-</li>
-<li><p>.snd：老音频</p>
-</li>
-</ul>
-<p>四、视频类</p>
-<ul>
-<li><p>.mp4：通用视频</p>
-</li>
-<li><p>.mkv：高清多音轨</p>
-</li>
-<li><p>.mov：苹果视频</p>
-</li>
-<li><p>.avi：老视频</p>
-</li>
-<li><p>.wmv：Windows 视频</p>
-</li>
-<li><p>.flv：Flash 视频</p>
-</li>
-<li><p>.webm：网页视频</p>
-</li>
-<li><p>.mpeg &#x2F; .mpg：MPEG 视频</p>
-</li>
-<li><p>.rm &#x2F; .rmvb：Real 视频</p>
-</li>
-<li><p>.3gp：手机老视频</p>
-</li>
-<li><p>.m4v：苹果视频</p>
-</li>
-<li><p>.ts &#x2F; .mts：高清摄像</p>
-</li>
-<li><p>.vob：DVD 视频</p>
-</li>
-<li><p>.m2ts：蓝光视频</p>
-</li>
-<li><p>.f4v：Flash 高清</p>
-</li>
-<li><p>.asf：Windows 媒体</p>
-</li>
-<li><p>.m3u8：在线视频流</p>
-</li>
-<li><p>.dat：VCD 视频</p>
-</li>
-<li><p>.dv：摄像机视频</p>
-</li>
-<li><p>.ogv：开源视频</p>
-</li>
-</ul>
-<p>五、压缩&#x2F;归档类</p>
-<ul>
-<li><p>.zip：通用压缩</p>
-</li>
-<li><p>.rar：高压缩</p>
-</li>
-<li><p>.7z：最强压缩</p>
-</li>
-<li><p>.tar：Linux 归档</p>
-</li>
-<li><p>.tar.gz &#x2F; .tgz：Linux 压缩</p>
-</li>
-<li><p>.tar.bz2：高压缩</p>
-</li>
-<li><p>.tar.xz：超高压</p>
-</li>
-<li><p>.gz：Gzip 压缩</p>
-</li>
-<li><p>.bz2：Bzip2 压缩</p>
-</li>
-<li><p>.xz：XZ 压缩</p>
-</li>
-<li><p>.z：老压缩</p>
-</li>
-<li><p>.iso：光盘镜像</p>
-</li>
-<li><p>.img：磁盘镜像</p>
-</li>
-<li><p>.nrg：Nero 镜像</p>
-</li>
-<li><p>.dmg：Mac 镜像</p>
-</li>
-<li><p>.cso：PSP 镜像</p>
-</li>
-<li><p>.isz：压缩 ISO</p>
-</li>
-<li><p>.arj：老压缩</p>
-</li>
-<li><p>.lzh：老压缩</p>
-</li>
-<li><p>.cab：Windows 压缩包</p>
-</li>
-<li><p>.wim：Windows 镜像</p>
-</li>
-<li><p>.squashfs：Linux 镜像</p>
-</li>
-</ul>
-<p>六、程序&#x2F;安装包（电脑+手机）</p>
-<ul>
-<li><p>.exe：Windows 程序</p>
-</li>
-<li><p>.msi：Windows 安装</p>
-</li>
-<li><p>.bat &#x2F; .cmd：Windows 脚本</p>
-</li>
-<li><p>.dll：系统库</p>
-</li>
-<li><p>.sys：驱动</p>
-</li>
-<li><p>.drv：驱动</p>
-</li>
-<li><p>.ocx：控件</p>
-</li>
-<li><p>.cpl：控制面板</p>
-</li>
-<li><p>.app：Mac 程序</p>
-</li>
-<li><p>.pkg：Mac 安装</p>
-</li>
-<li><p>.deb：Debian 包</p>
-</li>
-<li><p>.rpm：RedHat 包</p>
-</li>
-<li><p>.sh：Linux 脚本</p>
-</li>
-<li><p>.bin：二进制</p>
-</li>
-<li><p>.run：Linux 安装</p>
-</li>
-<li><p>.apk：安卓</p>
-</li>
-<li><p>.xapk &#x2F; .apkm：安卓分包</p>
-</li>
-<li><p>.apks：安卓捆绑</p>
-</li>
-<li><p>.aab：安卓发布</p>
-</li>
-<li><p>.ipa：苹果</p>
-</li>
-<li><p>.pxl &#x2F; .deb：越狱苹果</p>
-</li>
-<li><p>.jar：Java</p>
-</li>
-<li><p>.jad：Java 描述</p>
-</li>
-<li><p>.swf：Flash</p>
-</li>
-<li><p>.crx：Chrome 插件</p>
-</li>
-<li><p>.xpi：Firefox 插件</p>
-</li>
-</ul>
-<p>七、代码&#x2F;配置&#x2F;数据</p>
-<ul>
-<li><p>.py：Python</p>
-</li>
-<li><p>.js：JavaScript</p>
-</li>
-<li><p>.html &#x2F; .htm：网页</p>
-</li>
-<li><p>.css：样式</p>
-</li>
-<li><p>.java：Java</p>
-</li>
-<li><p>.c &#x2F; .cpp &#x2F; .cxx：C&#x2F;C++</p>
-</li>
-<li><p>.h &#x2F; .hpp：头文件</p>
-</li>
-<li><p>.php：PHP</p>
-</li>
-<li><p>.go：Go</p>
-</li>
-<li><p>.rs：Rust</p>
-</li>
-<li><p>.rb：Ruby</p>
-</li>
-<li><p>.pl：Perl</p>
-</li>
-<li><p>.lua：Lua</p>
-</li>
-<li><p>.swift：Swift</p>
-</li>
-<li><p>.kt：Kotlin</p>
-</li>
-<li><p>.json：数据</p>
-</li>
-<li><p>.xml：数据</p>
-</li>
-<li><p>.yaml &#x2F; .yml：配置</p>
-</li>
-<li><p>.toml：配置</p>
-</li>
-<li><p>.ini：配置</p>
-</li>
-<li><p>.conf：配置</p>
-</li>
-<li><p>.cfg：配置</p>
-</li>
-<li><p>.env：环境变量</p>
-</li>
-<li><p>.log：日志</p>
-</li>
-<li><p>.csv：表格</p>
-</li>
-<li><p>.tsv：制表符表格</p>
-</li>
-<li><p>.sql：数据库</p>
-</li>
-<li><p>.db &#x2F; .sqlite &#x2F; .sqlite3：数据库</p>
-</li>
-<li><p>.mdb &#x2F; .accdb：Access</p>
-</li>
-<li><p>.bak：备份</p>
-</li>
-<li><p>.dat：数据</p>
-</li>
-<li><p>.bin：二进制数据</p>
-</li>
-<li><p>.rc：资源文件</p>
-</li>
-<li><p>.plist：Mac 配置</p>
-</li>
-<li><p>.properties：Java 配置</p>
-</li>
-<li><p>.htaccess：Apache 配置</p>
-</li>
-</ul>
-<p>八、字体类</p>
-<ul>
-<li><p>.ttf：TrueType</p>
-</li>
-<li><p>.otf：OpenType</p>
-</li>
-<li><p>.woff &#x2F; .woff2：网页字体</p>
-</li>
-<li><p>.eot：老网页字体</p>
-</li>
-<li><p>.fon：Windows 字体</p>
-</li>
-<li><p>.ttc：字体集</p>
-</li>
-</ul>
-<p>九、虚拟机&#x2F;容器&#x2F;镜像</p>
-<ul>
-<li><p>.vmdk：VMware</p>
-</li>
-<li><p>.vdi：VirtualBox</p>
-</li>
-<li><p>.qcow2：KVM</p>
-</li>
-<li><p>.vhd &#x2F; .vhdx：Hyper-V</p>
-</li>
-<li><p>.ova：虚拟机导出</p>
-</li>
-<li><p>.ovf：虚拟机配置</p>
-</li>
-<li><p>.hdd：Parallels</p>
-</li>
-<li><p>.img：树莓派镜像</p>
-</li>
-<li><p>.iso：系统镜像</p>
-</li>
-<li><p>.tar：Docker 镜像</p>
-</li>
-</ul>
-<p>十、系统&#x2F;驱动&#x2F;固件</p>
-<ul>
-<li><p>.rom：固件</p>
-</li>
-<li><p>.bin：固件</p>
-</li>
-<li><p>.img：固件</p>
-</li>
-<li><p>.elf：Linux 可执行</p>
-</li>
-<li><p>.so：Linux 库</p>
-</li>
-<li><p>.dylib：Mac 库</p>
-</li>
-<li><p>.efi：UEFI 启动</p>
-</li>
-<li><p>.scpt：Mac 脚本</p>
-</li>
-<li><p>.applescript：AppleScript</p>
-</li>
-</ul>
-<p>十一、加密&#x2F;证书&#x2F;安全</p>
-<ul>
-<li><p>.pem：证书</p>
-</li>
-<li><p>.crt &#x2F; .cer：证书</p>
-</li>
-<li><p>.key：私钥</p>
-</li>
-<li><p>.pfx &#x2F; .p12：证书包</p>
-</li>
-<li><p>.asc：GPG 签名</p>
-</li>
-<li><p>.gpg：加密文件</p>
-</li>
-<li><p>.zipx：高级加密压缩</p>
-</li>
-<li><p>.rar5：新版 RAR</p>
-</li>
-</ul>
-<p>十二、手机特有</p>
-<ul>
-<li><p>.nomedia：安卓隐藏媒体</p>
-</li>
-<li><p>.inprogress：下载中</p>
-</li>
-<li><p>.crdownload：Chrome 未完成</p>
-</li>
-<li><p>.part：未完成下载</p>
-</li>
-<li><p>.uc：UC 浏览器缓存</p>
-</li>
-<li><p>.qlv：腾讯视频缓存</p>
-</li>
-<li><p>.kux：优酷缓存</p>
-</li>
-<li><p>.m3u：播放列表</p>
-</li>
-<li><p>.pls：播放列表</p>
-</li>
-<li><p>.xspf：播放列表</p>
-</li>
-</ul>
-<p>十三、临时&#x2F;缓存&#x2F;垃圾</p>
-<ul>
-<li><p>.tmp：临时</p>
-</li>
-<li><p>.cache：缓存</p>
-</li>
-<li><p>.swp &#x2F; .swo：Vim 缓存</p>
-</li>
-<li><p>.DS_Store：Mac 垃圾</p>
-</li>
-<li><p>.Thumbs.db：Windows 缩略图</p>
-</li>
-<li><p>.localized：Mac 本地化</p>
-</li>
-<li><p>.idb：缓存索引</p>
-</li>
-</ul>
-<p>十四、专业&#x2F;游戏&#x2F;设计</p>
-<ul>
-<li><p>.blend：Blender</p>
-</li>
-<li><p>.max：3ds Max</p>
-</li>
-<li><p>.ma &#x2F; .mb：Maya</p>
-</li>
-<li><p>.c4d：CINEMA 4D</p>
-</li>
-<li><p>.fbx：3D 模型</p>
-</li>
-<li><p>.obj：3D 模型</p>
-</li>
-<li><p>.stl：3D 打印</p>
-</li>
-<li><p>.sldprt &#x2F; .sldasm：SolidWorks</p>
-</li>
-<li><p>.dwg &#x2F; .dxf：CAD</p>
-</li>
-<li><p>.skp：SketchUp</p>
-</li>
-<li><p>.unitypackage：Unity 资源</p>
-</li>
-<li><p>.pak：游戏资源</p>
-</li>
-<li><p>.uasset：UE 资源</p>
-</li>
-<li><p>.vtt &#x2F; .srt &#x2F; .ass &#x2F; .ssa：字幕</p>
-</li>
-<li><p>.sub &#x2F; .idx：DVD 字幕</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/31/2026/03/2026-03-31-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E4%BD%9C%E7%94%A8/index/" data-id="cuidOtxCBpAOq0L1medjIXkjW" data-title="常见文件类型及作用" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-31-电脑常用软件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/31/2026/03/2026-03-31-%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-30T16:00:00.000Z" itemprop="datePublished">2026-03-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/31/2026/03/2026-03-31-%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/index/">电脑常用软件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：这是本人确实觉得好用的软件推荐</p>
-<p>1、卸载软件<a target="_blank" rel="noopener" href="https://geekuninstaller.com/">geek</a></p>
-<p>2、解压缩软件<a target="_blank" rel="noopener" href="https://7-zip.org/download.html">7 zip</a></p>
-<p>3、看视频软件<a target="_blank" rel="noopener" href="https://potplayer.org/">potployer</a></p>
-<p>4、杀毒软件<a target="_blank" rel="noopener" href="https://www.huorong.cn/">火绒</a></p>
-<p>5、办公软件<a target="_blank" rel="noopener" href="https://www.wps.cn/">wps</a></p>
-<p>6、下载器<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.com/">IDM</a></p>
-<p>7、电脑检测工具<a target="_blank" rel="noopener" href="https://www.tbtool.cn/">图吧工具箱</a></p>
-<p>8、编程的IDE<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">vs code</a></p>
-<p>9、电脑录屏工具<a target="_blank" rel="noopener" href="https://obsproject.com/zh-cn/download">OBS</a></p>
-<p>10、ssh工具<a target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">xshell</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/31/2026/03/2026-03-31-%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/index/" data-id="cuidQ5mwhmxM4N4ksIwwRvR8M" data-title="电脑常用软件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-30-浏览器装插件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/30/2026/03/2026-03-30-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A3%85%E6%8F%92%E4%BB%B6/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-29T16:00:00.000Z" itemprop="datePublished">2026-03-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/30/2026/03/2026-03-30-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A3%85%E6%8F%92%E4%BB%B6/index/">浏览器装插件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注 插件可以帮你在浏览网页时事半功倍，可玩性很高</p>
-<p><strong><em>1、准备条件</em></strong></p>
-<p>edge和火狐浏览器</p>
-<p>其他有的浏览器也可以装但是一般这两个比较方便</p>
-<p><strong><em>2、安装插件</em></strong></p>
-<p>点击浏览器上三个点点击扩展获取扩展</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-30-235509-502x1024.png"></p>
-<p>就会进入对应的商城用于安装插件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-30-235811-1024x544.png"></p>
-<p>在这里就可以安装插件了</p>
-<p>这里推荐几个本人常用的插件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-31-000035-1024x878.png"></p>
-<p>沉浸式翻译（用于翻译软件）</p>
-<p>篡改猴（在油叉里下载脚本文件，用于执行一些命令）</p>
-<p>大学搜题酱（用于刷网课，当然做题有限制，但是可以用篡改猴安装脚本刷课，但是不太好找了）</p>
-<p>万能复制（用于突破一些网上复制文字都要钱的限制）</p>
-<p>广告拦截器（可以有效的拦截网络上的网页广告）</p>
-<p>IDM下载器（这个插件可以帮你快速的下载网络上的文件，比浏览器上的下载器快很多）</p>
-<p><strong><em>3、总结</em></strong></p>
-<p>其插件有很多目的都是帮你高效办公，根据自己的需要来选择就行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/30/2026/03/2026-03-30-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A3%85%E6%8F%92%E4%BB%B6/index/" data-id="cuidIhcvHMIpLzNXLfprAxk4L" data-title="浏览器装插件" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/03/2026/05/2026-05-03-steam%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6/index/" data-id="cuidN4OzjMwSAmk_PEWgSQFa9" data-title="steam安装插件" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -1621,7 +698,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -1647,7 +724,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
     </div>
   </div>
 
@@ -1660,23 +737,23 @@
       <ul>
         
           <li>
-            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
           </li>
         
           <li>
-            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
           </li>
         
           <li>
-            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
           </li>
         
           <li>
-            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
           </li>
         
           <li>
-            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
           </li>
         
       </ul>

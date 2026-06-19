@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/19/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2026/2026-03-25-电脑adb连接模拟器/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-24T16:00:00.000Z" itemprop="datePublished">2026-03-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/">电脑adb连接模拟器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在一般要测试一些脚本时可以用这种方式在电脑上跑命令</p>
+<p>1、前提条件</p>
+<p>adb下载</p>
+<p>windwos端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">https://dl.google.com/android/repository/platform-tools-latest-windows.zip</a></p>
+<p>macos端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">https://dl.google.com/android/repository/platform-tools-latest-windows.zip</a></p>
+<p>linux端下载 <a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">https://dl.google.com/android/repository/platform-tools-latest-linux.zip</a></p>
+<p>解压</p>
+<p>2、改环境变量</p>
+<p><img src="/images/6da0d4f87d425ae11cae5502f534985e.jpg"></p>
+<p>选择好解压下来的adb.exe就行了</p>
+<h3 id="查看已连接设备"><a href="#查看已连接设备" class="headerlink" title="查看已连接设备"></a>查看已连接设备</h3><p>.\adb devices</p>
+<h3 id="连接-MuMu-模拟器（常用端口：16384-5554）"><a href="#连接-MuMu-模拟器（常用端口：16384-5554）" class="headerlink" title="连接 MuMu 模拟器（常用端口：16384 &#x2F; 5554）"></a>连接 MuMu 模拟器（常用端口：16384 &#x2F; 5554）</h3><p>.\adb connect 127.0.0.1:16384</p>
+<h3 id="断开设备"><a href="#断开设备" class="headerlink" title="断开设备"></a>断开设备</h3><p>.\adb disconnect 127.0.0.1:16384</p>
+<h3 id="重启-adb-服务"><a href="#重启-adb-服务" class="headerlink" title="重启 adb 服务"></a>重启 adb 服务</h3><p>.\adb kill-server<br>.\adb start-server  
+ </p>
+<p>二、模拟操作（自动化脚本最常用）</p>
+<h3 id="点击坐标-x-y"><a href="#点击坐标-x-y" class="headerlink" title="点击坐标 (x,y)"></a>点击坐标 (x,y)</h3><p>.\adb shell input tap x y</p>
+<h3 id="滑动（起点x1-y1-→-终点x2-y2，时长300ms）"><a href="#滑动（起点x1-y1-→-终点x2-y2，时长300ms）" class="headerlink" title="滑动（起点x1 y1 → 终点x2 y2，时长300ms）"></a>滑动（起点x1 y1 → 终点x2 y2，时长300ms）</h3><p>.\adb shell input swipe x1 y1 x2 y2 300</p>
+<h3 id="输入文字"><a href="#输入文字" class="headerlink" title="输入文字"></a>输入文字</h3><p>.\adb shell input text “你要输入的内容”</p>
+<h3 id="按返回键"><a href="#按返回键" class="headerlink" title="按返回键"></a>按返回键</h3><p>.\adb shell input keyevent 4</p>
+<h3 id="按-Home-键"><a href="#按-Home-键" class="headerlink" title="按 Home 键"></a>按 Home 键</h3><p>.\adb shell input keyevent 3  
+ </p>
+<p>三、安装 &#x2F; 卸载 APP</p>
+<h3 id="安装-APK"><a href="#安装-APK" class="headerlink" title="安装 APK"></a>安装 APK</h3><p>.\adb install 路径&#x2F;xxx.apk</p>
+<h3 id="强制覆盖安装（更新用）"><a href="#强制覆盖安装（更新用）" class="headerlink" title="强制覆盖安装（更新用）"></a>强制覆盖安装（更新用）</h3><p>.\adb install -r 路径&#x2F;xxx.apk</p>
+<h3 id="卸载-APP（需要包名）"><a href="#卸载-APP（需要包名）" class="headerlink" title="卸载 APP（需要包名）"></a>卸载 APP（需要包名）</h3><p>.\adb uninstall 包名  
+ </p>
+<p>四、文件传输（电脑 ↔ 模拟器）</p>
+<h3 id="电脑-→-模拟器"><a href="#电脑-→-模拟器" class="headerlink" title="电脑 → 模拟器"></a>电脑 → 模拟器</h3><p>.\adb push 电脑文件路径 &#x2F;sdcard&#x2F;</p>
+<h3 id="模拟器-→-电脑"><a href="#模拟器-→-电脑" class="headerlink" title="模拟器 → 电脑"></a>模拟器 → 电脑</h3><p>.\adb pull &#x2F;sdcard&#x2F;文件名 电脑保存路径  
+ </p>
+<p>五、查看与截图</p>
+<p>截图并保存到电脑</p>
+<p>.\adb shell screencap -p &#x2F;sdcard&#x2F;screen.png<br>.\adb pull &#x2F;sdcard&#x2F;screen.png 电脑路径</p>
+<h3 id="查看屏幕分辨率"><a href="#查看屏幕分辨率" class="headerlink" title="查看屏幕分辨率"></a>查看屏幕分辨率</h3><p>.\adb shell wm size  
+ </p>
+<p>六、APP 相关</p>
+<h3 id="查看当前打开的-APP-包名"><a href="#查看当前打开的-APP-包名" class="headerlink" title="查看当前打开的 APP 包名"></a>查看当前打开的 APP 包名</h3><p>.\adb shell dumpsys window | findstr mCurrentFocus</p>
+<h3 id="启动-APP"><a href="#启动-APP" class="headerlink" title="启动 APP"></a>启动 APP</h3><p>.\adb shell am start -n 包名&#x2F;Activity名</p>
+<h3 id="强制停止-APP"><a href="#强制停止-APP" class="headerlink" title="强制停止 APP"></a>强制停止 APP</h3><p>.\adb shell am force-stop 包名  
+ </p>
+<p>你现在最常用的（直接记这几个）</p>
+<p>.\adb devices # 看设备<br>.\adb connect 127.0.0.1:16384 # 连 MuMu<br>.\adb shell input tap x y # 点击<br>.\adb shell input swipe x1 y1 x2 y2 300 # 滑动</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/25/2026/2026-03-25-%E7%94%B5%E8%84%91adb%E8%BF%9E%E6%8E%A5%E6%A8%A1%E6%8B%9F%E5%99%A8/index/" data-id="cuidbxNzVvb4THjCwpPCS-tS1" data-title="电脑adb连接模拟器" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-23-mc服务器搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/2026/03/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-22T16:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/23/2026/03/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/">mc服务器搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1、前期准备</p>
+<p>部署服务器的电脑（可以是本地的或云服务器）</p>
+<p>一个公网IP或用内网穿透也可以</p>
+<p>安装好java 11</p>
+<p>apt update（更新库）</p>
+<p>apt install -y openjdk-17-jdk（安装java11）</p>
+<p><strong><em>2、安装<a target="_blank" rel="noopener" href="https://docs.mcsmanager.com/zh_cn/">mcsm</a></em></strong></p>
+<p>命令sudo su -c “wget -qO- <a target="_blank" rel="noopener" href="https://script.mcsmanager.com/setup/_cn.sh">https://script.mcsmanager.com/setup\_cn.sh</a> | bash”</p>
+<p>访问网页IP地址:23333</p>
+<p>记得如果连接不安全就删掉一个s用http访问</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193417-1024x538.png"></p>
+<p>访问后会喊你注册账号和密码，按操作来就行。</p>
+<p>记得如果是默认安装市场里的要选好对应的操作系统，本人之前没注意踩过坑之后一键安装就部署好了。</p>
+<p><strong><em>3、外网访问</em></strong></p>
+<p>如果是买的云服务器，那就会有公网IP直接在mc里选好对应的版本或相应的整合包就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193525-1024x508.png"></p>
+<p>一般不更改就是默认端口25565</p>
+<p>没有公网IP就用内网穿透，一般各家的内网穿透都还行，选免费的够用，对于玩的人不是特别多的话，各家厂商也有对应的操作文档，反正只要记得你的IP地址和要穿的端口是25565就行了。</p>
+<p><strong><em>4、注意事项</em></strong></p>
+<p>如果玩的不是正版或者有联机的朋友有一个玩的不是正版就要关闭服务器的配置文档里的正版验证</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-234556-1-1024x620.png"></p>
+<p>基本流程就是这样的，希望你和你的朋友玩的开心。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/23/2026/03/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" data-id="cuid2_7FsoJLwf8JZgNhwcDEK" data-title="mc服务器搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-03-23-mc服务器搭建/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/2026/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-22T16:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/23/2026/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/">mc服务器搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1、前期准备</p>
+<p>部署服务器的电脑（可以是本地的或云服务器）</p>
+<p>一个公网IP或用内网穿透也可以</p>
+<p>安装好java 11</p>
+<p>apt update（更新库）</p>
+<p>apt install -y openjdk-17-jdk（安装java11）</p>
+<p><strong><em>2、安装<a target="_blank" rel="noopener" href="https://docs.mcsmanager.com/zh_cn/">mcsm</a></em></strong></p>
+<p>命令sudo su -c “wget -qO- <a target="_blank" rel="noopener" href="https://script.mcsmanager.com/setup/_cn.sh">https://script.mcsmanager.com/setup\_cn.sh</a> | bash”</p>
+<p>访问网页IP地址:23333</p>
+<p>记得如果连接不安全就删掉一个s用http访问</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193417-1024x538.png"></p>
+<p>访问后会喊你注册账号和密码，按操作来就行。</p>
+<p>记得如果是默认安装市场里的要选好对应的操作系统，本人之前没注意踩过坑之后一键安装就部署好了。</p>
+<p><strong><em>3、外网访问</em></strong></p>
+<p>如果是买的云服务器，那就会有公网IP直接在mc里选好对应的版本或相应的整合包就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193525-1024x508.png"></p>
+<p>一般不更改就是默认端口25565</p>
+<p>没有公网IP就用内网穿透，一般各家的内网穿透都还行，选免费的够用，对于玩的人不是特别多的话，各家厂商也有对应的操作文档，反正只要记得你的IP地址和要穿的端口是25565就行了。</p>
+<p><strong><em>4、注意事项</em></strong></p>
+<p>如果玩的不是正版或者有联机的朋友有一个玩的不是正版就要关闭服务器的配置文档里的正版验证</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-23-234556-1-1024x620.png"></p>
+<p>基本流程就是这样的，希望你和你的朋友玩的开心。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/23/2026/2026-03-23-mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/index/" data-id="cuidIcgv0bLJhWogf8sMc4LEo" data-title="mc服务器搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-22-iflow部署教程/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/03/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ai/">ai</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/">iFLOW部署教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、安装条件</em></strong></p>
+<ul>
+<li><p>Node.js 22+（用于直接用命令安装）</p>
+</li>
+<li><p>4GB+ 内存（电脑运行配置最低）</p>
+</li>
+<li><p>互联网连接(其本身必须联网)</p>
+</li>
+</ul>
+<p><strong><em>2、安装iFLOW</em></strong></p>
+<p>重启终端：CMD(Windows + r 输入cmd) 或 PowerShell<br>运行 `npm install -g @iflow-ai&#x2F;iflow-cli@latest` 来安装 iFlow CLI<br>运行 `iflow` 来启动 iFlow CLI</p>
+<h3 id="3、启动iFlow"><a href="#3、启动iFlow" class="headerlink" title="3、启动iFlow"></a>3、启动iFlow</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在cmd中输入iflow就行</span><br><span class="line">按照指令登录，其本身是免费的。</span><br><span class="line">之后输入命令就能让他自动执行。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/" data-id="cuidaEoUDiivP3Zm4HHlw8_ij" data-title="iFLOW部署教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-22-openlist编译指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/03/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/">OpenList编译指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、所需环境</em></strong></p>
+<ul>
+<li><p><strong>Node.js</strong>：运行环境</p>
+</li>
+<li><p><strong>pnpm</strong>：包管理器</p>
+</li>
+<li><p><strong>Git</strong>：用于克隆仓库</p>
+</li>
+</ul>
+<p><strong><em>2、构建前端</em></strong></p>
+<p>新建文件夹打开cmd</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/OpenListTeam/OpenList-Frontend.git%EF%BC%88%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%89">https://github.com/OpenListTeam/OpenList-Frontend.git（克隆仓库到本地）</a><br>cd OpenList-Frontend（切换到仓库目录）<br>pnpm install （下载需要的包）</p>
+<p>pnpm build（构建前端）</p>
+<p>之后会生成一个dist</p>
+<p>3、构建后端</p>
+<h3 id="3、构建后端"><a href="#3、构建后端" class="headerlink" title="3、构建后端"></a>3、<strong><em>构建后端</em></strong></h3><p>git clone <a target="_blank" rel="noopener" href="https://github.com/OpenListTeam/OpenLis.git">https://github.com/OpenListTeam/OpenLis.git</a> (克隆后端到本地)</p>
+<p>将上一步的 dist 目录复制到项目下的 public 目录下，然后执行：</p>
+<p>appName&#x3D;”openlist”<br>builtAt&#x3D;”$(date +’%F %T %z’)”<br>goVersion&#x3D;$(go version | sed ‘s&#x2F;go version &#x2F;&#x2F;‘)<br>gitAuthor&#x3D;$(git show -s –format&#x3D;’format:%aN &lt;%ae&gt;’ HEAD)<br>gitCommit&#x3D;$(git log –pretty&#x3D;format:”%h” -1)<br>version&#x3D;$(git describe –long –tags –dirty –always)<br>webVersion&#x3D;$(curl -s –max-time 5 “<a target="_blank" rel="noopener" href="https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest">https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest</a>“ -L | grep ‘“tag_name”:’ | sed -E ‘s&#x2F;.<em>“([^”]+)”.</em>&#x2F;\1&#x2F;‘ | sed ‘s&#x2F;^v&#x2F;&#x2F;‘)<br>if [ -z “$webVersion” ]; then<br>webVersion&#x3D;”0.0.0”<br>fi<br>ldflags&#x3D;”\<br>-w -s \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.BuiltAt&#x3D;$builtAt’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GoVersion&#x3D;$goVersion’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GitAuthor&#x3D;$gitAuthor’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GitCommit&#x3D;$gitCommit’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.Version&#x3D;$version’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.WebVersion&#x3D;$webVersion’ \<br>“<br>go build -ldflags&#x3D;”$ldflags” .</p>
+<p>就会生成一个exe可执行文件</p>
+<p><em><strong>4、启动</strong></em></p>
+<p>在有exe的文件夹里打开cmd输入</p>
+<p>openlist server</p>
+<p>第一次启动记得记住密码，后访问localho1st:5244就行默认账号是admin</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/" data-id="cuidcK905pUm2lDhJED3la5d2" data-title="OpenList编译指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-22-本地ai部署教程（语言模型ollama）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/">本地ai部署教程（语言模型ollama）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>去<a target="_blank" rel="noopener" href="https://ollama.com/">ollama官网</a>在电脑上安装ollama</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-192927-1024x547.png"></p>
+<p>安装好后打开cmd运行</p>
+<p>ollama run 对应的模型名称会自动下载如有卡住就ctrl加c停止，在输入一次这个命令就行。</p>
+<p>安装好后就可以直接开始对话了</p>
+<p>一些ollama常用命令</p>
+<p>ollama list（查看下载了哪些模型）</p>
+<p>ollama rm mistral（删除不要的模型）</p>
+<p>一般来说要用于二次开发用这个127.0.0.1:11434其11434为ollama的监听端口可以直接使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" data-id="cuidIMDspFBKWDHPmRO2GdryY" data-title="本地ai部署教程（语言模型ollama）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/03/2026-03-22-部署一个自己的网盘搜索引擎（pansou）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/">部署一个自己的网盘搜索引擎（pansou）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>项目地址 <a target="_blank" rel="noopener" href="https://github.com/fish2018/pansou">https://github.com/fish2018/pansou</a></p>
+<p>用docker可以直接一键部署（开箱即用）</p>
+<p>docker run -d –name pansou -p 80:80 ghcr.io&#x2F;fish2018&#x2F;pansou-web</p>
+<p>在Nas上部署其本身还是用docker，打开后自定义compose</p>
+<p>version: ‘3.8’</p>
+<p>services:<br>pansou:<br>image: ghcr.io&#x2F;fish2018&#x2F;pansou-web:latest<br>container_name: pansou-app<br>ports:<br>- “8080:80” #我这个默认写的是8080，可根据自己的需求改<br>- “4433:443”<br>environment:<br># 基础配置<br>- DOMAIN&#x3D;localhost<br>- PANSOU_PORT&#x3D;8888<br>- PANSOU_HOST&#x3D;127.0.0.1<br># 代理配置（可选）<br># - SOCKS5_PROXY&#x3D;socks5:&#x2F;&#x2F;ip:20170<br># - HTTP_PROXY&#x3D;<a target="_blank" rel="noopener" href="http://ip:20171/">http://ip:20171</a><br>volumes:<br># 数据持久化<br>- .&#x2F;pansou-data:&#x2F;app&#x2F;data<br>- .&#x2F;pansou-logs:&#x2F;app&#x2F;logs<br>restart: unless-stopped<br>healthcheck:<br>test: [“CMD”, “curl”, “-f”, “<a target="_blank" rel="noopener" href="http://localhost/api/health%22/]">http://localhost/api/health&quot;\]</a><br>interval: 30s<br>timeout: 10s<br>retries: 3<br>start_period: 40s</p>
+<p>volumes:<br>pansou-data:<br>driver: local<br>pansou-logs:<br>driver: local</p>
+<p>这是我写的一个大致的，如果不懂就照抄</p>
+<p>演示</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193235-1024x544.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" data-id="cuidtNxSaugxntYdE5FXnl9Kr" data-title="部署一个自己的网盘搜索引擎（pansou）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-03-22-openlist编译指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/">OpenList编译指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、所需环境</em></strong></p>
+<ul>
+<li><p><strong>Node.js</strong>：运行环境</p>
+</li>
+<li><p><strong>pnpm</strong>：包管理器</p>
+</li>
+<li><p><strong>Git</strong>：用于克隆仓库</p>
+</li>
+</ul>
+<p><strong><em>2、构建前端</em></strong></p>
+<p>新建文件夹打开cmd</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/OpenListTeam/OpenList-Frontend.git%EF%BC%88%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%89">https://github.com/OpenListTeam/OpenList-Frontend.git（克隆仓库到本地）</a><br>cd OpenList-Frontend（切换到仓库目录）<br>pnpm install （下载需要的包）</p>
+<p>pnpm build（构建前端）</p>
+<p>之后会生成一个dist</p>
+<p>3、构建后端</p>
+<h3 id="3、构建后端"><a href="#3、构建后端" class="headerlink" title="3、构建后端"></a>3、<strong><em>构建后端</em></strong></h3><p>git clone <a target="_blank" rel="noopener" href="https://github.com/OpenListTeam/OpenLis.git">https://github.com/OpenListTeam/OpenLis.git</a> (克隆后端到本地)</p>
+<p>将上一步的 dist 目录复制到项目下的 public 目录下，然后执行：</p>
+<p>appName&#x3D;”openlist”<br>builtAt&#x3D;”$(date +’%F %T %z’)”<br>goVersion&#x3D;$(go version | sed ‘s&#x2F;go version &#x2F;&#x2F;‘)<br>gitAuthor&#x3D;$(git show -s –format&#x3D;’format:%aN &lt;%ae&gt;’ HEAD)<br>gitCommit&#x3D;$(git log –pretty&#x3D;format:”%h” -1)<br>version&#x3D;$(git describe –long –tags –dirty –always)<br>webVersion&#x3D;$(curl -s –max-time 5 “<a target="_blank" rel="noopener" href="https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest">https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest</a>“ -L | grep ‘“tag_name”:’ | sed -E ‘s&#x2F;.<em>“([^”]+)”.</em>&#x2F;\1&#x2F;‘ | sed ‘s&#x2F;^v&#x2F;&#x2F;‘)<br>if [ -z “$webVersion” ]; then<br>webVersion&#x3D;”0.0.0”<br>fi<br>ldflags&#x3D;”\<br>-w -s \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.BuiltAt&#x3D;$builtAt’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GoVersion&#x3D;$goVersion’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GitAuthor&#x3D;$gitAuthor’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.GitCommit&#x3D;$gitCommit’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.Version&#x3D;$version’ \<br>-X ‘github.com&#x2F;OpenListTeam&#x2F;OpenList&#x2F;v4&#x2F;internal&#x2F;conf.WebVersion&#x3D;$webVersion’ \<br>“<br>go build -ldflags&#x3D;”$ldflags” .</p>
+<p>就会生成一个exe可执行文件</p>
+<p><em><strong>4、启动</strong></em></p>
+<p>在有exe的文件夹里打开cmd输入</p>
+<p>openlist server</p>
+<p>第一次启动记得记住密码，后访问localho1st:5244就行默认账号是admin</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/2026-03-22-openlist%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97/index/" data-id="cuidOdoggvEHzikGDWZzxmOx0" data-title="OpenList编译指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-03-22-iflow部署教程/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ai/">ai</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/">iFLOW部署教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、安装条件</em></strong></p>
+<ul>
+<li><p>Node.js 22+（用于直接用命令安装）</p>
+</li>
+<li><p>4GB+ 内存（电脑运行配置最低）</p>
+</li>
+<li><p>互联网连接(其本身必须联网)</p>
+</li>
+</ul>
+<p><strong><em>2、安装iFLOW</em></strong></p>
+<p>重启终端：CMD(Windows + r 输入cmd) 或 PowerShell<br>运行 `npm install -g @iflow-ai&#x2F;iflow-cli@latest` 来安装 iFlow CLI<br>运行 `iflow` 来启动 iFlow CLI</p>
+<h3 id="3、启动iFlow"><a href="#3、启动iFlow" class="headerlink" title="3、启动iFlow"></a>3、启动iFlow</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在cmd中输入iflow就行</span><br><span class="line">按照指令登录，其本身是免费的。</span><br><span class="line">之后输入命令就能让他自动执行。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/2026-03-22-iflow%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index/" data-id="cuids42RQExTF21CM_2Td8EAw" data-title="iFLOW部署教程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-03-22-本地ai部署教程（语言模型ollama）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/22/2026/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/22/2026/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/">本地ai部署教程（语言模型ollama）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>去<a target="_blank" rel="noopener" href="https://ollama.com/">ollama官网</a>在电脑上安装ollama</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-192927-1024x547.png"></p>
+<p>安装好后打开cmd运行</p>
+<p>ollama run 对应的模型名称会自动下载如有卡住就ctrl加c停止，在输入一次这个命令就行。</p>
+<p>安装好后就可以直接开始对话了</p>
+<p>一些ollama常用命令</p>
+<p>ollama list（查看下载了哪些模型）</p>
+<p>ollama rm mistral（删除不要的模型）</p>
+<p>一般来说要用于二次开发用这个127.0.0.1:11434其11434为ollama的监听端口可以直接使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/22/2026/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" data-id="cuidtFzYvQLktAEnez8E-aQfC" data-title="本地ai部署教程（语言模型ollama）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

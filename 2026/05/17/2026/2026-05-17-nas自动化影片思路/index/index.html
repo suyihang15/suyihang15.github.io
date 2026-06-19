@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>nas自动化影片思路 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：本文章主要提供思路和搭建方法 1、准备情况 （1）Docker（用于部署环境） （2）nastool（用于管理资源的爬取和下载情况） （2）jackeet（用于收集种子库） （3）QBittorrent（用于下载资源） (4)TMDB的Key（用于刮削的准确性，当然你自己有刮削就不管） 2、部署（本人是飞牛的nas，其他家的根据具体文件调整） 部署的compose 12345678910111">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nas自动化影片思路">
+<meta property="og:url" content="http://example.com/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：本文章主要提供思路和搭建方法 1、准备情况 （1）Docker（用于部署环境） （2）nastool（用于管理资源的爬取和下载情况） （2）jackeet（用于收集种子库） （3）QBittorrent（用于下载资源） (4)TMDB的Key（用于刮削的准确性，当然你自己有刮削就不管） 2、部署（本人是飞牛的nas，其他家的根据具体文件调整） 部署的compose 12345678910111">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png">
+<meta property="article:published_time" content="2026-05-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:16.775Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-05-17-nas自动化影片思路/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-16T16:00:00.000Z" itemprop="datePublished">2026-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      nas自动化影片思路
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章主要提供思路和搭建方法</p>
+<p><strong><em>1、准备情况</em></strong></p>
+<p>（1）Docker（用于部署环境）</p>
+<p>（2）nastool（用于管理资源的爬取和下载情况）</p>
+<p>（2）jackeet（用于收集种子库）</p>
+<p>（3）QBittorrent（用于下载资源）</p>
+<p>(4)<a target="_blank" rel="noopener" href="https://www.themoviedb.org/">TMDB的Key</a>（用于刮削的准确性，当然你自己有刮削就不管）</p>
+<p><strong><em>2、部署（本人是飞牛的nas，其他家的根据具体文件调整）</em></strong></p>
+<p>部署的compose</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line"># 初始化目录&amp;权限服务</span><br><span class="line">services:</span><br><span class="line">  init-setup:</span><br><span class="line">    image: alpine</span><br><span class="line">    container_name: init-setup</span><br><span class="line">    command: &gt;</span><br><span class="line">      sh -c &quot;</span><br><span class="line">      mkdir -p /vol1/1000/docker/&#123;nastools,qbittorrent,jackett&#125; /vol1/1000/影视/下载/&#123;电影,电视剧&#125; /vol1/1000/影视/&#123;电影,电视剧&#125; &amp;&amp;</span><br><span class="line">      chown -R 1000:1000 /vol1/1000</span><br><span class="line">      &quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000:/vol1/1000</span><br><span class="line">    restart: no</span><br><span class="line"></span><br><span class="line"># 影音管理 NAS-Tools</span><br><span class="line">  nastools:</span><br><span class="line">    image: syly948/nastools:2.9.1</span><br><span class="line">    container_name: nastools</span><br><span class="line">    ports:</span><br><span class="line">      - 3000:3000</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/nastools:/config</span><br><span class="line">      - /vol1/1000/影视:/影视</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      UMASK: 022</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    depends_on:</span><br><span class="line">      init-setup:</span><br><span class="line">        condition: service_completed_successfully</span><br><span class="line">      qbittorrent:</span><br><span class="line">        condition: service_healthy</span><br><span class="line">      jackett:</span><br><span class="line">        condition: service_healthy</span><br><span class="line"></span><br><span class="line"># 下载工具 qBittorrent</span><br><span class="line">  qbittorrent:</span><br><span class="line">    image: superng6/qbittorrent</span><br><span class="line">    container_name: qbittorrent</span><br><span class="line">    ports:</span><br><span class="line">      - 8088:8080</span><br><span class="line">      - 6881:6881</span><br><span class="line">      - 6881:6881/udp</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/qbittorrent:/config</span><br><span class="line">      - /vol1/1000/影视/下载:/downloads</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      WEBUI_PORT: 8080</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:8080&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br><span class="line"></span><br><span class="line"># 索引聚合 Jackett</span><br><span class="line">  jackett:</span><br><span class="line">    image: linuxserver/jackett</span><br><span class="line">    container_name: jackett</span><br><span class="line">    ports:</span><br><span class="line">      - 9117:9117</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/jackett:/config</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      AUTO_UPDATE: true</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:9117/UI/Login&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<p>docker-compose up -d</p>
+<p><strong><em>3、调整</em></strong></p>
+<p><strong>Nastools</strong></p>
+<p>访问界面IP:3000</p>
+<p>账号admin</p>
+<p>密码password</p>
+<p>登录界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png"></p>
+<p><strong>Jackett</strong></p>
+<p>访问界面IP:9117</p>
+<p>这里你要根据自己的情况添加种子站点，如果没有私有的站点账号，就选择好几个公开的站点就行，如果有不能用的会自动删除的，然后添加好后，复制密钥，粘贴到nastool的设置里的索引器jackeet里测试，成功就行了。</p>
+<p><strong>QBittorrent</strong></p>
+<p>访问界面IP:8088</p>
+<p>账号：admin</p>
+<p>密码：在docker容器的日志里查看，登录后查看</p>
+<p>记得在nastool的设置下载器里面的Qbittorrent也设置好，IP地址和账号密码搞好了，再测试一下，确定就链接好了。</p>
+<p>可以设置一下TMDB那个，可以免费申请的，然后，注意其他的在nastool设置一下，比如做种时间，上传速度这些，不然会被认为的在跑PCDN的。</p>
+<p>之后就看你需求更改就行</p>
+<p><strong><em>4、自动化思路</em></strong></p>
+<p>nastool用于进行整体的管理，jackett作为种子的搜集器，QBittorrent作为下载器，下载到本地，TMDB的key帮助刮削准确性就很高了。</p>
+<p>总结：自动化的方法其实还有很多，比如我之前说的RSS订阅，主要是看你怎么折腾，网上的方法教程还是很多的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuid0wALW8Sd3G5fQ04-bK7D9" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          nas自动化影片思路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于PT</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CE修改器使用指南 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：本教程只适用于单机游戏，对于修改网络游戏造成的后果本人概不负责。 1、原理 当我们在打游戏时，我们的比如植物大战僵尸，当我们种植阳光时，我们的阳光值就会发生变化，CE修改器可以捕捉到这个变化的值然后，我们找出后对这个值进行修改，那么，就可以实现修改数字的目的。 2、风险 对于单机游戏一般风险是比较小的，但是不代表没有风险，因为一些厂家会有云端验证这种东西，就是其比如网游会上传到云端服务器，对其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CE修改器使用指南">
+<meta property="og:url" content="http://example.com/2026/05/24/2026/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：本教程只适用于单机游戏，对于修改网络游戏造成的后果本人概不负责。 1、原理 当我们在打游戏时，我们的比如植物大战僵尸，当我们种植阳光时，我们的阳光值就会发生变化，CE修改器可以捕捉到这个变化的值然后，我们找出后对这个值进行修改，那么，就可以实现修改数字的目的。 2、风险 对于单机游戏一般风险是比较小的，但是不代表没有风险，因为一些厂家会有云端验证这种东西，就是其比如网游会上传到云端服务器，对其">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-121534-1024x578.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122149.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122326-1024x577.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122550-1024x595.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122631-1024x590.png">
+<meta property="article:published_time" content="2026-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:16.949Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-121534-1024x578.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-05-24-ce修改器使用指南/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/24/2026/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-23T16:00:00.000Z" itemprop="datePublished">2026-05-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CE修改器使用指南
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本教程只适用于单机游戏，对于修改网络游戏造成的后果本人概不负责。</p>
+<p><strong><em>1、原理</em></strong></p>
+<p>当我们在打游戏时，我们的比如植物大战僵尸，当我们种植阳光时，我们的阳光值就会发生变化，CE修改器可以捕捉到这个变化的值然后，我们找出后对这个值进行修改，那么，就可以实现修改数字的目的。</p>
+<p><strong><em>2、风险</em></strong></p>
+<p>对于单机游戏一般风险是比较小的，但是不代表没有风险，因为一些厂家会有云端验证这种东西，就是其比如网游会上传到云端服务器，对其本地的存档进行一个验证，一旦检测到数据异常，就会有封号的风险，这也是一种比较常见的反作弊手段，但是，一般主要针对的是一些网游和要联网的单机游戏，这也是我们的存档可以进行云存档的原因，所以，请爱惜你自己的账号。</p>
+<p><strong><em>3、使用</em></strong></p>
+<p>（1）启动游戏和CE修改器，点击左上角的第一个搜索，找到游戏的进程，点击打开，之后，在数值这里填入你要修改的数值，后扫描，如果知道其是多少进制的就选择好，不知道就填全部。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-121534-1024x578.png"></p>
+<p>这里比如我要改阳光，就填入150后进行首次扫描</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122149.png"></p>
+<p>可以看到左边出现了很多的数值，不知道是哪个，这时我们就要进行筛选了，通过种植植物，我们把阳光变成了50，此时，我们后台的数值也会变化，我们填入50，点击再次扫描，就找到了阳光对应的数值变化，</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122326-1024x577.png"></p>
+<p>然后点击他，我们就能在下面的表格里找到这个进程。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122550-1024x595.png"></p>
+<p>之后，我们再点击下面的这个值，就会弹出一个修改框，只要修改里面的数值就能修改阳光了。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-24-122631-1024x590.png"></p>
+<p>这里我随便改了个值确定以后，阳光就跟着变化了。</p>
+<p>总结：本教程就是一个很简单的例子，CE修改器可以搞的事情还有很多，这只是一个大致的操作方法，但是请不要用于修改网游等其他的任何东西，毕竟账号还是很珍贵的，请爱惜自己的账号。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/24/2026/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" data-id="cuidlexGeaL2tvwk6kko_9uCE" data-title="CE修改器使用指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CE修改器使用指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于驱动</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

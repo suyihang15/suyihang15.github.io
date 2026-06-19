@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>图床的搭建和使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：我确实觉得这个很适合那些刚开始想网站小白要展示一些照片，但是又觉得存储不太方便的人。 1、什么是图床 按照我个人的理解，他就是一个可以帮我们存储图片的软件，当我们想要去使用时，只需要调用它的URL（就是他的一个专属地址）就行。 2、搭建图床（空蓝图床其本身是开源的） 首先你要有一台云服务器（建议香港的，如果是国内的记得备案） （1）安装宝塔面板 if [ -f &#x2F;usr&#x2F;b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图床的搭建和使用">
+<meta property="og:url" content="http://example.com/2026/04/29/2026/2026-04-29-%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：我确实觉得这个很适合那些刚开始想网站小白要展示一些照片，但是又觉得存储不太方便的人。 1、什么是图床 按照我个人的理解，他就是一个可以帮我们存储图片的软件，当我们想要去使用时，只需要调用它的URL（就是他的一个专属地址）就行。 2、搭建图床（空蓝图床其本身是开源的） 首先你要有一台云服务器（建议香港的，如果是国内的记得备案） （1）安装宝塔面板 if [ -f &#x2F;usr&#x2F;b">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-170227-1024x644.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175139-1024x995.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-170745-1024x538.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-171044-1024x871.png">
+<meta property="og:image" content="http://example.com/images/image-22-1024x862.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175707-774x1024.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175808-1024x877.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181037-1024x883.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181410-773x1024.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181519-894x1024.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181852.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-182056-1024x616.png">
+<meta property="article:published_time" content="2026-04-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:16.329Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-170227-1024x644.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-04-29-图床的搭建和使用/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/29/2026/2026-04-29-%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-28T16:00:00.000Z" itemprop="datePublished">2026-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      图床的搭建和使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：我确实觉得这个很适合那些刚开始想网站小白要展示一些照片，但是又觉得存储不太方便的人。</p>
+<p><strong><em>1、什么是图床</em></strong></p>
+<p>按照我个人的理解，他就是一个可以帮我们存储图片的软件，当我们想要去使用时，只需要调用它的URL（就是他的一个专属地址）就行。</p>
+<p><strong><em>2、搭建图床</em></strong>（<a target="_blank" rel="noopener" href="https://github.com/lsky-org/lsky-pro">空蓝图床</a>其本身是开源的）</p>
+<p>首先你要有一台云服务器（建议香港的，如果是国内的记得备案）</p>
+<p><strong><em>（1）安装<a target="_blank" rel="noopener" href="https://www.bt.cn/new/index.html">宝塔面板</a></em></strong></p>
+<p>if [ -f &#x2F;usr&#x2F;bin&#x2F;curl ];then curl -sSO <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;else">https://download.bt.cn/install/install\_panel.sh;else</a> wget -O install_panel.sh <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;fi;bash">https://download.bt.cn/install/install\_panel.sh;fi;bash</a> install_panel.sh ed8484bec</p>
+<p><strong><em>（2）下载这个压缩包</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lsky-org/lsky-pro/releases/download/2.1/lsky-pro-2.1.zip">https://github.com/lsky-org/lsky-pro/releases/download/2.1/lsky-pro-2.1.zip</a></p>
+<p><strong><em>（3）添加站点</em></strong></p>
+<p>安装好php8.1，其他版本可能会出错，我个人搞得是这个。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-170227-1024x644.png"></p>
+<p>创建站点，记得要添加my sql数据库，用于做存储，不然他就是一个静态文件，并填好域名后面要解析。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175139-1024x995.png"></p>
+<p>打开文件目录并上传之前下载的安装包解压</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-170745-1024x538.png"></p>
+<p>设置网站的运行目录为public</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-171044-1024x871.png"></p>
+<p>设置伪静态</p>
+<p><img src="/images/image-22-1024x862.png"></p>
+<p>代码</p>
+<p>location &#x2F; {<br>if (!-e $request_filename) {<br>rewrite ^(.*)$ &#x2F;index.php?s&#x3D;$1 last; break;<br>}<br>}</p>
+<p>保存好了，然后就访问解析好的域名就行了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175707-774x1024.png"></p>
+<p>如果有上面的错误，根据上面要的，安装对应的插件</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-175808-1024x877.png"></p>
+<p>注意有部分可能被禁用了，设置一下就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181037-1024x883.png"></p>
+<p>一个一个设置好了就可以开始了</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181410-773x1024.png"></p>
+<p>这里填入你前面设置的数据库名称和密码，其他的不要动，数据库类型选择你前面安装的版本看一下就行。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181519-894x1024.png"></p>
+<p>登录以后上传就行</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-181852.png"></p>
+<p>上传后你会得到一个URL后面直接调用就行，很方便的</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-29-182056-1024x616.png"></p>
+<p>这个图床的其本身是开源的，网络上也有不少基于他搭建的免费图床，你可以自己搭建，也可用别人搭建好的，总之是很方便的。</p>
+<p>一个简单的调用方法就是</p>
+<p>&lt; img src&#x3D;”图片的URL”&gt;</p>
+<p>我个人觉得是很方便的</p>
+<p>总结：如果你的网站有挂图片的需求这会是一个不错的选择，但是切记，不可用来存储任何暴力色情的图片，其照片的URL是任何人都可以用的，注意不要上传太过私密的照片。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/29/2026/2026-04-29-%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index/" data-id="cuidLNlKQAA5nGZRnCdyvcZbo" data-title="图床的搭建和使用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/29/2026/04/2026-04-29-%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          图床的搭建和使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/28/2026/04/2026-04-28-%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91%EF%BC%88tailscale%EF%BC%89/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">异地组网（tailscale）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

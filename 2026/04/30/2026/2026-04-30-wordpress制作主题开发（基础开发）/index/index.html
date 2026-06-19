@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>wordpress制作主题开发（基础开发） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：在学习之前，你要有一些php，html，css，js的基础，我的教程主要是本地写好了，再上传，主要是帮助你可视化去的调整你的模板。 1、准备条件 （1）WordPress的源码（这是一切的开始） （2）vs code（用于写一些基础文件的代码） （3）小皮面板（当我们代码写完了，就要去看样子是什么样子的） 2、环境配置 （1）一键启动 这样配置好数据库和web，如果没有下载my sql请自行下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wordpress制作主题开发（基础开发）">
+<meta property="og:url" content="http://example.com/2026/04/30/2026/2026-04-30-wordpress%E5%88%B6%E4%BD%9C%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%EF%BC%88%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%EF%BC%89/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：在学习之前，你要有一些php，html，css，js的基础，我的教程主要是本地写好了，再上传，主要是帮助你可视化去的调整你的模板。 1、准备条件 （1）WordPress的源码（这是一切的开始） （2）vs code（用于写一些基础文件的代码） （3）小皮面板（当我们代码写完了，就要去看样子是什么样子的） 2、环境配置 （1）一键启动 这样配置好数据库和web，如果没有下载my sql请自行下">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-181457-1024x804.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-181651-1024x805.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-182331-1024x600.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-183432-1024x604.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-183627-1024x589.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-190013-1024x592.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-190221-1024x597.png">
+<meta property="og:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-192005.png">
+<meta property="article:published_time" content="2026-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:16.345Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-181457-1024x804.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-04-30-wordpress制作主题开发（基础开发）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/30/2026/2026-04-30-wordpress%E5%88%B6%E4%BD%9C%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%EF%BC%88%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-29T16:00:00.000Z" itemprop="datePublished">2026-04-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      wordpress制作主题开发（基础开发）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：在学习之前，你要有一些php，html，css，js的基础，我的教程主要是本地写好了，再上传，主要是帮助你可视化去的调整你的模板。</p>
+<p><strong><em>1、准备条件</em></strong></p>
+<p>（1）<a target="_blank" rel="noopener" href="https://cn.wordpress.org/download/">WordPress的源码</a>（这是一切的开始）</p>
+<p>（2）<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">vs code</a>（用于写一些基础文件的代码）</p>
+<p>（3）<a target="_blank" rel="noopener" href="https://www.xp.cn/phpstudy">小皮面板</a>（当我们代码写完了，就要去看样子是什么样子的）</p>
+<p><strong><em>2、环境配置</em></strong></p>
+<p><strong><em>（1）一键启动</em></strong></p>
+<p>这样配置好数据库和web，如果没有下载my sql请自行下载</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-181457-1024x804.png"></p>
+<p><strong><em>（2）网站配置</em></strong></p>
+<p>域名自己写，其是在本地的，所以随便添加都行，这里的根目录，就选择好解压后的文件，之后启动，打开网站就可以看到创建的网站了，其是在本地的。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-181651-1024x805.png"></p>
+<p>这是大致的样子，就和我们最开始在服务器上创建wordpress一样，配置好数据库就行了。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-182331-1024x600.png"></p>
+<p>请自行创建数据库，创建好了，就和我们在服务器上的一样</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-183432-1024x604.png"></p>
+<p><strong><em>（3）编写代码</em></strong></p>
+<p>用vs code打开项目源码，这里就可以开始编写了。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-183627-1024x589.png"></p>
+<p><strong><em>（4）简单介绍(一般要改主题碰这几个就行，其他的系统文件建议不要改)</em></strong></p>
+<p><strong>style.css</strong></p>
+<p>让 WordPress 识别这是一个主题（顶部固定注释）<br>整站所有样式：颜色、布局、字体、边距、排版，全都写在这里。</p>
+<p><strong>functions.php</strong></p>
+<p>主题的功能配置中心。<br>在这里加功能：注册导航菜单、开文章缩略图、引入自己的CSS&#x2F;JS、加自定义小功能，所有自定义代码都放这，不改系统核心文件。</p>
+<p><strong>header.php</strong></p>
+<p>网站顶部通用模板。<br>每个页面都会加载它，放网页头部、logo、导航栏、网页头部meta信息。</p>
+<p><strong>footer.php</strong></p>
+<p>网站底部通用模板。<br>所有页面共用，放版权信息、底部文字、加载js代码。</p>
+<p><strong>index.php</strong></p>
+<p>主题默认首页&#x2F;兜底模板。<br>没单独做模板的页面，都用它显示，用来布局首页、文章列表。</p>
+<p><strong>single.php</strong></p>
+<p>专门管 文章详情页。<br>点开一篇文章，页面长什么样、内容怎么排，都改这个。</p>
+<p><strong>page.php</strong></p>
+<p>专门管 独立页面（关于我们、联系我们这种单独页面）。</p>
+<p><strong>archive.php</strong></p>
+<p>分类页、标签页、文章归档列表页，都由这个文件控制布局。</p>
+<p><strong>404.php</strong></p>
+<p>网址不存在、打不开的时候，显示的404页面，自己可以改文案和样式。</p>
+<p>一般情况我们是搞wordpress\wp-content\themes这里的文件，这是里面的主题，其本身就有一些，我们写的时候可以参考一下，可以省很多事情，我个人觉得研究这一个基本上就够了，其他的，看不懂就不要碰。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-190013-1024x592.png"></p>
+<p>就是这个，这里我创建了一个123的文件夹，里面有style.css和index.php，所以在这个主题里就可以看见,但是我是没有任何内容的我们要自己更改。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-190221-1024x597.png"></p>
+<p>创建文件的结构大概是</p>
+<p>themes&#x2F;一个文件夹（我这里命名的是123）<br>├── style.css<br>├── index.php<br>├── functions.php<br>├── header.php<br>├── footer.php<br>├── single.php<br>├── page.php<br>├── archive.php<br>├── 404.php<br>├── comments.php<br>├── sidebar.php<br>│<br>├── assets&#x2F;<br>│ ├── css&#x2F;<br>│ ├── js&#x2F;<br>│ └── images&#x2F;<br>│<br>├── template-parts&#x2F;<br>└── inc&#x2F;</p>
+<p>这个是我用的他们的主题的大致的结构</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-30-192005.png"></p>
+<p>这个应该都可以看懂吧，所以我说你得有一定的一些基础才能去手搓一个模板，不然就老老实实的用人家自带的吧，其可以改的东西还是很多的，或者参考别人现成的去改，但是，请保留原作者的信息，毕竟从0开始写真的很困难，记住不要重复造轮子。</p>
+<p>使用</p>
+<p>当你全部手搓完成以后，做成压缩包就可以让其他人用了</p>
+<p>就是后面如果要部署改项目，就上传压缩包到服务器，然后解压缩，就和前面部署这个wordpress项目一样，就可以看见你改好的东西了。</p>
+<p>总结：这个教程主要是教你怎么去做一个大致的模板，具体你要怎么改还是要根据你的需要去搞，本人主要是搞python的，php这些就会一些基础，如果你真正要去完美的搞一个主题那么要做的是很多的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/30/2026/2026-04-30-wordpress%E5%88%B6%E4%BD%9C%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%EF%BC%88%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%EF%BC%89/index/" data-id="cuidrOYNO2ESy7Nd1S9IpR15H" data-title="wordpress制作主题开发（基础开发）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/30/2026/04/2026-04-30-wordpress%E5%88%B6%E4%BD%9C%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91%EF%BC%88%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%EF%BC%89/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wordpress制作主题开发（基础开发）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/04/29/2026/04/2026-04-29-%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">图床的搭建和使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>基于python的扫雷 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：这是本人做的小游戏，目的是帮助人学习 项目地址：suyihang15&#x2F;minesweeper_game: 基于python的扫雷小游戏 成品下载：https:&#x2F;&#x2F;github.com&#x2F;suyihang15&#x2F;minesweeper_game&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;minesweeper.exe 扫雷游戏 — 原理与实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于python的扫雷">
+<meta property="og:url" content="http://example.com/2026/05/31/2026/2026-05-31-%E5%9F%BA%E4%BA%8Epython%E7%9A%84%E6%89%AB%E9%9B%B7/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：这是本人做的小游戏，目的是帮助人学习 项目地址：suyihang15&#x2F;minesweeper_game: 基于python的扫雷小游戏 成品下载：https:&#x2F;&#x2F;github.com&#x2F;suyihang15&#x2F;minesweeper_game&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;minesweeper.exe 扫雷游戏 — 原理与实现">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:17.123Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-05-31-基于python的扫雷/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/31/2026/2026-05-31-%E5%9F%BA%E4%BA%8Epython%E7%9A%84%E6%89%AB%E9%9B%B7/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-30T16:00:00.000Z" itemprop="datePublished">2026-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      基于python的扫雷
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这是本人做的小游戏，目的是帮助人学习</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/minesweeper_game">suyihang15&#x2F;minesweeper_game: 基于python的扫雷小游戏</a></p>
+<p>成品下载：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/minesweeper_game/releases/download/1.0.0/minesweeper.exe">https://github.com/suyihang15/minesweeper_game&#x2F;releases&#x2F;download&#x2F;1.0.0&#x2F;minesweeper.exe</a></p>
+<p><strong>扫雷游戏 — 原理与实现</strong></p>
+<p><strong>一、游戏概述</strong></p>
+<p>扫雷（Minesweeper）是一款经典的单人逻辑推理游戏，核心玩法是在一个隐藏地雷的矩形网格中，通过翻开格子解读数字线索，安全地定位所有地雷。本实现使用 <strong>**Python + tkinter**</strong> 完整还原经典扫雷的核心机制，并加入了 Chord 双击展开、胜利烟花动画等进阶体验。</p>
+<p><strong>二、操作说明</strong></p>
+<p>| 左键点击（未翻开） | 翻开格子 |</p>
+<p>| 左键点击（已插旗） | 快速解旗，无需右键循环 |</p>
+<p>| 左键点击（已翻开数字格） | Chord 双击展开 |</p>
+<p>| 右键点击 | 循环切换：无标记 → 旗子 → 问号 |</p>
+<p>| 右键点击（游戏开始前） | 允许提前插旗标记（与标准扫雷一致） |</p>
+<p>翻开格子显示 <strong>数字 (1~8)</strong>：表示该格周围 8 个相邻格子中的地雷数。</p>
+<p>翻开格子为 <strong>**空格**</strong>（雷数为 0）：自动递归展开连通空白区域。</p>
+<p>翻开格子为 <strong>**地雷**</strong>：游戏失败，展示所有地雷位置。</p>
+<p>旗子和问号标记的格子受到保护，不会被左键意外翻开。</p>
+<p><strong>胜利条件</strong></p>
+<p>所有非雷格子均被翻开即获胜，无需给每一颗雷插旗。胜利时触发彩色烟花动画。</p>
+<p><strong>三、数据结构</strong></p>
+<p>board[r][c]    : int    -1 &#x3D; 地雷， 0~8 &#x3D; 周围雷数</p>
+<p>revealed[r][c] : bool   是否已翻开</p>
+<p>flagged[r][c]  : int    0 &#x3D; 无标记， 1 &#x3D; 旗子， 2 &#x3D; 问号</p>
+<p>buttons[r][c]  : Button  对应的 tkinter 按钮对象引用</p>
+<p>所有数据以二维数组存储，索引 `(r, c)` 对应棋盘坐标。</p>
+<p><strong>四、核心算法</strong></p>
+<p><strong>4.1 首次点击安全保障</strong></p>
+<p>首次点击前地雷尚未布置。玩家点击后：</p>
+<p>1. 将该位置及其 3×3 邻域（共最多 9 格）标记为安全区；</p>
+<p>2. 从安全区外的所有格子中随机选取 `mines_count` 个放置地雷；</p>
+<p>3. 遍历棋盘，计算每个非雷格的周围地雷数。</p>
+<ul>
+<li><p>safe_cells &#x3D; {(safe_row + dr, safe_col + dc) for dr in (-1,0,1) for dc in (-1,0,1)}</p>
+</li>
+<li><p>candidates &#x3D; [pos for pos in all_cells if pos not in safe_cells]</p>
+</li>
+<li><p>mine_positions &#x3D; random.sample(candidates, mines_count)</p>
+</li>
+</ul>
+<p>复杂度：O(rows × cols)，在布雷阶段一次性完成。</p>
+<p><strong>4.2 周围雷数统计</strong></p>
+<p>对每个非雷格子，统计其 8 个方向上的地雷数量：</p>
+<p>    [NW] [N ] [NE]</p>
+<p>    [W ] [ X] [E ]</p>
+<p>    [SW] [S ] [SE]</p>
+<p>count &#x3D; 每个相邻位置是否为地雷（布尔累加）</p>
+<p>该值直接决定了格子翻开后显示的数字或空格。</p>
+<p><strong>4.3 空格自动展开（Flood Fill）</strong></p>
+<p>翻开雷数为 0 的格子（空格）时，使用深度优先搜索（DFS）递归展开：</p>
+<p>reveal_cell(r, c):</p>
+<p>    if revealed[r][c] or 有旗子&#x2F;问号标记 → 停止</p>
+<p>    标记 (r, c) 为已翻开</p>
+<p>    if board[r][c] &gt; 0: 显示数字，停止</p>
+<p>    if board[r][c] &#x3D;&#x3D; 0: 对 8 个邻居递归调用 reveal_cell</p>
+<p>点击一个空格即可让整个连通空白区域一次性展开，并在边界处停下显示数字。</p>
+<p><strong>4.4 Chord 双击展开</strong></p>
+<p>在已翻开的数字格上左键点击触发，是进阶玩家的高效操作：</p>
+<p>do_chord(r, c):</p>
+<p>    number &#x3D; board[r][c]</p>
+<p>    flag_count &#x3D; 统计周围旗子数</p>
+<p>    if flag_count !&#x3D; number:</p>
+<p>        数字格金色闪烁 250ms（视觉反馈）</p>
+<p>        return</p>
+<p>    if 周围有未保护的地雷:</p>
+<p>        游戏失败，直接展示所有雷（不翻开任何中间格）</p>
+<p>        return</p>
+<p>    翻开周围所有安全格子</p>
+<p><strong>原理</strong>：当周围插的旗子数恰好等于该格数字时，意味着剩余未翻开邻居必然是安全的。Chord 一键翻开它们，大幅提升操作效率。若旗子数与数字不匹配，数字格短暂变为金黄色作为反馈；若旗子标错且翻开的是地雷，直接判定失败。</p>
+<p><strong>4.5 胜利判定</strong></p>
+<p>遍历整个棋盘，确认没有非雷格子处于未翻开状态：</p>
+<p>check_win():</p>
+<p>    for each cell:</p>
+<p>        if board[r][c] !&#x3D; -1 and not revealed[r][c]:</p>
+<p>            return False</p>
+<p>    return True</p>
+<p><strong>五、烟花庆祝动画</strong></p>
+<p>胜利后触发彩色粒子烟花：</p>
+<p>1. <strong>Canvas 覆盖层</strong> — 在窗口上方创建透明 tkinter Canvas 画布</p>
+<p>2. <strong>多轮爆发</strong> — 分别在 100ms、600ms、1100ms 产生三轮随机位置爆发（4+3+3 次）</p>
+<p>3. <strong>粒子物理</strong> — 每次爆发约 30 个粒子，具有随机方向初速度，受重力（+0.25&#x2F;帧）和空气阻力（×0.94&#x2F;帧）影响</p>
+<p>4. <strong>淡出效果</strong> — 粒子生命周期内按比例缩小至消失</p>
+<p>5. <strong>自动清理</strong> — 所有粒子消失后自动销毁 Canvas</p>
+<p><strong>六、难度配置</strong></p>
+<p>| 难度 | 棋盘大小 | 雷数 | 雷密度 |</p>
+<p>| 初级 | 9×9 | 10 | ~12.3% |</p>
+<p>| 中级 | 16×16 | 40 | ~15.6% |</p>
+<p>| 高级 | 16×30 | 99 | ~20.6% |</p>
+<p><strong>七、运行方式</strong></p>
+<p>python minesweeper.py</p>
+<p>环境要求：Python 3.x。tkinter 是 Python 标准库组件，无需额外安装依赖。</p>
+<p>总结：具体可以看我项目仓库。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/31/2026/2026-05-31-%E5%9F%BA%E4%BA%8Epython%E7%9A%84%E6%89%AB%E9%9B%B7/index/" data-id="cuidMiwg_fcRAmZd51haJsDro" data-title="基于python的扫雷" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/06/01/2026/2026-06-01-%E5%AF%B9%E4%BA%8Eai/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对于ai
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/30/2026/2026-05-30-%E5%9F%BA%E4%BA%8Epython%E7%9A%84%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基于python的俄罗斯方块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

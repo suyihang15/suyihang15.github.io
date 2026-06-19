@@ -71,175 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/03/2026-03-22-本地ai部署教程（语言模型ollama）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-04-28-异地组网（tailscale）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/">本地ai部署教程（语言模型ollama）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>去<a target="_blank" rel="noopener" href="https://ollama.com/">ollama官网</a>在电脑上安装ollama</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-192927-1024x547.png"></p>
-<p>安装好后打开cmd运行</p>
-<p>ollama run 对应的模型名称会自动下载如有卡住就ctrl加c停止，在输入一次这个命令就行。</p>
-<p>安装好后就可以直接开始对话了</p>
-<p>一些ollama常用命令</p>
-<p>ollama list（查看下载了哪些模型）</p>
-<p>ollama rm mistral（删除不要的模型）</p>
-<p>一般来说要用于二次开发用这个127.0.0.1:11434其11434为ollama的监听端口可以直接使用。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-%E6%9C%AC%E5%9C%B0ai%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%EF%BC%88%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8Bollama%EF%BC%89/index/" data-id="cuidIMDspFBKWDHPmRO2GdryY" data-title="本地ai部署教程（语言模型ollama）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-22-部署一个自己的网盘搜索引擎（pansou）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T16:00:00.000Z" itemprop="datePublished">2026-03-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/">部署一个自己的网盘搜索引擎（pansou）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>项目地址 <a target="_blank" rel="noopener" href="https://github.com/fish2018/pansou">https://github.com/fish2018/pansou</a></p>
-<p>用docker可以直接一键部署（开箱即用）</p>
-<p>docker run -d –name pansou -p 80:80 ghcr.io&#x2F;fish2018&#x2F;pansou-web</p>
-<p>在Nas上部署其本身还是用docker，打开后自定义compose</p>
-<p>version: ‘3.8’</p>
-<p>services:<br>pansou:<br>image: ghcr.io&#x2F;fish2018&#x2F;pansou-web:latest<br>container_name: pansou-app<br>ports:<br>- “8080:80” #我这个默认写的是8080，可根据自己的需求改<br>- “4433:443”<br>environment:<br># 基础配置<br>- DOMAIN&#x3D;localhost<br>- PANSOU_PORT&#x3D;8888<br>- PANSOU_HOST&#x3D;127.0.0.1<br># 代理配置（可选）<br># - SOCKS5_PROXY&#x3D;socks5:&#x2F;&#x2F;ip:20170<br># - HTTP_PROXY&#x3D;<a target="_blank" rel="noopener" href="http://ip:20171/">http://ip:20171</a><br>volumes:<br># 数据持久化<br>- .&#x2F;pansou-data:&#x2F;app&#x2F;data<br>- .&#x2F;pansou-logs:&#x2F;app&#x2F;logs<br>restart: unless-stopped<br>healthcheck:<br>test: [“CMD”, “curl”, “-f”, “<a target="_blank" rel="noopener" href="http://localhost/api/health%22/]">http://localhost/api/health&quot;\]</a><br>interval: 30s<br>timeout: 10s<br>retries: 3<br>start_period: 40s</p>
-<p>volumes:<br>pansou-data:<br>driver: local<br>pansou-logs:<br>driver: local</p>
-<p>这是我写的一个大致的，如果不懂就照抄</p>
-<p>演示</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-193235-1024x544.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/22/2026/03/2026-03-22-%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88pansou%EF%BC%89/index/" data-id="cuidtNxSaugxntYdE5FXnl9Kr" data-title="部署一个自己的网盘搜索引擎（pansou）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-21-如何重装系统/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/21/2026/03/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/2026/03/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/">如何重装系统</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong><em>1、电脑直接恢复</em></strong></p>
-<p>在电脑上打开设置，搜索恢复，点击重置此电脑就行。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-191809-1024x915.png"></p>
-<p><strong><em>2、用微软提供的重装件</em></strong> <a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">下载 Windows 11</a></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-191931-1024x451.png"></p>
-<p>下载这个以后启动，可以无U盘安装，直接选择本地或者安装到U盘（U盘建议8G以上）里，记得U盘里的数据会被清空哦。</p>
-<p>后面进入Bloss选择U盘启动后重启就行。之后根据应道操作就行</p>
-<p><strong><em>3、用rufus安装</em></strong></p>
-<p>下载rufus<a target="_blank" rel="noopener" href="https://rufus.ie/en/">（Rufus - Create bootable USB drives the easy way</a>）</p>
-<p>去微软官方下载官方镜像<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">下载 Windows 11</a></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-192011-1024x338.png"></p>
-<p>然后打开rufus这里设备选择插入的U盘，选择这里选择下载好的镜像，无脑下一步，其他的可以不用管，默认就行。等做好以后按上面操作进入blossU盘启动根据引导来就行。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-192050.png"></p>
-<p>4、PE安装（一般现在不太推荐了）</p>
-<p>下载微PE<a target="_blank" rel="noopener" href="https://www.wepe.com.cn/">微PE工具箱 - 超好用的装机维护工具</a></p>
-<p><strong>插入4G及以上容量的U盘</strong>，然后打开软件，点击“安装到U盘”。</p>
-<p><strong>点击“立即安装进U盘”</strong>，然后点击“开始制作”。</p>
-<p><strong>稍等片刻</strong>，安装完成后，电脑开机时连按快捷键进入微PE即可。 这样就可以成功安装微PE工具箱了。</p>
-<p>后面进入bloss选择U盘启动，先用分区工具分好区，再用如下软件安装</p>
-<p><img src="/images/4.73d475b2.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/21/2026/03/2026-03-21-%E5%A6%82%E4%BD%95%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index/" data-id="cuidtphvqKlJMk8r-Z_c5zUOd" data-title="如何重装系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-21-frpc的使用（用于穿透家里的设备）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/21/2026/03/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/04/28/2026/2026-04-28-%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91%EF%BC%88tailscale%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-27T16:00:00.000Z" itemprop="datePublished">2026-04-28</time>
 </a>
     
   <div class="article-category">
@@ -254,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/2026/03/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/">frpc的使用（用于穿透家里的设备）</a>
+      <a class="p-name article-title" href="/2026/04/28/2026/2026-04-28-%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91%EF%BC%88tailscale%EF%BC%89/index/">异地组网（tailscale）</a>
     </h1>
   
 
@@ -262,30 +97,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong><em>1、前提条件</em></strong></p>
-<p>有一台有公网IP的云服务器。（建议国外的服务器，国内则必须备案）</p>
-<p>本地的服务已经准备好并知道其端口</p>
-<p>一个域名国内域名要备案，国外的服务器则不管</p>
-<p><strong><em>2、服务器端操作</em></strong></p>
-<p>远程ssh连接输入账号和密码（我直接用的是<a target="_blank" rel="noopener" href="https://www.xshell.com/zh/xshell/">XSHELL</a> ）</p>
-<p>连接好后输入</p>
-<p>if [ -f &#x2F;usr&#x2F;bin&#x2F;curl ];then curl -sSO <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;else">https://download.bt.cn/install/install\_panel.sh;else</a> wget -O install_panel.sh <a target="_blank" rel="noopener" href="https://download.bt.cn/install/install/_panel.sh;fi;bash">https://download.bt.cn/install/install\_panel.sh;fi;bash</a> install_panel.sh ed8484bec</p>
-<p><a target="_blank" rel="noopener" href="https://www.bt.cn/new/download.html">安装宝塔</a>后登录宝塔后台，记得关闭防火墙，安装docker</p>
-<p>找到frpc服务端安装后默认端口是7500，根据自己需要改</p>
-<p>安装好了进入安装目录data&#x2F;frps&#x2F;toml复制token</p>
-<p><strong><em>3、本地操作</em></strong></p>
-<p>同理安装宝塔加frpc客户端，打开配置文件</p>
-<p>serverAddr&#x3D;’你的公网IP’</p>
-<p>token改成服务器的,直接复制粘贴就行</p>
-<p>[[proxies]]<br>name &#x3D; “test-tcp”<br>type &#x3D; “tcp”<br>localIP &#x3D; “127.0.0.1”<br>localPort &#x3D; 你要穿的端口<br>remotePort &#x3D; 你要穿的端口</p>
-<p><em><strong>4、验证是否成功</strong></em></p>
-<p>公网ip加端口看看是否可以访问你要的服务</p>
-<p><strong><em>5、域名解析就行，记得国内必须域名备案</em></strong></p>
+        <p>注：因为本人之前尝试了frpc穿透家里的设备想要试试异地组网访问家里的设备，而且不要钱，就写了这个。</p>
+<p><strong><em>1、准备</em></strong>（个人是很推荐<a target="_blank" rel="noopener" href="https://tailscale.com/download">tailscale</a>）</p>
+<p>安装好<a target="_blank" rel="noopener" href="https://tailscale.com/download">tailscale</a>软件就行其基本上支持市面上绝大多数设备。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-28-203411-1024x554.png"></p>
+<p><strong><em>2、为什么玩异地组网。</em></strong></p>
+<p>我们知道，一般我们玩nas这些的，都需要开通公网IP还要配置好一些列乱七八糟的配置，用这个软件我们就可以实现外部设备和家里的网络处于同一局域网下。</p>
+<p><strong><em>3、怎么搞</em></strong></p>
+<p>需要组网的设备下载好这个软件</p>
+<p>注册号一个账号在网站<a target="_blank" rel="noopener" href="https://login.tailscale.com/start">Tailscale</a></p>
+<p>在下载号软件的设备上登录你的账号就行了，你们就在同一局域网下了</p>
+<p>没错就这么简单，都登录以后，你就可以在官网登录看到所有信息了</p>
+<p><img src="/images/IMG_20260428_204656-1024x375.png"></p>
+<p>比如，这里的第一个是我的nas设备，后面那一串IP就是我nas的管理后台，其次这里还可以设置流量的进出口的流量都可以设置的。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-28-210734-1024x596.png"></p>
+<p>组好后就像我这样就可以连接好设备了，整体网速还行，挺舒服的，主要是操作简单没有过多复杂的设置，而且不会破坏你原来的网络配置，你就相当于连接上了家里的网。</p>
+<p>总结：这种方式还是很香的，没有复杂的操作，而且不要钱。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/21/2026/03/2026-03-21-frpc%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E5%AE%B6%E9%87%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%89/index/" data-id="cuid71kPwT5GqDn7H8_KdBoFA" data-title="frpc的使用（用于穿透家里的设备）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/28/2026/2026-04-28-%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91%EF%BC%88tailscale%EF%BC%89/index/" data-id="cuidF3RdNMss5an9j_hxGHUlV" data-title="异地组网（tailscale）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -297,271 +129,10 @@
 
 
   
-    <article id="post-2026/03/2026-03-21-网页如何打包成打包exe（很基础的）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/04/2026-04-27-cookie的作用与获取/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/2026/03/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-20T16:00:00.000Z" itemprop="datePublished">2026-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/2026/03/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/">网页如何打包成打包exe（很基础的）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong><em>1、环境准备</em></strong></p>
-<p>安装<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">Node.js</a>和<a target="_blank" rel="noopener" href="https://npm.nodejs.cn/cli/v11/configuring-npm/install">npm</a></p>
-<p><strong><em>2、验证是否安装好</em></strong></p>
-<p>在cmd中输入node -v和npm -v</p>
-<p>看能不能输出版本号可以就装好了</p>
-<p><strong><em>3、下载要的包</em></strong></p>
-<p>npm install -g nativefier</p>
-<p><strong><em>4、验证包的安装</em></strong></p>
-<p>nativefier –version</p>
-<p><strong><em>5、创建exe文件</em></strong></p>
-<p>新建一个文件夹，这里面装的就是打包后的文件后打开文件夹右键打开cmd后输入nativefier ‘网址’</p>
-<p>之后找到exe文件就行</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/21/2026/03/2026-03-21-%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E6%88%90%E6%89%93%E5%8C%85exe%EF%BC%88%E5%BE%88%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%89/index/" data-id="cuidFJmFLcEjv9N9vyH2hKkLQ" data-title="网页如何打包成打包exe（很基础的）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-19-linux基本操作指令/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/19/2026/03/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/19/2026/03/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/">Linux基本操作指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Linux是一种强大的操作系统，提供了许多常用的命令行工具，可以帮助我们管理文件、目录、进程、网络和系统配置等。以下是一些常用的Linux命令及其用法：</p>
-<p><strong>文件和目录操作</strong></p>
-<p> <strong>ls：                列出当前目录中的文件和子目录</strong></p>
-<p><strong>pwd：                显示当前工作目录的路径</strong></p>
-<p><strong>cd：                 切换工作目录</strong></p>
-<p>cd &#x2F;path&#x2F;to&#x2F;directory</p>
-<p><strong>mkdir：              创建新目录</strong></p>
-<p>mkdir directory_name</p>
-<p><strong>rmdir：              删除空目录</strong></p>
-<p>rmdir directory_name</p>
-<p><strong>rm：                 删除文件或目录</strong></p>
-<p>rm file_name</p>
-<p>rm -r directory_name     递归删除目录及其内容</p>
-<p><strong>cp：                 复制文件或目录</strong></p>
-<p>cp source_file destination</p>
-<p>cp -r source_directory destination # 递归复制目录及其内容</p>
-<p><strong>mv：                 移动或重命名文件或目录</strong></p>
-<p>mv old_name new_name</p>
-<p><strong>touch：              创建空文件或更新文件的时间戳</strong></p>
-<p>touch file_name</p>
-<p><strong>cat：                连接和显示文件内容</strong></p>
-<p>cat file_name</p>
-<p><strong>系统管理</strong></p>
-<p><strong>ps：                 显示当前运行的进程</strong></p>
-<p><strong>ps aux</strong></p>
-<p><strong>kill：               终止进程</strong></p>
-<p>kill process_id</p>
-<p><strong>ifconfig&#x2F;ip：        查看和配置网络接口信息</strong></p>
-<p>ifconfig</p>
-<p>ip addr show</p>
-<p><strong>ping：               测试与主机的连通性</strong></p>
-<p>ping host_name_or_ip</p>
-<p><strong>chmod：              修改文件或目录的权限</strong></p>
-<p>chmod permissions file_name</p>
-<p><strong>chown：              修改文件或目录的所有者</strong></p>
-<p>chown owner:group file_name</p>
-<p><strong>df&#x2F;du：              显示磁盘使用情况</strong></p>
-<p><strong>df -h                显示磁盘空间使用情况</strong></p>
-<p><strong>du -h directory_name 显示目录的磁盘使用情况</strong></p>
-<p><strong>umount &#x2F;dev&#x2F;sdX1 &#x2F;mnt 挂载分区到指定目录</strong></p>
-<p><strong>umount &#x2F;mnt           卸载挂载的文件系统</strong></p>
-<p><strong>网络操作</strong></p>
-<p><strong>ssh：                 远程登录到其他计算机</strong></p>
-<p>ssh username@remote_host</p>
-<p><strong>scp：                 安全地将文件从本地复制到远程主机，或从远程主机复制到本地</strong></p>
-<p>scp local_file remote_user@remote_host:&#x2F;remote&#x2F;directory</p>
-<p><strong>wget&#x2F;curl：           从网络下载文件</strong></p>
-<p>wget URL</p>
-<p>curl -O URL</p>
-<p>这些命令是Linux系统中最常用的基本操作命令，掌握这些命令可以帮助你更有效地管理和操作Linux系统</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/19/2026/03/2026-03-19-linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index/" data-id="cuidIz7VD_nw1WPHhk_2EAvrM" data-title="Linux基本操作指令" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-19-hexo加github搭建博客网站/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/19/2026/03/2026-03-19-hexo%E5%8A%A0github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/19/2026/03/2026-03-19-hexo%E5%8A%A0github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index/">hexo加github搭建博客网站</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>环境准备</strong></p>
-<p><strong>下载<a target="_blank" rel="noopener" href="http://(https//nodejs.org/en/)">node.js</a>(<strong><a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></strong>)</strong></p>
-<p><strong>下载<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git</a>(<strong><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></strong>)</strong></p>
-<p><strong>验证下载（cmd中运行）</strong></p>
-<p>node -v</p>
-<p>npm -v（这个是node附带的）</p>
-<p>git -v</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-180633-1024x539.png"></p>
-<p><strong>下载hexo</strong></p>
-<p>npm install hexo-cli -g</p>
-<p><strong>搭建github仓库</strong></p>
-<p>注册并登录<a target="_blank" rel="noopener" href="https://github.com/">github</a>（github用于托管我们的文件）</p>
-<p>点击Create a new repository（创建仓库）</p>
-<p>用户名.github.io</p>
-<p>勾选 Public</p>
-<p>勾选 Add a README file</p>
-<p>拉到下面点击create创建</p>
-<p><strong>生成SSH Keys</strong></p>
-<p>在Git bash here输入</p>
-<p>ssh-keygen -t rsa -C “邮件地址”四下回车</p>
-<p>找C:\Users\用户名\.ssh\id_rsa.pub复制</p>
-<p><strong>github创建ssh</strong></p>
-<p>设置里面找ssh keys</p>
-<p>复制粘贴创建</p>
-<p><strong>验正</strong></p>
-<p>git中输入ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">git@github.com</a>后yes</p>
-<p><strong>本地搭建</strong></p>
-<p>新建文件夹</p>
-<p>git中输入</p>
-<p>hexo init</p>
-<p>hexo install</p>
-<p>hexo g</p>
-<p>hexo s</p>
-<p>如果不行就加npx</p>
-<p><strong>改配置文件</strong></p>
-<p>打开_config.yml</p>
-<p>拉到最下面将deploy后面的全删掉，复制粘贴这段</p>
-<p>  deploy:</p>
-<p>  type: git</p>
-<p>  repository: <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;">git@github.com</a>:名字&#x2F;名字.github.io.git</p>
-<p>  branch: main</p>
-<p>  注意格式</p>
-<p><strong>安装自动部署发布工具</strong></p>
-<p>npm install hexo-deployer-git –save  </p>
-<p>然后在Blog文件夹右键打开git bash，依次输入</p>
-<p>hexo g（生成）</p>
-<p>hexo d（上传）</p>
-<p><strong>第一次使用git的话会需要配置</strong></p>
-<p>git config –global user.email “你的邮箱”</p>
-<p>git config –global user.name “你的名字”</p>
-<p>配置完后再hexo d上传</p>
-<p>在跳出来的窗口内进行登录</p>
-<p>接下来我们就成功把本地内容上传到github了</p>
-<p>上传成功以后，我们就算搭建好了！上自己的网址看看吧</p>
-<p><strong>网址是我们之前设的仓库名：</strong></p>
-<p>用户名.github.io</p>
-<p><strong>用记事本打开我们新建文件夹中的_config.yml文件</strong></p>
-<p>将Site下面按自己的需求填上</p>
-<p><strong>Site</strong></p>
-<p>title: 标题</p>
-<p>subtitle: 副标题</p>
-<p>description: 描述</p>
-<p>keywords: 关键词</p>
-<p>author: 站主</p>
-<p>language: 语言（可以填写zh-CN）</p>
-<p>timezone: 时区（可以填写Asia&#x2F;Shanghai）</p>
-<p>然后保存</p>
-<p><strong>上传文章</strong></p>
-<p>我们在新建文件夹中打开git bash,</p>
-<p>输入下方代码就可以生成新的文章md文件</p>
-<p>hexo new 文章标题</p>
-<p><strong>注意</strong></p>
-<p>文章是.md格式，在我们的Blog文件夹中的source&#x2F;_posts中</p>
-<p>_config.yml是配置文件自己修改就行</p>
-<p>查看成果（这是本人搭建的成果）</p>
-<p><a target="_blank" rel="noopener" href="https://suyihang15.github.io/">Mr.苏的博客https://suyihang15.github.io/</a></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-03-21-180448-1024x461.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/19/2026/03/2026-03-19-hexo%E5%8A%A0github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index/" data-id="cuidfbX2IDvZp7rOYTCMF_BCJ" data-title="hexo加github搭建博客网站" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/03/2026-03-19-python基础语法/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/03/19/2026/03/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+    <a href="/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-26T16:00:00.000Z" itemprop="datePublished">2026-04-27</time>
 </a>
     
   <div class="article-category">
@@ -576,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/19/2026/03/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/">python基础语法</a>
+      <a class="p-name article-title" href="/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/">cookie的作用与获取</a>
     </h1>
   
 
@@ -584,57 +155,35 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><em>基础语法</em></p>
-<p>1. 变量名规则</p>
-<p>   只能是字母或者下划线 _ 开头；特别注意不能使用数字开头</p>
-<p>   区分大小写</p>
-<p>   可以用中文</p>
-<p>2. 注释</p>
-<p>   单行注释：使用 # 号进行注释</p>
-<p>   多行注释：使用三引号 ‘’’ 或者 “”” 进行注释</p>
-<p>   python</p>
-<p>3. 代码块结构（缩进）</p>
-<p>python 最具特色的就是使用缩进来表示代码块，不需要使用大括号 {}</p>
-<p>可以使用制表符（Tab 键）或者空格来进行缩进，通常使用一个 Tab 或者 4 个空格 即可</p>
-<p>同一代码文件中必须统一使用 Tab 或者空格，不能混用（不同系统解析的制表符不一致，混用会导致在不同系统中代码表现不一致）</p>
-<p>重要：实际使用中一般统一使用 4 个空格</p>
-<p>python</p>
-<p>if True:</p>
-<p>    print(‘hello, world’)</p>
-<p>4. print 输出</p>
-<p>   使用 print() 进行输出</p>
-<p>   print 默认输出是换行的，如果不需要换行可以加上 end 参数：</p>
-<p>   python</p>
-<p>   print(‘hello, world’)</p>
-<p>   print(‘hello, world’, end&#x3D;’’)</p>
-<p>5. 关键字</p>
-<p>   关键字也称保留字，每个编程语言均有的；不能作为普通标识符（变量名，函数名等）</p>
-<p>   就是我们自己定义的变量不要用就行了</p>
-<p>   简单了解一下就行，不需要现在就弄懂：</p>
-<p>关键字    简述</p>
-<p>True      逻辑真                                                                       False           逻辑假</p>
-<p>and        逻辑与                                                                       or                逻辑或</p>
-<p>if            条件语句的如果                                                        elif               条件语句的另一个如果</p>
-<p>else       条件语句的否则                                                         in                在 … 里</p>
-<p>is            是，常用在判断中                                                    not              不是</p>
-<p>async     异步                                                                           await           异步中的等待</p>
-<p>from       从 … 用在引入包                                                      import        引入包</p>
-<p>pass       占位符，啥也不干                                                    None          空，通常用于初始变量</p>
-<p>try           开始捕获异常                                                           except         捕获到异常</p>
-<p>finally     异常语句中的最后无论是否异常都要执行的块      raise           抛出异常</p>
-<p>def           定义函数                                                                   return        函数返回</p>
-<p>yield        用于创建生成器</p>
-<p>lambda   定义匿名函数                                                           for               循环</p>
-<p>while        循环                                                                         continue     继续循环</p>
-<p>break       退出循环                                                                 class             定义类</p>
-<p>assert       断言                                                                        nonlocal      非局部变量</p>
-<p>global      全局，常用与定义全局变量                            del                删除</p>
-<p>with          上下文                                                                     as                 别名</p>
+        <p>注：本文主要是介绍cookie，至于具体的使用方式不会过多介绍。</p>
+<p>Cookie是网站用于记录你电脑&#x2F;手机里的登录信息的东西，你可能看见过这个申请。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-172923-1024x198.png"></p>
+<p><strong><em>作用：</em></strong></p>
+<p>那么他是干什么的，我们知道，当我们访问有些网站时，他要登录，但是，当我们登录以后下次再访问相同的网站时，他就不需要我们再次登录了，这就是cookie的作用，是不是很方便。</p>
+<p>而且，由于他是储存我们这个网站的登录信息，所以，我们可以调用它做各种各样的事情，比如之前介绍的openlist挂载网盘时，就是利用了这个cookie来识别你的软件登录信息的，因此，他也有风险，可以通过这个东西来盗取你的账号和密码，但是，网站一般的话都会保护好使用者的个人信息的，一些黑客也可以利用这个东西的，请保护好你的个人cookie</p>
+<p>但是，这个也有一定的时间期限的，我们会发现，网站登录以后，过一段时间会喊你重新登录，这就是因为你的cookie失效了，所以，不用过度担心，他不是一成不变的。</p>
+<p><strong><em>获取：</em></strong></p>
+<p>这里以夸克网盘为例（其他的网站获取也大差不差）：登陆好你的账号</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174224-1024x648.png"></p>
+<p>右键检查或者按F12开启开发者模式</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174252-1024x622.png"></p>
+<p>就会弹出这个界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174312-1024x619.png"></p>
+<p>点击网络，开始是什么都没有的要手动刷新一下，就会有下面的东西</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174340-1024x595.png"></p>
+<p>随便点击一个，我这里点击的是list，就会弹出一个界面找到cookie这就是我们要的东西了。</p>
+<p><img src="/images/qq_pic_merged_1777283328617-1024x618.jpg"></p>
+<p>获取以后这个的使用就要你自己去开发了</p>
+<p>这里就些一个简单的python的调用</p>
+<p>import requests</p>
+<p>ck &#x3D; “cookie”<br>r &#x3D; requests.get(“网站”, headers&#x3D;{“Cookie”: ck})<br>print(r.text)</p>
+<p>这样就可以爬取你登录后的一些简单的网站信息，这也是最简单让机器人去通过登录的方式。</p>
+<p>总结：如果你想去学爬虫那么，这个最简单的方法你必须要知道，这基本就是一些基础，希望你能学到吧。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/19/2026/03/2026-03-19-python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index/" data-id="cuidZIDQMb7QObo-rvkhJ_vc_" data-title="python基础语法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/27/2026/04/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" data-id="cuidxbqoBqvcWgLGA1GrM3mKQ" data-title="cookie的作用与获取" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -646,12 +195,16 @@
 
 
   
-    <article id="post-2026/03/2026-03-19-网站公告（必看）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-04-27-cookie的作用与获取/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/19/2026/03/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-03-18T16:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+    <a href="/2026/04/27/2026/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-26T16:00:00.000Z" itemprop="datePublished">2026-04-27</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -660,7 +213,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/19/2026/03/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/">网站公告（必看）</a>
+      <a class="p-name article-title" href="/2026/04/27/2026/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/">cookie的作用与获取</a>
     </h1>
   
 
@@ -668,13 +221,641 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>本网站是只用于科技交流的个人博客网站，无任何盈利目的和商业行为，赞赏码只是希望各位大佬觉得还行希望打赏一些，本身无任何商业目的和行为，如有违规或侵权行为请联系本站站主删除。本人坚决维护好一个健康安全的上网环境，遵守网络法律道德，希望大家能搭建出一个纯技术讨论环境，本人水平有限，按照自己的理解来讲述我理解的知识点。如果有什么想发或者建议，可以联系本站长，或者在文章上留言，本人会积极回复，并改正的。</p>
-<p>站主QQ邮箱：<a href="mailto:&#50;&#55;&#x34;&#x38;&#56;&#x37;&#x34;&#x35;&#56;&#x36;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;">2748874586@qq.com</a></p>
+        <p>注：本文主要是介绍cookie，至于具体的使用方式不会过多介绍。</p>
+<p>Cookie是网站用于记录你电脑&#x2F;手机里的登录信息的东西，你可能看见过这个申请。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-172923-1024x198.png"></p>
+<p><strong><em>作用：</em></strong></p>
+<p>那么他是干什么的，我们知道，当我们访问有些网站时，他要登录，但是，当我们登录以后下次再访问相同的网站时，他就不需要我们再次登录了，这就是cookie的作用，是不是很方便。</p>
+<p>而且，由于他是储存我们这个网站的登录信息，所以，我们可以调用它做各种各样的事情，比如之前介绍的openlist挂载网盘时，就是利用了这个cookie来识别你的软件登录信息的，因此，他也有风险，可以通过这个东西来盗取你的账号和密码，但是，网站一般的话都会保护好使用者的个人信息的，一些黑客也可以利用这个东西的，请保护好你的个人cookie</p>
+<p>但是，这个也有一定的时间期限的，我们会发现，网站登录以后，过一段时间会喊你重新登录，这就是因为你的cookie失效了，所以，不用过度担心，他不是一成不变的。</p>
+<p><strong><em>获取：</em></strong></p>
+<p>这里以夸克网盘为例（其他的网站获取也大差不差）：登陆好你的账号</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174224-1024x648.png"></p>
+<p>右键检查或者按F12开启开发者模式</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174252-1024x622.png"></p>
+<p>就会弹出这个界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174312-1024x619.png"></p>
+<p>点击网络，开始是什么都没有的要手动刷新一下，就会有下面的东西</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-27-174340-1024x595.png"></p>
+<p>随便点击一个，我这里点击的是list，就会弹出一个界面找到cookie这就是我们要的东西了。</p>
+<p><img src="/images/qq_pic_merged_1777283328617-1024x618.jpg"></p>
+<p>获取以后这个的使用就要你自己去开发了</p>
+<p>这里就些一个简单的python的调用</p>
+<p>import requests</p>
+<p>ck &#x3D; “cookie”<br>r &#x3D; requests.get(“网站”, headers&#x3D;{“Cookie”: ck})<br>print(r.text)</p>
+<p>这样就可以爬取你登录后的一些简单的网站信息，这也是最简单让机器人去通过登录的方式。</p>
+<p>总结：如果你想去学爬虫那么，这个最简单的方法你必须要知道，这基本就是一些基础，希望你能学到吧。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/19/2026/03/2026-03-19-%E7%BD%91%E7%AB%99%E5%85%AC%E5%91%8A%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/index/" data-id="cuid57njq60lCFSvXwqP70Kz1" data-title="网站公告（必看）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/27/2026/2026-04-27-cookie%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%8E%B7%E5%8F%96/index/" data-id="cuidPd66LK-_Jc_YUUZllbEqo" data-title="cookie的作用与获取" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-26-bt种子下载/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/26/2026/04/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-25T16:00:00.000Z" itemprop="datePublished">2026-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/26/2026/04/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/">BT种子下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>注：由于现在的传输文件的方式越来越多了，有的人可能就不太知道BT种子是什么了，这里介绍一下。我个人觉得这是互联网分享精神的体现，真的就是好人一生平安啊。</em></strong></p>
+<p><strong><em>BT下载是怎么来的</em></strong></p>
+<p>最开始互联网下载文件，文件基本上都放在网站的服务器里面，所有人都从这一台服务器获取文件，而且早期上网带宽很低的，早年间上网的人就会有这种感觉，下载一个破资源为什么这么慢啊，我现在都记得，当时，下载一个资源有时候是要挂一下午的，当时就是很慢，而且其本身受到地域很多因素影响。</p>
+<p>像我的那台云服务器只有10mbp的上下行，传文件慢的要死。1个G快半小时了,偶尔还断连，气得要死。</p>
+<p>那么，既然网站的服务器传文件不行，可不可以让让用户和用户之间互相传文件，这就是BT<br>我们不需要大型储存服务器，每个使用这个BT种子的都是一个服务器，下载的人越多，速度就越快</p>
+<p><strong><em>运行的逻辑</em></strong></p>
+<p>有人拥有完整文件，BT程序软件会把整个文件切成许许多多大小一致的小碎片，根据这些碎片信息，生成一个很小的文件，就是BT种子。</p>
+<p>种子里面没有视频、没有文件内容，只记录三件事：文件多大、碎片长什么样、全网哪些人正在下载这个资源。</p>
+<p>普通下载软件看不懂这套规则，必须用专门的BT下载器（如qbittorrent，有的人也用迅雷），下载器读取种子，在网络中匹配到所有下载同一个资源的用户。</p>
+<p>所有用户电脑里，都只拥有文件的一部分碎片，BT下载器会让所有人互相连通，互相交换碎片，你拿别人手上你没有的片段，别人也拿你手上他没有的片段，当你集齐全部碎片，软件自动拼接，形成完整文件。</p>
+<p>文件下载完成后，你的设备也会自动上传碎片，变成资源的一部分，供给其他人下载，这样就比全部搞一个服务器快得多。</p>
+<p><strong><em>上传的原因</em></strong><br>我们只要双方使用同一个种子、同一个BT协议下载，那么，下载软件会主动开放当前这个文件的碎片共享权限，大家只互通这一个文件的数据，而且电脑里其他所有文件完全隔离、无法访问，属于自愿互相传输，所以，不用特别担心自己文件有什么泄露的风险，这里真的不是拉踩迅雷，他有那个专门的下载链接，我个人觉的这违背了互联网的开源精神，我们的很多资源是大家分享出来的，不应该去搞什么专门的链接，以至于很多的BT种子资源网站都是把迅雷下载器给拉黑了的，我不太喜欢这种行为，但是，作为商业考量确实也不好说什么。</p>
+<p>还有就是只有专门的BT下载器才能下载种子，一般下载器是不行的。</p>
+<p>普通浏览器下载、普通下载工具，走的是网站服务器传输规则。</p>
+<p>而BT是一套完全独立的点对点传输协议：</p>
+<p>需要识别碎片，在全网匹配在线用户，然后互相上传、交换数据，最后，校验文件片段、拼接文件</p>
+<p>普通下载软件看不懂这套语言的，只有专门的BT下载器，内置了这套传输规则，才能解析种子、完成下载。</p>
+<p><em><strong>影响BT下载速度的</strong></em></p>
+<p><strong>做种人数（这是主要因素）</strong><br>已经完整下完文件、并且在上传的人越多，速度越快，毕竟人家手里有完整的文件。<br><strong>同时下载的人数（这个应该好理解吧</strong>）<br>一起下载的人越多，碎片来源越多，可以同时从多个人接收数据，速度大幅提升。<br><strong>别人的上传网速</strong><br>别人愿意分给你的上传带宽，直接限制你的下载上限。但现在基本上都很快了吧，我都基本上没有听到那个人下载资源要半天了，当然没开会员的网盘不算，那是运营商的锅。<br><strong>你自己的宽带速度</strong><br>自身网速上限决定最快能跑到多少，简单说就是，人不行就别怪其他的了，你看看下载其他文件的速度和种子文件的速度就行。<br><strong>网络运营商限制（这点是真的很蛋疼的）</strong><br>大部分宽带运营商会限制BT传输，主动压低BT网速，就和跑pcdn一样，本质还是要吃运营商的带宽，其是很不喜欢这种行为的。<br><strong>资源新旧热度（这就和上面说的差不多）</strong><br>热门资源人多共享充足；老旧冷门资源没人留存碎片，下载缓慢甚至失败，这就是为什么BT种子资源失效的原因，但是，这我个人遇到的很少，也可能是我很少下载冷门资源的</p>
+<p>总结：BT是把文件拆碎分散在每个用户设备，种子负责标记资源和找人，专用下载器负责连通用户、交换碎片，所有人互相传输拼凑文件，下载快慢完全取决于共享人数和上传情况，可以说只要有一个人还有这个BT种子的文件，那么，文件就还有备份，算是一种比较好的存文件的方式了吧。</p>
+<p><em><strong>提醒：当互联网上有人分享资源时，无论如何，请礼貌对待这个分享的陌生人，因为，有些资源是很难找的，人家愿意分享出来是处于帮助他人，这样互相帮助的互联网，才是最开始开发者的最初设想，请不要在网络上辱骂或者以命令的方式去要求他人，别人没有帮你的义务，好人一生平安，我觉得这是最好的网络语言了，也是支持这些无私分享者的坚持的动力，感谢这些无私的人。</strong></em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/26/2026/04/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/" data-id="cuidFJcyd8Q55C-ZWCY0Z48tR" data-title="BT种子下载" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-04-26-bt种子下载/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/26/2026/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-25T16:00:00.000Z" itemprop="datePublished">2026-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/26/2026/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/">BT种子下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>注：由于现在的传输文件的方式越来越多了，有的人可能就不太知道BT种子是什么了，这里介绍一下。我个人觉得这是互联网分享精神的体现，真的就是好人一生平安啊。</em></strong></p>
+<p><strong><em>BT下载是怎么来的</em></strong></p>
+<p>最开始互联网下载文件，文件基本上都放在网站的服务器里面，所有人都从这一台服务器获取文件，而且早期上网带宽很低的，早年间上网的人就会有这种感觉，下载一个破资源为什么这么慢啊，我现在都记得，当时，下载一个资源有时候是要挂一下午的，当时就是很慢，而且其本身受到地域很多因素影响。</p>
+<p>像我的那台云服务器只有10mbp的上下行，传文件慢的要死。1个G快半小时了,偶尔还断连，气得要死。</p>
+<p>那么，既然网站的服务器传文件不行，可不可以让让用户和用户之间互相传文件，这就是BT<br>我们不需要大型储存服务器，每个使用这个BT种子的都是一个服务器，下载的人越多，速度就越快</p>
+<p><strong><em>运行的逻辑</em></strong></p>
+<p>有人拥有完整文件，BT程序软件会把整个文件切成许许多多大小一致的小碎片，根据这些碎片信息，生成一个很小的文件，就是BT种子。</p>
+<p>种子里面没有视频、没有文件内容，只记录三件事：文件多大、碎片长什么样、全网哪些人正在下载这个资源。</p>
+<p>普通下载软件看不懂这套规则，必须用专门的BT下载器（如qbittorrent，有的人也用迅雷），下载器读取种子，在网络中匹配到所有下载同一个资源的用户。</p>
+<p>所有用户电脑里，都只拥有文件的一部分碎片，BT下载器会让所有人互相连通，互相交换碎片，你拿别人手上你没有的片段，别人也拿你手上他没有的片段，当你集齐全部碎片，软件自动拼接，形成完整文件。</p>
+<p>文件下载完成后，你的设备也会自动上传碎片，变成资源的一部分，供给其他人下载，这样就比全部搞一个服务器快得多。</p>
+<p><strong><em>上传的原因</em></strong><br>我们只要双方使用同一个种子、同一个BT协议下载，那么，下载软件会主动开放当前这个文件的碎片共享权限，大家只互通这一个文件的数据，而且电脑里其他所有文件完全隔离、无法访问，属于自愿互相传输，所以，不用特别担心自己文件有什么泄露的风险，这里真的不是拉踩迅雷，他有那个专门的下载链接，我个人觉的这违背了互联网的开源精神，我们的很多资源是大家分享出来的，不应该去搞什么专门的链接，以至于很多的BT种子资源网站都是把迅雷下载器给拉黑了的，我不太喜欢这种行为，但是，作为商业考量确实也不好说什么。</p>
+<p>还有就是只有专门的BT下载器才能下载种子，一般下载器是不行的。</p>
+<p>普通浏览器下载、普通下载工具，走的是网站服务器传输规则。</p>
+<p>而BT是一套完全独立的点对点传输协议：</p>
+<p>需要识别碎片，在全网匹配在线用户，然后互相上传、交换数据，最后，校验文件片段、拼接文件</p>
+<p>普通下载软件看不懂这套语言的，只有专门的BT下载器，内置了这套传输规则，才能解析种子、完成下载。</p>
+<p><em><strong>影响BT下载速度的</strong></em></p>
+<p><strong>做种人数（这是主要因素）</strong><br>已经完整下完文件、并且在上传的人越多，速度越快，毕竟人家手里有完整的文件。<br><strong>同时下载的人数（这个应该好理解吧</strong>）<br>一起下载的人越多，碎片来源越多，可以同时从多个人接收数据，速度大幅提升。<br><strong>别人的上传网速</strong><br>别人愿意分给你的上传带宽，直接限制你的下载上限。但现在基本上都很快了吧，我都基本上没有听到那个人下载资源要半天了，当然没开会员的网盘不算，那是运营商的锅。<br><strong>你自己的宽带速度</strong><br>自身网速上限决定最快能跑到多少，简单说就是，人不行就别怪其他的了，你看看下载其他文件的速度和种子文件的速度就行。<br><strong>网络运营商限制（这点是真的很蛋疼的）</strong><br>大部分宽带运营商会限制BT传输，主动压低BT网速，就和跑pcdn一样，本质还是要吃运营商的带宽，其是很不喜欢这种行为的。<br><strong>资源新旧热度（这就和上面说的差不多）</strong><br>热门资源人多共享充足；老旧冷门资源没人留存碎片，下载缓慢甚至失败，这就是为什么BT种子资源失效的原因，但是，这我个人遇到的很少，也可能是我很少下载冷门资源的</p>
+<p>总结：BT是把文件拆碎分散在每个用户设备，种子负责标记资源和找人，专用下载器负责连通用户、交换碎片，所有人互相传输拼凑文件，下载快慢完全取决于共享人数和上传情况，可以说只要有一个人还有这个BT种子的文件，那么，文件就还有备份，算是一种比较好的存文件的方式了吧。</p>
+<p><em><strong>提醒：当互联网上有人分享资源时，无论如何，请礼貌对待这个分享的陌生人，因为，有些资源是很难找的，人家愿意分享出来是处于帮助他人，这样互相帮助的互联网，才是最开始开发者的最初设想，请不要在网络上辱骂或者以命令的方式去要求他人，别人没有帮你的义务，好人一生平安，我觉得这是最好的网络语言了，也是支持这些无私分享者的坚持的动力，感谢这些无私的人。</strong></em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/26/2026/2026-04-26-bt%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD/index/" data-id="cuidhjI4TuaiFNp_nUJAibkTT" data-title="BT种子下载" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python基础（会看报错）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/">python基础（会看报错）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：这里就只讲一些简单常见的报错问题及其情况，帮助人查看理解，具体的情况还要具体分析，因为报错的情况太多了。</p>
+<p>基本的错误代码：</p>
+<h2 id="IndentationError-expected-an-indented-block"><a href="#IndentationError-expected-an-indented-block" class="headerlink" title="IndentationError: expected an indented block"></a><strong><em>IndentationError: expected an indented block</em></strong></h2><p>原因：冒号下面没有空格缩进，代码没往右挪<br>解决：冒号下一行统一缩进4个空格</p>
+<h2 id="SyntaxError-invalid-syntax"><a href="#SyntaxError-invalid-syntax" class="headerlink" title="SyntaxError: invalid syntax"></a><em><strong>SyntaxError: invalid syntax</strong></em></h2><p>原因：中文逗号、中文引号、中文冒号、少标点、格式乱<br>解决：所有符号全部切换英文输入法</p>
+<h2 id="NameError-name-‘xxx’-is-not-defined"><a href="#NameError-name-‘xxx’-is-not-defined" class="headerlink" title="NameError: name ‘xxx’ is not defined"></a><strong><em>NameError: name ‘xxx’ is not defined</em></strong></h2><p>原因：变量、函数名字没提前写，直接拿来用<br>解决：先定义，再使用</p>
+<h2 id="IndexError-string-index-out-of-range"><a href="#IndexError-string-index-out-of-range" class="headerlink" title="IndexError: string index out of range"></a><strong><em>IndexError: string index out of range</em></strong></h2><p>原因：字符串、列表取值数字太大，没有这个位置<br>解决：下标从0开始，数字写小一点</p>
+<h2 id="KeyError"><a href="#KeyError" class="headerlink" title="KeyError"></a><em><strong>KeyError</strong></em></h2><p>原因：字典里面没有你写的这个名字，单词写错<br>解决：核对字典关键字，一字不差</p>
+<h2 id="TypeError-object-of-type-‘int’-has-no-len"><a href="#TypeError-object-of-type-‘int’-has-no-len" class="headerlink" title="TypeError: object of type ‘int’ has no len()"></a><strong><em>TypeError: object of type ‘int’ has no len()</em></strong></h2><p>原因：给数字用len()、下标取值</p>
+<p>解决：len只能用文字、列表，不能用数字</p>
+<h2 id="TypeError-can-only-concatenate-str-not-“int”-to-str"><a href="#TypeError-can-only-concatenate-str-not-“int”-to-str" class="headerlink" title="TypeError: can only concatenate str (not “int”) to str"></a><em><strong>TypeError: can only concatenate str (not “int”) to str</strong></em></h2><p>原因：文字和数字直接相加拼接<br>解决：不要字符串和数字混着相加</p>
+<h2 id="TypeError-missing-1-required-positional-argument"><a href="#TypeError-missing-1-required-positional-argument" class="headerlink" title="TypeError: missing 1 required positional argument"></a><strong><em>TypeError: missing 1 required positional argument</em></strong></h2><p>原因：函数有参数，调用的时候括号空着没传东西<br>解决：调用括号里填上内容</p>
+<h2 id="TypeError-takes-0-arguments-but-1-was-given"><a href="#TypeError-takes-0-arguments-but-1-was-given" class="headerlink" title="TypeError: takes 0 arguments but 1 was given"></a><strong><em>TypeError: takes 0 arguments but 1 was given</em></strong></h2><p>原因：函数没有参数，调用时多写了内容<br>解决：调用括号清空</p>
+<h2 id="NameError-name-‘fun’-is-not-defined"><a href="#NameError-name-‘fun’-is-not-defined" class="headerlink" title="NameError: name ‘fun’ is not defined"></a><strong><em>NameError: name ‘fun’ is not defined</em></strong></h2><p>原因：先调用函数，后面才写def函数<br>解决：从上到下，先定义函数，再调用</p>
+<h2 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a><strong><em>SyntaxError</em></strong></h2><p>原因：定义函数括号里写带引号内容<br>解决：def括号只写名字，引号内容写在调用那里</p>
+<h2 id="IndentationError-unindent-does-not-match"><a href="#IndentationError-unindent-does-not-match" class="headerlink" title="IndentationError: unindent does not match"></a><strong><em>IndentationError: unindent does not match</em></strong></h2><p>原因：缩进一会大一会小，空格很乱<br>解决：全部对齐，缩进大小统一</p>
+<h2 id="TypeError-unsupported-operand-type"><a href="#TypeError-unsupported-operand-type" class="headerlink" title="TypeError: unsupported operand type"></a><strong><em>TypeError: unsupported operand type</em></strong></h2><p>原因：两个不能加减的数据强行运算<br>解决：换成相同类型数据计算</p>
+<h2 id="代码不报错，运行空白啥都不出来"><a href="#代码不报错，运行空白啥都不出来" class="headerlink" title="代码不报错，运行空白啥都不出来"></a><strong><em>代码不报错，运行空白啥都不出来</em></strong></h2><p>原因：只写了函数，没有调用函数<br>解决：最后一行加上 函数名()</p>
+<h2 id="SyntaxError-EOL-while-scanning-string-literal"><a href="#SyntaxError-EOL-while-scanning-string-literal" class="headerlink" title="SyntaxError: EOL while scanning string literal"></a><strong><em>SyntaxError: EOL while scanning string literal</em></strong></h2><p>原因：引号只写了一半，少半边引号<br>解决：引号左右成对写完整</p>
+<h2 id="TypeError-len-takes-exactly-one-argument"><a href="#TypeError-len-takes-exactly-one-argument" class="headerlink" title="TypeError: len() takes exactly one argument"></a><strong><em>TypeError: len() takes exactly one argument</em></strong></h2><p>原因：len括号里多写、少写内容<br>解决：len()里面只放一个数据</p>
+<h2 id="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"><a href="#总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。" class="headerlink" title="总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。"></a><strong><em>总结：基本上我认为大致就这些东西了，然后，后面就看你自己还要学什么了，这些都只是教你入个门，一些基本的你应该也可以看懂了，后面就是研究别人的代码，要学更多的就涉及到导入一些第三方库了，基本上每一个库就够单开一个专门介绍了，后面可能会介绍一些，但是，我就只教个入门，毕竟我也没有系统学过这，只是一些我自己根据网上的教学总结的一些东西罢了，反正是要什么去学什么，只要达到目的就行，又不是真的要了解的很牛，记住所有的代码都只是你达到目的的工具，不要被他束缚了，只要能跑就是好代码。</em></strong></h2><p>拓展：Python自带功能有限，想要实现更多功能，需要第三方库<br>第三方库不属于自带内容，需要手动安装、引入使用</p>
+<p>引入是import 库名</p>
+<p>安装是在终端输入pip install 库 （当然可能会因为网络安装不行，请自己去配网络镜像，清华源这些）</p>
+<p>当然这就不是本人要说的内容，主要就推荐常见的几个库自己去学吧</p>
+<p>pygame游戏库、random 随机库、time 时间库、turtle 画图库、pywin32自动化、pyautogui自动化、requests 网络请求库、pillow 图片处理库、</p>
+<p>自己去学就行，网上有不少教程，希望我写的这些对你有帮助，越来越好。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BC%9A%E7%9C%8B%E6%8A%A5%E9%94%99%EF%BC%89/index/" data-id="cuiddwLZV3nfOdtXBPPvcoK5G" data-title="python基础（会看报错）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python基础（函数）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/">python基础（函数）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：函数就是把一段重复要用的代码，打包封装起来，你写好一次，后面想用，直接一句话调用就行，不用反反复复复制粘贴一模一样的代码，简直就是懒人的福音。 简化代码，不用重复写大段一模一样的代码，前面学的字符串、列表、所有操作，全都可以放进函数里打包，而且，你定义好了，后面代码也会美观简洁很多。</p>
+<p><strong><em>1、定义一个基础函数</em></strong></p>
+<p>def fun(你要给这个函数起的名字):<br>print(“函数”)  
+ </p>
+<p>解释：<br> def  是固定开头，用来告诉程序，我要打包一个函数<br>括号+冒号必须带，下面缩进里，放你所有要打包的代码</p>
+<p>注意：</p>
+<p>1. def后面必须空格，再写函数名字<br>2. 末尾必须加英文冒号<br>3. 函数里面的代码，必须全部缩进，和你之前学的缩进规则完全通用</p>
+<p><strong>2、调用运行函数</strong></p>
+<p>fun()  
+ </p>
+<p>解释：<br>你打包好代码之后，直接写函数名字+括号<br>程序就会自动运行你里面打包的所有代码</p>
+<p>注意事项：<br>必须先定义函数，再调用函数<br>不能先调用、再写函数，直接爆红报错</p>
+<p><strong><em>3、函数传入参数</em></strong></p>
+<p>def fun(name):<br>print(name)</p>
+<p>fun(“小苏”)  
+ </p>
+<p>解释：<br>括号里的东西，就是你可以往函数里传进去的内容<br>每次调用，可以传入不一样的数据</p>
+<p>注意事项：<br>括号里有几个参数，调用的时候就要传几个内容，数量必须对上</p>
+<p><strong><em>4、函数返回值 return</em></strong></p>
+<p>def fun(a,b):<br>return a+b  
+ </p>
+<p>解释：<br>把函数里面计算出来的结果，丢出函数外面<br>可以拿到结果、继续拿去二次使用</p>
+<p>简单来说就是计算器的结果拿去二次使用，但是这里的结果是输出结果不一定是计算的数字结果。</p>
+<p>注意事项：<br>1、代码遇到return，会直接结束函数运行<br>2、return后面的内容，不会再执行</p>
+<p>函数整体要注意的是</p>
+<p>1. 所有符号全部必须是英文符号<br>2. 函数内部代码，严格遵守缩进规则<br>3. 永远：先定义函数，再调用函数<br>4. 函数名字不能用中文、不能用特殊符号<br>5. 参数数量，调用和定义必须一一对应</p>
+<p>总结：以上就是大致的有关函数的简单知识了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89/index/" data-id="cuideejsLQmMieGpmPX5Cvb3A" data-title="python基础（函数）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的基础（列表字典）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/">python的基础（列表+字典）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：列表就是一个大盒子，可以一次性装一大堆东西，文字、数字、中文、字母，啥都能往里面放，想想你读书时被的书包，差不多就可以理解了，字典应该可以理解吧，就是我们用来查找东西的。</p>
+<p>之前字符串只能存单独一段文字，列表可以一次性存一整组、一大堆数据，平时班级名单、商品清单、账号列表，全都是用列表，就像excel表格一样。</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong><em>列表</em></strong></h2><p>list1 &#x3D; [“小明”,18,”男生”]  
+ </p>
+<p>解释：<br>中括号  []  包起来的，就是列表<br>一个盒子里，同时装了名字、年龄、性别</p>
+<p><strong><em>1.列表下标取值</em></strong></p>
+<p>a &#x3D; [“小明”,18,”男生”]<br>print(a[0])  
+ </p>
+<p>解释：<br>和字符串规则完全一模一样<br>盒子里每个东西，位置从0开始数，精准拿出里面任意一个内容</p>
+<p>这里输出的就是小明</p>
+<p>注意事项：</p>
+<p>1. 下标永远从0开始，不是1<br>2. 数字不能超出盒子里东西的总数，否则直接报错</p>
+<p><strong><em>2.列表添加数据</em></strong></p>
+<p>a.append(“西瓜”)  
+ </p>
+<p>解释：<br>往盒子最后面，新加一个东西放进去</p>
+<p>注意事项：<br>只能往末尾添加，不能插在中间</p>
+<p><strong><em>3.列表删除数据</em></strong></p>
+<p>a.remove(“苹果”)  
+ </p>
+<p>解释：<br>在盒子里，删掉你指定的某一个东西</p>
+<p>注意事项：<br>删除的内容必须盒子里存在，不存在会爆红报错</p>
+<p><strong><em>4.列表修改数据</em></strong></p>
+<p>a[0] &#x3D; “榴莲”  
+ </p>
+<p>解释：<br>找到对应位置，直接换掉盒子里原来的东西</p>
+<p>注意事项：<br>下标位置一定要写对</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a><strong><em>字典</em></strong></h2><p>字典就是带标签的盒子，东西都是成对出现的，一边是名字标签，一边是对应内容，一一对应</p>
+<p>列表只有东西，分不清谁是谁，字典可以精准对应信息，比如一个人的所有信息、账号密码、个人资料，全部用字典存储</p>
+<p>dic &#x3D; {“名字”:”小明”,”年龄”:18}  
+ </p>
+<p>解释：<br>大括号  {}  包起来，键值对格式<br>左边是标签，右边是这个标签对应的信息</p>
+<p><strong><em>1.字典取值</em></strong></p>
+<p>dic[“名字”]  
+ </p>
+<p>解释：<br>通过左边的标签，直接拿出右边对应的内容</p>
+<p>注意事项：<br>标签名字必须一模一样，写错一个字直接报错</p>
+<p><strong><em>2.字典添加和修改</em></strong></p>
+<p>dic[“性别”] &#x3D; “男”  
+ </p>
+<p>解释：<br>标签不存在，就是新加内容<br>标签已经存在，就是直接改掉原来的内容</p>
+<p><strong><em>3.字典删除内容</em></strong></p>
+<p>del dic[“年龄”]  
+ </p>
+<p>解释：<br>直接删掉这一整组标签+信息</p>
+<p>注意：</p>
+<p>1. 列表  []  、字典  {}  符号千万不要搞混<br>2. 列表靠数字下标找东西，字典靠标签名字找东西<br>3. 里面所有符号，全部必须是英文符号<br>4. 列表可以重复放一样的东西，字典标签名字不能重复</p>
+<p>总结：这些都是之后学习必要的基础。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E5%9F%BA%E7%A1%80%EF%BC%88%E5%88%97%E8%A1%A8%E5%AD%97%E5%85%B8%EF%BC%89/index/" data-id="cuid_gbm-RWyW1maGldxGZahR" data-title="python的基础（列表+字典）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的教程（基础语法）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/">python的教程（基础语法）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>1、注释</em></strong></p>
+<p>代码里给自己看的笔记，不然自己写了什么东西都看不懂。<br>程序看到注释就直接跳过，不会运行这一行，方便我们看不爽那行代码不爱删了就注释就行</p>
+<p>单行注释</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>多行注释可以写很多行，都不会运行的  </p>
+<p>“””  
+ </p>
+<p><strong><em>2、print() 输出语句</em></strong></p>
+<p>把东西显示在屏幕上</p>
+<p>print(内容)</p>
+<p>输出文字、汉字、句子文字必须加英文双引号 “”</p>
+<p>print(“你好世界”)  </p>
+<p>输出数字</p>
+<p>数字不需要加引号</p>
+<p>print(666)  
+ </p>
+<p><strong><em>3、变量（这里基本就是核心了，必须搞清楚）</em></strong></p>
+<p>变量 &#x3D; 一个小盒子<br>专门用来存放东西、保存数据</p>
+<p>变量名字 &#x3D; 存放的数据  </p>
+<p><em>= 不是等于号，是放入和装进<br>把右边的数据，装进左边的盒子里</em></p>
+<p>四种最基础数据类型（盒子分4种）</p>
+<p>（1）整数 int</p>
+<p>存放 没有小数点的数字</p>
+<p>age &#x3D; 18</p>
+<p>（2）浮点数 float</p>
+<p>存放 带小数点的小数</p>
+<p>height &#x3D; 1.66</p>
+<p>（3）字符串 str</p>
+<p>存放 所有汉字、字母、句子、符号<br>必须带上英文引号 “” ‘’</p>
+<p>name &#x3D; “小苏”</p>
+<p>（4）布尔类型 bool</p>
+<p>只有固定两个单词</p>
+<p>True  &#x3D; 对、正确、成立</p>
+<p>False  &#x3D; 错、错误、不成立</p>
+<p>例如</p>
+<p>a &#x3D; True<br>b &#x3D; False  
+ </p>
+<p>专门用来判断对错，我个人觉得多用于写那些破循环用来判断对错，这么理解就行。</p>
+<p>使用变量（通过这种方式，我们就可以直接很简短的用我们自己定义好的东西，就不用重复很长一段了）</p>
+<p>盒子存好东西，想用就打印出来</p>
+<p>print(name)<br>print(age)<br>这里会输出你定义的东西</p>
+<p>变量取名规则</p>
+<p>（1）只能写：字母、数字、下划线 _一般命名建议用英文如果有好几段就用_来连接一般是最基础的命名规则。如book_name 相信你通过这种方式可以看懂了吧书的名字。<br>（2）不能用数字开头<br>（3）不能有空格、汉字、特殊符号 ! @ #<br>（4）大写小写不一样 A 和 a 是两个盒子<br>（5）名字简单易懂，age年龄 name名字</p>
+<p><strong><em>4、type() 查看数据类型</em></strong></p>
+<p>print(type(age))</p>
+<p>当你不知道这个盒子里是什么类型<br>用这个代码一看就知道<br>是数字？小数？还是文字？</p>
+<p>其最后输出是</p>
+<p>&lt;class ‘上面的字符’&gt;你看一眼就知道其是什么数据类型了。</p>
+<p><strong><em>（5）算术运算符 加减乘除</em></strong></p>
+<p>+加法</p>
+<p>-减法</p>
+<p>*乘法</p>
+<p>&#x2F; 除法</p>
+<p>&#x2F;&#x2F; 整除（只保留整数部分，不要小数）</p>
+<p>% 取余数（除法剩下多少）</p>
+<p>** 次方 （print（3**2））3的二次方简单吧  
+ </p>
+<p>让程序自动算数学题，数学计算这个应该不需要我介绍了吧</p>
+<p><strong><em>6、input() 输入</em></strong></p>
+<p>name &#x3D; input(“请输入名字：”)  
+ </p>
+<p>print 是程序往外吐东西<br>input 是我们人往程序里打字输入东西</p>
+<p>只要运行，页面会出现方框让你写字<br>你输入什么，变量就存什么</p>
+<p>如上面那个他会显示请输入你的名字：</p>
+<p>你这里就在窗口里输入什么他就会记住什么，当然程序停止的你输入的东西就会没有的，因为我们没有搞他的记忆功能，这里的name的变量就是我们输入的东西</p>
+<p><strong><em>7、比较运算符 判断大小对错</em></strong></p>
+<blockquote>
+<p>大于<br>&lt; 小于<br>= 大于等于<br>&lt;&#x3D; 小于等于<br>=&#x3D; 判断两边是否相等<br>!&#x3D; 判断两边是否不相等  
+ </p>
+</blockquote>
+<p>运算结果只会出现两个：True 或者 False<br>专门给后面判断语句使用，记得这些符号我个人觉的其实就差不多了。</p>
+<p><strong><em>8、逻辑运算符（这个你学过基础的英文应该都可以看懂的）</em></strong></p>
+<p>and  并且 两边都对才是对</p>
+<p>or  或者 一边对就是对</p>
+<p>not  反过来 对变错，错变对</p>
+<p><strong><em>9、if 判断语句（做选择）</em></strong></p>
+<p>中文就是如果……就……</p>
+<p>if 条件:<br>条件成立就执行这里<br>else:<br>条件不成立就执行这里<br>让程序有选择能力<br>比如：大于18输出成年，小于18输出未成年</p>
+<p>多条件判断</p>
+<p>if 条件1:  </p>
+<p>elif 条件2:  </p>
+<p>else:  
+ </p>
+<p>多个情况挨个判断，这里条件要由松到严</p>
+<p><strong><em>10、while 循环（一般是很常用的东西）</em></strong></p>
+<p>作用：重复不停跑代码<br>只要条件是 True 正确，就一直循环<br>条件变成 False 立刻停止</p>
+<p>i &#x3D; 1<br>while i &lt; 5:<br>print(i)<br>i &#x3D; i + 1  
+ </p>
+<p>解释：</p>
+<p> i一开始是1<br>判断1小于5，正确<br>打印i<br>i变大1<br>继续判断，直到i大于5停止</p>
+<p><strong><em>11、for 循环</em></strong></p>
+<p>简单固定次数循环（毕竟你需要循环，但是不可能有的循环循环一辈子吧）</p>
+<p>for i in range(5):<br>print(i)  
+ </p>
+<p>range(5) 代表循环 5次</p>
+<p>循环两个控制关键词</p>
+<p>break  直接彻底结束整个循环</p>
+<p>continue  跳过当前这一次，直接下一轮</p>
+<p><strong>12、列表 list 中括号 []</strong></p>
+<p>num &#x3D; [1,2,3,4,5]  
+ </p>
+<p>一个盒子装一大堆数据<br>可以同时放数字、文字</p>
+<p>取值：</p>
+<p>print(num[0])  
+ </p>
+<p>注：程序从0开始数第一个<br>第1个数据下标是0<br>第2个是1</p>
+<p>这里相当于取的值就是上面的1，其最后输出的值就是1</p>
+<p><strong><em>13、字典 dict 大括号 {}</em></strong></p>
+<p>info &#x3D; {“name”:”小明”}  
+ </p>
+<p>一一对应存放信息<br>名字对应人，年龄对应数字<br>方便查找个人信息</p>
+<p>比如上面那个如果再写print（info[“name”]）输出的就是小明</p>
+<p><strong>14、<em>自定义函数 def</em></strong></p>
+<p>def hello():<br>print(“你好”)</p>
+<p>hello()  
+ </p>
+<p>把一堆代码打包成一个功能<br>以后想用，只需要写名字调用<br>不用一遍一遍复制粘贴代码</p>
+<p>比如上面这个就是把print(“你好”)打包成了hello()，写好了，后面要这个功能就直接写hello()就行了。</p>
+<p>总结：大致认识这些其实我个人觉得就差不多了，虽然看着不多但是一定要记住，这些基本上就是很基础的东西了，你可以在pycharm一个个的试，很有成就感的，最开始我们学习一定要会抄，这样你才会慢慢脑子里有自己的想法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%89/index/" data-id="cuidS4rejbyNv9TeGfnP-kTlf" data-title="python的教程（基础语法）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/04/2026-04-25-python的教程（缩进）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-04-24T16:00:00.000Z" itemprop="datePublished">2026-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/">python的教程（缩进）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Python的缩进，就是代码行开头空出来的空格，专门用来告诉程序哪里是该这个程序管理，那段不该他管理，如果你下载了IDE基本上按一下tab就能补全，但这里我们还是要学，因为，这些是最基础的，只有学好了才能真正的去看懂一些代码，知道他们的逻辑，tab只是帮助我们不去重复做一个事情罢了。</p>
+<p><strong><em>1、if 判断语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>if 条件:<br>执行内容<br>elif 条件:<br>执行内容<br>else:<br>执行内容</p>
+<p>注意</p>
+<p>（1）if&#x2F;elif&#x2F;else 末尾必须带冒号</p>
+<p>（2）冒号下一行必须缩进4个空格</p>
+<p>（3）同一层级代码缩进必须完全对齐</p>
+<p><strong><em>2、while 循环 缩进规范</em></strong></p>
+<p>格式<br> while 循环条件:<br>循环内执行内容</p>
+<p>注意</p>
+<p>（1）while 末尾必须带冒号</p>
+<p>（2）循环内所有代码统一缩进4个空格</p>
+<p>（3）循环结束后代码取消缩进</p>
+<p><strong><em>3、for 循环 缩进规范</em></strong></p>
+<p>格式</p>
+<p>for 变量 in 循环范围:<br>循环内执行内容</p>
+<p>注意：</p>
+<p>（1）for 末尾必须带冒号</p>
+<p>（2）循环内代码（包括break&#x2F;continue）必须缩进4个空格</p>
+<p>(3)循环结束后代码取消缩进</p>
+<p><strong><em>4、def 自定义函数 缩进规范</em></strong></p>
+<p>格式</p>
+<p>def 函数名():<br>函数内执行内容</p>
+<p>注意</p>
+<p>（1)def 末尾必须带冒号</p>
+<p>(2)函数内所有代码统一缩进4个空格</p>
+<p>(3)函数调用代码顶格写，不缩进</p>
+<p><strong><em>5、try-except 异常处理 缩进规范</em></strong></p>
+<p>标准缩进格式</p>
+<p>try:<br>尝试执行的代码<br>except:<br>出错后执行的代码<br> 注意</p>
+<p>（1）try&#x2F;except 末尾必须带冒号</p>
+<p>（2）对应代码块必须缩进4个空格</p>
+<p><strong><em>6、with 语句 缩进规范</em></strong></p>
+<p>格式</p>
+<p>with 操作 as 变量:<br>执行代码<br> 注意</p>
+<p>（1）with 末尾必须带冒号</p>
+<p>（2）内部代码必须缩进4个空格</p>
+<p><strong><em>7、class 类 缩进规范</em></strong></p>
+<p>格式</p>
+<p>class 类名:<br>类内部代码<br>def 类方法(self):<br>方法内部代码<br> 注意</p>
+<p>（1）class 末尾必须带冒号</p>
+<p>(2) 类内部代码缩进4个空格</p>
+<p>(3) 类里的方法，内部代码再额外缩进4个空格</p>
+<p><strong><em>8、嵌套语法 缩进规范</em></strong></p>
+<p>格式</p>
+<p>外层语句:<br>内层语句:<br>最内层执行代码<br> 注意</p>
+<p>（1）每嵌套一层，就多缩进4个空格</p>
+<p>（2）同一层级代码缩进必须完全一致</p>
+<p>所有语法通用缩进规则</p>
+<p>1. 标准缩进固定为 4个空格。<br>2. 只要代码末尾带冒号 : ，下一行必须缩进。<br>3. 同一个代码块，缩进空格数量必须完全相同。<br>4. 不要Tab键和空格混合使用，这是不好的习惯。<br>5. 代码块结束，必须取消缩进，回到上一层级。</p>
+<p>但是，一般情况下，我自己是直接按tab进行自动缩进就行，我不太爱管这些，自己养成好习惯吧，本人已经改不过来了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/25/2026/04/2026-04-25-python%E7%9A%84%E6%95%99%E7%A8%8B%EF%BC%88%E7%BC%A9%E8%BF%9B%EF%BC%89/index/" data-id="cuid4tDA4qdfIlFIV3y2ti-cL" data-title="python的教程（缩进）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -690,7 +871,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -716,7 +897,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
     </div>
   </div>
 
@@ -729,23 +910,23 @@
       <ul>
         
           <li>
-            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
           </li>
         
           <li>
-            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
           </li>
         
           <li>
-            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
           </li>
         
           <li>
-            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
           </li>
         
           <li>
-            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
           </li>
         
       </ul>

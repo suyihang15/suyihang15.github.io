@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>如何用python调用API | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="注：请自行申请一个api，本教程主要是针对于api的调用怎么写 项目地址：suyihang15&#x2F;AI_gui: 基于python的ai图形简单的化界面 前期准备 pip install openai(安装第三方库) tkinter（可选，主要是用于写一个UI的）好处就是不用再安装第三方库了，坏处就是ui不好看 调用代码示例 12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用python调用API">
+<meta property="og:url" content="http://example.com/2026/05/26/2026/2026-05-26-%E5%A6%82%E4%BD%95%E7%94%A8python%E8%B0%83%E7%94%A8api/index/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注：请自行申请一个api，本教程主要是针对于api的调用怎么写 项目地址：suyihang15&#x2F;AI_gui: 基于python的ai图形简单的化界面 前期准备 pip install openai(安装第三方库) tkinter（可选，主要是用于写一个UI的）好处就是不用再安装第三方库了，坏处就是ui不好看 调用代码示例 12345678910111213141516171819202">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-19T12:42:16.989Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2026/2026-05-26-如何用python调用api/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/26/2026/2026-05-26-%E5%A6%82%E4%BD%95%E7%94%A8python%E8%B0%83%E7%94%A8api/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-25T16:00:00.000Z" itemprop="datePublished">2026-05-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ai/">ai</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      如何用python调用API
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：请自行申请一个api，本教程主要是针对于api的调用怎么写</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/AI_gui">suyihang15&#x2F;AI_gui: 基于python的ai图形简单的化界面</a></p>
+<p>前期准备</p>
+<p>pip install openai(安装第三方库)</p>
+<p>tkinter（可选，主要是用于写一个UI的）好处就是不用再安装第三方库了，坏处就是ui不好看</p>
+<p>调用代码示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import os</span><br><span class="line">from openai import OpenAI</span><br><span class="line"></span><br><span class="line"># 初始化 DeepSeek 客户端</span><br><span class="line"># - api_key: 从环境变量读取 API 密钥（更安全，避免硬编码）</span><br><span class="line"># - base_url: DeepSeek API 的服务端点地址</span><br><span class="line">client = OpenAI(</span><br><span class="line">    api_key=os.environ.get(&#x27;DEEPSEEK_API_KEY&#x27;),</span><br><span class="line">    base_url=&quot;https://api.deepseek.com&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># 发送聊天请求</span><br><span class="line">response = client.chat.completions.create(</span><br><span class="line">    # 模型名称：使用 DeepSeek V4 Pro 版本</span><br><span class="line">    model=&quot;deepseek-v4-pro&quot;,</span><br><span class="line">    </span><br><span class="line">    # 对话消息列表</span><br><span class="line">    messages=[</span><br><span class="line">        &#123;&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant&quot;&#125;,  # 系统提示词，设定助手角色</span><br><span class="line">        &#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello&quot;&#125;,  # 用户消息</span><br><span class="line">    ],</span><br><span class="line">    </span><br><span class="line">    # 是否使用流式输出</span><br><span class="line">    # - False: 等待完整响应后一次性返回</span><br><span class="line">    # - True:  逐字/逐块实时输出（适合聊天界面）</span><br><span class="line">    stream=False,</span><br><span class="line">    </span><br><span class="line">    # 推理深度控制</span><br><span class="line">    # 可选值: &quot;low&quot;, &quot;medium&quot;, &quot;high&quot;</span><br><span class="line">    # 越高的推理深度，思考越充分，但耗时更长</span><br><span class="line">    reasoning_effort=&quot;high&quot;,</span><br><span class="line">    </span><br><span class="line">    # 额外请求体参数</span><br><span class="line">    # 这里启用 DeepSeek 的&quot;深度思考&quot;模式</span><br><span class="line">    # 模型会在内部生成更详细的推理过程</span><br><span class="line">    extra_body=&#123;&quot;thinking&quot;: &#123;&quot;type&quot;: &quot;enabled&quot;&#125;&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># 输出助手的回复内容</span><br><span class="line"># response.choices[0] - 第一个（通常也是唯一的）回复选项</span><br><span class="line"># .message.content - 提取消息的文本内容</span><br><span class="line">print(response.choices[0].message.content)</span><br></pre></td></tr></table></figure>
+
+<p>带UI的代码示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">DeepSeek 聊天助手 - Tkinter 版</span><br><span class="line">一个简洁美观的 AI 对话桌面应用</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">import tkinter as tk</span><br><span class="line">from tkinter import scrolledtext, messagebox</span><br><span class="line">import threading</span><br><span class="line">from openai import OpenAI</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"># ==================== 配置区域 ====================</span><br><span class="line">API_KEY = &quot;sk-你的密钥&quot;  # 在这里填入你的 DeepSeek API Key</span><br><span class="line"># =================================================</span><br><span class="line"></span><br><span class="line">class DeepSeekApp:</span><br><span class="line">    &quot;&quot;&quot;主应用类&quot;&quot;&quot;</span><br><span class="line">    </span><br><span class="line">    def __init__(self, root):</span><br><span class="line">        self.root = root</span><br><span class="line">        self.root.title(&quot;DeepSeek · 智能助手&quot;)</span><br><span class="line">        self.root.geometry(&quot;620x720&quot;)</span><br><span class="line">        self.root.minsize(500, 600)</span><br><span class="line">        self.root.configure(bg=&#x27;#f5f7fa&#x27;)</span><br><span class="line">        </span><br><span class="line">        # 初始化 API 客户端</span><br><span class="line">        self.client = OpenAI(</span><br><span class="line">            api_key=API_KEY,</span><br><span class="line">            base_url=&quot;https://api.deepseek.com&quot;</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        # 对话记忆</span><br><span class="line">        self.messages = [</span><br><span class="line">            &#123;&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;你是 DeepSeek，一个友好的智能助手。&quot;&#125;</span><br><span class="line">        ]</span><br><span class="line">        </span><br><span class="line">        # 构建界面</span><br><span class="line">        self._build_ui()</span><br><span class="line">        </span><br><span class="line">        # 绑定快捷键</span><br><span class="line">        self.input_text.bind(&#x27;&lt;Return&gt;&#x27;, lambda e: self.send())</span><br><span class="line">        </span><br><span class="line">        # 显示欢迎语</span><br><span class="line">        self._show_welcome()</span><br><span class="line">    </span><br><span class="line">    # ==================== 界面构建 ====================</span><br><span class="line">    </span><br><span class="line">    def _build_ui(self):</span><br><span class="line">        &quot;&quot;&quot;搭建所有界面组件&quot;&quot;&quot;</span><br><span class="line">        # 顶部栏</span><br><span class="line">        header = tk.Frame(self.root, bg=&#x27;#2c3e50&#x27;, height=70)</span><br><span class="line">        header.pack(fill=&#x27;x&#x27;)</span><br><span class="line">        header.pack_propagate(False)</span><br><span class="line">        </span><br><span class="line">        tk.Label(header, text=&quot;🤖 DeepSeek&quot;, font=(&#x27;微软雅黑&#x27;, 20, &#x27;bold&#x27;),</span><br><span class="line">                 fg=&#x27;white&#x27;, bg=&#x27;#2c3e50&#x27;).pack(expand=True)</span><br><span class="line">        tk.Label(header, text=&quot;深度思考 · 智能对话&quot;, font=(&#x27;微软雅黑&#x27;, 10),</span><br><span class="line">                 fg=&#x27;#bdc3c7&#x27;, bg=&#x27;#2c3e50&#x27;).pack()</span><br><span class="line">        </span><br><span class="line">        # 聊天区域</span><br><span class="line">        self.chat_area = scrolledtext.ScrolledText(</span><br><span class="line">            self.root, wrap=&#x27;word&#x27;, font=(&#x27;微软雅黑&#x27;, 11),</span><br><span class="line">            bg=&#x27;white&#x27;, fg=&#x27;#2c3e50&#x27;, padx=15, pady=12,</span><br><span class="line">            state=&#x27;disabled&#x27;, relief=&#x27;flat&#x27;</span><br><span class="line">        )</span><br><span class="line">        self.chat_area.pack(padx=15, pady=(15, 10), fill=&#x27;both&#x27;, expand=True)</span><br><span class="line">        </span><br><span class="line">        # 配置消息样式</span><br><span class="line">        self.chat_area.tag_config(&#x27;user&#x27;, foreground=&#x27;#3498db&#x27;, font=(&#x27;微软雅黑&#x27;, 11, &#x27;bold&#x27;))</span><br><span class="line">        self.chat_area.tag_config(&#x27;ai&#x27;, foreground=&#x27;#27ae60&#x27;, font=(&#x27;微软雅黑&#x27;, 11))</span><br><span class="line">        self.chat_area.tag_config(&#x27;system&#x27;, foreground=&#x27;#e67e22&#x27;, font=(&#x27;微软雅黑&#x27;, 10, &#x27;italic&#x27;))</span><br><span class="line">        </span><br><span class="line">        # 底部输入区</span><br><span class="line">        bottom = tk.Frame(self.root, bg=&#x27;#f5f7fa&#x27;)</span><br><span class="line">        bottom.pack(padx=15, pady=(0, 15), fill=&#x27;x&#x27;)</span><br><span class="line">        </span><br><span class="line">        self.input_text = tk.Text(bottom, height=4, font=(&#x27;微软雅黑&#x27;, 11),</span><br><span class="line">                                   wrap=&#x27;word&#x27;, padx=12, pady=10,</span><br><span class="line">                                   relief=&#x27;groove&#x27;, borderwidth=1)</span><br><span class="line">        self.input_text.pack(fill=&#x27;x&#x27;, pady=(0, 10))</span><br><span class="line">        </span><br><span class="line">        # 按钮栏</span><br><span class="line">        btn_frame = tk.Frame(bottom, bg=&#x27;#f5f7fa&#x27;)</span><br><span class="line">        btn_frame.pack(fill=&#x27;x&#x27;)</span><br><span class="line">        </span><br><span class="line">        tk.Button(btn_frame, text=&quot;📤 发送&quot;, command=self.send,</span><br><span class="line">                  bg=&#x27;#3498db&#x27;, fg=&#x27;white&#x27;, font=(&#x27;微软雅黑&#x27;, 10, &#x27;bold&#x27;),</span><br><span class="line">                  padx=20, pady=6, relief=&#x27;flat&#x27;, cursor=&#x27;hand2&#x27;).pack(side=&#x27;right&#x27;, padx=(10, 0))</span><br><span class="line">        </span><br><span class="line">        tk.Button(btn_frame, text=&quot;🗑 清空&quot;, command=self.clear,</span><br><span class="line">                  bg=&#x27;#95a5a6&#x27;, fg=&#x27;white&#x27;, font=(&#x27;微软雅黑&#x27;, 10),</span><br><span class="line">                  padx=20, pady=6, relief=&#x27;flat&#x27;, cursor=&#x27;hand2&#x27;).pack(side=&#x27;right&#x27;)</span><br><span class="line">        </span><br><span class="line">        # 状态栏</span><br><span class="line">        self.status = tk.Label(self.root, text=&quot;✅ 就绪&quot;, font=(&#x27;微软雅黑&#x27;, 9),</span><br><span class="line">                               bg=&#x27;#ecf0f1&#x27;, fg=&#x27;#7f8c8d&#x27;, anchor=&#x27;w&#x27;, padx=15)</span><br><span class="line">        self.status.pack(fill=&#x27;x&#x27;, side=&#x27;bottom&#x27;)</span><br><span class="line">    </span><br><span class="line">    def _show_welcome(self):</span><br><span class="line">        &quot;&quot;&quot;欢迎消息&quot;&quot;&quot;</span><br><span class="line">        welcome = &quot;✨ 欢迎使用 DeepSeek 智能助手！\n\n💡 提示：\n• 支持多轮对话，AI 会记住上下文\n• 按回车键快速发送\n\n开始聊天吧～&quot;</span><br><span class="line">        self._append_message(welcome, &#x27;system&#x27;)</span><br><span class="line">    </span><br><span class="line">    def _append_message(self, text, role):</span><br><span class="line">        &quot;&quot;&quot;在聊天框显示消息&quot;&quot;&quot;</span><br><span class="line">        self.chat_area.config(state=&#x27;normal&#x27;)</span><br><span class="line">        prefix = &quot;👤 你：&quot; if role == &#x27;user&#x27; else &quot;🤖 DeepSeek：&quot; if role == &#x27;ai&#x27; else &quot;💡 提示：&quot;</span><br><span class="line">        tag = &#x27;user&#x27; if role == &#x27;user&#x27; else &#x27;ai&#x27; if role == &#x27;ai&#x27; else &#x27;system&#x27;</span><br><span class="line">        </span><br><span class="line">        self.chat_area.insert(&#x27;end&#x27;, f&quot;&#123;prefix&#125;\n&quot;, tag)</span><br><span class="line">        self.chat_area.insert(&#x27;end&#x27;, f&quot;&#123;text&#125;\n\n&quot;)</span><br><span class="line">        self.chat_area.see(&#x27;end&#x27;)</span><br><span class="line">        self.chat_area.config(state=&#x27;disabled&#x27;)</span><br><span class="line">    </span><br><span class="line">    # ==================== 核心功能 ====================</span><br><span class="line">    </span><br><span class="line">    def send(self):</span><br><span class="line">        &quot;&quot;&quot;发送消息&quot;&quot;&quot;</span><br><span class="line">        user_input = self.input_text.get(&#x27;1.0&#x27;, &#x27;end-1c&#x27;).strip()</span><br><span class="line">        if not user_input:</span><br><span class="line">            return</span><br><span class="line">        </span><br><span class="line">        # 显示用户消息</span><br><span class="line">        self._append_message(user_input, &#x27;user&#x27;)</span><br><span class="line">        self.input_text.delete(&#x27;1.0&#x27;, &#x27;end&#x27;)</span><br><span class="line">        self.status.config(text=&quot;⏳ AI 思考中...&quot;)</span><br><span class="line">        self.send_btn.config(state=&#x27;disabled&#x27;)</span><br><span class="line">        </span><br><span class="line">        # 保存到记忆</span><br><span class="line">        self.messages.append(&#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_input&#125;)</span><br><span class="line">        </span><br><span class="line">        # 开线程请求 API（避免界面卡死）</span><br><span class="line">        threading.Thread(target=self._get_ai_reply, daemon=True).start()</span><br><span class="line">    </span><br><span class="line">    def _get_ai_reply(self):</span><br><span class="line">        &quot;&quot;&quot;调用 DeepSeek API&quot;&quot;&quot;</span><br><span class="line">        try:</span><br><span class="line">            response = self.client.chat.completions.create(</span><br><span class="line">                model=&quot;deepseek-chat&quot;,  # 或 deepseek-v4-pro</span><br><span class="line">                messages=self.messages,</span><br><span class="line">                stream=False</span><br><span class="line">            )</span><br><span class="line">            reply = response.choices[0].message.content</span><br><span class="line">            </span><br><span class="line">            # 更新界面（需在主线程）</span><br><span class="line">            self.root.after(0, lambda: self._on_reply(reply))</span><br><span class="line">            </span><br><span class="line">        except Exception as e:</span><br><span class="line">            self.root.after(0, lambda: self._on_error(str(e)))</span><br><span class="line">    </span><br><span class="line">    def _on_reply(self, reply):</span><br><span class="line">        &quot;&quot;&quot;收到回复后的处理&quot;&quot;&quot;</span><br><span class="line">        self._append_message(reply, &#x27;ai&#x27;)</span><br><span class="line">        self.messages.append(&#123;&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: reply&#125;)</span><br><span class="line">        self.status.config(text=&quot;✅ 就绪&quot;)</span><br><span class="line">        self.send_btn.config(state=&#x27;normal&#x27;)</span><br><span class="line">    </span><br><span class="line">    def _on_error(self, error):</span><br><span class="line">        &quot;&quot;&quot;错误处理&quot;&quot;&quot;</span><br><span class="line">        self._append_message(f&quot;出错了：&#123;error&#125;\n请检查 API Key 或网络。&quot;, &#x27;system&#x27;)</span><br><span class="line">        self.status.config(text=&quot;❌ 出错&quot;)</span><br><span class="line">        self.send_btn.config(state=&#x27;normal&#x27;)</span><br><span class="line">    </span><br><span class="line">    def clear(self):</span><br><span class="line">        &quot;&quot;&quot;清空对话&quot;&quot;&quot;</span><br><span class="line">        if messagebox.askyesno(&quot;确认&quot;, &quot;清空所有对话记录？&quot;):</span><br><span class="line">            self.messages = [&#123;&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;你是 DeepSeek，一个友好的智能助手。&quot;&#125;]</span><br><span class="line">            self.chat_area.config(state=&#x27;normal&#x27;)</span><br><span class="line">            self.chat_area.delete(&#x27;1.0&#x27;, &#x27;end&#x27;)</span><br><span class="line">            self.chat_area.config(state=&#x27;disabled&#x27;)</span><br><span class="line">            self._show_welcome()</span><br><span class="line">            self.status.config(text=&quot;✅ 已清空&quot;)</span><br><span class="line">    </span><br><span class="line">    @property</span><br><span class="line">    def send_btn(self):</span><br><span class="line">        return self.root.nametowidget(self.root.children[&#x27;!frame3&#x27;].children[&#x27;!frame&#x27;].children[&#x27;!button&#x27;])</span><br><span class="line"></span><br><span class="line"># ==================== 启动程序 ====================</span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    root = tk.Tk()</span><br><span class="line">    app = DeepSeekApp(root)</span><br><span class="line">    root.mainloop()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/26/2026/2026-05-26-%E5%A6%82%E4%BD%95%E7%94%A8python%E8%B0%83%E7%94%A8api/index/" data-id="cuidkW7970nDzRPFXYlV9UD9H" data-title="如何用python调用API" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/05/27/2026/2026-05-27-docker%E6%B1%89%E5%8C%96/index/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker汉化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">利用pe修改windows电脑开机密码</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ai/">ai</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E6%95%99%E7%A8%8B/">python教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
+          </li>
+        
+          <li>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

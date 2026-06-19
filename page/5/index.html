@@ -71,558 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2026/04/2026-04-23-蓝牙传输文件/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-05-18-编译自己的操作系统（基于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-22T16:00:00.000Z" itemprop="datePublished">2026-04-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%89%8B%E6%9C%BA%E7%9F%A5%E8%AF%86/">手机知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/">蓝牙传输文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：没想到吧，蓝牙也是可以传文件的，别以为他只能连接耳机这些，而且基本上有蓝牙就可以传，没有什么限制，但是，传输很慢，基本上是很紧急的情况，没有网络和传输线才用，不让相信我你不会想用的，这里也只是介绍这种方式</p>
-<p>以电脑和手机传文件为例，主要没有第二台手机了。</p>
-<p><strong><em>1、原理</em></strong></p>
-<p>其实说白了就是两台设备，靠近距离的无线电波隔空传数据，适合身边没网和数据线的时候传点小文件。</p>
-<p>先说说它到底是怎么传的。平时我们打开手机蓝牙，设备就会悄悄往外发信号，相当于跟周围说“我在这，能连我”。等搜到要传文件的设备，配对输个密码或者确认一下，就是俩设备互相打个招呼，建一个专属的私密通道，防止别人蹭到数据。</p>
-<p>真要传文件的时候，不管是图片、文档还是歌，系统都会自动把整个文件拆成一小段一小段的小数据包，就像把一大箱东西分成小包裹挨个寄。然后通过2.4GHz的无线电波，一点点把这些小数据包发过去，另一边的设备收到所有小包裹，再自动拼回完整的文件，存到手机里，传输就完成了。就和那早年间下载器加速下载差不多，切割文件，传输，再合起来，但是，他不像下载器一样，可以同时下载好几个，就死死的一点点的传，所以很慢。</p>
-<p>蓝牙是近距离传输，基本上要面对面传，就这，传的都慢的要死，照片都不能秒传，所以基本上不建议用，就你看哪个搞传输文件的用到了蓝牙去传，基本上就是连接设备吧，传输基本上就是用网络吧，所以这里是用于一些极端情况。</p>
-<p>另外，蓝牙用的2.4GHz频段，跟家里WiFi、微波炉挨得近，会互相干扰，传文件突然卡顿，多半是这个原因。但是，配对传输的时候还有加密，对，我查资料的时候也很吃惊，所以安全性也够用，</p>
-<p>简单说就是，蓝牙就是近距离、低功耗的无线隔空传文件，先配对建通道，再把文件拆分传输、接收重组，适合临时传小文件，方便又不用依赖网络。但是千万千万不要传大文件，不然那传输速度会让你怀疑人生，当热，你可以体会一下，当初哪些说网速慢，就和现在蓝牙传文件的速度差不多，可能还要慢点。</p>
-<p>然后就是传输协议是OPP对象推送协议（推送）和RFCOMM协议（传输通道），具体的自己去查，毕竟我不可能帮你把协议上的东西都给你介绍清楚吧，反正知道他是一个推送一个搞通道的就行。</p>
-<p><strong><em>2、连接</em></strong></p>
-<p>注意现在基本上都有蓝牙模块的，但是有些可能也没有，所以还是要提醒大家看看有没有蓝牙在东西。</p>
-<p>（1）开启蓝牙（那图标你不可能都不认识吧）</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-22-212559.png"></p>
-<p>这东西啊，手机上一样</p>
-<p>（2）配对设备（两边同时开启然后配对就行）</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-205714.png"></p>
-<p>这里我是没有联网的</p>
-<p>（3）传输文件</p>
-<p>就手机上和电脑上这样传输文件就行</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-205819-1024x855.png"></p>
-<p><img src="/images/98d5201e42c3e4067d98e9afca82ac47-461x1024.jpg"></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-210000-1024x843.png"></p>
-<p>额，看吧，就这照片都要传半天，而且中间还会断连，额，真的不是很推荐。</p>
-<p>总结：这种就是用于没网急用，传小文件，你就当听个乐，实际上用的真的不多，但是好像又有点用的知识吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/23/2026/04/2026-04-23-%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/index/" data-id="cuiduTu5cTcj4SWJjmRtCpi86" data-title="蓝牙传输文件" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-22-关于早期上网/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/22/2026/04/2026-04-22-%E5%85%B3%E4%BA%8E%E6%97%A9%E6%9C%9F%E4%B8%8A%E7%BD%91/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-21T16:00:00.000Z" itemprop="datePublished">2026-04-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/22/2026/04/2026-04-22-%E5%85%B3%E4%BA%8E%E6%97%A9%E6%9C%9F%E4%B8%8A%E7%BD%91/index/">关于早期上网</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本人是00后，算经历当时那个各种各样的网上的东西吧，主要谈谈个人的近几年对于上网的感受吧。</p>
-<p>在早年间我并没有对上网有多少的概念，基本上是看家里电视为主，我到现在还记得28 48（以前是37） 57 62 64 65 73这几个台，因为没有什么网络电视，所以就这几个台转来转去的，当时家里好像是三年级才有了一台烂笔记本电脑，方正科技，当时是拨号上网，windows xp。具体细节记不清了，家里是有一台座机的，当时还是很开心的，我记得当时死缠烂打才让我表哥给我搞了一个QQ好像是2013年吧，叫天真童年，头像是个小灰灰，但是，当时没太多时间去管这个QQ后面2015年看了一下，好像因为太久没有登录，被冻结了，现在想想还挺感慨的。</p>
-<p>关于手机我有印象是记得我当时是用的我爹的有个手机，然后是老人机还是智能机记不清了，当时有个猫和老鼠的视频，就反复看了好几遍，所以对这事印象很深，那时我兄弟好像都没有出生，后面玩过像神庙逃亡，小小部队，瘟疫公司，国宝三国等一系列的小游戏，记得家里当时没有wifi，所以还学会了用蓝牙穿安装包，记得当时好像还挺慢的，后面家里有WiFi以后，就很爽，之前还舔着个脸要别人家的WiFi，用过WiFi万能钥匙，当时确实很好用，之后就是玩天天酷跑，天天炫斗，这些游戏了，我记得我爹的第一个智能机是金立的，当时电池是可以扣下来的，可以用万能充电器充电，当时我妈好像用的是小米手机，还有一句为发烧而生，当时，没有WiFi，用的流量看的熊出没之夺宝雄兵，和我兄弟一起看的，不知道他还有没有印象，当时好像是扣了快100块的花费吧，被我妈说我就说为什么有100多块钱的花费，具体不知道她被扣了多少，但是后面基本上就有阴影了，不怎么敢开流量了，还有就是当时手机上还遇到过病毒，就一直在手机上自动下乱七八糟的软件，后面是拿到街上的手机店里恢复出厂设置才行的，当时还觉得很神奇，真的高科技。</p>
-<p>然后，后面就是在我另外一个表哥家里，在那里玩游戏，最开始是4399，我们玩过一些小游戏，但是当时小，所以，基本上不怎么得玩，基本上是看他们玩，就是玩一些双人小游戏可以得玩一下，记得当时玩过不少小游戏了，后面接触的就是穿越火线了，我记得当时他没有打lol也不知道为什么，印象最深的是生化酒店，我现在都记得那个泳池旁有个角是可以卡的，不被抓，当时还卡死了，所以印象很深，之后就是快玩游戏盒，其他的没接触过，玩过罪恶都市，当时是在我舅舅那里玩的，我还问过怎么上车，然后，电脑旁边还有个作弊的贴在墙上，当时是木墙，所以有印象，然后还玩过极品飞车好像是最高通缉吧，还是比较丰富的，但是，因为家里算管的严的所以玩的手游比电脑多的多。</p>
-<p>可能是因为小时候基本上是看他们玩吧，所以，到了大学现在，基本上经常玩电脑游戏，电脑对我的吸引力比手机大多了，也算想要弥补一些遗憾吧。但是现在看到网络发展是真的快啊，我记得当时下载是真的真的很慢，用过迅雷，暴风影音，网上说的电驴什么的倒是没有看过，但是确实变化是真的快。</p>
-<p>对现在来说，我个人觉得，特指单机游戏不会让人特别沉迷，确实，手机害人，但是我觉得更多的是要管控好，尤其是短视频，我可以一直刷，但是，游戏我会玩累，会想休息，对于日后我自己的子女，我会让他玩游戏，但是玩电脑游戏，手游会让他玩，但是都会控制，尤其是短视频，这玩意真的停不下来，而且我真的没有以前那么有耐心了。</p>
-<p>以上只代表我个人的看法以及做一个自己的一个回忆吧，老了还可以拿出来看看乐呵乐呵，你们也当看个回忆吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/22/2026/04/2026-04-22-%E5%85%B3%E4%BA%8E%E6%97%A9%E6%9C%9F%E4%B8%8A%E7%BD%91/index/" data-id="cuidiVk6rSkb9ct2Baf8Ekooq" data-title="关于早期上网" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-21-软件汉化/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/21/2026/04/2026-04-21-%E8%BD%AF%E4%BB%B6%E6%B1%89%E5%8C%96/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-20T16:00:00.000Z" itemprop="datePublished">2026-04-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/21/2026/04/2026-04-21-%E8%BD%AF%E4%BB%B6%E6%B1%89%E5%8C%96/index/">软件汉化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：本教程只适用于已经脱壳或者没有壳的软件教程，如果没有脱壳请自行处理。而且不同的软件可能需要的不同，这里只介绍一些比较通用的办法以及思路。</p>
-<p>1、准备工作</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wzsx150/ResourceHacker_CN">ResHacker</a>（.exe、.dll）</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/morkt/GARbro">GARbro</a>（.xp3、.rpa、.nsa、.sar、.pak、.arc、.dat主要是针对于glagame的我觉得大部分都可以）</p>
-<p><a target="_blank" rel="noopener" href="https://mh-nexus.de/en/hxd/">HXD</a>（差不多是万能的，但是其本身是二进制文件，但是要一点点的改很麻烦，推荐先用上面的两个）</p>
-<p>2、开始一步步操作</p>
-<p>先用ResHacker做最基础的</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212059-1024x714.png"></p>
-<p>这样就可以更改一些最基础的文件，但是能改的并不是很多，基本上就是一些很基础的东西，更改后保存就行。</p>
-<p>再用GARbro这个可以进行简单的解包看到一些基本的文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-214010-1024x586.png"></p>
-<p>但是对于有些文件还是打不开的，这时我们就要用到最后要介绍的软件了</p>
-<p>HDX的使用</p>
-<p>在前面用GARbro后可能会有些文件显示无法作为压缩包打开，这里我们要提取一下文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-214110-630x1024.png"></p>
-<p>用HXD打开这个文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-214418-1024x629.png"></p>
-<p>这里你要一点点的去分析了，我自己也没有什么好办法，因为太麻烦了，就不做过多解释，因为我个人也不太会分析这个，只能说提供个思路自己解决。</p>
-<p>总结：你要学习汉化，大概率脱不了脱壳，修改文件，这里主要目的是帮助大家提供想法，因为不同的软件，其代码的写法是不同的，所以，你还是要根据其具体的底层是用什么东西写的，找到对应的拆包工具去分析，我这里是上面那个是我自己用过的确实简单方便，但是，能搞的不多最后这个主要是帮助分析的，比较专业，主要是哪些做逆向分析的人使用的，如果你真正想要去分析汉化，甚至是破解软件，基本上都离不开HXD这个软件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/21/2026/04/2026-04-21-%E8%BD%AF%E4%BB%B6%E6%B1%89%E5%8C%96/index/" data-id="cuidy3vV546-WHrY_YOg_v0Gy" data-title="软件汉化" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-20-软件安装包制作/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/20/2026/04/2026-04-20-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-19T16:00:00.000Z" itemprop="datePublished">2026-04-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/20/2026/04/2026-04-20-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C/index/">软件安装包制作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注:本安装包的制作主要用Win RAR压缩软件制作，上手快，但是可自定义程度低，主要方便一些新手。</p>
-<p><strong><em>1、准备条件</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">Win RAR</a></p>
-<p>你要打包的exe及其dll等资源文件</p>
-<p>2、打包</p>
-<p>选好你要打包的全部的文件，右键，添加到压缩文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212546-1024x634.png"></p>
-<p>后面点击创建自解压格式压缩文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212610.png"></p>
-<p>点击高级，自解压选项</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212623.png"></p>
-<p>设置安装路径</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212634.png"></p>
-<p>设置，这里可以设置安装后直接启动软件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212641.png"></p>
-<p>模式</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212648.png"></p>
-<p>高级，用于创建文件快捷方式</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212656.png"></p>
-<p>根据直接需求来</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212610-1.png"></p>
-<p>更新</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212704.png"></p>
-<p>文本和图标</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212710.png"></p>
-<p>许可，这里根据你自己有没有来，可能会报病毒，如果不添加，你自己有证书添加就行，不影响</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212716.png"></p>
-<p>模块</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-212723.png"></p>
-<p>打包后的安装包</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-213458.png"></p>
-<p>整体根据自己的需求来，这是本人觉得最简单的打包软件为安装包的方法。</p>
-<p>总结：通过这种方法打包来的安装包自定义程度很低，但起码可以打包，而且不要任何代码，还是比较方便的，如果想要高度自定义还是要去学习专门的语言，一般安装包是由c c++ c#这些写的，这里推荐想要进一步学习的可以试试<a target="_blank" rel="noopener" href="https://jrsoftware.org/isinfo.php">Inno Setup</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/20/2026/04/2026-04-20-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C/index/" data-id="cuides1zAhJcMF02y6M_I0_Ae" data-title="软件安装包制作" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-19-一个简单的python贪吃蛇实现方法/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-18T16:00:00.000Z" itemprop="datePublished">2026-04-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/">一个简单的python贪吃蛇实现方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：这是本人很早之前写的的一个小游戏，最近玩编程农场有点上头，就想复现一下之前写的的一个小游戏，现在主要介绍实现方法，以及本人打包好的exe文件</p>
-<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/Snake-Game">suyihang15&#x2F;Snake-Game: 基于python实现的贪吃蛇</a></p>
-<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/suyihang15/Snake-Game/releases/download/1.0.0/default.exe">https://github.com/suyihang15/Snake-Game/releases/download/1.0.0/default.exe</a></p>
-<p><strong><em>1、环境配置</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-3110/">python</a>（运行所要的环境）</p>
-<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/pycharm/">pycharm</a>（编写所需要的IDE，毕竟你不可能用记事本写吧，社区版是免费的）</p>
-<p>pip install pygame（安装所需的第三方库）</p>
-<p><strong><em>2、编写代码</em></strong></p>
-<p><strong>1、导入工具库</strong> （这是下面可以运行的必要条件）</p>
-<p>import pygame, random  
- </p>
-<p>pygame  做游戏窗口、画图、按键控制的库，我觉得大部分python小游戏的实现都要靠这个小玩意</p>
-<p>random  专门用来随机生成食物位置</p>
-<p><strong>2、初始化游戏</strong>（<strong>创建游戏窗口）</strong></p>
-<p>pygame.init()<br>W, H &#x3D; 600, 400<br>screen &#x3D; pygame.display.set_mode((W, H))<br>pygame.display.set_caption(“贪吃蛇”)<br>clock &#x3D; pygame.time.Clock()  
- </p>
-<p>pygame.init() ：启动游戏引擎，就是直接调用第三方库，不然全部逻辑你自己写得写死<br>W, H &#x3D; 600, 400 ：设定窗口宽度 600，高度 400，可以根据需要改嘛<br>screen &#x3D; … ：创建一个游戏窗口<br>set_caption(“贪吃蛇”) ：窗口标题写“贪吃蛇”，或者写你自己想到的任何你名字都行，不影响整体逻辑<br>clock &#x3D; pygame.time.Clock() ：用来控制蛇的移动速度</p>
-<p><strong>3、定义颜色</strong></p>
-<p>BLACK &#x3D; (0,0,0)<br>WHITE &#x3D; (255,255,255)<br>RED &#x3D; (255,0,0)<br>GREEN &#x3D; (0,255,0)  
- </p>
-<p>给颜色起名字，后面画图直接用单词，不用记数字，当然你自己记得那个调色板的那个一点点写也可以，不拦你(R,G,B)三色板自己调去吧。</p>
-<p>BLACK：背景黑色</p>
-<p>RED：食物红色</p>
-<p>GREEN：蛇身体绿色</p>
-<p><strong>4、游戏基础参数</strong>（差不多就是游戏的初始值）</p>
-<p>block &#x3D; 10<br>speed &#x3D; 12  
- </p>
-<p>block &#x3D; 10 ：蛇每一节、食物都是 10 像素大小，你可以理解为蛇和食物的大小设置</p>
-<p>speed &#x3D; 12 ：游戏每秒刷新 12 次，数字越大蛇跑得越快</p>
-<p><strong><em>5、主函数开始</em></strong></p>
-<p>def main():  
- </p>
-<p>把整个游戏放进一个函数里</p>
-<p><strong><em>6、游戏初始状态</em></strong></p>
-<p>x, y &#x3D; W&#x2F;&#x2F;2, H&#x2F;&#x2F;2<br>dx, dy &#x3D; block, 0<br>snake &#x3D; [[x, y]]<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)]<br>score &#x3D; 0  
- </p>
-<p>x, y &#x3D; 窗口中心 ：蛇出生在屏幕正中间，后面的就是刚好在窗口正中心，W和H我上面定义了的，注意看<br>dx, dy &#x3D; block, 0 ：- dx &#x3D; 水平方向速度</p>
-<p>dy &#x3D; 垂直方向速度</p>
-<p>一开始蛇向右走<br>snake &#x3D; [[x, y]] ：蛇是一个列表，每一节是一个坐标- 刚开始只有一个头<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)] ：随机生成食物位置，坐标是 10 的倍数，和蛇对齐<br>score &#x3D; 0 ：初始分数为 0</p>
-<p><strong><em>7、游戏主循环</em></strong>（循环运行毕竟你不可能让他一下子就结束吧）</p>
-<p>while True:  
- </p>
-<p>游戏永远循环执行</p>
-<p>直到关闭窗口或蛇死掉才跳出</p>
-<p><strong><em>8、处理退出事件</em></strong></p>
-<p>for e in pygame.event.get():<br>if e.type &#x3D;&#x3D; pygame.QUIT:<br>pygame.quit()<br>return  
- </p>
-<p>检测你是否点了窗口右上角的 ×</p>
-<p>点了就关闭游戏，退出程序</p>
-<p><strong><em>9、按键控制方向</em></strong></p>
-<p>if e.type &#x3D;&#x3D; pygame.KEYDOWN:<br>if e.key &#x3D;&#x3D; pygame.K_LEFT and dx &#x3D;&#x3D; 0:<br>dx, dy &#x3D; -block, 0<br>elif e.key &#x3D;&#x3D; pygame.K_RIGHT and dx &#x3D;&#x3D; 0:<br>dx, dy &#x3D; block, 0<br>elif e.key &#x3D;&#x3D; pygame.K_UP and dy &#x3D;&#x3D; 0:<br>dx, dy &#x3D; 0, -block<br>elif e.key &#x3D;&#x3D; pygame.K_DOWN and dy &#x3D;&#x3D; 0:<br>dx, dy &#x3D; 0, block  
- </p>
-<p>按上下左右键改变蛇的方向</p>
-<p>dx &#x3D;&#x3D; 0  &#x2F;  dy &#x3D;&#x3D; 0  是为了防止蛇立刻反向撞死自己- 比如向右走时不能直接向左</p>
-<p><strong><em>10、蛇移动核心逻辑</em></strong></p>
-<p>x +&#x3D; dx<br>y +&#x3D; dy<br>snake.append([x, y])  
- </p>
-<p>先更新蛇头坐标<br>把新蛇头加到蛇的列表最后<br>蛇看起来就像往前挪了一步</p>
-<p><strong><em>11、吃食物</em></strong></p>
-<p>if [x, y] &#x3D;&#x3D; food:<br>score +&#x3D; 1<br>food &#x3D; [random.randrange(0, W, block), random.randrange(0, H, block)]<br>else:<br>snake.pop(0)  
- </p>
-<p>如果蛇头碰到食物：1. 分数 +1<br>重新随机生成一个食物<br>不删除尾巴 → 蛇变长</p>
-<p>没吃到食物：- 删除最后一节身体 → 蛇保持长度，只向前移动</p>
-<p><strong><em>12、碰撞检测（死亡判断）</em></strong></p>
-<p>if x &lt; 0 or x &gt;&#x3D; W or y &lt; 0 or y &gt;&#x3D; H or [x, y] in snake[:-1]:<br>print(“游戏结束！得分：”, score)<br>pygame.quit()<br>return<br> <br>满足任意一条，蛇死亡：</p>
-<p> 撞墙：x、y 超出窗口范围<br>撞自己：蛇头坐标出现在身体里<br>死掉后打印分数，关闭游戏</p>
-<p><strong><em>13、绘制画面</em></strong>（就是场景设置）</p>
-<p>screen.fill(BLACK)<br>pygame.draw.rect(screen, RED, (food[0], food[1], block, block))<br>for pos in snake:<br>pygame.draw.rect(screen, GREEN, (pos[0], pos[1], block, block))<br>pygame.display.update()<br>clock.tick(speed)  
- </p>
-<p>全屏涂黑色<br>画红色食物方块<br>循环画出蛇的每一节<br>update() ：把画好的内容显示到屏幕<br>clock.tick(speed) ：控制游戏速度，保持稳定</p>
-<p><strong><em>14、程序入口</em></strong>（要开始喽）</p>
-<p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:<br>main()  
- </p>
-<p>只有直接运行这个文件时，才启动游戏  main() </p>
-<p>注：上面的代码就是大致的介绍，缩进什么的自己调，基本上你有点基础的都可以看懂的，这是大致的效果</p>
-<p><img src="/images/580384426-2889cbfc-24db-4d94-8ab0-be4c61a814c2-1-1024x608.png"></p>
-<p>本人主要是介绍一下大致的实现过程，完整的代码也已经放在我github仓库了。</p>
-<p>如果改好了代码。想自己打包成exe可以看我这个<a target="_blank" rel="noopener" href="https://suyihang15.com/2026/04/05/python%e6%89%93%e5%8c%85%e6%88%90exe%ef%bc%88pyinstaller%e7%9a%84%e4%bd%bf%e7%94%a8%ef%bc%89/">python打包成exe（pyinstaller的使用） – 苏的小站</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/19/2026/04/2026-04-19-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84python%E8%B4%AA%E5%90%83%E8%9B%87%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/index/" data-id="cuidQbejHJwkuHLCrIXn2HwMR" data-title="一个简单的python贪吃蛇实现方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-18-网络挂载硬盘（针对于linux）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/18/2026/04/2026-04-18-%E7%BD%91%E7%BB%9C%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%EF%BC%88%E9%92%88%E5%AF%B9%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-17T16:00:00.000Z" itemprop="datePublished">2026-04-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/18/2026/04/2026-04-18-%E7%BD%91%E7%BB%9C%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%EF%BC%88%E9%92%88%E5%AF%B9%E4%BA%8Elinux%EF%BC%89/index/">网络挂载硬盘（针对于Linux）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>注：因为一般要通过网络挂载到本地的都是nas，绝大部分nas其本质的内核都是Linux魔改来的，所以都大部分都通用，而且一般专门的nas的系统都会直接有网络共享文件的功能所以我还会介绍各个协议与优缺点。而且本人试了一下启动我预装在nas的游戏，体验还不错，可以试试玩玩小游戏。有点网吧的感觉。</p>
-<p><strong><em>1、准备</em></strong></p>
-<p>创建一个专门用与共享的文件夹一般默认在mnt里名字随便，建议英文，因为有些可能会显示乱码。</p>
-<p>sudo mkdir -p &#x2F;mnt&#x2F;nas</p>
-<p><strong><em>2、选好共享文件的协议</em></strong></p>
-<p><strong><em>（1）NFS（内网最快）</em></strong></p>
-<p>1、安装</p>
-<p>sudo apt update<br>sudo apt install nfs-common -y</p>
-<p>2、挂载</p>
-<p>sudo mount -t nfs 192.168.x.x:&#x2F;volume1&#x2F;共享名 &#x2F;mnt&#x2F;nas</p>
-<p>开机自启（&#x2F;etc&#x2F;fstab）</p>
-<p>192.168.x.x:&#x2F;volume1&#x2F;共享名 &#x2F;mnt&#x2F;nas nfs defaults 0 0</p>
-<p>3、卸载</p>
-<p>sudo umount &#x2F;mnt&#x2F;nas</p>
-<p>4、优点缺点</p>
-<p>速度最快、延迟最低</p>
-<p>Linux ↔ NAS 最稳定</p>
-<p>权限友好</p>
-<p>不加密，公网不推荐直接用</p>
-<p>不适合跨网高延迟</p>
-<p>5、穿透端口</p>
-<p>NFS 端口很乱（111&#x2F;2049&#x2F;动态端口），不适合内网穿透</p>
-<p><strong><em>6、连接</em></strong></p>
-<p><strong>Windows端</strong></p>
-<p>CMD 管理员执行：</p>
-<p>mount \你自己的IP地址:&#x2F;nas Z:</p>
-<p>断开：</p>
-<p>umount Z:</p>
-<p><strong>macOS端</strong></p>
-<p>sudo mount_nfs -o resvport IP地址:&#x2F;nas &#x2F;Volumes&#x2F;nfs<br> 断开：</p>
-<p>umount &#x2F;Volumes&#x2F;nfs</p>
-<p><strong><em>（2）SMB&#x2F;CIFS（NAS 默认共享）</em></strong></p>
-<p>1、安装</p>
-<p>sudo apt install cifs-utils -y</p>
-<p>2、挂载</p>
-<p>sudo mount -t cifs &#x2F;&#x2F;192.168.x.x&#x2F;共享名 &#x2F;mnt&#x2F;nas \<br>-o username&#x3D;NAS账号,password&#x3D;NAS密码,vers&#x3D;3.0</p>
-<p>fstab 开机自启</p>
-<p>&#x2F;&#x2F;192.168.x.x&#x2F;共享名 &#x2F;mnt&#x2F;nas cifs username&#x3D;user,password&#x3D;pass,vers&#x3D;3.0 0 0</p>
-<p>3、卸载</p>
-<p>sudo umount &#x2F;mnt&#x2F;nas</p>
-<p>4、优点缺点</p>
-<p>全平台通用</p>
-<p>NAS 默认开启，不用额外配置</p>
-<p>速度不如 NFS</p>
-<p>445 端口在公网几乎全被封杀，穿透极难</p>
-<p>5、穿透端口</p>
-<p>TCP 445 → 公网基本不可用</p>
-<p>6、连接</p>
-<p>Windows</p>
-<p>右键此电脑 → 映射网络驱动器</p>
-<p>\IP地址\nas</p>
-<p>断开：右键盘符 → 断开</p>
-<p>macOS</p>
-<p>Finder 按  Cmd + K </p>
-<p>smb:&#x2F;&#x2F;192.168.1.100&#x2F;share<br> 断开：左侧点推出</p>
-<p><em><strong>（3）SSHFS（个人觉得比较简单的方式）</strong></em></p>
-<p>1、安装</p>
-<p>sudo apt install sshfs -y</p>
-<p>2、挂载</p>
-<p>sshfs 账号@192.168.x.x:&#x2F;volume1&#x2F;共享名 &#x2F;mnt&#x2F;nas -p 22  
- </p>
-<p>3、卸载</p>
-<p>fusermount -u &#x2F;mnt&#x2F;nas</p>
-<p>4、优点缺点</p>
-<p>SSH 加密，公网极其安全</p>
-<p>只要能 SSH 就能挂载</p>
-<p>穿透最简单</p>
-<p>速度中等，大文件不如 NFS&#x2F;iSCSI</p>
-<p>5、穿透端口</p>
-<p>TCP 22（SSH）<br>穿透只需要映射这一个端口，支持公网</p>
-<p>6、连接</p>
-<p>Windows</p>
-<p>cmd中执行</p>
-<p>\\sshfs\root@IP地址!22\nas</p>
-<p>macOS</p>
-<p>sshfs root@IP地址:&#x2F;nas &#x2F;Volumes&#x2F;sshfs</p>
-<p>**_（4）WebDAV（公网友好，NAS 常用）_**本人在外网常用的方式</p>
-<p>1、安装</p>
-<p>sudo apt install davfs2 -y</p>
-<p>2、挂载</p>
-<p>sudo mount -t davfs <a target="_blank" rel="noopener" href="http://192.168.x.x:5005/webdav">http://192.168.x.x:5005/webdav</a> &#x2F;mnt&#x2F;nas</p>
-<p>3、卸载</p>
-<p>sudo umount &#x2F;mnt&#x2F;nas  
- </p>
-<p>4、优点缺点</p>
-<p>基于 HTTP&#x2F;HTTPS</p>
-<p>公网、穿透、代理都友好</p>
-<p>速度最慢</p>
-<p>大文件性能差</p>
-<p>穿透端口</p>
-<p>群晖 WebDAV：5005</p>
-<p>可自定义为任意端口</p>
-<p>5、连接</p>
-<p>Windows</p>
-<p>添加网络位置：</p>
-<p><a target="_blank" rel="noopener" href="http://ip地址:8080/nas">http://IP地址:8080/nas</a></p>
-<p>macOS</p>
-<p>Cmd+K：</p>
-<p><a target="_blank" rel="noopener" href="http://ip地址:8080/nas">http://IP地址:8080/nas</a></p>
-<p>（5）iSCSI（块设备，当本地硬盘用）</p>
-<p>1、安装</p>
-<p>sudo apt install open-iscsi -y</p>
-<p>2、查找磁盘</p>
-<p>sudo iscsiadm -m discovery -t st -p 192.168.x.x</p>
-<p>3、登录</p>
-<p>sudo iscsiadm -m node -l</p>
-<p>4、查看磁盘</p>
-<p>lsblk</p>
-<p>5、挂载</p>
-<p>sudo mount &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;nas</p>
-<p>6、优点缺点</p>
-<p>性能接近本地硬盘</p>
-<p>可格式化、分区</p>
-<p>配置复杂</p>
-<p>公网不安全</p>
-<p>不支持多设备同时写</p>
-<p>穿透端口</p>
-<p>TCP 3260 → 可穿透，但不推荐公网使用</p>
-<p>7、连接</p>
-<p>windows</p>
-<p>按下  Win + R ，输入  control  回车，打开控制面板<br>搜索并打开 iSCSI 发起程序<br> 在「目标」框里输入你的 iSCSI 服务器 IP地址<br>选择你要连接的目标（LUN），点连接</p>
-<p>之后找到创建磁盘并格式化分区<br>右键这个磁盘，选择初始化磁盘<br>跟着向导走完成后，你就能在此电脑里看到这个盘了</p>
-<p>删除</p>
-<p>在磁盘管理里删除卷，再在 iSCSI 发起程序里断开连接</p>
-<p>以上便是所有连接协议了，这里展示以下本人用的webdav</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-214728-1024x637.png"></p>
-<p>这里填入以后会自动加载，可以存一些游戏用于启动，直接通过网络连接，但是本人目测问题有点多，但是用来跑一些小游戏还行，就是运行可能会有dll文件缺失一系列问题，但是一些游戏还是可以跑的，总体不建议跑打游戏，根本玩不了。</p>
-<p>这是本人搞得，跑小游戏真的还行</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-214832-1024x609.png"></p>
-<p>可以玩的，比较稳定的，但是有点吃网络和你服务器的性能。</p>
-<p>但也可能会有如下问题，这个本人也没有太好的解决方法</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-215129-1024x652.png"></p>
-<p>因为毕竟不是在本地电脑上运行的所以问题有点多。</p>
-<p>但是可以解决一些本地电脑存储不够的问题。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/18/2026/04/2026-04-18-%E7%BD%91%E7%BB%9C%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%EF%BC%88%E9%92%88%E5%AF%B9%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuidA0zbOqjAfKUmFCnG9PEwv" data-title="网络挂载硬盘（针对于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2026/04/2026-04-17-关于抢车票/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/17/2026/04/2026-04-17-%E5%85%B3%E4%BA%8E%E6%8A%A2%E8%BD%A6%E7%A5%A8/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-16T16:00:00.000Z" itemprop="datePublished">2026-04-17</time>
+    <a href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-17T16:00:00.000Z" itemprop="datePublished">2026-05-18</time>
 </a>
     
   <div class="article-category">
@@ -637,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/17/2026/04/2026-04-17-%E5%85%B3%E4%BA%8E%E6%8A%A2%E8%BD%A6%E7%A5%A8/index/">关于抢车票</a>
+      <a class="p-name article-title" href="/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/">编译自己的操作系统（基于Linux）</a>
     </h1>
   
 
@@ -645,16 +97,148 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：本人只介绍软件是如何帮你抢票的，本人不提倡任何通过不正规方式抢票。</p>
-<p>对于节假日时间很多人都有想要出去门，买票的需求，但是，基本上卡着点都在12306上买不到票。</p>
-<p>原因：官方在节假日期间并不会第一时间放出票，很多哪怕是机器人自动抢票都不行，因为如果第一时间放出来了，第一时间抢到的肯定是哪些黄牛，所以，为了正常客户可以买到票，就会后面慢慢放票。</p>
-<p>关于第三方抢票软件，这些本质上也是通过机器人进行抢票，还是要通过12306的官方进行买票，只不过看那家的算法更好一点罢了，还有，那些所谓的加速包，实际上就是很多人通过第三方软件进行购票，帮你的优先级提高到那些没有买加速包的客户前面去了而已，确实有点用，但是不多。</p>
-<p>最后，不要相信任何优先抢票包抢，其本质还是要通过12306来拿票，而且官方是严厉打击这些行为的。</p>
+        <p>注：本文主要介绍如何基于Linux的内核编译一个最简单的操作系统，编译Linux内核+BusyBox，制作可启动迷你Linux系统</p>
+<p><strong><em>1、环境准备</em></strong></p>
+<p>wsl –install（在windows安装Linux的环境）</p>
+<p><strong><em>2、编译步骤</em></strong></p>
+<p>一、更换国内软件源（解决下载慢）</p>
+<p>备份原有软件源</p>
+<p>sudo cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak  
+ </p>
+<p>作用：备份系统默认源，后续出错可以恢复</p>
+<p>写入阿里云高速镜像源</p>
+<p>sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list &gt; &#x2F;dev&#x2F;null &lt;&lt; ‘EOF’<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> jammy main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> jammy-updates main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> jammy-security main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> jammy-backports main restricted universe multiverse<br>EOF  
+ </p>
+<p>作用：替换国外源，大幅加快软件下载速度</p>
+<p>更新软件仓库</p>
+<p>sudo apt update</p>
+<p>sudo apt upgrade -y  
+ </p>
+<p>作用：刷新源缓存，升级系统基础软件</p>
+<p>二、安装全套编译依赖环境</p>
+<p>sudo apt install -y gcc make flex bison libncurses-dev cpio xorriso grub-common grub-pc-bin grub-efi-amd64-bin libelf-dev libssl-dev bc wget qemu-system-x86  
+ </p>
+<p>作用介绍</p>
+<ul>
+<li><p> gcc&#x2F;make ：C语言编译工具</p>
+</li>
+<li><p> flex&#x2F;bison ：内核语法编译依赖</p>
+</li>
+<li><p> libncurses-dev ：图形配置界面依赖</p>
+</li>
+<li><p> cpio&#x2F;xorriso ：打包文件、制作ISO镜像</p>
+</li>
+<li><p> grub系列 ：系统引导必备工具</p>
+</li>
+<li><p> qemu-system-x86 ：虚拟机运行自制系统</p>
+</li>
+</ul>
+<p>三、创建专属编译工作目录</p>
+<p>mkdir -p ~&#x2F;mini_os</p>
+<p>cd ~&#x2F;mini_os  
+ </p>
+<p>作用：统一存放源码、编译文件，路径干净无权限冲突</p>
+<p>四、编译Linux原生内核</p>
+<p>下载Linux内核源码（阿里云镜像）</p>
+<p>wget <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.1.tar.xz">https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.1.tar.xz</a>  
+ </p>
+<p>解压内核源码</p>
+<p>tar -xf linux-6.1.tar.xz  
+ </p>
+<p>进入内核源码目录</p>
+<p>cd linux-6.1  
+ </p>
+<p>生成内核默认配置</p>
+<p>make defconfig  
+ </p>
+<p>作用：自动生成通用电脑适配内核配置，新手无需手动修改</p>
+<p>多核全速编译内核</p>
+<p>make -j$(nproc)  
+ </p>
+<p>作用：调用电脑全部CPU核心编译，提升编译速度<br>编译完成产物： arch&#x2F;x86_64&#x2F;boot&#x2F;bzImage  内核镜像</p>
+<p>返回上级目录</p>
+<p>cd ..  
+ </p>
+<p>五、编译BusyBox极简命令工具箱</p>
+<p>BusyBox集成ls、cd、mkdir等所有Linux基础命令</p>
+<p>下载BusyBox源码</p>
+<p>wget <a target="_blank" rel="noopener" href="https://busybox.net/downloads/busybox-1.36.1.tar.bz2">https://busybox.net/downloads/busybox-1.36.1.tar.bz2</a>  
+ </p>
+<p>解压源码</p>
+<p>sudo apt install -y bzip2（下载解压软件）</p>
+<p>tar -xf busybox-1.36.1.tar.bz2  
+ </p>
+<p>进入BusyBox目录</p>
+<p>cd busybox-1.36.1  
+ </p>
+<p>生成默认配置</p>
+<p>make defconfig  </p>
+<p>开启静态编译（核心关键）</p>
+<p>sed -i ‘&#x2F;CONFIG_STATIC&#x3D;&#x2F;d’ .config<br>echo “CONFIG_STATIC&#x3D;y” &gt;&gt; .config  
+ </p>
+<p>作用：编译成独立静态程序，不依赖系统动态库，迷你系统可直接运行</p>
+<p>多核编译BusyBox</p>
+<p>make -j$(nproc)  
+ </p>
+<p>安装编译好的命令工具</p>
+<p>make install  
+ </p>
+<p>作用：命令全部输出到 _install 目录，作为系统基础命令集</p>
+<p>返回上级目录</p>
+<p>cd ..  
+ </p>
+<p>六、搭建迷你Linux根文件系统</p>
+<p>创建根文件系统文件夹</p>
+<p>mkdir rootfs  
+ </p>
+<p>拷贝BusyBox所有命令到根系统</p>
+<p>cp -r busybox-1.36.1&#x2F;_install&#x2F;* rootfs&#x2F;  
+ </p>
+<p>创建系统必备空目录</p>
+<p>mkdir -p rootfs&#x2F;{dev,proc,sys,etc}  
+ </p>
+<p>作用：dev设备目录、proc系统信息目录、sys硬件目录</p>
+<p>创建系统必要设备文件</p>
+<p>sudo mknod rootfs&#x2F;dev&#x2F;console c 5 1<br>sudo mknod rootfs&#x2F;dev&#x2F;null c 1 3  
+ </p>
+<p>作用：控制台终端、空设备，系统启动必需</p>
+<p>配置系统开机自动启动终端</p>
+<p>echo ‘::askfirst:-&#x2F;bin&#x2F;sh’ &gt; rootfs&#x2F;etc&#x2F;inittab  
+ </p>
+<p>作用：系统开机直接进入命令行终端</p>
+<p>七、打包内核内存文件系统</p>
+<p>进入根文件系统目录</p>
+<p>cd rootfs  
+ </p>
+<p>打包压缩为initramfs启动文件</p>
+<p>find . | cpio -o -H newc | gzip &gt; ..&#x2F;initramfs.cpio.gz  
+ </p>
+<p>作用：把整个根系统打包，让内核启动时加载</p>
+<p>返回上级目录</p>
+<p>cd ..  
+ </p>
+<p>八、制作GRUB引导启动ISO镜像</p>
+<p>创建ISO镜像目录结构</p>
+<p>mkdir -p iso&#x2F;boot&#x2F;grub  
+ </p>
+<p>拷贝内核与启动文件到ISO目录</p>
+<p>cp linux-6.1&#x2F;arch&#x2F;x86_64&#x2F;boot&#x2F;bzImage iso&#x2F;<br>cp initramfs.cpio.gz iso&#x2F;  
+ </p>
+<p>编写GRUB系统启动菜单</p>
+<p>cat &gt; iso&#x2F;boot&#x2F;grub&#x2F;grub.cfg &lt;&lt; ‘EOF’<br>menuentry “My Self Linux” {<br>linux &#x2F;bzImage<br>initrd &#x2F;initramfs.cpio.gz<br>}<br>EOF  
+ </p>
+<p>作用：虚拟机启动时显示系统选项，指定内核与根文件系统</p>
+<p>生成最终可启动ISO镜像</p>
+<p>grub-mkrescue -o mylinux.iso iso  
+ </p>
+<p>生成文件： mylinux.iso  自制完整Linux系统镜像</p>
+<p>其是可以直接安装在虚拟机上的</p>
+<p>总结：其用Linux搭建操作系统本身不难，因为已经用很成熟的内核这些了，但本身还是调用别人的东西，希望后面有人能完整的搞出完整的独立操作系统吧。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/17/2026/04/2026-04-17-%E5%85%B3%E4%BA%8E%E6%8A%A2%E8%BD%A6%E7%A5%A8/index/" data-id="cuidW939QFjvqDsjce1FJMDHv" data-title="关于抢车票" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/18/2026/2026-05-18-%E7%BC%96%E8%AF%91%E8%87%AA%E5%B7%B1%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%9F%BA%E4%BA%8Elinux%EF%BC%89/index/" data-id="cuid_GvZGMQaZDQ2S-cNEG_4e" data-title="编译自己的操作系统（基于Linux）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -666,10 +250,474 @@
 
 
   
-    <article id="post-2026/04/2026-04-16-astrbot部署qq机器人/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-17-nas自动化影片思路/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/16/2026/04/2026-04-16-astrbot%E9%83%A8%E7%BD%B2qq%E6%9C%BA%E5%99%A8%E4%BA%BA/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-15T16:00:00.000Z" itemprop="datePublished">2026-04-16</time>
+    <a href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-16T16:00:00.000Z" itemprop="datePublished">2026-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/">nas自动化影片思路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章主要提供思路和搭建方法</p>
+<p><strong><em>1、准备情况</em></strong></p>
+<p>（1）Docker（用于部署环境）</p>
+<p>（2）nastool（用于管理资源的爬取和下载情况）</p>
+<p>（2）jackeet（用于收集种子库）</p>
+<p>（3）QBittorrent（用于下载资源）</p>
+<p>(4)<a target="_blank" rel="noopener" href="https://www.themoviedb.org/">TMDB的Key</a>（用于刮削的准确性，当然你自己有刮削就不管）</p>
+<p><strong><em>2、部署（本人是飞牛的nas，其他家的根据具体文件调整）</em></strong></p>
+<p>部署的compose</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line"># 初始化目录&amp;权限服务</span><br><span class="line">services:</span><br><span class="line">  init-setup:</span><br><span class="line">    image: alpine</span><br><span class="line">    container_name: init-setup</span><br><span class="line">    command: &gt;</span><br><span class="line">      sh -c &quot;</span><br><span class="line">      mkdir -p /vol1/1000/docker/&#123;nastools,qbittorrent,jackett&#125; /vol1/1000/影视/下载/&#123;电影,电视剧&#125; /vol1/1000/影视/&#123;电影,电视剧&#125; &amp;&amp;</span><br><span class="line">      chown -R 1000:1000 /vol1/1000</span><br><span class="line">      &quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000:/vol1/1000</span><br><span class="line">    restart: no</span><br><span class="line"></span><br><span class="line"># 影音管理 NAS-Tools</span><br><span class="line">  nastools:</span><br><span class="line">    image: syly948/nastools:2.9.1</span><br><span class="line">    container_name: nastools</span><br><span class="line">    ports:</span><br><span class="line">      - 3000:3000</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/nastools:/config</span><br><span class="line">      - /vol1/1000/影视:/影视</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      UMASK: 022</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    depends_on:</span><br><span class="line">      init-setup:</span><br><span class="line">        condition: service_completed_successfully</span><br><span class="line">      qbittorrent:</span><br><span class="line">        condition: service_healthy</span><br><span class="line">      jackett:</span><br><span class="line">        condition: service_healthy</span><br><span class="line"></span><br><span class="line"># 下载工具 qBittorrent</span><br><span class="line">  qbittorrent:</span><br><span class="line">    image: superng6/qbittorrent</span><br><span class="line">    container_name: qbittorrent</span><br><span class="line">    ports:</span><br><span class="line">      - 8088:8080</span><br><span class="line">      - 6881:6881</span><br><span class="line">      - 6881:6881/udp</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/qbittorrent:/config</span><br><span class="line">      - /vol1/1000/影视/下载:/downloads</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      WEBUI_PORT: 8080</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:8080&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br><span class="line"></span><br><span class="line"># 索引聚合 Jackett</span><br><span class="line">  jackett:</span><br><span class="line">    image: linuxserver/jackett</span><br><span class="line">    container_name: jackett</span><br><span class="line">    ports:</span><br><span class="line">      - 9117:9117</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/jackett:/config</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      AUTO_UPDATE: true</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:9117/UI/Login&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<p>docker-compose up -d</p>
+<p><strong><em>3、调整</em></strong></p>
+<p><strong>Nastools</strong></p>
+<p>访问界面IP:3000</p>
+<p>账号admin</p>
+<p>密码password</p>
+<p>登录界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png"></p>
+<p><strong>Jackett</strong></p>
+<p>访问界面IP:9117</p>
+<p>这里你要根据自己的情况添加种子站点，如果没有私有的站点账号，就选择好几个公开的站点就行，如果有不能用的会自动删除的，然后添加好后，复制密钥，粘贴到nastool的设置里的索引器jackeet里测试，成功就行了。</p>
+<p><strong>QBittorrent</strong></p>
+<p>访问界面IP:8088</p>
+<p>账号：admin</p>
+<p>密码：在docker容器的日志里查看，登录后查看</p>
+<p>记得在nastool的设置下载器里面的Qbittorrent也设置好，IP地址和账号密码搞好了，再测试一下，确定就链接好了。</p>
+<p>可以设置一下TMDB那个，可以免费申请的，然后，注意其他的在nastool设置一下，比如做种时间，上传速度这些，不然会被认为的在跑PCDN的。</p>
+<p>之后就看你需求更改就行</p>
+<p><strong><em>4、自动化思路</em></strong></p>
+<p>nastool用于进行整体的管理，jackett作为种子的搜集器，QBittorrent作为下载器，下载到本地，TMDB的key帮助刮削准确性就很高了。</p>
+<p>总结：自动化的方法其实还有很多，比如我之前说的RSS订阅，主要是看你怎么折腾，网上的方法教程还是很多的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/17/2026/05/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuidnKFeVObEKfn4RE9K91wgy" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-17-nas自动化影片思路/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-16T16:00:00.000Z" itemprop="datePublished">2026-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/">nas自动化影片思路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章主要提供思路和搭建方法</p>
+<p><strong><em>1、准备情况</em></strong></p>
+<p>（1）Docker（用于部署环境）</p>
+<p>（2）nastool（用于管理资源的爬取和下载情况）</p>
+<p>（2）jackeet（用于收集种子库）</p>
+<p>（3）QBittorrent（用于下载资源）</p>
+<p>(4)<a target="_blank" rel="noopener" href="https://www.themoviedb.org/">TMDB的Key</a>（用于刮削的准确性，当然你自己有刮削就不管）</p>
+<p><strong><em>2、部署（本人是飞牛的nas，其他家的根据具体文件调整）</em></strong></p>
+<p>部署的compose</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line"># 初始化目录&amp;权限服务</span><br><span class="line">services:</span><br><span class="line">  init-setup:</span><br><span class="line">    image: alpine</span><br><span class="line">    container_name: init-setup</span><br><span class="line">    command: &gt;</span><br><span class="line">      sh -c &quot;</span><br><span class="line">      mkdir -p /vol1/1000/docker/&#123;nastools,qbittorrent,jackett&#125; /vol1/1000/影视/下载/&#123;电影,电视剧&#125; /vol1/1000/影视/&#123;电影,电视剧&#125; &amp;&amp;</span><br><span class="line">      chown -R 1000:1000 /vol1/1000</span><br><span class="line">      &quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000:/vol1/1000</span><br><span class="line">    restart: no</span><br><span class="line"></span><br><span class="line"># 影音管理 NAS-Tools</span><br><span class="line">  nastools:</span><br><span class="line">    image: syly948/nastools:2.9.1</span><br><span class="line">    container_name: nastools</span><br><span class="line">    ports:</span><br><span class="line">      - 3000:3000</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/nastools:/config</span><br><span class="line">      - /vol1/1000/影视:/影视</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      UMASK: 022</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    depends_on:</span><br><span class="line">      init-setup:</span><br><span class="line">        condition: service_completed_successfully</span><br><span class="line">      qbittorrent:</span><br><span class="line">        condition: service_healthy</span><br><span class="line">      jackett:</span><br><span class="line">        condition: service_healthy</span><br><span class="line"></span><br><span class="line"># 下载工具 qBittorrent</span><br><span class="line">  qbittorrent:</span><br><span class="line">    image: superng6/qbittorrent</span><br><span class="line">    container_name: qbittorrent</span><br><span class="line">    ports:</span><br><span class="line">      - 8088:8080</span><br><span class="line">      - 6881:6881</span><br><span class="line">      - 6881:6881/udp</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/qbittorrent:/config</span><br><span class="line">      - /vol1/1000/影视/下载:/downloads</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      WEBUI_PORT: 8080</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:8080&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br><span class="line"></span><br><span class="line"># 索引聚合 Jackett</span><br><span class="line">  jackett:</span><br><span class="line">    image: linuxserver/jackett</span><br><span class="line">    container_name: jackett</span><br><span class="line">    ports:</span><br><span class="line">      - 9117:9117</span><br><span class="line">    volumes:</span><br><span class="line">      - /vol1/1000/docker/jackett:/config</span><br><span class="line">    environment:</span><br><span class="line">      PUID: 1000</span><br><span class="line">      PGID: 1000</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      AUTO_UPDATE: true</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    healthcheck:</span><br><span class="line">      test: [&quot;CMD&quot;,&quot;curl&quot;,&quot;-f&quot;,&quot;http://localhost:9117/UI/Login&quot;]</span><br><span class="line">      interval: 30s</span><br><span class="line">      timeout: 10s</span><br><span class="line">      retries: 5</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<p>docker-compose up -d</p>
+<p><strong><em>3、调整</em></strong></p>
+<p><strong>Nastools</strong></p>
+<p>访问界面IP:3000</p>
+<p>账号admin</p>
+<p>密码password</p>
+<p>登录界面</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-17-144047-1024x557.png"></p>
+<p><strong>Jackett</strong></p>
+<p>访问界面IP:9117</p>
+<p>这里你要根据自己的情况添加种子站点，如果没有私有的站点账号，就选择好几个公开的站点就行，如果有不能用的会自动删除的，然后添加好后，复制密钥，粘贴到nastool的设置里的索引器jackeet里测试，成功就行了。</p>
+<p><strong>QBittorrent</strong></p>
+<p>访问界面IP:8088</p>
+<p>账号：admin</p>
+<p>密码：在docker容器的日志里查看，登录后查看</p>
+<p>记得在nastool的设置下载器里面的Qbittorrent也设置好，IP地址和账号密码搞好了，再测试一下，确定就链接好了。</p>
+<p>可以设置一下TMDB那个，可以免费申请的，然后，注意其他的在nastool设置一下，比如做种时间，上传速度这些，不然会被认为的在跑PCDN的。</p>
+<p>之后就看你需求更改就行</p>
+<p><strong><em>4、自动化思路</em></strong></p>
+<p>nastool用于进行整体的管理，jackett作为种子的搜集器，QBittorrent作为下载器，下载到本地，TMDB的key帮助刮削准确性就很高了。</p>
+<p>总结：自动化的方法其实还有很多，比如我之前说的RSS订阅，主要是看你怎么折腾，网上的方法教程还是很多的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/17/2026/2026-05-17-nas%E8%87%AA%E5%8A%A8%E5%8C%96%E5%BD%B1%E7%89%87%E6%80%9D%E8%B7%AF/index/" data-id="cuid0wALW8Sd3G5fQ04-bK7D9" data-title="nas自动化影片思路" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-16-关于pt/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-15T16:00:00.000Z" itemprop="datePublished">2026-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/">关于PT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章只介绍PT，请不要轻易相信那些什么拉人什么的</p>
+<p><strong><em>PT全称是 Private Tracker（私有种子服务器），本质上是一个封闭、半封闭的种子分享社区。</em></strong></p>
+<p>和你平时用的迅雷、百度网盘、公开BT站有很大不同，个人理解就是那些私人的种子网站，相比于公开BT&#x2F;网盘 这些PT站的公开BT站的资源虽然多，但鱼龙混杂，同一部电影，可能同时存在枪版、低码率、带水印、甚至被植入病毒的版本；网盘下载虽然方便，但热门资源秒传、冷门资源几乎绝迹，而且随时面临版权风险和限速的困扰。而PT站则通过严格的准入和审核机制，从根源上解决了这些问题，基本上在那个社区的都有跑的任务，不会有死种，而且基本上所有的用户都要维护，不然就封号，资源真的很好，这种高质量的体验，也意味着更高的门槛和更严格的规则。公开下载的核心是“索取”，而PT的核心是“分享”。你享受了别人提供的稳定高速下载，就有义务为后来的人提供上传，这种“我为人人，人人为我”的信用体系，才是PT社区能长久运转下去的根基。</p>
+<p>关于PT说的</p>
+<ul>
+<li><p>保种：把下载好的资源挂在服务器&#x2F;NAS上，持续为其他用户上传。保种越久，社区越活跃，你的账号也越安全。</p>
+</li>
+<li><p>分享率（Ratio）：上传量 ÷ 下载量，大部分PT站要求 ≥1.0，也就是“下多少，传多少”。</p>
+</li>
+<li><p>魔力值&#x2F;积分：部分PT站的虚拟货币，可以用来换邀请码、免考核、或者兑换下载券，是“老玩家福利”。</p>
+</li>
+<li><p>考核期：新用户注册后，需要在规定时间内（比如30天）完成指定的上传量&#x2F;分享率要求，不达标会被封号。</p>
+</li>
+<li><p>邀请码：PT站的“入场券”，老用户才能发，你违规被封，邀请你的人也会被牵连，所以没人会随便给陌生人发码。</p>
+</li>
+<li><p>HDSky（天空）：国内最热门的高清PT站之一，资源全、用户多，也是很多新手的目标站。</p>
+</li>
+<li><p>星码（带星星的邀请码）：HDSky里的高级邀请码，只有站内高等级用户（VIP&#x2F;老用户）才有资格发，注册后直接跳过考核期，账号更稳，圈内俗称“星码”。</p>
+</li>
+</ul>
+<p>HDSky像这种都有一定的门槛，一般其注册都很少而且是在节假日才开放，开放时间很短，一般要内部人员推送才行，而且进去了还有上传的任务，不然很快号就没了，所以，一般不要轻信那些什么卖号的。</p>
+<p>总结：相比于BT其PT资源跟好，但是门槛跟高。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/16/2026/05/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuid-DTOMyOhbu60KE820cCFt" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-16-关于pt/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/16/2026/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-15T16:00:00.000Z" itemprop="datePublished">2026-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/16/2026/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/">关于PT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章只介绍PT，请不要轻易相信那些什么拉人什么的</p>
+<p><strong><em>PT全称是 Private Tracker（私有种子服务器），本质上是一个封闭、半封闭的种子分享社区。</em></strong></p>
+<p>和你平时用的迅雷、百度网盘、公开BT站有很大不同，个人理解就是那些私人的种子网站，相比于公开BT&#x2F;网盘 这些PT站的公开BT站的资源虽然多，但鱼龙混杂，同一部电影，可能同时存在枪版、低码率、带水印、甚至被植入病毒的版本；网盘下载虽然方便，但热门资源秒传、冷门资源几乎绝迹，而且随时面临版权风险和限速的困扰。而PT站则通过严格的准入和审核机制，从根源上解决了这些问题，基本上在那个社区的都有跑的任务，不会有死种，而且基本上所有的用户都要维护，不然就封号，资源真的很好，这种高质量的体验，也意味着更高的门槛和更严格的规则。公开下载的核心是“索取”，而PT的核心是“分享”。你享受了别人提供的稳定高速下载，就有义务为后来的人提供上传，这种“我为人人，人人为我”的信用体系，才是PT社区能长久运转下去的根基。</p>
+<p>关于PT说的</p>
+<ul>
+<li><p>保种：把下载好的资源挂在服务器&#x2F;NAS上，持续为其他用户上传。保种越久，社区越活跃，你的账号也越安全。</p>
+</li>
+<li><p>分享率（Ratio）：上传量 ÷ 下载量，大部分PT站要求 ≥1.0，也就是“下多少，传多少”。</p>
+</li>
+<li><p>魔力值&#x2F;积分：部分PT站的虚拟货币，可以用来换邀请码、免考核、或者兑换下载券，是“老玩家福利”。</p>
+</li>
+<li><p>考核期：新用户注册后，需要在规定时间内（比如30天）完成指定的上传量&#x2F;分享率要求，不达标会被封号。</p>
+</li>
+<li><p>邀请码：PT站的“入场券”，老用户才能发，你违规被封，邀请你的人也会被牵连，所以没人会随便给陌生人发码。</p>
+</li>
+<li><p>HDSky（天空）：国内最热门的高清PT站之一，资源全、用户多，也是很多新手的目标站。</p>
+</li>
+<li><p>星码（带星星的邀请码）：HDSky里的高级邀请码，只有站内高等级用户（VIP&#x2F;老用户）才有资格发，注册后直接跳过考核期，账号更稳，圈内俗称“星码”。</p>
+</li>
+</ul>
+<p>HDSky像这种都有一定的门槛，一般其注册都很少而且是在节假日才开放，开放时间很短，一般要内部人员推送才行，而且进去了还有上传的任务，不然很快号就没了，所以，一般不要轻信那些什么卖号的。</p>
+<p>总结：相比于BT其PT资源跟好，但是门槛跟高。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/16/2026/2026-05-16-%E5%85%B3%E4%BA%8Ept/index/" data-id="cuidxv5AVVy-7Qey4DxuVHPc6" data-title="关于PT" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-15-steam假入库/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-14T16:00:00.000Z" itemprop="datePublished">2026-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/">steam假入库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章主要讲解steam假入库的原理和风险。</p>
+<p>1、原理</p>
+<p>Steam 是本地+云端双重验证的方式：</p>
+<p>1. 云端：账号绑定的 License（许可证），官方数据库记录。<br>2. 本地：-  Steam\steamapps\appmanifest_.acf （清单文件）</p>
+<ul>
+<li><p> Steam\config\config.vdf （下载密钥）</p>
+</li>
+<li><p>Steam 客户端启动时优先读本地缓存 → 有就显示“已拥有”</p>
+</li>
+</ul>
+<p>假入库核心逻辑：不上传云端，在本地骗过客户端然后让他认为你电脑上有了这个游戏。</p>
+<p><strong><em>1、伪造 appmanifest（最基础）</em></strong></p>
+<ul>
+<li><p>手动&#x2F;脚本生成  appmanifest_12345.acf </p>
+</li>
+<li><p>写入  steamapps  文件夹</p>
+</li>
+<li><p>Steam 刷新库 → 直接显示已安装&#x2F;已拥有</p>
+</li>
+<li><p>缺点：不能下载，只能骗库显示</p>
+</li>
+</ul>
+<p><strong><em>2、DLL 劫持（hid.dll &#x2F; steam_api.dll）</em></strong></p>
+<ul>
+<li><p>替换 Steam 目录下  hid.dll  或注入  steam_api64.dll </p>
+</li>
+<li><p>拦截 Steam 验证请求，返回“已授权”假结果</p>
+</li>
+<li><p>可正常下载、玩单机</p>
+</li>
+<li><p>风险最高：红信、盗号、木马</p>
+</li>
+</ul>
+<p><strong><em>3、PowerShell 脚本一键执行（现在最常见）</em></strong></p>
+<p>一般就是（网上几块钱卖的基本上是这玩意）</p>
+<p>irm steam.work | iex  
+ </p>
+<p>1、从陌生网站下载脚本&#x2F;恶意程序</p>
+<p>2、自动：- 关 Defender &#x2F; 加排除</p>
+<p>3、改注册表</p>
+<p>4、替换 DLL</p>
+<p>5、写入假 manifest</p>
+<p>6、全程管理员权限，电脑完全敞开</p>
+<p>一般情况下，不太建议这么搞，因为其本身是下载第三方的脚本文件，不知道其有没有被植入后门或者病毒。</p>
+<p>对于假入库也有不少工具，但是这里也不建议，因为有红锁的风险。</p>
+<p><strong><em>2、关于D加密</em></strong></p>
+<p>有的人在找破解资源的时候，可能会有什么开启虚拟化的过程。</p>
+<p>其本质是关闭电脑上所有的验证，让其不能验证，就可以绕开了，但是本身还是和上面的原理差不多的，而且搞那些虚拟化有被病毒感染的风险和电脑性能会有损耗，</p>
+<p><strong><em>3、防范</em></strong></p>
+<p>一般不要下来历不明的软件和买cdk时，如果要你干什么cmd输命令的都是假的，一般是会直接给激活码然后激活就行，不要贪便宜，还有一些是礼物发货，这个有被收回的风险。</p>
+<p>总结：反正一般不贪便宜基本上问题不大。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/15/2026/05/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuidQFob0-QtTHl1zsbNoJgx4" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/2026-05-15-steam假入库/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/15/2026/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-14T16:00:00.000Z" itemprop="datePublished">2026-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86/">其他知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/15/2026/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/">steam假入库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>注：本文章主要讲解steam假入库的原理和风险。</p>
+<p>1、原理</p>
+<p>Steam 是本地+云端双重验证的方式：</p>
+<p>1. 云端：账号绑定的 License（许可证），官方数据库记录。<br>2. 本地：-  Steam\steamapps\appmanifest_.acf （清单文件）</p>
+<ul>
+<li><p> Steam\config\config.vdf （下载密钥）</p>
+</li>
+<li><p>Steam 客户端启动时优先读本地缓存 → 有就显示“已拥有”</p>
+</li>
+</ul>
+<p>假入库核心逻辑：不上传云端，在本地骗过客户端然后让他认为你电脑上有了这个游戏。</p>
+<p><strong><em>1、伪造 appmanifest（最基础）</em></strong></p>
+<ul>
+<li><p>手动&#x2F;脚本生成  appmanifest_12345.acf </p>
+</li>
+<li><p>写入  steamapps  文件夹</p>
+</li>
+<li><p>Steam 刷新库 → 直接显示已安装&#x2F;已拥有</p>
+</li>
+<li><p>缺点：不能下载，只能骗库显示</p>
+</li>
+</ul>
+<p><strong><em>2、DLL 劫持（hid.dll &#x2F; steam_api.dll）</em></strong></p>
+<ul>
+<li><p>替换 Steam 目录下  hid.dll  或注入  steam_api64.dll </p>
+</li>
+<li><p>拦截 Steam 验证请求，返回“已授权”假结果</p>
+</li>
+<li><p>可正常下载、玩单机</p>
+</li>
+<li><p>风险最高：红信、盗号、木马</p>
+</li>
+</ul>
+<p><strong><em>3、PowerShell 脚本一键执行（现在最常见）</em></strong></p>
+<p>一般就是（网上几块钱卖的基本上是这玩意）</p>
+<p>irm steam.work | iex  
+ </p>
+<p>1、从陌生网站下载脚本&#x2F;恶意程序</p>
+<p>2、自动：- 关 Defender &#x2F; 加排除</p>
+<p>3、改注册表</p>
+<p>4、替换 DLL</p>
+<p>5、写入假 manifest</p>
+<p>6、全程管理员权限，电脑完全敞开</p>
+<p>一般情况下，不太建议这么搞，因为其本身是下载第三方的脚本文件，不知道其有没有被植入后门或者病毒。</p>
+<p>对于假入库也有不少工具，但是这里也不建议，因为有红锁的风险。</p>
+<p><strong><em>2、关于D加密</em></strong></p>
+<p>有的人在找破解资源的时候，可能会有什么开启虚拟化的过程。</p>
+<p>其本质是关闭电脑上所有的验证，让其不能验证，就可以绕开了，但是本身还是和上面的原理差不多的，而且搞那些虚拟化有被病毒感染的风险和电脑性能会有损耗，</p>
+<p><strong><em>3、防范</em></strong></p>
+<p>一般不要下来历不明的软件和买cdk时，如果要你干什么cmd输命令的都是假的，一般是会直接给激活码然后激活就行，不要贪便宜，还有一些是礼物发货，这个有被收回的风险。</p>
+<p>总结：反正一般不贪便宜基本上问题不大。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/15/2026/2026-05-15-steam%E5%81%87%E5%85%A5%E5%BA%93/index/" data-id="cuidHNK3v1c1SBDotrB5in-ls" data-title="steam假入库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2026/05/2026-05-14-进程加速器（openspeedy）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-13T16:00:00.000Z" itemprop="datePublished">2026-05-14</time>
 </a>
     
   <div class="article-category">
@@ -684,7 +732,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/16/2026/04/2026-04-16-astrbot%E9%83%A8%E7%BD%B2qq%E6%9C%BA%E5%99%A8%E4%BA%BA/index/">astrbot部署QQ机器人</a>
+      <a class="p-name article-title" href="/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/">进程加速器（openspeedy）</a>
     </h1>
   
 
@@ -692,64 +740,26 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong><em>注：接入第三方插件可能会有封号的风险</em></strong><em><strong>，本人只是简化了原作者的很多操作方便小白上手。</strong></em></p>
-<p>项目原文档：<a target="_blank" rel="noopener" href="https://astrbot.app/">AstrBot - Agentic AI 助手</a></p>
-<p><strong><em>1、环境准备</em></strong></p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">git</a>（用于克隆代码）</p>
-<p><a target="_blank" rel="noopener" href="https://www.python.org/">python</a>（用来运行的环境）</p>
-<p><a target="_blank" rel="noopener" href="https://uv.doczh.com/getting-started/installation/#_1">uv</a>（管理依赖）</p>
-<p><strong><em>2、部署astrbot</em></strong></p>
-<p>git clone <a target="_blank" rel="noopener" href="https://github.com/AstrBotDevs/AstrBot.git">https://github.com/AstrBotDevs/AstrBot.git</a></p>
-<p>cd AstrBot</p>
-<p>在终端执行(AstrBot 目录下)执行安装依赖</p>
-<p>uv sync<br>uv run main.py</p>
-<p>访问链接是 <code>http://localhost:6185</code></p>
-<p><strong><em>3、接入消息平台（本人用的是NapCat）</em></strong></p>
-<h2 id="windows端"><a href="#windows端" class="headerlink" title="windows端"></a>windows端</h2><ol>
-<li><p>前往 <a target="_blank" rel="noopener" href="https://github.com/NapNeko/NapCatQQ/releases">NapCatQQ 的 Releases 页面</a> 下载 NapCat.Shell.zip 并解压</p>
-</li>
-<li><p>确保 QQ 版本安装且最新</p>
-</li>
-<li><p>双击目录下 launcher.bat 即可启动 如果是 Win10 则使用 launcher-win10.bat</p>
-</li>
-</ol>
-<h2 id="linux端"><a href="#linux端" class="headerlink" title="linux端"></a>linux端</h2><p>一键安装脚本</p>
-<p>curl -o \<br>napcat.sh \<br><a target="_blank" rel="noopener" href="https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh">https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh</a> \<br>&amp;&amp; bash napcat.sh \<br>--tui</p>
-<p><strong><em>4、连接操作</em></strong></p>
-<p><strong><em>astrbot</em></strong></p>
-<ol>
-<li><p>进入 AstrBot 的 WebUI</p>
-</li>
-<li><p>点击左边栏 <code>机器人</code></p>
-</li>
-<li><p>然后在右边的界面中，点击 <code>+ 创建机器人</code></p>
-</li>
-<li><p>选择 <code>OneBot v11</code></p>
-</li>
-</ol>
-<p>填写</p>
-<p>ID(id)：随意填写，仅用于区分不同的消息平台实例。</p>
-<p>启用(enable): 勾选。</p>
-<p>反向 WebSocket 主机地址：请填写你的机器的 IP 地址，一般情况下请直接填写 <code>0.0.0.0</code></p>
-<p>反向 WebSocket 端口：填写一个端口，默认为 <code>6199</code>。</p>
-<p>反向 Websocket Token：只有当 NapCat 网络配置中配置了 token 才需填写。</p>
-<p>点击 <code>保存</code>。</p>
-<p><strong>注：<code>反向 WebSocket</code> 的 URL 为</strong> ws:&#x2F;&#x2F;IP地址:6199&#x2F;ws</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-210359-1024x547.png"></p>
-<p><strong><em>NapCat</em></strong></p>
-<p>在 NapCat WebUI 页面选择 网络配置 → 新建 → WebSocket 客户端，URL 填入<code>ws://127.0.0.1:6199/ws</code>，添加完成后，点击保存即可。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-211250-1024x541.png"></p>
-<p>回到astrbot，查看日志，如果显示连接上适配器就连接好了。</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-211304-1024x162.png"></p>
-<p>剩下的就由你自己配置，这是手机上的效果。</p>
-<p><img src="/images/9edd05b33c395e33ed23406282c14833-461x1024.jpg"></p>
-<p>可以接入各家的大模型，具体各家的各不相同，请查看各家的配置文件，这里不详细介绍。</p>
-<p>总结：本人只是很简单的简化了原文档的很多步骤，方便小白操作，详细请查看原项目文档，支持项目的原作者，如果要进行二次开发请遵守原作者的开源协议，这是对人家作者最基本的尊重。</p>
+        <p>注：本项目只适用于加速单机游戏，如果用用于其他造成的后果自行负责。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy">game1024&#x2F;OpenSpeedy：🎮开源游戏速度修正器。 — game1024&#x2F;OpenSpeedy: 🎮 An open-source game speed modifier.</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip">https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip</a></p>
+<p>1、作用</p>
+<p>跳过单机游戏的漫长等待时间，用于单机游戏的进程加速。</p>
+<p>用于电脑上的exe程序进程的单独的加速。</p>
+<p>2、原理</p>
+<p>通过修改进程的系统时间读数器到达修改程序进程的目的。</p>
+<p>具体原理可以看看作者的项目文档。</p>
+<p>3、使用</p>
+<p>下载以后解压</p>
+<p>在下面进程里找到你要加速的程序勾选后滑动上面的加速的倍数就行。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-14-185949-1024x609.png"></p>
+<p>操作很简单，不用修改注册表什么的，可以极大的方便你使用。</p>
+<p>总结：这是一个很好用的开源软件，希望大家可以去支持一下作者，并遵守作者的开源协议。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/16/2026/04/2026-04-16-astrbot%E9%83%A8%E7%BD%B2qq%E6%9C%BA%E5%99%A8%E4%BA%BA/index/" data-id="cuid8icLdVEb8YVKu4tZ0qu9S" data-title="astrbot部署QQ机器人" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/14/2026/05/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuidKTZjEfQLbUuuylTEqcMY3" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -761,14 +771,14 @@
 
 
   
-    <article id="post-2026/04/2026-04-15-远程访问家里的nas设备/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/2026-05-14-进程加速器（openspeedy）/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-14T16:00:00.000Z" itemprop="datePublished">2026-04-15</time>
+    <a href="/2026/05/14/2026/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-13T16:00:00.000Z" itemprop="datePublished">2026-05-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86/">服务器知识</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
   </div>
 
   </div>
@@ -779,7 +789,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/">远程访问家里的nas设备</a>
+      <a class="p-name article-title" href="/2026/05/14/2026/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/">进程加速器（openspeedy）</a>
     </h1>
   
 
@@ -787,120 +797,26 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：这里介绍公网IP，p2p打洞，异地组网，内网穿透</p>
-<p><strong><em>方法1：公网IP+端口转发</em></strong></p>
-<p>一、原理</p>
-<p>给你家宽带办一个全网独一份的门牌号（公网IP），外面的手机&#x2F;电脑能直接找到你家；再给你要远程访问的设备（比如NAS），在路由器上开个专属“小门”，外面的访问直接通过小门进到设备里，全程不绕路、不经过第三方。</p>
-<p>二、操作</p>
-<p>1、申请公网IP（没有就看下面的方法，不好申请的）</p>
-<p>直接打宽带运营商客服电话，要公网IPV4最好，但是一般不会给，别问为什么，当然，要到了就开始下面的操作没要到就看后面的吧，毕竟如果搞nas传的文件还是比较大的，容易被标记为跑pcdn，被关小黑屋就不太好了</p>
-<p>2、查你设备的内网IP</p>
-<p>1. 打开你要远程访问的设备，进入系统设置-网络<br>2. 找到内网IP地址，比如  我自己家里的nas的IP地址是192.168.1.6 <br>3. 找设备的管理端口：群晖NAS是5000，威联通是8080，Windows远程桌面是3389，通用WebDAV是443（当然一般不建议默认，可以改一下，毕竟网上还是有不少爬虫机器人会骚2一些默认端口的特别是80这些）</p>
-<p>3、路由器设置端口转发（所有路由器都一样）</p>
-<p>1. 打开浏览器，输入路由器后台地址（路由器底部标签上写着，比如  192.168.1.1 ），登录管理员账号  </p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202341-1024x592.png"></p>
-<p>2. 找 ：端口转发&#x2F;虚拟服务器&#x2F;高级转发，不同路由器名字不一样，找类似的就行<br>3. 填参数 外部端口：和设备管理端口填一样（就填nas的端口）</p>
-<p>内部IP：填你设备的内网IP（比如192.168.1.6）</p>
-<p>内部端口：和设备管理端口一致</p>
-<p>协议：选TCP，保存设置</p>
-<p>4、设置DDNS（用来固定IP的毕竟IP会变就很蛋疼，固定好了，就没那么麻烦）</p>
-<p>1. 路由器后台找到「DDNS」功能，开启<br>2. 选一个免费域名（路由器自带的服务，比如TP-Link的DDNS），绑定你家的公网IP<br>3. 之后就算公网IP变了，用这个域名也能访问</p>
-<p>5、外网直接访问</p>
-<p>在外网浏览器输入： 你的公网IP:外部端口  或者  你的域名:外部端口 ，就能直接进入设备管理页。</p>
-<p>因为本人也没有申请公网IP所以具体操作就是这样图片没办法不太好演示，请见谅，反正大致就这样。</p>
-<p><strong><em>方法2：P2P打洞</em></strong></p>
-<p>一、原理</p>
-<p>你家里的设备都在内网，你自己在外面，在不同的网络里，互相看不见，是相互连接不上的，就自己租个便宜云服务器当中间人，先让两边互相交换地址信息，打洞打出一条临时通道，通道通了之后，手机和设备直接点对点传数据，通过云服务器打通一条专门用于传输的通道，来点对点的连接，具体实现还是比较复杂的，反正原理就是这样，云服务器打通一条专门用来搞的通道，不然也不会叫打洞了。</p>
-<p>二、详细操作步骤</p>
-<p>搞1台云服务器</p>
-<p>安装好STUN服务</p>
-<p>1. 用SSH工具（Xshell&#x2F;宝塔）登录你的云服务器<br>2. 复制命令，安装STUN工具</p>
-<p>sudo apt update #更新包</p>
-<p>sudo apt install coturn -y #安装对应文件</p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202445-1024x724.png"></p>
-<p>3. 配置中介参数：<br>输入命令编辑配置文件： sudo nano &#x2F;etc&#x2F;turnserver.conf </p>
-<p>当然你手动弄也可以，反正配置文件<br>写好这个</p>
-<p>listening-port&#x3D;3478 #这里根据需求改stun默认端口我记得就这个，反正都行，无所谓<br>external-ip&#x3D;你的云服务器公网IP<br>stun-only</p>
-<p>保存好就行。<br> <br>4. 启动服务：<br>输入命令开启开机自启和启动服务</p>
-<p>sudo nano &#x2F;etc&#x2F;default&#x2F;coturn  
- </p>
-<p>找到  TURNSERVER_ENABLED ，改成  TURNSERVER_ENABLED&#x3D;1 ，这里改的是启用这个服务，不然就是禁用的</p>
-<p>执行</p>
-<p>sudo systemctl start coturn #启动服务</p>
-<p>sudo systemctl enable coturn #设置开机自启动，这个应该看得懂吧<br> <br>5. 放行服务器防火墙端口：在服务器安全组里，放行3478端口（UDP协议）如果你上面改了，记得这里放行的是上面改的端口。</p>
-<p>步骤2：家里设备安装P2P客户端</p>
-<p>1. NAS设备：打开Docker，搜索「P2P Client」，一键部署客户端<br>2. Windows&#x2F;电脑：官网下载客户端安装<br>3. 客户端里填写：你自建的STUN服务器地址  你的云服务器IP:3478 ，启动客户端</p>
-<p>步骤3：手机&#x2F;电脑连接访问</p>
-<p>1. 手机&#x2F;电脑下载同一个P2P客户端，填写相同的STUN服务器地址<br>2. 连接成功后，软件会显示「P2P打洞成功」<br>3. 直接用软件分配的虚拟IP，访问家里的NAS&#x2F;设备，传文件速度接近公网IP</p>
-<p>三、好处和坏处</p>
-<p>打洞成功后不限流量、不限速，完全自己掌控，不用依赖任何品牌官方服务，但是，需要租云服务器，国内网络环境复杂，不是每次都能打洞成功；打不通会降级成中转，速度变慢</p>
-<p><strong><em>方法3：内网穿透</em></strong></p>
-<p>第三方商用穿透（个人觉得算比较简单的）</p>
-<p>一、原理</p>
-<p>服务商给你准备好一个带公网IP的中转站，你家里的设备主动和中转站建立连接。外面访问设备的数据，先发到中转站，再由中转站转发给你家设备，全程靠别人的服务器中转，不用自己折腾，但是因为用的是别人的服务器，所以有太多不可控制的，额，所以我觉得比较看脸。</p>
-<p>二、详细操作步骤</p>
-<p>各家的内网穿透都有自己的操作指南，我觉得都算比较详细了，这里就不过多介绍了，主要是个人也比较懒，懒得一个一个去介绍了，反正直接去网上收索内网穿透就行，尽量找免费的，毕竟之前被坑过，所以，有点伤心，不说多了，反正自己看着办，有不少大带宽的，内网穿透工具的</p>
-<p>三、好坏处</p>
-<p>零配置、100%能用，所有设备都适配，完全不用懂技术，但是，免费版限速、流量少；稳定版要花钱；数据走第三方服务器，隐私安全性一般，反正别被坑了就行，免费的肯定有的。</p>
-<p><strong><em>方法四 自建FRP穿透（我自己用的就是这种方法，所以还是比较推荐的，之前也写过介绍过的）</em></strong></p>
-<p>一、原理</p>
-<p>自己租个云服务器，搭一个专属中转站。家里设备主动连你的中转站，外面访问的数据先到你的服务器，再转给家里设备，全程自己掌控，不限速不限流量，很爽的，就是自己要买大带宽的服务器，最好选香港的，国内的记得一定一定要备案，不然会被罚款</p>
-<p>二、详细操作步骤</p>
-<p>详细看这篇文章</p>
-<p><a target="_blank" rel="noopener" href="https://suyihang15.com/2026/03/21/frpc%e7%9a%84%e4%bd%bf%e7%94%a8%ef%bc%88%e7%94%a8%e4%ba%8e%e7%a9%bf%e9%80%8f%e5%ae%b6%e9%87%8c%e7%9a%84%e8%ae%be%e5%a4%87%ef%bc%89/">frpc的使用（用于穿透家里的设备） – 苏的小站</a><br> <br>步骤3：外网访问</p>
-<p>浏览器输入  你的云服务器IP:端口号，直接访问家里设备</p>
-<p>三、好处和坏处</p>
-<p>完全自己掌控，不限流量、不限速，长期使用成本最低，但是，需要一点点电脑基础，设置比商用穿透麻烦</p>
-<p><strong><em>方法5 设备官方自带穿透（群晖QuickConnect&#x2F;威联通myQNAPcloud）</em></strong></p>
-<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-04-25-202605-1024x120.png"></p>
-<p>一、原理</p>
-<p>设备厂商自己搭了官方中转站服务器，你的设备绑定品牌账号后，主动和厂商服务器建立连接。外网用品牌App访问时，数据经过厂商服务器中转到你家设备，本质是厂商给你专属的内网穿透，这是最最简单的办法的</p>
-<p>二、详细操作步骤</p>
-<p>1. 设备后台开启远程服务：群晖开QuickConnect，威联通开myQNAPcloud，极空间&#x2F;飞牛开自带远程访问<br>2. 登录你买设备时注册的品牌账号，绑定当前设备<br>3. 外网访问：下载品牌专属App，登录同一个账号，直接就能连接家里设备</p>
-<p>三、优缺点</p>
-<p>一键开启，和设备适配最好，稳定省心，完全不用自己设置，但是，完全依赖厂商服务器，厂商服务器崩了就用不了；大多有流量、速度限制</p>
-<p><strong><em>方法6：异地组网（Tailscale，最安全，访问和在家一模一样）</em></strong></p>
-<p>一、原理</p>
-<p>用软件把你手机、电脑、家里NAS，虚拟成同一个局域网。不管你在外地还是公司，访问家里设备就和在家用内网IP访问一样，数据全程加密，不暴露真实地址，安全拉满。</p>
-<p>二、详细操作步骤</p>
-<p>步骤1：注册Tailscale账号</p>
-<p>打开Tailscale官网，用邮箱注册免费账号，个人使用完全免费</p>
-<p>步骤2：所有设备安装Tailscale</p>
-<p>1. NAS设备：打开Docker，搜索Tailscale，一键部署并登录你的账号<br>2. Windows&#x2F;Mac&#x2F;手机：官网直接下载客户端，安装后登录同一个账号</p>
-<p>步骤3：外网访问</p>
-<p>1. 所有设备登录成功后，软件会给每台设备分配一个专属虚拟IP<br>2. 在外网直接用这个虚拟IP访问家里的NAS&#x2F;设备，和在家用内网访问没有任何区别</p>
-<p>三、优缺点</p>
-<p>安全性最高，数据全程加密，设备不暴露在公网；访问体验和在家完全一致，但是，传大文件速度受软件服务器影响；设置比官方穿透多几步</p>
-<p><strong><em>方法7：VPN隧道（企业级安全，适合隐私敏感场景）</em></strong></p>
-<p><strong><em>注：请兄弟们搞清楚，VPN不只是用于绕过国家的防火墙，这里只做探讨，没有任何其他的想法，适用于企业，如果要用请向相关的机构进行报备，本人在这里只是补全所有的方式，切勿用于任何违法犯罪行为，本人是一名遵纪守法的好公民，也不要谈论任何其他触犯法律底线的事，违者必惩</em></strong></p>
-<p>一、原理</p>
-<p>在外网设备和家里路由器&#x2F;NAS之间，搭一条加密的专属通道。你先在外网连上这个通道，就能像在家一样访问家里所有内网设备，数据全程加密，别人看不到。</p>
-<p>二、详细操作步骤（以WireGuard为例）</p>
-<p>步骤1：家里路由器&#x2F;NAS安装WireGuard服务端</p>
-<p>1. 路由器&#x2F;设备应用中心搜索WireGuard，安装服务端<br>2. 按照提示设置账号密码，生成客户端配置文件（.conf格式）</p>
-<p>步骤2：外网设备安装客户端</p>
-<p>1. 手机&#x2F;电脑下载WireGuard客户端<br>2. 导入刚才生成的配置文件，输入账号密码连接VPN</p>
-<p>步骤3：访问设备</p>
-<p>VPN连接成功后，直接用家里设备的内网IP访问，和在家访问完全一样</p>
-<p>三、好处和坏处</p>
-<p>加密性最强，企业都在用；连入VPN后，家里所有内网设备都能访问，但是，配置步骤多，小白上手难度大；对路由器性能有一定要求</p>
-<p><strong><em>方法8：IPv6直连（个人觉得是未来趋势）</em></strong></p>
-<p>一、原理</p>
-<p>现在旧的IP地址不够用了，运营商给家里每台设备分配一个全球唯一的新IPv6地址。不用办公网IP、不用开端口转发，外面直接用这个IPv6地址就能访问设备，直连无中转。</p>
-<p>二、详细操作步骤</p>
-<p>步骤1：开启IPv6</p>
-<p>1. 登录路由器后台，找到「IPv6功能」，直接开启<br>2. 家里NAS&#x2F;电脑进入网络设置，确认已经获取到IPv6地址</p>
-<p>步骤2：外网测试访问</p>
-<p>手机切换到5G流量，打开浏览器，输入设备的IPv6地址+管理端口，能正常打开就成功了</p>
-<p>步骤3：绑定域名</p>
-<p>路由器&#x2F;设备开启IPv6的DDNS，绑定域名，不用记长长的IPv6地址，毕竟你可以看看IPV6有多长，当然你觉得你记性好当我放了个屁</p>
-<p>三、好处和坏处</p>
-<p>不用申请公网IP，不用折腾任何转发&#x2F;打洞，速度快，无流量限制，老路由器、老设备不支持IPv6；部分外网环境（比如公司内网）不兼容，偶尔连不上，所以个人还是推荐其他的几个，但是后面可能基本上用IPV6是大趋势了。</p>
+        <p>注：本项目只适用于加速单机游戏，如果用用于其他造成的后果自行负责。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy">game1024&#x2F;OpenSpeedy：🎮开源游戏速度修正器。 — game1024&#x2F;OpenSpeedy: 🎮 An open-source game speed modifier.</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip">https://github.com/game1024/OpenSpeedy/releases/download/v1.7.9/Speedy-1.7.9.zip</a></p>
+<p>1、作用</p>
+<p>跳过单机游戏的漫长等待时间，用于单机游戏的进程加速。</p>
+<p>用于电脑上的exe程序进程的单独的加速。</p>
+<p>2、原理</p>
+<p>通过修改进程的系统时间读数器到达修改程序进程的目的。</p>
+<p>具体原理可以看看作者的项目文档。</p>
+<p>3、使用</p>
+<p>下载以后解压</p>
+<p>在下面进程里找到你要加速的程序勾选后滑动上面的加速的倍数就行。</p>
+<p><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2026-05-14-185949-1024x609.png"></p>
+<p>操作很简单，不用修改注册表什么的，可以极大的方便你使用。</p>
+<p>总结：这是一个很好用的开源软件，希望大家可以去支持一下作者，并遵守作者的开源协议。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/15/2026/04/2026-04-15-%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%9A%84nas%E8%AE%BE%E5%A4%87/index/" data-id="cuid6EIXpWQWOXBAwcuyh7EQN" data-title="远程访问家里的nas设备" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/14/2026/2026-05-14-%E8%BF%9B%E7%A8%8B%E5%8A%A0%E9%80%9F%E5%99%A8%EF%BC%88openspeedy%EF%BC%89/index/" data-id="cuidm_zlxw4OlCUY6tQG20EvU" data-title="进程加速器（openspeedy）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -912,12 +828,16 @@
 
 
   
-    <article id="post-2026/04/2026-04-14-网页的大致框架/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-2026/05/2026-05-13-系统还原/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/04/14/2026/04/2026-04-14-%E7%BD%91%E9%A1%B5%E7%9A%84%E5%A4%A7%E8%87%B4%E6%A1%86%E6%9E%B6/index/" class="article-date">
-  <time class="dt-published" datetime="2026-04-13T16:00:00.000Z" itemprop="datePublished">2026-04-14</time>
+    <a href="/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" class="article-date">
+  <time class="dt-published" datetime="2026-05-12T16:00:00.000Z" itemprop="datePublished">2026-05-13</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/">电脑知识</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -926,7 +846,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/14/2026/04/2026-04-14-%E7%BD%91%E9%A1%B5%E7%9A%84%E5%A4%A7%E8%87%B4%E6%A1%86%E6%9E%B6/index/">网页的大致框架</a>
+      <a class="p-name article-title" href="/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/">系统还原</a>
     </h1>
   
 
@@ -934,96 +854,31 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>注：网页大致组成框架是html、css、js，以下是基于我个人的理解写的</p>
-<p><strong><em>1、html（网站的框架骨骼）</em></strong></p>
-<p>用来写文字标题和挂图片的，排好版的，把网站比作房子，这玩意就和装房子的砖头一样，个人觉得他就是核心，用来显示出你网页上可以看见的东西，文字，界面，图片，按钮，输入框，基本都要靠这玩意。</p>
-<p><strong><em>2、css（网站的美化）</em></strong></p>
-<p>当你大致骨架写好了，就要进行美化了，比如字体的样式和大小颜色，这就好比装修时的家具这些，当然你不用也不影响正常使用，当然那样很不美观，而且网站看起来会很反人类。</p>
-<p><strong><em>3、js（网站的交互）</em></strong></p>
-<p>你看很多网站你点击或者翻看，其都会有对应的反应，js就是用来处理这些事情的，不然你的网站就是个死的网页，没有任何交互功能。就好比新房子里的电视机你打开就会显示出界面。</p>
-<p>4、<strong><em>总的一些基础语法</em></strong></p>
-<p><strong><em>（1）html的语法</em></strong></p>
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<title>标题内容</title>
-
-</head>
-
-<body>
-
-<p>主体内容</p>
-</body>
-
-</html>
-
-<p>1、写标题：<code>&lt;h1&gt;一级标题&lt;/h1&gt;</code>、<code>&lt;h2&gt;二级标题&lt;/h2&gt;</code>（h1 最大，h6 最小）</p>
-<p>2、写段落文字：<code>&lt;p&gt;这是一段普通文字&lt;/p&gt;</code> 换行：<code>&lt;br&gt;</code>（用来另起一行的）</p>
-<p>3、加图片：<code>&lt;img src=&quot;图片地址&quot;&gt;</code>（把图片地址换成自己的就行）</p>
-<p>4、做链接：<code>&lt;a href=&quot;跳转地址&quot;&gt;点我去百度&lt;/a&gt;</code></p>
-<p>5、加粗文字：<code>&lt;strong&gt;重要的内容&lt;/strong&gt;</code></p>
-<p>6、列表</p>
-<ul>
-
-<li>苹果</li>
-
-<li>香蕉</li>
-
-</ul>
-
-<p>7、按钮：<code>&lt;button&gt;按钮&lt;/button&gt;</code></p>
-<p><strong><em>（2）css的语法</em></strong></p>
-<head>
-
-<style>
-
-/\* 这里写样式 \*/
-
-p { color: 红色; } /\* 把所有段落文字改成红色 \*/
-
-h1 { font-size: 30px; } /\* 把一级标题调大 \*/
-
-body { background-color: 浅灰色; } /\* 给网页换背景色 \*/
-
-.box { width: 200px; height: 200px; background: 白色; } /\* 做一个白色方块 \*/
-
-</style>
-
-</head>
-
-<ol>
-<li><p>改文字颜色：<code>color: 颜色名;</code>（比如 red 红色、blue 蓝色）</p>
-</li>
-<li><p>改文字大小：<code>font-size: 20px;</code></p>
-</li>
-<li><p>内容居中：<code>text-align: center;</code></p>
-</li>
-<li><p>改背景颜色：<code>background-color: 颜色名;</code></p>
-</li>
-<li><p>给方块加圆角：<code>border-radius: 10px;</code></p>
-</li>
-</ol>
-<p><em><strong>（3）js的语法</strong></em></p>
-<script> // 互动代码 </script>
-
-<p>弹出提示</p>
-<p><button onclick="alert('你好呀！')">点我试试</button></p>
-<p>改网页文字</p>
-<p id="demo">原来的文字</p>
-
-<p><button onclick="document.getElementById('demo').innerText = '改后的文字啦'">点我改字</button></p>
-<p>计算</p>
-<script> let a = 10; let b = 20; alert(a + b); // 弹窗显示结果30 </script>
-
-<p>这些都是最基础的，本人想到的，如果要真正详细的去学还要学习更多的东西。</p>
+        <p>注：本文章主要介绍网吧的开机后系统还原的原理。</p>
+<p>主流的还原方法一般就两种（硬件和软件方便的）</p>
+<p>还原软件（冰点还原）</p>
+<p>硬件还原卡</p>
+<p><strong><em>一、最主流：冰点还原（Deep Freeze）</em></strong><br>原理：</p>
+<p>把 C 盘（系统盘）做成只读镜像，你下载东西、装软件、中毒、乱改系统，全部存在临时虚拟缓存里</p>
+<p>一重启，缓存直接清空，C盘一秒变回老板设定的纯净状态，D盘游戏盘不还原，游戏、下载的东西一直保留</p>
+<p><strong><em>一般情况是</em></strong></p>
+<p> 先装好纯净 Windows、驱动、运行库、游戏环境，调好桌面、壁纸、浏览器、关闭系统更新，安装冰点，只保护C盘，D盘不保护，设置密码，普通用户关不掉，开机默认冻结模式 → 重启必还原</p>
+<p><strong>管理员一般是（更新用）</strong></p>
+<p>快捷键： Ctrl + Alt + Shift + F6 （记得好像是这个）<br>输入密码，切换解冻模式<br>更新游戏、系统、软件，改完切回冻结，重启保存新状态。</p>
+<p><strong><em>二、老网吧：硬件还原卡（小哨兵、海光、蓝沙）</em></strong></p>
+<p>很早以前网吧用，PCI 小卡片插主板上。</p>
+<p>硬件接管硬盘，比软件更底层</p>
+<p>所有修改都存在内存&#x2F;临时空间，重启清空</p>
+<p>现在基本淘汰，因为维护麻烦、不能远程更新游戏</p>
+<p><strong><em>三、还有一种：易乐游 &#x2F; 迅闪（网吧无盘系统）感觉现在基本上都是这个吧网吧</em></strong></p>
+<p>大型连锁网吧用无盘系统：<br>电脑本身没硬盘，系统从服务器读取，<br>所有电脑共用服务器镜像，重启自动还原，一台服务器统一更新。</p>
+<p>无盘系统是很方便的</p>
+<p>总结：这差不多就是网吧电脑比家用电脑快很多的原因，但是如果是你自己的电脑我是很不建议这么搞的，虽然确实这样会很快，但是基本上数据这些不太好存储，而且，其本身家用搞的基本上是跑在软件层面的，问题风险这些是不太可控的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/14/2026/04/2026-04-14-%E7%BD%91%E9%A1%B5%E7%9A%84%E5%A4%A7%E8%87%B4%E6%A1%86%E6%9E%B6/index/" data-id="cuidfDADgU39KIymo0Ke9JDST" data-title="网页的大致框架" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/05/13/2026/05/2026-05-13-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F/index/" data-id="cuidPbCCYH8US3UldfTYvUvZi" data-title="系统还原" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -1039,7 +894,7 @@ body { background-color: 浅灰色; } /\* 给网页换背景色 \*/
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -1065,7 +920,7 @@ body { background-color: 浅灰色; } /\* 给网页换背景色 \*/
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
     </div>
   </div>
 
@@ -1078,23 +933,23 @@ body { background-color: 浅灰色; } /\* 给网页换背景色 \*/
       <ul>
         
           <li>
-            <a href="/2026/05/25/2026/05/2026-05-25-%E5%88%A9%E7%94%A8pe%E4%BF%AE%E6%94%B9windows%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/index/">利用pe修改windows电脑开机密码</a>
+            <a href="/2026/06/19/2026/2026-06-19-%E7%83%AD%E7%82%B9%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%EF%BC%88trendradar%EF%BC%89/index/">热点分析项目（TrendRadar）</a>
           </li>
         
           <li>
-            <a href="/2026/05/24/2026/05/2026-05-24-ce%E4%BF%AE%E6%94%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index/">CE修改器使用指南</a>
+            <a href="/2026/06/18/2026/2026-06-18-%E9%B8%BF%E8%92%99%E7%B3%BB%E7%BB%9F%E5%B0%9D%E9%B2%9C/index/">鸿蒙系统尝鲜</a>
           </li>
         
           <li>
-            <a href="/2026/05/23/2026/05/2026-05-23-%E5%85%B3%E4%BA%8E%E9%A9%B1%E5%8A%A8/index/">关于驱动</a>
+            <a href="/2026/06/17/2026/2026-06-17-github-store/index/">Github store</a>
           </li>
         
           <li>
-            <a href="/2026/05/22/2026/05/2026-05-22-python-%E6%89%93%E5%8C%85%E5%99%A8-gui/index/">Python 打包器 (GUI)</a>
+            <a href="/2026/06/16/2026/2026-06-16-%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98/index/">关于硬盘</a>
           </li>
         
           <li>
-            <a href="/2026/05/21/2026/05/2026-05-21-%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E7%94%A8/index/">关于操作系统的选用</a>
+            <a href="/2026/06/15/2026/2026-06-15-ai%E5%8A%A9%E6%89%8B%E6%8F%92%E4%BB%B6/index/">ai助手插件</a>
           </li>
         
       </ul>
